@@ -61,10 +61,16 @@ const UI_ACTIONS = {
     render();
   },
   async commitImport() {
+    const before = store.state;
     await replaceState(getPendingImport());
     clearPendingImport();
     closeDialog();
-    render();
+    try { render(); } catch (error) {
+      // 검증은 통과했지만 화면에 그릴 수 없는 일지 → 원래 일지로 되돌린다
+      await replaceState(before, {keepPrevious: true});
+      render();
+      throw Error('이 일지는 화면에 표시할 수 없어 가져오지 않았어요.');
+    }
     announceSaved(store.state);
   },
   ending: button => openEndingConfirm(button.dataset.id),
@@ -77,13 +83,23 @@ const UI_ACTIONS = {
     downloadJournal(raw, 'rakoko-journal-original.json');
     toast('저장된 원본을 파일로 내보냈어요.');
   },
-  async bootReset() {
-    if (!confirm('새 일지로 시작할까요? 지금 저장본은 백업 칸에 한 번 보관돼요.')) return;
+  async bootRecover() {
     if (!store.catalog) { location.reload(); return; }
-    await replaceState(newGame());
+    const backup = await storage.recover();
+    if (!backup) { toast('되돌릴 직전 저장이 없어요.'); return; }
+    const state = loadSave(backup, store.catalog);
+    await replaceState(state, {keepPrevious: true});
     announceSaved(store.state);
     render();
-    toast('새 일지를 펼쳤어요. 이전 저장본은 백업 칸에 보관했어요.');
+    toast('직전 저장으로 되돌렸어요.');
+  },
+  async bootReset() {
+    if (!confirm('새 일지로 시작할까요? 직전 정상 저장(백업)은 그대로 남겨 둬요.')) return;
+    if (!store.catalog) { location.reload(); return; }
+    await replaceState(newGame(), {keepPrevious: true}); // 깨진 현재본이 정상 백업을 덮지 않게
+    announceSaved(store.state);
+    render();
+    toast('새 일지를 펼쳤어요. 직전 정상 저장은 백업 칸에 남아 있어요.');
   },
   async continue() {
     await runCommand('continue');

@@ -33,7 +33,7 @@ async function loadState(catalog) {
 
 /** 저장본·백업이 모두 쓸 수 없을 때의 탈출구: 다시 시도 / 원본 내보내기 / 새 일지 (actions.js 의 boot* 동작) */
 function showBootError(error) {
-  document.querySelector('#app').innerHTML = `<div class="boot error"><span>▥</span><h1>일지를 펼치지 못했어요.</h1><p>${escape(error.message)}</p><p>브라우저 저장이 허용되어 있는지 확인하고 다시 열어주세요.</p><div class="boot-actions"><button class="button primary" data-action="bootRetry">다시 시도</button><button class="button secondary" data-action="bootExportRaw">저장된 일지 원본 내보내기</button><button class="text-button danger" data-action="bootReset">새 일지로 시작하기</button></div><p class="boot-note">새 일지로 시작해도 지금 저장본은 백업 칸에 한 번 보관돼요. 먼저 원본을 내보내 두는 것을 권해요.</p></div>`;
+  document.querySelector('#app').innerHTML = `<div class="boot error"><span>▥</span><h1>일지를 펼치지 못했어요.</h1><p>${escape(error.message)}</p><p>브라우저 저장이 허용되어 있는지 확인하고 다시 열어주세요.</p><div class="boot-actions"><button class="button primary" data-action="bootRetry">다시 시도</button><button class="button secondary" data-action="bootRecover">직전 저장으로 되돌리기</button><button class="button secondary" data-action="bootExportRaw">저장된 일지 원본 내보내기</button><button class="text-button danger" data-action="bootReset">새 일지로 시작하기</button></div><p class="boot-note">새 일지로 시작해도 직전 정상 저장(백업)은 남겨 둬요. 먼저 원본을 내보내 두는 것을 권해요.</p></div>`;
 }
 
 export async function boot() {
@@ -45,7 +45,11 @@ export async function boot() {
     const {state, fresh} = await loadState(store.catalog);
     store.state = state;
     if (fresh) await storage.save(state, null, {replace: true});
-    render();
+    try { render(); } catch (renderError) {
+      // 검증은 통과했지만 그릴 수 없는 저장본 → 부팅 실패 화면(되돌리기·내보내기·새 일지)
+      store.state = null;
+      throw renderError;
+    }
     if (state.phase === 'credits') showCredits();
   } catch (error) {
     showBootError(error);

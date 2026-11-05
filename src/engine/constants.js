@@ -5,6 +5,9 @@ export const START_YEAR = Number(START_DATE.slice(0, 4));
 export const BIRTHDAY = '09-10';
 export const ANNIVERSARY = '01-18';
 export const LATEST_DATE = '2100-12-31';
+/** 저장본이 허용하는 최대 방송 회차/목록 길이: 2026~2100년 매일 방송해도 넘지 않게(약 27,375회) */
+export const MAX_BROADCASTS = 40000;
+export const CASH_MAXIMUM = 9000000000000;
 
 export const CORNERS = {T: '잡담', G: '게임 도전', F: '팬 참여', S: '특별 기획'};
 export const LABELS = {awareness: '인지도', community: '단골 시청층', planning: '기획력', operation: '방송 운영력', gameSkill: '게임 숙련도'};

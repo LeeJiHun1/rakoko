@@ -1,5 +1,6 @@
 // 시청자·방송 등급·역대 기록·가상 응원 (사용자 결정 Q4, docs/DESIGN-REVIEW.md §4-1).
 // 응원 금액은 방송 중 실제로 진행한 코너에서만 생긴다(날짜 건너뛰기로는 생기지 않음). 실제 플랫폼 화폐명은 쓰지 않는다.
+import {CASH_MAXIMUM} from './constants.js';
 import {random} from './rng.js';
 
 const GRADE_SCORE = {great: 3, success: 2, miss: 1};
@@ -51,7 +52,7 @@ export function rollDonation(s, bonus = 0) {
   const amount = Math.round((tier.min + Math.floor(random(s) * tier.steps) * tier.step) * TIER_DONATION[s.scaleIndex] / 1000) * 1000;
   const from = `키몽이 ${String(1 + Math.floor(random(s) * 99)).padStart(2, '0')}`;
   const message = tier.messages[(s.broadcastIndex + s.slot) % tier.messages.length];
-  s.cash += amount;
+  s.cash = Math.min(CASH_MAXIMUM, s.cash + amount);
   s.ledger.push({id: `donation:${s.broadcastIndex}:${s.slot}`, date: s.date, net: amount});
   s.records.donations++;
   s.records.donationTotal += amount;

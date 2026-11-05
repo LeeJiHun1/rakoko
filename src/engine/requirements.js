@@ -6,7 +6,7 @@ import {getPath} from './util.js';
 /** 조건식 path 를 상태 값으로 해석한다. $game 은 현재 기획(없으면 오늘)의 게임. */
 function valueAt(s, path, gameId = s.project?.gameId || s.gameId) {
   if (path === 'stats.gameSkillById.$game') return skill(s, gameId);
-  if (path.startsWith('experienceCountsByGame.$game.')) return s.experienceCountsByGame[gameId]?.[path.split('.').at(-1)] || 0;
+  if (path.startsWith('experienceCountsByGame.$game.')) { const g = Object.hasOwn(s.experienceCountsByGame, gameId) ? s.experienceCountsByGame[gameId] : null, k = path.split('.').at(-1); return g && Object.hasOwn(g, k) ? g[k] : 0; }
   if (path.startsWith('experienceCounts.')) return s.experienceCounts[path.split('.').at(-1)] || 0;
   if (path === 'economy.cash') return s.cash;
   if (path.startsWith('module.')) {

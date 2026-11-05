@@ -38,8 +38,8 @@ export async function runCommand(type, params = {}) {
 }
 
 /** 저장본을 통째로 바꾼다(새 일지·가져오기). 다른 탭의 변경을 덮어쓴다. */
-export async function replaceState(next) {
-  await storage.save(next, store.state, {replace: true});
+export async function replaceState(next, {keepPrevious = false} = {}) {
+  await storage.save(next, store.state, {replace: true, keepPrevious});
   store.state = next;
   store.stale = false;
   store.view = 'broadcast';

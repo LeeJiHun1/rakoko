@@ -14,7 +14,8 @@ export async function load(){
     request.onsuccess=()=>resolve(request.result||null);request.onerror=()=>reject(request.error);
   });
 }
-export async function save(next,previous,{replace=false}={}){
+/** keepPrevious: 현재 칸을 백업 칸으로 옮기지 않는다(현재본이 깨졌을 때 정상 백업을 지키기 위해) */
+export async function save(next,previous,{replace=false,keepPrevious=false}={}){
   const database=await db();return new Promise((resolve,reject)=>{
     const transaction=database.transaction('journal','readwrite'),store=transaction.objectStore('journal');
     let problem;
@@ -24,7 +25,7 @@ export async function save(next,previous,{replace=false}={}){
       if(!replace&&actual&&(!previous||actual.runId!==previous.runId||actual.revision!==previous.revision)){
         problem=Error('다른 탭에서 더 새로운 일지가 저장됐어요. 최신 일지를 불러와 주세요.');transaction.abort();return;
       }
-      if(actual)store.put(actual,'previous');store.put(next,'current');
+      if(actual&&!keepPrevious)store.put(actual,'previous');store.put(next,'current');
     };
     transaction.oncomplete=()=>resolve(next);
     transaction.onabort=()=>reject(problem||Error('저장이 완료되지 않았어요. 현재 기록은 유지됩니다. 다시 시도하거나 일지를 내보내 주세요.'));

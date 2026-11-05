@@ -35,5 +35,5 @@ function eventTag(e) {
 export function eventScreen() {
   const {state} = store, e = state.event;
   return `<div class="broadcast-progress">${[0,1,2].map((i)=>`<span class="${i===state.slot?'current':i<state.slot?'done':''}">${i<state.slot?'✓':String(i+1).padStart(2,'0')} ${CORNERS[state.plan[i]]}</span>`).join('')}</div>
-  <article class="event-card"><div class="event-meta">${tag(eventTag(e))}<span>SCENE ${String(state.slot+1).padStart(2,'0')}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${oddsNote(e)}${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.</p>`;
+  <article class="event-card"><div class="event-meta">${tag(eventTag(e))}<span>SCENE ${escape(String(Number(state.slot)+1).padStart(2,'0'))}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${oddsNote(e)}${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.</p>`;
 }

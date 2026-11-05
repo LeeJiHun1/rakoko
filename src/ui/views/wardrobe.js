@@ -12,7 +12,7 @@ function craftHint(state, progress) {
 }
 
 function card(state, o, index) {
-  const open=!!state.wardrobe[o.id],progress=state.outfitProgress[o.id]||0;const canCraft=state.phase==='prep'&&state.preparations>0&&state.cash>=OUTFIT_COST&&progress<100;
+  const open=!!state.wardrobe[o.id],progress=Math.max(0,Math.min(100,Number(state.outfitProgress[o.id])||0));const canCraft=state.phase==='prep'&&state.preparations>0&&state.cash>=OUTFIT_COST&&progress<100;
   return `<article class="wardrobe-card ${open?'unlocked':'locked'} ${state.equipped===o.id?'equipped':''}"><div class="outfit-preview">${open?`<img src="${o.image}" alt="${escape(o.name)}" loading="lazy" width="1024" height="1536"/>`:`<span class="sealed-outfit">???<small>미공개 의상 ${String(index).padStart(2,'0')}</small></span>`}${state.equipped===o.id?'<span class="equipped-label">입고 있는 옷</span>':''}</div><div class="outfit-info"><h2>${open?escape(o.name):'???'}</h2><p>${open?escape(o.description):'공개하면 이 옷의 이야기가 열려요.'}</p>${open?btn(state.equipped===o.id?'입고 있어요':'갈아입기 · 무료','equip',`data-id="${o.id}" ${state.equipped===o.id?'disabled':''}`,'button secondary full'):`<div class="craft-progress"><span>준비 ${progress}%</span><div class="meter"><i style="width:${progress}%"></i></div></div>${progress>=100?btn('공개할 옷으로 선택','craft',`data-id="${o.id}" ${state.phase!=='prep'?'disabled':''}`,'button secondary full'):btn('제작하기 · 50만원','craftAndPrepare',`data-id="${o.id}" ${canCraft?'':'disabled'}`,'button secondary full')}<small class="craft-cost">${craftHint(state,progress)}</small>`}</div></article>`;
 }
 

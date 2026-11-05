@@ -7,7 +7,8 @@ export function announceSaved(state) { channel?.postMessage({runId: state.runId,
 
 export function listenForOtherTabs(onStale) {
   channel?.addEventListener('message', e => {
-    const s = store.state;
-    if (s && (e.data.runId !== s.runId || e.data.revision > s.revision)) { store.stale = true; onStale(); }
+    const s = store.state, d = e.data;
+    if (!d || typeof d.runId !== 'string' || !Number.isSafeInteger(d.revision)) return; // 형식이 다른 메시지는 무시
+    if (s && (d.runId !== s.runId || d.revision > s.revision)) { store.stale = true; onStale(); }
   });
 }

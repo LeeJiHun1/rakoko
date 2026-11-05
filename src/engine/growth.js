@@ -20,7 +20,9 @@ export function awardExperience(s, id, source, gameId, catalog) {
   s.experienceRecords.push({experienceId: id, source, gameId: bound ? gameId : null, date: s.date, broadcastIndex: s.broadcastIndex});
   s.experienceCounts[id] = (s.experienceCounts[id] || 0) + 1;
   if (bound) {
-    s.experienceCountsByGame[gameId] ??= {};
-    s.experienceCountsByGame[gameId][id] = (s.experienceCountsByGame[gameId][id] || 0) + 1;
+    // 동적 키는 자기 속성만 다룬다('__proto__' 같은 키로 프로토타입을 건드리지 않게)
+    if (!Object.hasOwn(s.experienceCountsByGame, gameId)) Object.defineProperty(s.experienceCountsByGame, gameId, {value: {}, enumerable: true, writable: true, configurable: true});
+    const byGame = s.experienceCountsByGame[gameId];
+    Object.defineProperty(byGame, id, {value: (Object.hasOwn(byGame, id) ? byGame[id] : 0) + 1, enumerable: true, writable: true, configurable: true});
   }
 }

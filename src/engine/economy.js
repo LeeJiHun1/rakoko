@@ -25,7 +25,7 @@ export function deliverOrders(s) {
 
 export function awardTournamentPrize(s, m, catalog) {
   const amount = catalog.economy.tournamentAwards.find(x => x.moduleId === m.id).winnerPrize;
-  s.cash += amount;
+  s.cash = Math.min(catalog.economy.cashMaximum, s.cash + amount);
   m.prizeAwarded = true;
   s.ledger.push({id: `prize:${m.instanceId}`, date: s.date, net: amount});
 }
