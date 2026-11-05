@@ -33,6 +33,12 @@ export function baseViewers(s, bonus = 0) {
   const snap = s.incomeSnapshot, base = 20 + snap.awareness * 3 + snap.community * 5;
   return Math.round(base * TIER_VIEWERS[s.scaleIndex] * (1 + bonus) * (0.9 + random(s) * 0.2));
 }
+/** 방송 중 화면용 시청자 추정(난수 없음, 상태를 바꾸지 않음) */
+export function estimateViewers(s, bonus = 0) {
+  const snap = s.incomeSnapshot || s.stats, base = 20 + snap.awareness * 3 + snap.community * 5;
+  return Math.round(base * TIER_VIEWERS[s.scaleIndex] * (1 + bonus));
+}
+
 /** 최종 최고 동시 시청자 = 기본 시청자 × 등급 배율 */
 export const peakViewers = (base, grade) => Math.round(base * GRADE_VIEWERS[grade]);
 /** 직전 방송의 기본 시청자(구버전 일지에는 없을 수 있음) */

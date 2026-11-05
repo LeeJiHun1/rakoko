@@ -25,6 +25,8 @@ export function choices(event) {
   return `<div class="choices">${event.choices.map((c,i)=>{const locks=choiceLocks(event,c);return `<div class="choice-wrap"><button class="choice" data-action="${event.kind==='ending'?'ending':'choose'}" data-id="${escape(c.id)}" ${locks.length?'disabled':''}><span class="choice-number">${String(i+1).padStart(2,'0')}</span><span>${escape(c.text)}${styleTag(c)}</span><span class="choice-arrow">${locks.length?'⌑':'↗'}</span></button>${locks.length?`<p class="lock-reason">잠금 · ${escape([...new Set(locks)].join(' · '))}</p>`:''}</div>`;}).join('')}</div>`;
 }
 
+const CORNER_ICONS = {T: '☕', G: '▣', F: '♡', S: '✦'};
+
 function eventTag(e) {
   if (e.kind === 'project') return '작은 기획의 한 단계';
   if (e.kind === 'module') return '함께 이어가는 콘텐츠';
@@ -37,6 +39,6 @@ function eventTag(e) {
 
 export function eventScreen() {
   const {state} = store, e = state.event;
-  return `<div class="broadcast-progress">${[0,1,2].map((i)=>`<span class="${i===state.slot?'current':i<state.slot?'done':''}">${i<state.slot?'✓':String(i+1).padStart(2,'0')} ${CORNERS[state.plan[i]]}</span>`).join('')}</div>
-  <article class="event-card"><div class="event-meta">${tag(eventTag(e))}<span>SCENE ${escape(String(Number(state.slot)+1).padStart(2,'0'))}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${e.kind==='reveal'?'<div class="reveal-stage"><img src="assets/events/outfit-journal/stage-closed-v1.png" alt="닫힌 무대 커튼" width="1672" height="941"/></div>':''}${oddsNote(e)}${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.<span class="key-hint"> · 키보드 1~${escape(Math.min(4,e.choices.length))}로 선택</span></p>`;
+  return `<div class="broadcast-progress">${[0,1,2].map((i)=>`<span class="corner-${escape(state.plan[i])} ${i===state.slot?'current':i<state.slot?'done':''}">${i<state.slot?'✓':String(i+1).padStart(2,'0')} ${CORNERS[state.plan[i]]}</span>`).join('')}</div>
+  <article class="event-card corner-${escape(state.plan[state.slot])}"><div class="event-meta"><span class="corner-badge corner-${escape(state.plan[state.slot])}">${CORNER_ICONS[state.plan[state.slot]]||''} ${escape(CORNERS[state.plan[state.slot]])}</span>${tag(eventTag(e))}<span>SCENE ${escape(String(Number(state.slot)+1).padStart(2,'0'))}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${e.kind==='reveal'?'<div class="reveal-stage"><img src="assets/events/outfit-journal/stage-closed-v1.png" alt="닫힌 무대 커튼" width="1672" height="941"/></div>':''}${oddsNote(e)}${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.<span class="key-hint"> · 키보드 1~${escape(Math.min(4,e.choices.length))}로 선택</span></p>`;
 }

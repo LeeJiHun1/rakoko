@@ -1,0 +1,43 @@
+/* 시각 다듬기(V1): 코너 색 · 방송 중 스튜디오 오버레이 · 미세 연출. 코너 색은 dataviz 검증 통과(색각 이상 포함), 글자에는 쓰지 않는다 */
+:root{--c-T:#b08a3e;--c-G:#2f7fc8;--c-F:#c2557a;--c-S:#6a4cc0}
+.corner-T{--corner:var(--c-T)}.corner-G{--corner:var(--c-G)}.corner-F{--corner:var(--c-F)}.corner-S{--corner:var(--c-S)}
+
+/* 진행 막대: 지금 코너는 코너 색 굵은 밑줄 */
+.broadcast-progress span.current{border-bottom-color:var(--corner);border-bottom-width:3px;color:var(--ink);font-weight:700}
+.broadcast-progress span.done{border-bottom-color:color-mix(in srgb,var(--corner) 45%,#e7ded7)}
+/* 사건 카드: 왼쪽 코너 색 띠 + 코너 배지(연한 바탕·진한 글자) */
+.event-card[class*="corner-"]{border-left:4px solid var(--corner)}
+.corner-badge{display:inline-flex;align-items:center;gap:4px;margin-right:6px;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--corner) 14%,#fff);border:1px solid color-mix(in srgb,var(--corner) 40%,#fff);color:var(--ink);font-size:calc(11px * var(--text-scale));font-weight:700}
+.program-slot[class*="corner-"]{box-shadow:inset 4px 0 0 var(--corner);border-radius:8px}
+
+/* 방송 중 스튜디오: 시청자 수 + 채팅 오버레이 */
+.studio-live{display:grid;gap:8px;margin-bottom:10px}
+.live-viewers{justify-self:start;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:#00000066;color:#fff;font-size:calc(12px * var(--text-scale));font-weight:700}
+.live-viewers i{width:8px;height:8px;border-radius:50%;background:#ff5d7a;box-shadow:0 0 0 3px #ff5d7a44;animation:fx-live 1.4s ease-in-out infinite}
+@keyframes fx-live{50%{opacity:.35}}
+.studio-chat{display:grid;gap:4px;padding:10px 12px;border-radius:10px;background:#1d1824cc;backdrop-filter:blur(2px);max-height:150px;overflow:hidden}
+.studio-chat p{margin:0;color:#f3eaf0;font-size:calc(12px * var(--text-scale));line-height:1.45;animation:fx-rise .3s ease-out both}
+.studio-chat p b{color:#ffc4d3;margin-right:4px}
+.studio-chat .chat-idle{color:#c9bcc5}
+
+/* 미세 연출: 누를 수 있는 카드가 살짝 떠오르고 눌림 */
+.choice,.prep-action,.memory,.project-option,.ending-hint,.wardrobe-card{transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.choice:not([disabled]):hover,.prep-action:not([disabled]):hover,.memory:hover{transform:translateY(-2px);box-shadow:0 6px 16px #3e2b361f}
+.choice:not([disabled]):active,.prep-action:not([disabled]):active,.memory:active{transform:translateY(0) scale(.995);box-shadow:none}
+.event-card[class*="corner-"] .choice:not([disabled]):hover{border-color:var(--corner)}
+.button.primary{transition:transform .15s ease,filter .15s ease}
+.button.primary:not([disabled]):hover{filter:brightness(1.06);transform:translateY(-1px)}
+.reduce-motion .choice,.reduce-motion .prep-action,.reduce-motion .memory,.reduce-motion .button.primary{transition:none;transform:none!important}
+@media (prefers-reduced-motion:reduce){.choice,.prep-action,.memory,.button.primary{transition:none;transform:none!important}}
+
+/* 결말 모음·업적 카드 글자 정리 */
+.collection-list article p,.achievement p{font-size:calc(11px * var(--text-scale));line-height:1.5}
+.collection-list article h3{font-size:calc(14px * var(--text-scale))}
+.corner-dots{display:inline-flex;gap:3px;margin-left:8px;vertical-align:middle}
+.corner-dots i{width:8px;height:8px;border-radius:50%;background:var(--corner)}
+.event-meta .tag{margin-right:auto}
+.prep-action .action-icon{color:var(--rose-dark)}
+/* 사건 카드 머리말: 배지·태그는 줄바꿈 없이, 좁은 화면에서는 SCENE 숨김(진행 막대에 이미 표시) */
+.event-meta{flex-wrap:wrap;gap:6px}
+.corner-badge,.event-meta .tag{white-space:nowrap}
+@media (max-width:760px){.event-meta>span:last-child:not(.tag):not(.corner-badge){display:none}}

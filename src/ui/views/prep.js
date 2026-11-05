@@ -4,6 +4,10 @@ import {btn, escape} from '../dom.js';
 import {store} from '../store.js';
 import {projectMini} from './project-mini.js';
 
+/** 준비 행동이 유리하게 만드는 코너(코너 색 점으로 표시) */
+const PREP_CORNERS = {data: ['T', 'F', 'S'], practice: ['G'], check: ['T', 'G', 'F', 'S']};
+const cornerDots = id => `<span class="corner-dots" aria-hidden="true">${(PREP_CORNERS[id] || []).map(c => `<i class="corner-${c}"></i>`).join('')}</span>`;
+
 const PREP_ACTIONS = [['data', '▤', '자료 준비', '기획력 +2 · 잡담·팬 참여·특별 기획 코너가 유리'], ['practice', '▣', '게임 연습', '숙련 +2 · 게임 도전 코너가 크게 유리'], ['check', '◉', '화면 점검', '운영력 +1 · 모든 코너의 실수 감소']];
 
 /** 준비 중인 새 옷이 있으면 네 번째 준비 행동 '의상 준비' */
@@ -25,7 +29,7 @@ function outfitReady(state) {
 }
 
 function prepButtons(state) {
-  return PREP_ACTIONS.map(([id,icon,title,sub])=>{const disabled=!state.preparations||(id==='check'&&state.checked);return `<button class="prep-action" data-action="prepare" data-kind="${id}" ${disabled?'disabled':''}><span class="action-icon">${icon}</span><span><b>${title}</b><small>${sub}</small></span><span class="arrow">${id==='check'&&state.checked?'✓':'+'}</span></button>`;}).join('') + outfitAction(state);
+  return PREP_ACTIONS.map(([id,icon,title,sub])=>{const disabled=!state.preparations||(id==='check'&&state.checked);return `<button class="prep-action" data-action="prepare" data-kind="${id}" ${disabled?'disabled':''}><span class="action-icon">${icon}</span><span><b>${title}${cornerDots(id)}</b><small>${sub}</small></span><span class="arrow">${id==='check'&&state.checked?'✓':'+'}</span></button>`;}).join('') + outfitAction(state);
 }
 
 /** 예약된 특집이 들어갈 코너는 편성 변경을 막고 이름을 바꿔 보여준다. */
@@ -37,7 +41,7 @@ function reservedLabel(state, i, calendar) {
 }
 
 function programSlots(state, calendar) {
-  return state.plan.map((corner,i)=>{const reserved=reservedLabel(state,i,calendar);return `<div class="program-slot"><span class="slot-no">${i+1}</span><select data-change="plan" data-index="${i}" aria-label="${i+1}번째 코너" ${reserved?'disabled':''}>${Object.entries(CORNERS).map(([key,label])=>`<option value="${key}" ${key===(reserved?'S':corner)?'selected':''}>${key==='S'&&reserved?reserved:label}</option>`).join('')}</select></div>`;}).join('');
+  return state.plan.map((corner,i)=>{const reserved=reservedLabel(state,i,calendar);return `<div class="program-slot corner-${escape(reserved?'S':corner)}"><span class="slot-no">${i+1}</span><select data-change="plan" data-index="${i}" aria-label="${i+1}번째 코너" ${reserved?'disabled':''}>${Object.entries(CORNERS).map(([key,label])=>`<option value="${key}" ${key===(reserved?'S':corner)?'selected':''}>${key==='S'&&reserved?reserved:label}</option>`).join('')}</select></div>`;}).join('');
 }
 
 /** 지금 적용 중인 구매 효과 (대략 표시) */

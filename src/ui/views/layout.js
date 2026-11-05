@@ -1,5 +1,5 @@
 // 화면 공통 틀: 상단바 · 왼쪽 스튜디오(캐릭터·능력) · 일지 탭 · 날짜 머리말.
-import {LABELS, skill} from '../../engine.js';
+import {activeBonus, estimateViewers, LABELS, skill} from '../../engine.js';
 import {btn, escape} from '../dom.js';
 import {gameName, outfit, store} from '../store.js';
 
@@ -23,12 +23,20 @@ function statusPanel(state, catalog) {
   <div class="game-stat"><span>▣ ${escape(gameName(state.gameId))}</span><b>숙련 ${escape(skill(state))}</b></div>${recordLine(state)}</section>`;
 }
 
+/** 방송 중: 시청자 수(추정)와 최근 키몽이 채팅 — 방송 화면처럼 */
+function liveOverlay(state) {
+  const viewers = estimateViewers(state, activeBonus(state, 'viewers'));
+  const rows = (state.phase === 'result' ? state.result?.reactions : state.currentLog.at(-1)?.reactions) || [];
+  const chat = rows.slice(-4).map(r => `<p><b>${escape(r.speaker)}</b> ${escape(r.text)}</p>`).join('') || '<p class="chat-idle">채팅창이 두근두근 기다리는 중…</p>';
+  return `<div class="studio-live"><span class="live-viewers"><i></i>${escape(viewers.toLocaleString('ko-KR'))}명 시청 중</span><div class="studio-chat">${chat}</div></div>`;
+}
+
 export function studio() {
   const {state, catalog} = store, live = isLive(state), o = outfit();
   return `<aside class="studio-column"><section class="studio"><div class="studio-top"><span class="live-pill ${live?'live':''}"><i></i>${live?'ON AIR':'STANDBY'}</span><span>RAKOKO / STUDIO 01</span></div>
   <div class="studio-window"><span></span></div><div class="studio-grid"></div><span class="studio-spark s1">✦</span><span class="studio-spark s2">✧</span>
   <img class="character" src="${o.image}" alt="${escape(o.name)}을 입은 라코코" width="1024" height="1536" />
-  <div class="studio-caption"><span class="tiny">TODAY'S RAKOKO</span><h2>오늘도,<br/>코코랑.</h2><p>${live?'지금 이 순간도 다음 페이지가 될 거야.':'아직 쓰지 않은 이야기가 기다리고 있어.'}</p><div class="outfit-label"><i></i>${escape(o.name)}${btn('갈아입기 ↗','wardrobe','','text-button')}</div></div></section>
+  <div class="studio-caption">${live?liveOverlay(state):`<span class="tiny">TODAY'S RAKOKO</span><h2>오늘도,<br/>코코랑.</h2><p>아직 쓰지 않은 이야기가 기다리고 있어.</p>`}<div class="outfit-label"><i></i>${escape(o.name)}${btn('갈아입기 ↗','wardrobe','','text-button')}</div></div></section>
   ${statusPanel(state, catalog)}</aside>`;
 }
 
