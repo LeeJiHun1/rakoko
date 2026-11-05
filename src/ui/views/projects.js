@@ -1,5 +1,5 @@
 // 목표 고르기 화면: 기획 선택·보류 · 장기 콘텐츠 · 주문 기록. (구매는 방송 중 랜덤 사건으로만 등장)
-import {effectText, projectLocks} from '../../engine.js';
+import {effectText, endingUnlocked, firstEndingDate, LABELS, projectLocks, skill} from '../../engine.js';
 import {btn, escape, money} from '../dom.js';
 import {currentProject, gameName, store} from '../store.js';
 import {projectMini} from './project-mini.js';
@@ -8,10 +8,37 @@ const RECOMMENDED = ['END-001', 'END-003', 'END-007'];
 const MODULE_SYMBOLS = ['▧', '⌂', '♧', '⚑', '♜', '♞', '☕', '▥'];
 const MODULE_PHASES = {invited: '참가 안내', orientation: '역할과 규칙', working: '함께 준비 중', project_ready: '기획 준비 완료', rehearsed: '리허설 완료', closed: '마무리'};
 
-function projectCard(p) {
+function startButton(p) {
   const {state} = store;
   const active=state.project?.id===p.id,locks=projectLocks(state,p),disabled=state.phase!=='prep'||(state.project&&state.project.step<3)||locks.length;
-  return `<article class="project-option"><div><h3>${escape(p.name)}</h3><p>${escape(p.steps[0])}</p>${locks.length?`<small>${escape(locks.join(' · '))}</small>`:''}</div>${btn(active?'진행 중':'이 기획 시작','project',`data-id="${p.id}" ${disabled||active?'disabled':''}`,'button small secondary')}</article>`;
+  return btn(active?'진행 중':'이 기획 시작','project',`data-id="${p.id}" ${disabled||active?'disabled':''}`,'button small secondary');
+}
+
+function projectCard(p) {
+  const locks = projectLocks(store.state, p);
+  return `<article class="project-option"><div><h3>${escape(p.name)}</h3><p>${escape(p.steps[0])}</p>${locks.length?`<small>${escape(locks.join(' · '))}</small>`:''}</div>${startButton(p)}</article>`;
+}
+
+/** 결말별 능력 요구치 달성률 (진행 중인 기획은 그 게임, 아니면 오늘 게임 기준) */
+function endingProgress(state, p) {
+  const gameId = state.project?.id === p.id ? state.project.gameId : state.gameId;
+  const parts = p.requirements.filter(r => r.path.startsWith('stats.')).map(r => {
+    const key = r.path.includes('gameSkill') ? 'gameSkill' : r.path.split('.')[1];
+    const current = key === 'gameSkill' ? skill(state, gameId) : state.stats[key];
+    return {key, current, need: r.value};
+  });
+  const ratio = parts.length ? parts.reduce((a, x) => a + Math.min(1, x.current / x.need), 0) / parts.length : 1;
+  return {parts, ratio};
+}
+
+/** 곧 열 수 있는 결말 TOP3 — 아직 만나지 않은 결말 중 달성률 순 */
+function endingHints(state, catalog) {
+  const seen = new Set(state.reachedEndings.map(e => e.id));
+  const top = catalog.projects.filter(p => !seen.has(p.id) && !projectLocks(state, p).length)
+    .map(p => ({p, ...endingProgress(state, p)})).sort((a, b) => b.ratio - a.ratio).slice(0, 3);
+  if (!top.length) return '';
+  const gate = endingUnlocked(state) ? '' : `<p class="view-description">결말은 방송 150일째(${escape(firstEndingDate())})부터 열 수 있어요. 지금은 능력을 쌓아 두세요.</p>`;
+  return `<section class="ending-hints"><h2 class="subheading">곧 열 수 있는 결말</h2>${gate}${top.map(({p,parts,ratio})=>`<article class="ending-hint"><div class="ending-hint-head"><b>${escape(p.name)}</b><span>${escape(Math.round(ratio*100))}%</span></div><div class="meter"><i style="width:${escape(Math.round(ratio*100))}%"></i></div><div class="ending-hint-reqs">${parts.map(x=>`<span class="${x.current>=x.need?'met':''}">${escape(LABELS[x.key]||x.key)} ${escape(x.current)}/${escape(x.need)}</span>`).join('')}</div>${startButton(p)}</article>`).join('')}</section>`;
 }
 
 function activeProject(state) {
@@ -43,6 +70,7 @@ export function projects() {
   const {state, catalog} = store;
   return `<p class="simple-guide">목표를 하나 고르면 <b>특별 기획 코너가 자동으로 편성</b>돼요.<br/>자료 준비 → 시범 방송 → 피드백, 세 방송에 걸쳐 만들어요.</p>
   ${activeProject(state)}
+  ${endingHints(state, catalog)}
   <h2 class="subheading">처음이라면 이 기획부터</h2><div class="project-list recommended-projects">${catalog.projects.filter(p=>RECOMMENDED.includes(p.id)).map(projectCard).join('')}</div>
   <details class="optional-options"><summary>다른 기획 둘러보기 <small>29가지</small></summary><div class="project-list">${catalog.projects.filter(p=>!RECOMMENDED.includes(p.id)).map(projectCard).join('')}</div></details>
   ${pausedProjects(state, catalog)}
