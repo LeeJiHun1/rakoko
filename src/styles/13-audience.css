@@ -1,0 +1,22 @@
+/* 시청자·방송 등급·응원·기록 (F2) */
+.donation-banner{margin:14px 0;padding:14px 16px;border-radius:12px;background:#fff7e8;border:1px solid #ead2a2;color:#5b4a2e}
+.donation-banner .donation-title{display:inline-block;font-size:11px;letter-spacing:.08em;color:#b08a3e;font-weight:700;margin-bottom:4px}
+.donation-banner p{margin:2px 0;font-size:14px}
+.donation-banner small{color:#8a7a5e}
+.donation-banner.tier-jackpot{background:linear-gradient(135deg,#fff0f4,#fff7e0);border-color:#d9a4b5;box-shadow:0 0 0 3px #b85b7520}
+.donation-banner.tier-jackpot .donation-title{color:#b85b75;font-size:13px}
+.broadcast-summary{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin:6px 0 18px;padding:16px 18px;border-radius:14px;background:#f8f2ec;border:1px solid var(--line)}
+.grade-stamp{display:flex;flex-direction:column;align-items:center;justify-content:center;width:78px;height:78px;border-radius:50%;border:3px solid #b85b75;color:#b85b75;transform:rotate(-8deg)}
+.grade-stamp b{font-size:34px;line-height:1;font-family:Neo,inherit}
+.grade-stamp small{font-size:9px;margin-top:2px;text-align:center}
+.broadcast-summary.grade-S .grade-stamp{border-color:#c19f67;color:#a8803c;background:#fff8e6}
+.broadcast-summary.grade-C .grade-stamp{border-color:#9c8a96;color:#8a7a84}
+.viewer-peak{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.viewer-peak span{font-size:12px;color:var(--muted);width:100%}
+.viewer-peak strong{font-size:28px;font-family:Neo,inherit;color:var(--ink)}
+.viewer-peak em{font-style:normal;font-size:12px;color:#b08a3e;margin-left:8px}
+.new-records{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+.new-records span{font-size:11px;font-weight:700;letter-spacing:.04em;color:#fff;background:#b85b75;border-radius:999px;padding:4px 10px}
+.journal-grade{color:#b85b75}
+.record-line{display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px dashed #ded5d0;font-size:12px;color:var(--muted)}
+.record-line b{color:var(--ink)}

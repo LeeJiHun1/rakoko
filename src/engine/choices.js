@@ -1,5 +1,6 @@
 // 사건 선택 반영: 잠금 확인 → 사건 종류별 효과 → 공통 성장 → 결과·채팅 기록.
 import {CORNER_BASE_STAT} from './constants.js';
+import {rollDonation} from './audience.js';
 import {gain} from './growth.js';
 import {commitModuleChoice} from './module.js';
 import {gradeOutcome, prepBonus, rollGrade, scaleGains} from './outcome.js';
@@ -70,6 +71,9 @@ export function applyChoice(s, id, catalog) {
   const corner = s.plan[s.slot];
   gain(s, CORNER_BASE_STAT[corner], 1, segmentGame);
   if (corner === 'G') s.gameHistory[s.gameId] = {last: s.broadcastIndex};
+  if (s.result.grade === 'great') s.records.greats++;
+  const donation = rollDonation(s);
+  if (donation) s.result.donation = donation;
   s.result.changes = Object.fromEntries(Object.entries({...s.stats, gameSkill: skill(s, segmentGame)}).map(([k, v]) => [k, v - before[k]]).filter(([, v]) => v));
   // reactions() 가 s.result.chatContext 를 먼저 기록한 뒤 reactions 가 붙는다(저장 키 순서 유지).
   s.result.reactions = reactions(s, c);

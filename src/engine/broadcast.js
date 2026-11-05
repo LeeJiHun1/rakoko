@@ -3,6 +3,7 @@ import {CORNERS, PREPARATIONS_PER_BROADCAST, SEGMENTS_PER_BROADCAST} from './con
 import {celebrationKey, celebrationOn} from './dates.js';
 import {scheduleDate} from './calendar.js';
 import {applyChoice} from './choices.js';
+import {broadcastGrade, GRADE_INCOME, peakViewers, updateRecords} from './audience.js';
 import {deliverOrders, settleIncome, snapshotIncome} from './economy.js';
 import {offerEndingIfReady} from './ending.js';
 import {nextEvent} from './events/next.js';
@@ -20,13 +21,17 @@ function reserveSpecials(s) {
 }
 
 function settle(s, catalog) {
-  const {gross, cost, net} = settleIncome(s, catalog);
+  const grade = broadcastGrade(s.currentLog);
+  const {gross, cost, net} = settleIncome(s, catalog, GRADE_INCOME[grade]);
+  const viewers = peakViewers(s, grade);
+  const newRecords = updateRecords(s, {viewers, gross, grade});
+  const donations = s.currentLog.reduce((a, r) => a + (r.donation?.amount || 0), 0);
   s.completedBroadcasts++;
   deliverOrders(s);
-  s.journal.push({id: s.broadcastIndex, date: s.date, events: clone(s.currentLog), income: {gross, cost, net}, outfit: s.equipped, representative: 0});
+  s.journal.push({id: s.broadcastIndex, date: s.date, events: clone(s.currentLog), income: {gross, cost, net}, outfit: s.equipped, representative: 0, viewers, grade, donations});
   if (s.module?.phase === 'closed') { s.moduleArchive.push(clone(s.module)); s.module = null; }
   s.phase = 'wrap';
-  s.result = {gross, cost, net};
+  s.result = {gross, cost, net, grade, viewers, donations, newRecords};
   s.event = null;
   offerEndingIfReady(s, catalog);
 }

@@ -3,6 +3,7 @@ import {CORNERS, PHASES} from './constants.js';
 import {isValidIsoDate} from './dates.js';
 import {SCHEMA_VERSION} from './state.js';
 import {clone} from './util.js';
+import {emptyRecords} from './audience.js';
 
 const LIST_KEYS = ['journal', 'commands', 'promises', 'purchases', 'experienceRecords', 'reachedEndings', 'projectArchive', 'moduleArchive', 'celebrations', 'seenOnce'];
 
@@ -11,7 +12,10 @@ const LIST_KEYS = ['journal', 'commands', 'promises', 'purchases', 'experienceRe
  * state.js 의 SCHEMA_VERSION 을 올릴 때 반드시 여기에 변환을 추가하고 테스트를 붙인다.
  * 예) 1: s => ({...s, schemaVersion: 2, newField: 기본값}),
  */
-export const MIGRATIONS = {};
+export const MIGRATIONS = {
+  /** 1 → 2: 역대 기록(records) 추가. 지난 일지의 최고 수입은 복원하고 나머지는 0에서 시작 */
+  1: s => ({...s, schemaVersion: 2, records: {...emptyRecords(), bestGross: Math.max(0, ...s.journal.map(j => j.income?.gross || 0))}}),
+};
 
 /** 예전 형식 저장본을 현재 형식으로 올린다. 더 새로운 버전의 저장본은 거부한다. */
 export function migrateSave(raw, migrations = MIGRATIONS) {
@@ -35,7 +39,8 @@ const optStr = v => v == null || isStr(v);
 const RECORD_CHECKS = {
   journal: j => isInt(j?.id, 1, 10000) && isDate(j.date) && Array.isArray(j.events) && j.events.length <= 3
     && j.events.every(e => isStr(e?.title) && isStr(e.choice) && optStr(e.outcome)) && isInt(j.representative, 0, 2)
-    && Number.isFinite(j.income?.gross) && Number.isFinite(j.income?.cost) && Number.isFinite(j.income?.net) && optStr(j.outfit) && optStr(j.ending),
+    && Number.isFinite(j.income?.gross) && Number.isFinite(j.income?.cost) && Number.isFinite(j.income?.net) && optStr(j.outfit) && optStr(j.ending)
+    && (j.viewers == null || isInt(j.viewers, 0, 1e9)) && (j.grade == null || ['S', 'A', 'B', 'C'].includes(j.grade)) && (j.donations == null || Number.isSafeInteger(j.donations)),
   projectArchive: (p, catalog) => isProject(p, catalog),
   reachedEndings: e => isStr(e?.id, 64) && isStr(e.title) && optStr(e.epilogue) && optStr(e.resolution),
   purchases: p => isStr(p?.id, 80) && isStr(p.choice) && Number.isSafeInteger(p.cost) && isInt(p.dueBroadcast, 0, 20000) && ['pending', 'delivered'].includes(p.status),
@@ -59,6 +64,8 @@ function validateRecords(s, catalog) {
   for (const [key, check] of Object.entries(RECORD_CHECKS)) if (!s[key].every(x => check(x, catalog))) throw Error('일지 기록 형식이 올바르지 않아요.');
   if (s.project && !isProject(s.project, catalog)) throw Error('현재 기획을 확인할 수 없어요.');
   if (s.module && !isModule(s.module)) throw Error('장기 콘텐츠 기록이 올바르지 않아요.');
+  const r = s.records;
+  if (!r || !['bestViewers', 'bestGross', 'greats', 'donations', 'donationTotal'].every(k => Number.isSafeInteger(r[k]) && r[k] >= 0) || !(r.bestGrade == null || ['S', 'A', 'B', 'C'].includes(r.bestGrade))) throw Error('역대 기록이 올바르지 않아요.');
   if (s.lastEnding && !isEnding(s.lastEnding)) throw Error('결말 기록이 올바르지 않아요.');
   if (s.phase === 'event' && !s.event.choices.every(c => isStr(c?.id, 80) && isStr(c.text))) throw Error('진행 중 사건이 없어요.');
 }

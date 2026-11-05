@@ -1,12 +1,14 @@
 // 방송 수입 정산 · 구매 · 대회 상금. 금액은 모두 정수(가상 원화).
-export function settleIncome(s, catalog) {
+/** gradeFactor: 방송 등급 배율(S 1.3 ~ C 0.9). 금액은 정수로 반올림. */
+export function settleIncome(s, catalog, gradeFactor = 1) {
   const cfg = catalog.economy.income, snap = s.incomeSnapshot, segments = s.currentLog.length;
   const gross = (cfg.base + snap.awareness * cfg.perAwarenessPoint + snap.community * cfg.perCommunityPoint
     + segments * cfg.perCompletedSegment + (segments === 3 ? cfg.threeSegmentCompletionBonus : 0)) * snap.multiplier;
-  const cost = cfg.operatingCostPerSettledBroadcast * snap.multiplier, net = gross - cost;
+  const graded = Math.round(gross * gradeFactor);
+  const cost = cfg.operatingCostPerSettledBroadcast * snap.multiplier, net = graded - cost;
   s.cash = Math.min(catalog.economy.cashMaximum, s.cash + net);
-  s.ledger.push({id: `income:${s.broadcastIndex}`, date: s.date, gross, cost, net});
-  return {gross, cost, net};
+  s.ledger.push({id: `income:${s.broadcastIndex}`, date: s.date, gross: graded, cost, net});
+  return {gross: graded, cost, net};
 }
 
 /** 방송 시작 시 규모 단계(최고 도달 단계 유지)와 수입 계산용 능력 스냅샷을 고정한다. */

@@ -11,9 +11,16 @@ export function topbar() {
   <div class="topbar-actions"><span class="save-state ${saveError?'error':''}"><i></i>${busy?'저장 중':saveError?'저장 확인 필요':'기록 중'}</span>${btn('↻','reload','title="최신 일지 불러오기"','icon-button')}${btn('☷','settings','title="설정"','icon-button')}${btn('?','about','aria-label="게임 안내"','icon-button')}</div></header>`;
 }
 
+/** 역대 기록 한 줄 (기록이 생긴 뒤부터) */
+function recordLine(state) {
+  const r = state.records;
+  if (!r?.bestViewers) return '';
+  return `<div class="record-line"><span>역대 최고</span><b>${escape(r.bestViewers.toLocaleString('ko-KR'))}명 · ${escape(r.bestGrade || '-')}등급</b></div>`;
+}
+
 function statusPanel(state, catalog) {
   return `<section class="status-panel"><div class="section-heading"><span>우리 방송의 지금</span><small>${escape(catalog.economy.income.scaleTiers[state.scaleIndex].label)}</small></div><div class="stat-grid">${Object.entries(state.stats).map(([key,value])=>`<div class="stat"><div><span>${LABELS[key]}</span><b>${escape(value)}<small>/100</small></b></div><div class="meter"><i style="width:${escape(value)}%" class="${escape(key)}"></i></div></div>`).join('')}</div>
-  <div class="game-stat"><span>▣ ${escape(gameName(state.gameId))}</span><b>숙련 ${escape(skill(state))}</b></div></section>`;
+  <div class="game-stat"><span>▣ ${escape(gameName(state.gameId))}</span><b>숙련 ${escape(skill(state))}</b></div>${recordLine(state)}</section>`;
 }
 
 export function studio() {

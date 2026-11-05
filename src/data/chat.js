@@ -47,6 +47,14 @@ const pools={
     '손이 생각보다 먼저 갔네 ㅋㅋ','그 키는 아니었다 ㅋㅋㅋ','아 나도 깜짝 놀랐네','일단 진정하고 다시 가자','이번 키는 기억해 두자',
     '방금은 손도 당황했겠는데','다음엔 천천히 누르자','이런 장면도 일지에 남는 거야?','ㅋㅋ 괜찮아 이어가자'
   ],
+  donation:[
+    '응원 감사합니다아아','ㄷㄷ 응원 들어왔다','고마운 키몽이 등장','방금 응원 메시지 귀엽다 ㅋㅋ','오 이 타이밍에?',
+    '응원 받고 기운 내자','다들 마음이 따뜻하네','감사 인사 크게 해줘!','이 응원 일지에 남겨야 해','훈훈하다'
+  ],
+  donation_big:[
+    '헉 대박 응원 ㄷㄷㄷ','이게 무슨 일이야 ㅋㅋㅋㅋ','오늘 역사 쓰는 날','손 떨려서 채팅 못 치겠다','레전드 응원 등장',
+    '와 진짜 감동이다','클립 안 따면 반칙임','코코 표정 봐 ㅋㅋㅋ','이 방송 다시보기 필수','소리 질러!!'
+  ],
   hype:[
     '와 미쳤다 ㅋㅋㅋㅋ','방금 거 클립 각이다','ㄹㅇ 대박','이게 되네?!','소리 질렀다 지금','오늘 방송 레전드 찍었다',
     '박수 박수 박수','방금 장면 다시 보여줘','손 떨리는 거 나만 그럼?','이 맛에 방송 보지','코코 오늘 폼 미쳤다',
@@ -138,6 +146,7 @@ export function chatContext(event,selected,result,module){
   if(event.kind==='routine')return 'routine';
   if(event.kind==='match')return selected.id==='withdraw'?'module_finish':module?.matches.at(-1)?.won?'match_win':'match_loss';
   if(event.kind==='module')return module?.phase==='closed'?'module_finish':['orientation','working'].includes(module?.phase)&&module?.participation<=2?'module_intro':'module_work';
+  if(result?.donation)return result.donation.tier==='jackpot'?'donation_big':'donation';
   if(result?.grade==='great')return 'hype';
   if(result?.grade==='miss')return 'blooper';
   if(/다음|미루|보류/.test(selected.text))return 'postpone';

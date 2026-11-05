@@ -1,8 +1,10 @@
 // 새 일지 상태와 기본 조회. 상태 키를 추가하면 save.js 검증·마이그레이션도 함께 고친다.
 // 주의: 키 순서는 골든 테스트 해시에 반영되므로 기존 키 순서를 바꾸지 않는다.
+import {emptyRecords} from './audience.js';
 import {DEFAULT_SKILL, INITIAL_CASH, PREPARATIONS_PER_BROADCAST, START_DATE} from './constants.js';
 
-export const SCHEMA_VERSION = 1;
+/** 저장 형식 버전. 올리면 save.js MIGRATIONS 에 변환을 추가한다. (2: records 추가) */
+export const SCHEMA_VERSION = 2;
 
 export function newGame(seed = Date.now() >>> 0) {
   return {
@@ -17,6 +19,7 @@ export function newGame(seed = Date.now() >>> 0) {
     promises: [], journal: [], celebrations: [], story: {}, project: null, projectArchive: [], module: null, moduleArchive: [],
     experienceRecords: [], experienceCounts: {}, experienceCountsByGame: {},
     reachedEndings: [], lastEnding: null, lastEndingCheck: null, deferUntil: null, endingSeenEver: false, commands: [],
+    records: emptyRecords(),
   };
 }
 
