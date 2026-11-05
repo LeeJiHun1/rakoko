@@ -30,10 +30,10 @@ export function playSceneEffects(root, state) {
   const sameScene = key === lastSceneKey;
   if (sameScene && now - sceneStartedAt > CONTINUATION_MS) { root.classList.add('fx-settled'); return; }
   root.classList.remove('fx-settled');
+  if (!sameScene && lastSceneKey) hideToast(); // 장면이 바뀌면 이전 화면 알림은 닫는다(첫 화면의 복구 알림은 유지)
   if (reducedMotion()) { root.classList.add('fx-settled'); lastSceneKey = key; return; }
   root.querySelectorAll('[data-count-to]').forEach(el => countUp(el));
   if (sameScene) return; // 연달아 그린 경우: 애니메이션만 이어가고 효과음은 한 번만
-  if (lastSceneKey) hideToast(); // 장면이 바뀌면 이전 화면 알림은 닫는다(첫 화면의 복구 알림은 유지)
   lastSceneKey = key;
   sceneStartedAt = now;
   const r = state.result;

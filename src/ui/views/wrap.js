@@ -8,7 +8,7 @@ const RECORD_TEXT = {viewers: '최고 시청자', gross: '최고 수입', grade:
 /** 방송 등급 도장 + 최고 시청자 + 새 기록 (구버전 일지에는 등급이 없을 수 있음) */
 function broadcastSummary(journal, result) {
   if (!journal.grade) return '';
-  const fresh = (result?.newRecords || []).filter(k => journal.id > 1 || k !== 'grade');
+  const fresh = journal.id > 1 ? (result?.newRecords || []) : []; // 첫 방송은 무조건 갱신이라 표시하지 않음
   return `<div class="broadcast-summary grade-${escape(journal.grade)}"><div class="grade-stamp"><b>${escape(journal.grade)}</b><small>${GRADE_TEXT[journal.grade] || ''}</small></div><div class="viewer-peak"><span>최고 동시 시청</span><strong data-count-to="${escape(journal.viewers)}">${escape(Number(journal.viewers).toLocaleString('ko-KR'))}</strong><small>명</small>${journal.donations?`<em>응원 ${money(journal.donations)}</em>`:''}</div>${fresh.length?`<div class="new-records">${fresh.map(k=>`<span>NEW RECORD · ${RECORD_TEXT[k]}</span>`).join('')}</div>`:''}</div>`;
 }
 

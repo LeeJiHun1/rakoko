@@ -47,6 +47,7 @@ docs/               아래 문서
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | 구조 · 데이터 흐름 · "이런 걸 추가하려면" · 테스트 정책 |
 | [`docs/DESIGN-REVIEW.md`](docs/DESIGN-REVIEW.md) | 기획 검토 · 사용자 결정 사항 |
 | [`docs/AUDIT.md`](docs/AUDIT.md) | 플레이·UI/UX·보안 조사 결과 |
+| [`docs/PLAYTEST.md`](docs/PLAYTEST.md) | 실제 플레이 검토(첫 결말까지) |
 | [`AGENTS.md`](AGENTS.md) | 작업 규칙 (Codex·Claude Code 공용, `CLAUDE.md` 가 가져옴) |
 
 ## 고지

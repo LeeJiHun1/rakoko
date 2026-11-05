@@ -63,7 +63,8 @@ export const commands = {
     if (!def) throw Error('기획을 찾을 수 없어요.');
     const locks = projectLocks(s, def);
     if (locks.length) throw Error(locks.join(' · '));
-    if (s.project) s.projectArchive.push(clone(s.project));
+    // 완료한 기획은 '보류한 기획'으로 남겨 언제든 이어서 그 결말로 갈 수 있게(새 기획을 시작해도 잃지 않음)
+    if (s.project) s.projectArchive.push({...clone(s.project), paused: true});
     s.story = {endingProject: {accepted: true, eventId: def.eventId}};
     s.project = {id: def.id, eventId: def.eventId, boundGame: def.boundGame, instanceId: `${s.broadcastIndex}:${s.revision}`, gameId: s.gameId, step: 0, lastProgress: -1, practiced: false, log: []};
     s.plan[1] = 'S';

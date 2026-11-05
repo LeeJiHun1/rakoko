@@ -18,8 +18,9 @@
 .skip-link{position:absolute;left:12px;top:0;z-index:100;background:#3e3046;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;transform:translateY(-150%)}
 .skip-link:focus{transform:translateY(12px)}
 
-/* U5 토스트는 위쪽에 — 아래쪽 고정 버튼·선택지를 가리지 않게 */
+/* U5 토스트: 모바일은 위쪽(아래 고정 버튼을 가리지 않게), 데스크톱은 오른쪽 아래(탭 메뉴를 가리지 않게) */
 #toast{top:16px;bottom:auto;transform:translate(-50%,-15px)}
+@media (min-width:761px){#toast{top:auto;bottom:24px;left:auto;right:24px;transform:translateY(15px)}#toast.show{transform:none}}
 
 @media (max-width:760px){
   /* U1 주요 행동 버튼을 화면 아래에 고정 (방송 켜기 · 다음 코너 · 다음 방송) */
