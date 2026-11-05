@@ -17,10 +17,12 @@ function routineEvent(s) {
   ]);
 }
 
+/** 같은 계열 사건을 다시 만나면 원래 상황 설명은 그대로 두고, 지난 선택을 떠올리는 한 줄을 덧붙인다. */
 function recallBody(s, selected) {
   const previous = s.familyMemory[selected.family];
   if (!previous) return selected.body;
-  return `지난 방송에서 ‘${previous.choice}’를 선택했던 기록을 펼쳤다. ${s.completedBroadcasts % 2 ? '새 코너에 맞춰 이번의 방법을 다시 골라 보자.' : '이번에는 그 메모를 곁에 두고 코너를 이어간다.'}`;
+  const tail = s.completedBroadcasts % 2 ? '새 코너에 맞춰 이번의 방법을 다시 골라 보자.' : '이번에는 그 메모를 곁에 두고 코너를 이어간다.';
+  return `${selected.body} — 지난 방송에서는 ‘${previous.choice}’를 골랐다. ${tail}`;
 }
 
 export function pickGeneral(s, catalog) {

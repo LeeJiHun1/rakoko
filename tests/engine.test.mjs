@@ -47,6 +47,8 @@ test('shared save cannot smuggle markup into numeric/record fields',()=>{const b
 
 test('save migration upgrades old schema and rejects newer schema with a clear message',()=>{const s=newGame(180);assert.equal(migrateSave(s),s);assert.equal(loadSave(copy(s),catalog).runId,s.runId);const future={...copy(s),schemaVersion:99};assert.throws(()=>loadSave(future,catalog),/더 새로운 버전/);const old={...copy(s),schemaVersion:0};const up=migrateSave(old,{0:x=>({...x,schemaVersion:1,migrated:true})});assert.equal(up.schemaVersion,1);assert(up.migrated);assert.equal(old.migrated,undefined);});
 
+test('repeated event keeps its original situation text and adds a recall line',()=>{let s=newGame(5),seen=0;for(let b=0;b<40&&!seen;b++){s=act(s,'start');while(['event','result'].includes(s.phase)){if(s.phase==='result'){s=act(s,'advance');continue;}if(s.event.kind==='general'&&s.familyMemory[s.event.family]){const def=catalog.events.find(e=>e.id===s.event.definitionId);assert(s.event.body.startsWith(def.body));assert(s.event.body.includes(`‘${s.familyMemory[s.event.family].choice}’`));seen++;}s=act(s,'choose',{id:available(s)[0].id});}s=next(s);}assert(seen>0,'반복 사건을 만나지 못함');});
+
 // Real reachability witnesses: never inject stats, story flags or experiences.
 function witness(def,seed){
   let s=def.requiresOutfit?unlockedOutfit(seed):newGame(seed);
