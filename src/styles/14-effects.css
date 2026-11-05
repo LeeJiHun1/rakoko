@@ -8,7 +8,7 @@
 @keyframes fx-sparkle{0%{opacity:0;transform:scale(.4) rotate(0)}40%{opacity:1}100%{opacity:0;transform:scale(1.6) rotate(90deg)}}
 .result-heading.grade-great span{animation:fx-pop .45s ease-out both}
 .result-card.grade-great{position:relative;animation:fx-shake .5s ease-in-out .1s both}
-.result-card.grade-great::before,.result-card.grade-great::after{content:'✦';position:absolute;color:#c19f67;font-size:22px;pointer-events:none;animation:fx-sparkle .9s ease-out both}
+.result-card.grade-great::before,.result-card.grade-great::after{content:'✦';position:absolute;color:#c19f67;font-size:calc(22px * var(--text-scale));pointer-events:none;animation:fx-sparkle .9s ease-out both}
 .result-card.grade-great::before{top:-12px;left:18px}
 .result-card.grade-great::after{right:22px;bottom:-10px;animation-delay:.15s}
 .result-card.grade-miss{animation:fx-wobble .5s ease-in-out both}

@@ -38,7 +38,7 @@ function endingHints(state, catalog) {
     .map(p => ({p, ...endingProgress(state, p)})).sort((a, b) => b.ratio - a.ratio).slice(0, 3);
   if (!top.length) return '';
   const gate = endingUnlocked(state) ? '' : `<p class="view-description">결말은 방송 150일째(${escape(firstEndingDate())})부터 열 수 있어요. 지금은 능력을 쌓아 두세요.</p>`;
-  return `<section class="ending-hints"><h2 class="subheading">곧 열 수 있는 결말</h2>${gate}${top.map(({p,parts,ratio})=>`<article class="ending-hint"><div class="ending-hint-head"><b>${escape(p.name)}</b><span>${escape(Math.round(ratio*100))}%</span></div><div class="meter"><i style="width:${escape(Math.round(ratio*100))}%"></i></div><div class="ending-hint-reqs">${parts.map(x=>`<span class="${x.current>=x.need?'met':''}">${escape(LABELS[x.key]||x.key)} ${escape(x.current)}/${escape(x.need)}</span>`).join('')}</div>${startButton(p)}</article>`).join('')}</section>`;
+  return `<section class="ending-hints"><h2 class="subheading">곧 열 수 있는 결말</h2>${gate}${top.map(({p,parts,ratio})=>`<article class="ending-hint"><div class="ending-hint-head"><b>${escape(p.name)}</b><span>${escape(Math.round(ratio*100))}%</span></div><div class="meter"><i data-meter="${escape(Math.round(ratio*100))}"></i></div><div class="ending-hint-reqs">${parts.map(x=>`<span class="${x.current>=x.need?'met':''}">${escape(LABELS[x.key]||x.key)} ${escape(x.current)}/${escape(x.need)}</span>`).join('')}</div>${startButton(p)}</article>`).join('')}</section>`;
 }
 
 function activeProject(state) {

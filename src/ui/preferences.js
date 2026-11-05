@@ -19,4 +19,5 @@ export function applyPreferences() {
   document.documentElement.style.setProperty('--text-scale', String(preferences.textSize / 100));
   document.body.classList.toggle('reduce-motion', preferences.reducedMotion);
   document.body.classList.toggle('pixel-text', preferences.font === 'pixel');
+  document.body.classList.toggle('text-large', preferences.textSize >= 150); // 큰 글자용 모바일 레이아웃
 }

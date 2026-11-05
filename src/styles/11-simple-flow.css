@@ -1,119 +1,119 @@
 /* 간소화 플레이 흐름(주요 행동 우선) 덮어쓰기 + 모바일 조정 */
 /* Simple play flow: primary action first; optional management stays collapsed. */
-.simple-flow{display:flex;align-items:center;justify-content:center;gap:18px;margin:2px 0 18px;font-size:13px;color:#8a7a84}
+.simple-flow{display:flex;align-items:center;justify-content:center;gap:18px;margin:2px 0 18px;font-size:calc(13px * var(--text-scale));color:#8a7a84}
 .simple-flow span{padding:5px 12px;border-radius:20px}
 .simple-flow .active{background:#ead6df;color:#87405b;font-weight:700}
 .simple-flow i{font-style:normal;color:#b6a3ad}
-.simple-guide{font-size:14px;line-height:1.9;color:#71616b;margin:12px 0 22px}
+.simple-guide{font-size:calc(14px * var(--text-scale));line-height:1.9;color:#71616b;margin:12px 0 22px}
 .simple-guide b{color:#994763}
 .simple-preps{grid-template-columns:1fr;gap:8px}
 .simple-preps .prep-action{min-height:59px;padding:12px 16px}
-.simple-preps .prep-action b{font-size:14px}
-.simple-preps .prep-action small{font-size:12px}
-.simple-preps .action-icon{width:30px;font-size:23px}
-.simple-preps .arrow{font-size:20px}
+.simple-preps .prep-action b{font-size:calc(14px * var(--text-scale))}
+.simple-preps .prep-action small{font-size:calc(12px * var(--text-scale))}
+.simple-preps .action-icon{width:30px;font-size:calc(23px * var(--text-scale))}
+.simple-preps .arrow{font-size:calc(20px * var(--text-scale))}
 .simple-broadcast-start{margin:21px 0 23px}
-.simple-broadcast-start .button{font-size:16px;min-height:55px;justify-content:space-between;padding:14px 23px}
-.simple-broadcast-start p{font-size:12px;text-align:center;color:#8a7782;margin:11px 0 0}
+.simple-broadcast-start .button{font-size:calc(16px * var(--text-scale));min-height:55px;justify-content:space-between;padding:14px 23px}
+.simple-broadcast-start p{font-size:calc(12px * var(--text-scale));text-align:center;color:#8a7782;margin:11px 0 0}
 .simple-secondary{display:flex;align-items:center;justify-content:space-between;gap:13px;margin-top:16px}
-.simple-secondary .button,.simple-secondary .text-button{font-size:12px}
+.simple-secondary .button,.simple-secondary .text-button{font-size:calc(12px * var(--text-scale))}
 .optional-options{margin-top:19px;border:1px solid #ded0c9;border-radius:6px;padding:0 15px;background:#f4ede4}
-.optional-options>summary{cursor:pointer;min-height:48px;padding:12px 0;color:#735369;font-size:14px;font-weight:600}
-.optional-options>summary small{float:right;font-size:11px;color:#95808c;font-weight:400}
+.optional-options>summary{cursor:pointer;min-height:48px;padding:12px 0;color:#735369;font-size:calc(14px * var(--text-scale));font-weight:600}
+.optional-options>summary small{float:right;font-size:calc(11px * var(--text-scale));color:#95808c;font-weight:400}
 .optional-options[open]{padding-bottom:16px}
-.optional-options>.view-description{font-size:12px;line-height:1.9}
-.optional-options .program-slot select,.optional-options .game-select,.optional-options .game-select select{font-size:12px}
+.optional-options>.view-description{font-size:calc(12px * var(--text-scale));line-height:1.9}
+.optional-options .program-slot select,.optional-options .game-select,.optional-options .game-select select{font-size:calc(12px * var(--text-scale))}
 .optional-options .game-select{padding:4px 10px}
 .recommended-projects .project-option{background:#fff9f0;border:1px solid #dfcfc9;border-radius:6px;padding:15px;margin-bottom:10px}
-.recommended-projects h3{font-size:15px}
-.recommended-projects p{font-size:12px}
-.recommended-projects .button{min-height:44px;font-size:12px}
-.project-next-step{color:#8f4b68!important;font-size:12px!important;margin:6px 0!important}
-.next-task{font-size:12px;color:#8d536b;margin-top:10px}
-.craft-cost{font-size:11px;color:#866976;display:block;margin-top:8px;line-height:1.8}
-.sealed-outfit{font:45px Neo,sans-serif;gap:13px}
-.sealed-outfit small{font:12px/1.8 Arial,sans-serif;color:#8c7380}
+.recommended-projects h3{font-size:calc(15px * var(--text-scale))}
+.recommended-projects p{font-size:calc(12px * var(--text-scale))}
+.recommended-projects .button{min-height:44px;font-size:calc(12px * var(--text-scale))}
+.project-next-step{color:#8f4b68!important;font-size:calc(12px * var(--text-scale))!important;margin:6px 0!important}
+.next-task{font-size:calc(12px * var(--text-scale));color:#8d536b;margin-top:10px}
+.craft-cost{font-size:calc(11px * var(--text-scale));color:#866976;display:block;margin-top:8px;line-height:1.8}
+.sealed-outfit{font:calc(45px * var(--text-scale)) Neo,sans-serif;gap:13px}
+.sealed-outfit small{font:calc(12px * var(--text-scale))/1.8 Arial,sans-serif;color:#8c7380}
 .wardrobe-card.locked .outfit-info h2{letter-spacing:3px}
-.notebook-tabs button{font-size:13px;min-height:52px}
-.section-heading h2{font-size:16px}
-.remaining{font-size:12px}
-.project-mini b{font-size:14px}
-.project-mini p{font-size:12px}
-.project-mini .eyebrow{font-size:10px}
-.project-mini .text-button{font-size:12px}
-.step-dots{font-size:11px}
-.wallet{font-size:12px}
-.wallet b{font-size:17px}
-.view-description{font-size:13px}
+.notebook-tabs button{font-size:calc(13px * var(--text-scale));min-height:52px}
+.section-heading h2{font-size:calc(16px * var(--text-scale))}
+.remaining{font-size:calc(12px * var(--text-scale))}
+.project-mini b{font-size:calc(14px * var(--text-scale))}
+.project-mini p{font-size:calc(12px * var(--text-scale))}
+.project-mini .eyebrow{font-size:calc(10px * var(--text-scale))}
+.project-mini .text-button{font-size:calc(12px * var(--text-scale))}
+.step-dots{font-size:calc(11px * var(--text-scale))}
+.wallet{font-size:calc(12px * var(--text-scale))}
+.wallet b{font-size:calc(17px * var(--text-scale))}
+.view-description{font-size:calc(13px * var(--text-scale))}
 .event-body{font-size:calc(15px * var(--text-scale))}
 .choice{font-size:calc(14px * var(--text-scale));min-height:60px}
-.lock-reason{font-size:12px}
-.quiet-note{font-size:12px}
+.lock-reason{font-size:calc(12px * var(--text-scale))}
+.quiet-note{font-size:calc(12px * var(--text-scale))}
 .chat-reactions{padding:17px 15px}
-.chat-label{font-size:12px}
-.chat-row{font-size:14px;align-items:flex-start;padding:5px 0;line-height:1.75}
+.chat-label{font-size:calc(12px * var(--text-scale))}
+.chat-row{font-size:calc(14px * var(--text-scale));align-items:flex-start;padding:5px 0;line-height:1.75}
 .chat-row img{margin-top:1px}
-.chat-name{font-size:11px;padding-top:3px}
-.continue-row>.button{font-size:14px;min-height:48px}
-.gain-list>span:not(.tag){font-size:12px}
-.result-heading{font-size:13px}
-.wrap-title p{font-size:13px}
-.memory b{font-size:14px}
-.memory small{font-size:12px}
-.settlement>div{font-size:13px}
-.settlement small{font-size:12px}
-.outfit-info p{font-size:12px}
-.outfit-info .button{font-size:12px;min-height:44px}
-.craft-toolbar>span{font-size:12px}
-.about-list{font-size:14px}
-.modal-description{font-size:13px}
+.chat-name{font-size:calc(11px * var(--text-scale));padding-top:3px}
+.continue-row>.button{font-size:calc(14px * var(--text-scale));min-height:48px}
+.gain-list>span:not(.tag){font-size:calc(12px * var(--text-scale))}
+.result-heading{font-size:calc(13px * var(--text-scale))}
+.wrap-title p{font-size:calc(13px * var(--text-scale))}
+.memory b{font-size:calc(14px * var(--text-scale))}
+.memory small{font-size:calc(12px * var(--text-scale))}
+.settlement>div{font-size:calc(13px * var(--text-scale))}
+.settlement small{font-size:calc(12px * var(--text-scale))}
+.outfit-info p{font-size:calc(12px * var(--text-scale))}
+.outfit-info .button{font-size:calc(12px * var(--text-scale));min-height:44px}
+.craft-toolbar>span{font-size:calc(12px * var(--text-scale))}
+.about-list{font-size:calc(14px * var(--text-scale))}
+.modal-description{font-size:calc(13px * var(--text-scale))}
 .game-select select{min-height:44px}
 .stale-banner .text-button{min-height:44px}
-.collection-list p,.journal-entry>p{font-size:14px}
-.journal-entry summary{font-size:12px;min-height:36px}
-.journal-scene b{font-size:13px}
-.journal-scene p{font-size:12px}
-.stat>div:first-child{font-size:12px}
-.stat b{font-size:16px}
-.game-stat{font-size:11px}
+.collection-list p,.journal-entry>p{font-size:calc(14px * var(--text-scale))}
+.journal-entry summary{font-size:calc(12px * var(--text-scale));min-height:36px}
+.journal-scene b{font-size:calc(13px * var(--text-scale))}
+.journal-scene p{font-size:calc(12px * var(--text-scale))}
+.stat>div:first-child{font-size:calc(12px * var(--text-scale))}
+.stat b{font-size:calc(16px * var(--text-scale))}
+.game-stat{font-size:calc(11px * var(--text-scale))}
 .program-slot{min-height:48px}
 .button.small{min-height:44px}
 .image-unavailable{min-height:44px}
 
 @media(max-width:760px){
-.notebook-tabs button{font-size:12px;gap:5px}
-.simple-guide{font-size:14px}
-.simple-flow{gap:10px;font-size:12px}
+.notebook-tabs button{font-size:calc(12px * var(--text-scale));gap:5px}
+.simple-guide{font-size:calc(14px * var(--text-scale))}
+.simple-flow{gap:10px;font-size:calc(12px * var(--text-scale))}
 .simple-flow span{padding:5px 9px}
-.project-mini .text-button{max-width:80px;font-size:12px}
+.project-mini .text-button{max-width:80px;font-size:calc(12px * var(--text-scale))}
 .project-mini{flex-wrap:wrap}
-.project-mini .eyebrow{font-size:10px}
-.project-mini b{font-size:13px}
-.status-panel .section-heading{font-size:12px}
-.status-panel .section-heading small{font-size:10px}
-.stat>div:first-child{font-size:10px}
-.stat b{font-size:14px}
-.game-stat{font-size:10px}
-.chat-row{font-size:13px;gap:7px}
-.chat-name{font-size:10px;min-width:56px}
+.project-mini .eyebrow{font-size:calc(10px * var(--text-scale))}
+.project-mini b{font-size:calc(13px * var(--text-scale))}
+.status-panel .section-heading{font-size:calc(12px * var(--text-scale))}
+.status-panel .section-heading small{font-size:calc(10px * var(--text-scale))}
+.stat>div:first-child{font-size:calc(10px * var(--text-scale))}
+.stat b{font-size:calc(14px * var(--text-scale))}
+.game-stat{font-size:calc(10px * var(--text-scale))}
+.chat-row{font-size:calc(13px * var(--text-scale));gap:7px}
+.chat-name{font-size:calc(10px * var(--text-scale));min-width:56px}
 .chat-row img{width:26px;height:26px}
-.module-grid h3{font-size:13px}
-.module-grid p{font-size:11px}
+.module-grid h3{font-size:calc(13px * var(--text-scale))}
+.module-grid p{font-size:calc(11px * var(--text-scale))}
 .simple-secondary{gap:8px;flex-wrap:wrap}
-.project-option h3{font-size:14px}
-.project-option p{font-size:12px}
-.project-option .button{font-size:11px}
+.project-option h3{font-size:calc(14px * var(--text-scale))}
+.project-option p{font-size:calc(12px * var(--text-scale))}
+.project-option .button{font-size:calc(11px * var(--text-scale))}
 .wardrobe-grid{gap:12px}
 .outfit-info{padding:13px}
-.outfit-info p{font-size:11px}
+.outfit-info p{font-size:calc(11px * var(--text-scale))}
 .craft-toolbar{flex-wrap:wrap}
 .choice{font-size:calc(14px * var(--text-scale))}
-.simple-broadcast-start .button{font-size:16px}
-.optional-options>summary{font-size:13px}
-.optional-options>summary small{font-size:10px}
-.journal-controls{font-size:12px}
-.journal-controls .button{font-size:11px}
-.next-broadcast>.button{font-size:13px}
-.credits-scene>p{font-size:14px}
-.modal-heading h2{font-size:23px}
+.simple-broadcast-start .button{font-size:calc(16px * var(--text-scale))}
+.optional-options>summary{font-size:calc(13px * var(--text-scale))}
+.optional-options>summary small{font-size:calc(10px * var(--text-scale))}
+.journal-controls{font-size:calc(12px * var(--text-scale))}
+.journal-controls .button{font-size:calc(11px * var(--text-scale))}
+.next-broadcast>.button{font-size:calc(13px * var(--text-scale))}
+.credits-scene>p{font-size:calc(14px * var(--text-scale))}
+.modal-heading h2{font-size:calc(23px * var(--text-scale))}
 }

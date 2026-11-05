@@ -31,7 +31,9 @@ function settle(s, catalog) {
   const fame = GRADE_AWARENESS[grade] ? gain(s, 'awareness', GRADE_AWARENESS[grade]) : 0;
   s.completedBroadcasts++;
   deliverOrders(s);
-  s.journal.push({id: s.broadcastIndex, date: s.date, events: clone(s.currentLog), income: {gross, cost, net}, outfit: s.equipped, representative: 0, viewers, grade, donations});
+  // 일지에는 화면에 쓰는 값만 남긴다(채팅 줄·맥락은 결과 화면용이라 제외 — 장기 저장본 크기 절반)
+  const events = s.currentLog.map(({reactions, chatContext, ...rest}) => clone(rest));
+  s.journal.push({id: s.broadcastIndex, date: s.date, events, income: {gross, cost, net}, outfit: s.equipped, representative: 0, viewers, grade, donations});
   if (s.module?.phase === 'closed') { s.moduleArchive.push(clone(s.module)); s.module = null; }
   s.phase = 'wrap';
   s.result = {gross, cost, net, grade, viewers, donations, newRecords, fame};

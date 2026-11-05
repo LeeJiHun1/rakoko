@@ -1,34 +1,34 @@
 /* 목표(기획)·장기 콘텐츠·상점 화면 */
 .active-project{border-bottom:1px solid var(--line);padding-bottom:17px;margin-bottom:24px}
-.active-project>p{color:#87717d;font-size:11px;margin-top:12px}
+.active-project>p{color:#87717d;font-size:calc(11px * var(--text-scale));margin-top:12px}
 .active-project>small{color:#8a7885}
 .active-project .text-button{display:block}
-.subheading{font-size:14px;margin:25px 0 14px}
+.subheading{font-size:calc(14px * var(--text-scale));margin:25px 0 14px}
 .project-list{display:grid;gap:0}
 .project-option{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
 .project-option>div{flex:1}
-.project-index{font:11px Neo,sans-serif;color:#b395a1}
-.project-option h3{font-size:12px;font-weight:600}
-.project-option p{font-size:10px;color:#8b7b85;line-height:1.8;margin-top:3px}
-.project-option small{color:#90546b;font-size:10px}
+.project-index{font:calc(11px * var(--text-scale)) Neo,sans-serif;color:#b395a1}
+.project-option h3{font-size:calc(12px * var(--text-scale));font-weight:600}
+.project-option p{font-size:calc(10px * var(--text-scale));color:#8b7b85;line-height:1.8;margin-top:3px}
+.project-option small{color:#90546b;font-size:calc(10px * var(--text-scale))}
 .project-option .button{flex-shrink:0}
-.paused-row{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:10px 0;font-size:11px}
+.paused-row{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:10px 0;font-size:calc(11px * var(--text-scale))}
 .module-active{padding:18px;background:#f0e7df;border:1px solid #d8c6c7;border-radius:7px;margin-bottom:16px}
-.module-active h3{font-size:14px}
-.module-active p{font-size:11px;color:#83727c;margin:8px 0}
-.module-active small{font-size:10px;color:#9a7f8d}
+.module-active h3{font-size:calc(14px * var(--text-scale))}
+.module-active p{font-size:calc(11px * var(--text-scale));color:#83727c;margin:8px 0}
+.module-active small{font-size:calc(10px * var(--text-scale));color:#9a7f8d}
 .module-active>div{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
 .module-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .module-grid article{padding:16px;background:#f5eee4;border:1px solid #e0d4c8;border-radius:6px}
-.module-symbol{font-size:25px;color:#a28296}
-.module-grid h3{font-size:12px;margin:7px 0}
-.module-grid p{font-size:9px;color:#8d7b87;margin-bottom:12px}
+.module-symbol{font-size:calc(25px * var(--text-scale));color:#a28296}
+.module-grid h3{font-size:calc(12px * var(--text-scale));margin:7px 0}
+.module-grid p{font-size:calc(9px * var(--text-scale));color:#8d7b87;margin-bottom:12px}
 .shop-list details{border-bottom:1px solid var(--line);padding:11px 0}
-.shop-list summary{font-size:11px;cursor:pointer}
-.shop-list summary>span{float:right;font-size:10px;color:#9a7989}
-.shop-choice{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:15px 0;font-size:11px}
-.shop-choice b{display:block;font-family:Neo,sans-serif;font-size:13px;color:#9c7082;font-weight:400;margin-top:3px}
-.shop-note{font-size:10px;color:#8c7a85}
-.order-list>div{display:flex;justify-content:space-between;font-size:11px;padding:12px 0;border-bottom:1px solid var(--line)}
-.order-list small{display:block;font-size:10px;color:#a28795}
-.order-list b{font-size:10px;color:#8e7182;font-weight:400}
+.shop-list summary{font-size:calc(11px * var(--text-scale));cursor:pointer}
+.shop-list summary>span{float:right;font-size:calc(10px * var(--text-scale));color:#9a7989}
+.shop-choice{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:15px 0;font-size:calc(11px * var(--text-scale))}
+.shop-choice b{display:block;font-family:Neo,sans-serif;font-size:calc(13px * var(--text-scale));color:#9c7082;font-weight:400;margin-top:3px}
+.shop-note{font-size:calc(10px * var(--text-scale));color:#8c7a85}
+.order-list>div{display:flex;justify-content:space-between;font-size:calc(11px * var(--text-scale));padding:12px 0;border-bottom:1px solid var(--line)}
+.order-list small{display:block;font-size:calc(10px * var(--text-scale));color:#a28795}
+.order-list b{font-size:calc(10px * var(--text-scale));color:#8e7182;font-weight:400}
