@@ -22,4 +22,21 @@ async function jsFiles(dir) {
 const files = await jsFiles('src');
 for (const file of files) execFileSync(process.execPath, ['--check', file]);
 assert((await stat('assets/fonts/neodgm-LICENSE.txt')).isFile());
-console.log(`PASS: IDs, 80 events, 32 projects, 8 modules, choices, experience links, image/font paths, JS syntax (${files.length} files).`);
+
+// 코드에 직접 적힌 콘텐츠 ID 가 카탈로그에 실제로 있는지 (카탈로그 재생성으로 ID 가 바뀌면 조건이 조용히 사라지는 것을 막는다)
+const known = {
+  event: new Set(c.events.map(e => e.id)),
+  experience: new Set(Object.keys(c.experienceDefinitions)),
+  endingEvent: new Set(c.endingEvents.map(e => e.id)),
+  module: new Set(c.modules.map(m => m.id)),
+  project: new Set(c.projects.map(p => p.id)),
+};
+const ID_PATTERNS = [[/\b(?:CE|RK|RA)-\d{3}\b/g, 'event'], [/\bEX-\d{3}\b/g, 'experience'], [/\bEF-\d{3}\b/g, 'endingEvent'], [/\bLC-[A-Z]{2}\b/g, 'module'], [/\bEND-\d{3}\b/g, 'project']];
+const missing = [];
+let refs = 0;
+for (const file of files.filter(f => f.startsWith('src/engine') || f.startsWith('src/ui'))) {
+  const text = await readFile(file, 'utf8');
+  for (const [pattern, kind] of ID_PATTERNS) for (const id of text.match(pattern) || []) { refs++; if (!known[kind].has(id)) missing.push(`${file}: ${id}`); }
+}
+assert.deepEqual(missing, [], `카탈로그에 없는 콘텐츠 ID:\n${missing.join('\n')}`);
+console.log(`PASS: IDs, 80 events, 32 projects, 8 modules, choices, experience links, image/font paths, JS syntax (${files.length} files), code content refs (${refs}).`);
