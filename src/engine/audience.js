@@ -13,17 +13,30 @@ const GRADE_RANK = {C: 0, B: 1, A: 2, S: 3};
 
 export const emptyRecords = () => ({bestViewers: 0, bestGross: 0, bestGrade: null, greats: 0, donations: 0, donationTotal: 0});
 
-/** 세 코너 결과 점수 합: 8↑ S · 7 A · 5~6 B · 그 아래 C (등급 없는 고정 사건은 성공 취급) */
-export function broadcastGrade(log) {
-  const score = log.reduce((a, r) => a + (GRADE_SCORE[r.grade] ?? 2), 0);
-  return score >= 8 ? 'S' : score >= 7 ? 'A' : score >= 5 ? 'B' : 'C';
+/** 시청자 성장 점수(사용자 결정: 등급에 시청자 성장 반영): 직전 방송 기본 시청자 대비 +8%↑ +1 · -8%↓ -1 */
+export const GROWTH_STEP = .08;
+export function growthPoint(base, previousBase) {
+  if (!previousBase) return 0;
+  const g = (base - previousBase) / previousBase; // (현재-이전)/이전: 경계값(±8%)에서 부동소수점 오차가 없게
+  return g >= GROWTH_STEP ? 1 : g <= -GROWTH_STEP ? -1 : 0;
 }
 
-/** 방송 최고 동시 시청자. 시작 시 능력 스냅샷·규모 단계·등급·구매 효과(bonus)·±10% 변동 */
-export function peakViewers(s, grade, bonus = 0) {
+/** 등급 점수 = 세 코너 결과(대성공 3·성공 2·아쉬움 1, 고정 사건은 성공) + 시청자 성장 점수(-1~+1) */
+export const gradeScore = (log, growth = 0) => log.reduce((a, r) => a + (GRADE_SCORE[r.grade] ?? 2), 0) + growth;
+/** 시뮬레이션(30명×40회) 기준 S 19% · A 35% · B 33% · C 16% — 한 등급이 몰리지 않게 */
+export const GRADE_THRESHOLDS = {S: 8, A: 7, B: 6};
+export const gradeFromScore = score => score >= GRADE_THRESHOLDS.S ? 'S' : score >= GRADE_THRESHOLDS.A ? 'A' : score >= GRADE_THRESHOLDS.B ? 'B' : 'C';
+export const broadcastGrade = (log, growth = 0) => gradeFromScore(gradeScore(log, growth));
+
+/** 기본 시청자(등급 배율 전): 시작 시 능력 스냅샷·규모 단계·구매 효과(bonus)·±10% 변동 */
+export function baseViewers(s, bonus = 0) {
   const snap = s.incomeSnapshot, base = 20 + snap.awareness * 3 + snap.community * 5;
-  return Math.round(base * TIER_VIEWERS[s.scaleIndex] * GRADE_VIEWERS[grade] * (1 + bonus) * (0.9 + random(s) * 0.2));
+  return Math.round(base * TIER_VIEWERS[s.scaleIndex] * (1 + bonus) * (0.9 + random(s) * 0.2));
 }
+/** 최종 최고 동시 시청자 = 기본 시청자 × 등급 배율 */
+export const peakViewers = (base, grade) => Math.round(base * GRADE_VIEWERS[grade]);
+/** 직전 방송의 기본 시청자(구버전 일지에는 없을 수 있음) */
+export const previousBaseViewers = s => s.journal.at(-1)?.viewersBase || null;
 
 /** 역대 기록 갱신. 새로 갱신한 항목 이름 목록을 돌려준다. */
 export function updateRecords(s, {viewers, gross, grade}) {

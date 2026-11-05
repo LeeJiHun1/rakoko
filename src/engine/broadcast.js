@@ -3,7 +3,7 @@ import {CORNERS, PREPARATIONS_PER_BROADCAST, SEGMENTS_PER_BROADCAST} from './con
 import {celebrationKey, celebrationOn} from './dates.js';
 import {scheduleDate} from './calendar.js';
 import {applyChoice} from './choices.js';
-import {broadcastGrade, GRADE_AWARENESS, GRADE_INCOME, peakViewers, updateRecords} from './audience.js';
+import {baseViewers, broadcastGrade, GRADE_AWARENESS, GRADE_INCOME, growthPoint, peakViewers, previousBaseViewers, updateRecords} from './audience.js';
 import {gain} from './growth.js';
 import {activeBonus} from './purchases.js';
 import {updateNeglect} from './outfit.js';
@@ -26,9 +26,12 @@ function reserveSpecials(s) {
 }
 
 function settle(s, catalog) {
-  const grade = broadcastGrade(s.currentLog);
+  // 시청자 성장(직전 방송 기본 시청자 대비)을 등급에 반영한 뒤, 등급 배율로 최종 시청자를 낸다
+  const viewersBase = baseViewers(s, activeBonus(s, 'viewers')), previousBase = previousBaseViewers(s);
+  const growth = previousBase ? Math.round((viewersBase - previousBase) / previousBase * 100) : null;
+  const grade = broadcastGrade(s.currentLog, growthPoint(viewersBase, previousBase));
   const {gross, cost, net} = settleIncome(s, catalog, GRADE_INCOME[grade]);
-  const viewers = peakViewers(s, grade, activeBonus(s, 'viewers'));
+  const viewers = peakViewers(viewersBase, grade);
   const newRecords = updateRecords(s, {viewers, gross, grade});
   const donations = s.currentLog.reduce((a, r) => a + (r.donation?.amount || 0), 0);
   const fame = GRADE_AWARENESS[grade] ? gain(s, 'awareness', GRADE_AWARENESS[grade]) : 0;
@@ -37,10 +40,10 @@ function settle(s, catalog) {
   deliverOrders(s);
   // 일지에는 화면에 쓰는 값만 남긴다(채팅 줄·맥락은 결과 화면용이라 제외 — 장기 저장본 크기 절반)
   const events = s.currentLog.map(({reactions, chatContext, ...rest}) => clone(rest));
-  s.journal.push({id: s.broadcastIndex, date: s.date, events, income: {gross, cost, net}, outfit: s.equipped, representative: 0, viewers, grade, donations});
+  s.journal.push({id: s.broadcastIndex, date: s.date, events, income: {gross, cost, net}, outfit: s.equipped, representative: 0, viewers, grade, donations, viewersBase, growth});
   if (s.module?.phase === 'closed') { s.moduleArchive.push(clone(s.module)); s.module = null; }
   s.phase = 'wrap';
-  s.result = {gross, cost, net, grade, viewers, donations, newRecords, fame};
+  s.result = {gross, cost, net, grade, viewers, donations, newRecords, fame, growth};
   s.event = null;
   offerEndingIfReady(s, catalog);
 }

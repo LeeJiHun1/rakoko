@@ -44,7 +44,7 @@ const RECORD_CHECKS = {
   journal: j => isInt(j?.id, 1, MAX_BROADCASTS) && isDate(j.date) && Array.isArray(j.events) && j.events.length <= 3
     && j.events.every(e => isStr(e?.title) && isStr(e.choice) && optStr(e.outcome)) && isInt(j.representative, 0, 2)
     && Number.isFinite(j.income?.gross) && Number.isFinite(j.income?.cost) && Number.isFinite(j.income?.net) && optStr(j.outfit) && optStr(j.ending)
-    && (j.viewers == null || isInt(j.viewers, 0, 1e9)) && (j.grade == null || ['S', 'A', 'B', 'C'].includes(j.grade)) && (j.donations == null || Number.isSafeInteger(j.donations)),
+    && (j.viewers == null || isInt(j.viewers, 0, 1e9)) && (j.viewersBase == null || isInt(j.viewersBase, 0, 1e9)) && (j.growth == null || isInt(j.growth, -100, 100000)) && (j.grade == null || ['S', 'A', 'B', 'C'].includes(j.grade)) && (j.donations == null || Number.isSafeInteger(j.donations)),
   projectArchive: (p, catalog) => isProject(p, catalog),
   reachedEndings: e => isStr(e?.id, 64) && isStr(e.title) && optStr(e.epilogue) && optStr(e.resolution),
   purchases: p => isStr(p?.id, 80) && isStr(p.choice) && Number.isSafeInteger(p.cost) && isInt(p.dueBroadcast, 0, 20000) && ['pending', 'delivered'].includes(p.status)
@@ -107,7 +107,7 @@ function isResult(r) {
 
 function isSettlement(r) {
   return isPlainObject(r) && ['gross', 'cost', 'net'].every(k => Number.isFinite(r[k]))
-    && (r.grade == null || GRADES.includes(r.grade)) && (r.viewers == null || isInt(r.viewers, 0, 1e9))
+    && (r.grade == null || GRADES.includes(r.grade)) && (r.viewers == null || isInt(r.viewers, 0, 1e9)) && (r.growth == null || isInt(r.growth, -100, 100000))
     && (r.newRecords == null || (Array.isArray(r.newRecords) && r.newRecords.every(x => RECORD_NAMES.includes(x))));
 }
 

@@ -34,3 +34,6 @@
 .ending-hint-reqs span{font-size:calc(11px * var(--text-scale));padding:3px 8px;border-radius:999px;background:#f3ece6;color:#7b6c76}
 .ending-hint-reqs span.met{background:#e7f1ea;color:#4f6b5c}
 .ending-hint .button{justify-self:start}
+.viewer-peak em.growth{color:#76666f}
+.viewer-peak em.growth.up{color:#46705c;font-weight:700}
+.viewer-peak em.growth.down{color:#9a4560}
