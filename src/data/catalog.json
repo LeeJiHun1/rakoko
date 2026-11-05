@@ -9199,7 +9199,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "장터 동선 메모를 얻는다",
+          "outcome": "광장 옆 상점 거리를 한 바퀴 돌며 가게 위치를 메모했다. 키몽이들은 '저 간판 귀엽다'며 지도를 같이 그려 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -9246,7 +9246,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공용 작업 규칙을 익힌다",
+          "outcome": "건축 담당 이웃이 재료 나누는 법과 작업 예절을 차근차근 알려 주었다. 키몽이들도 채팅으로 규칙을 복습했다.",
           "effects": [
             {
               "op": "local.add",
@@ -9287,7 +9287,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "초보 거처와 기본 재료를 받는다",
+          "outcome": "초보 안내 담당 이웃이 작은 오두막과 나무 재료 한 묶음을 건네주었다. 키몽이들은 '코코네 첫 집'이라며 반겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -9319,7 +9319,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "가상 동료들이 함께 사는 블록 마을 서버에 초대장이 도착한다. 입장 첫날, 마을 이웃들이 광장에 모여 설명회를 연다."
     },
     {
       "id": "LC-MC-02",
@@ -9357,7 +9358,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "자원 정리 역할을 정한다",
+          "outcome": "자원 담당 칸에 이름을 적고 재료 정리 방법을 이웃에게 물었다. 키몽이들은 '광물 관리인 코코'라는 별명을 붙였다.",
           "effects": [
             {
               "op": "local.add",
@@ -9409,7 +9410,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "판매 준비 역할을 정한다",
+          "outcome": "오두막 한쪽에 작은 진열대를 놓고 가게 이름을 고민했다. 키몽이들이 채팅으로 가게 이름 후보를 쏟아 냈다.",
           "effects": [
             {
               "op": "local.add",
@@ -9455,7 +9456,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "누구나 가능한 보조 역할로 정착한다",
+          "outcome": "공동 창고 보조로 이름을 올리고 상자 나르는 일부터 시작했다. 이웃들은 '손이 하나 늘었다'며 반갑게 맞았다.",
           "effects": [
             {
               "op": "local.add",
@@ -9492,7 +9493,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "작은 오두막에 짐을 푼 코코 앞에 마을 역할표가 놓인다. 이웃들은 각자 맡을 일을 고르며 코코의 선택을 기다린다."
     },
     {
       "id": "LC-MC-03",
@@ -9530,7 +9532,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "주문 처리가 안정되어 마을 평판이 오른다",
+          "outcome": "같은 재료끼리 주문을 묶어 표로 정리하고 차례대로 처리했다. 이웃들은 '코코네 가게는 줄이 빨리 준다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -9573,7 +9575,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "서로 나눌 배송 약속을 만든다",
+          "outcome": "같은 팀 동료와 마을 동쪽과 서쪽으로 배송 구역을 나눴다. 키몽이들은 지도에 표시하며 배송길을 지켜봤다.",
           "effects": [
             {
               "op": "local.add",
@@ -9610,7 +9612,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "규모를 줄여 손실 없이 주문을 마친다",
+          "outcome": "감당할 수 있는 주문만 받고 나머지는 다음 장터로 넘겼다. 이웃들은 '다음엔 우리 것부터'라며 예약을 걸었다.",
           "effects": [
             {
               "op": "local.add",
@@ -9638,7 +9640,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "장터 날이 되자 이웃들의 주문이 한꺼번에 몰려든다. 같은 재료를 찾는 주문서가 계산대 위에 겹겹이 쌓인다."
     },
     {
       "id": "LC-MC-04",
@@ -9676,7 +9679,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "다음 재료 탐색이 쉬워진다",
+          "outcome": "재료 종류별로 상자 색을 정하고 표지판을 하나씩 달았다. 키몽이들은 '이제 돌 찾느라 헤맬 일 없다'며 박수를 보냈다.",
           "effects": [
             {
               "op": "local.add",
@@ -9719,7 +9722,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "마을 참여자와 시청자가 규칙을 이해한다",
+          "outcome": "마을 확성기로 창고 사용법을 짧게 안내했다. 이웃들은 고개를 끄덕였고 키몽이들도 '규칙 외웠다'고 남겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -9756,7 +9759,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "기본 재료를 정리하고 사용 기록을 남긴다",
+          "outcome": "입구 쪽 몇 칸만 골라 정리하고 꺼낸 재료를 장부에 적었다. 이웃들은 남은 칸도 이어서 정리하겠다고 나섰다.",
           "effects": [
             {
               "op": "local.add",
@@ -9784,7 +9787,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "공동 창고에 재료가 뒤섞여 이웃들이 같은 상자를 몇 번씩 연다. 표지판 하나 없는 창고 앞에서 코코가 팔을 걷는다."
     },
     {
       "id": "LC-MC-05",
@@ -9822,7 +9826,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공용 건물의 설계 기여가 남는다",
+          "outcome": "출입구와 통로가 막히지 않게 동선을 그려 넣은 설계안을 냈다. 이웃들은 '다니기 편하겠다'며 도면에 서명했다.",
           "effects": [
             {
               "op": "local.add",
@@ -9865,7 +9869,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공동 작업의 역할 합의가 생긴다",
+          "outcome": "벽과 지붕, 내부로 구간을 나누고 이웃마다 맡을 부분을 정했다. 키몽이들은 '코코 반장'이라며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -9902,7 +9906,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "가능한 규모로 건축에 참여한다",
+          "outcome": "건물 앞 화단과 작은 분수 자리를 맡아 꾸몄다. 키몽이들은 꽃 색깔을 골라 주며 '여기가 제일 예쁘다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -9930,7 +9934,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "마을 회의에서 광장 옆 공용 건물을 짓자는 의뢰가 들어온다. 이웃들이 설계도 앞에 모여 코코에게 의견을 묻는다."
     },
     {
       "id": "LC-MC-06",
@@ -9968,7 +9973,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "시험할 독자 부스 기획을 만든다",
+          "outcome": "블록 높이 쌓기 미니게임 부스를 직접 설계해 기획서에 담았다. 키몽이들은 '규칙 하나 더 넣자'며 아이디어를 보탰다.",
           "effects": [
             {
               "op": "local.add",
@@ -10030,7 +10035,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "팬 참여 안내 기획을 만든다",
+          "outcome": "축제에 처음 온 사람을 위한 안내대를 기획했다. 키몽이들은 안내 문구를 함께 다듬으며 '친절한 축제'를 약속했다.",
           "effects": [
             {
               "op": "local.add",
@@ -10086,7 +10091,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "검수 가능한 작은 부스를 만든다",
+          "outcome": "직접 만든 소품을 놓을 작은 전시대 하나부터 준비하기로 했다. 이웃들은 '작아도 알차다'며 자리를 내주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -10133,7 +10138,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시즌 마지막에 서버 축제가 열린다는 공지가 붙는다. 이웃들은 저마다 부스를 구상하고 코코도 기획서를 펼친다."
     },
     {
       "id": "LC-MC-07",
@@ -10171,7 +10177,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "부스의 안내와 운영 시험을 마친다",
+          "outcome": "준비한 순서표대로 안내와 운영을 처음부터 끝까지 돌려 보았다. 이웃들은 고칠 점 몇 가지를 메모로 건넸다.",
           "effects": [
             {
               "op": "local.add",
@@ -10238,7 +10244,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "수정된 부스 규칙을 검증한다",
+          "outcome": "시험 중 드러난 애매한 규칙을 고치고 다시 한 번 돌려 보았다. 키몽이들은 '이번엔 헷갈리지 않는다'고 확인했다.",
           "effects": [
             {
               "op": "local.add",
@@ -10299,7 +10305,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "도움을 받아 작은 부스를 시험한다",
+          "outcome": "옆 부스 이웃 한 팀의 도움을 받아 작은 부스를 천천히 시험했다. 키몽이들은 손님이 된 기분으로 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -10351,7 +10357,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "축제 사흘 전, 이웃들이 부스를 미리 열어 보는 시범 운영을 한다. 코코의 부스 앞에도 첫 시험 손님이 줄을 선다."
     },
     {
       "id": "LC-MC-08",
@@ -10404,7 +10411,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "기획 규모의 축제 부스를 완료한다",
+          "outcome": "시범 운영에서 다듬은 부스를 열고 손님을 맞았다. 축제가 끝나자 이웃들과 키몽이들이 부스 앞에서 인사를 나눴다.",
           "effects": [
             {
               "op": "local.add",
@@ -10480,7 +10487,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "완성 건축물과 과정을 소개한다",
+          "outcome": "함께 지은 공용 건물을 돌며 지어진 과정을 하나하나 소개했다. 키몽이들은 첫날 오두막을 떠올리며 감회에 젖었다.",
           "effects": [
             {
               "op": "local.add",
@@ -10541,7 +10548,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "참여한 범위의 기록을 남기고 시즌을 마친다",
+          "outcome": "직접 꾸민 작은 구역을 소개하고 시즌 일지를 마무리했다. 이웃들은 '다음 시즌에도 이웃 하자'며 손을 흔들었다.",
           "effects": [
             {
               "op": "local.add",
@@ -10587,7 +10594,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "드디어 서버 축제 날, 광장이 불빛과 이웃들로 가득 찬다. 축제가 끝나면 이번 시즌의 블록 마을도 문을 닫는다."
     },
     {
       "id": "LC-RP-01",
@@ -10624,7 +10632,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "운송 규칙과 도시 지도를 익힌다",
+          "outcome": "운송 회사를 견학하며 도시 지도와 운행 규칙을 익혔다. 키몽이들은 '코코 기사님'을 미리 불러 보며 들떴다.",
           "effects": [
             {
               "op": "local.add",
@@ -10671,7 +10679,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "정비 작업 순서를 익힌다",
+          "outcome": "정비 작업장에 들러 수리 순서를 어깨너머로 배웠다. 작업장 동료가 공구 이름을 알려 주자 키몽이들도 받아 적었다.",
           "effects": [
             {
               "op": "local.add",
@@ -10712,7 +10720,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "기본 이동과 시민 규칙을 배운다",
+          "outcome": "신입 시민 안내원을 따라 걸으며 이동법과 기본 규칙을 배웠다. 키몽이들은 '첫날은 천천히'라며 코코를 다독였다.",
           "effects": [
             {
               "op": "local.add",
@@ -10744,7 +10752,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "가상 동료들이 운영하는 도시 생활 역할극에 초대받는다. 첫날 시청 앞에서 새 시민을 위한 직업 안내가 시작된다."
     },
     {
       "id": "LC-RP-02",
@@ -10781,7 +10790,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "운송 역할을 정하고 안내 운전을 마친다",
+          "outcome": "택시 시범 근무에 나서 안내 손님을 목적지까지 태웠다. 키몽이들은 길 안내 대신 '다음 골목 오른쪽!'을 외쳤다.",
           "effects": [
             {
               "op": "local.add",
@@ -10833,7 +10842,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "접수와 작업 배분을 경험한다",
+          "outcome": "정비소 접수대에 앉아 들어오는 의뢰를 정비사들에게 나눴다. 동료들은 '접수가 깔끔하다'며 엄지를 세웠다.",
           "effects": [
             {
               "op": "local.add",
@@ -10879,7 +10888,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "신입에게 가능한 역할로 정착한다",
+          "outcome": "안내소 보조로 시작해 길 묻는 시민들에게 지도를 건넸다. 키몽이들은 '친절한 안내원 코코'라고 불러 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -10916,7 +10925,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시민증을 받은 코코에게 첫 직업 체험 날이 다가온다. 도시 곳곳의 일터가 신입 시민의 지원서를 기다린다."
     },
     {
       "id": "LC-RP-03",
@@ -10953,7 +10963,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "약속 시간을 조정하고 신뢰를 얻는다",
+          "outcome": "가까운 손님끼리 순서를 다시 짜고 늦어질 손님에게 미리 알렸다. 손님 역할 동료들은 '연락 고맙다'고 답했다.",
           "effects": [
             {
               "op": "local.add",
@@ -10996,7 +11006,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공동 운송 합의를 남긴다",
+          "outcome": "같은 운송 회사 동료에게 일부 배차를 맡아 달라고 부탁했다. 동료는 흔쾌히 핸들을 잡았고 둘은 구역을 나눴다.",
           "effects": [
             {
               "op": "local.add",
@@ -11033,7 +11043,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "받아 둔 예약만 처리한다",
+          "outcome": "새 예약 접수는 잠시 멈추고 받아 둔 손님부터 모셨다. 키몽이들은 '차근차근 하는 게 제일'이라며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -11061,7 +11071,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "도시에 큰 장이 서는 날, 운송 예약이 한꺼번에 몰린다. 예약표에는 같은 시간대 손님이 빼곡하게 적혀 있다."
     },
     {
       "id": "LC-RP-04",
@@ -11098,7 +11109,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "상점의 서비스 범위를 분명히 한다",
+          "outcome": "가게에서 해 줄 수 있는 일을 정리해 안내판에 적었다. 시민 역할 동료들은 '이제 뭘 부탁할지 알겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -11141,7 +11152,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "가상의 시민 의견으로 간판을 정한다",
+          "outcome": "가상의 시민들에게 간판 후보를 보여 주고 의견을 모았다. 키몽이들도 채팅으로 한 표씩 보태며 투표를 즐겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -11178,7 +11189,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "준비된 기본 간판으로 영업한다",
+          "outcome": "미리 준비해 둔 기본 간판을 걸고 문을 열었다. 키몽이들은 '단순해서 오히려 눈에 띈다'고 반응했다.",
           "effects": [
             {
               "op": "local.add",
@@ -11206,7 +11217,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "역할극 도시에 작은 가게 자리를 얻었지만 아직 간판이 없다. 지나가는 시민들이 무슨 가게냐며 고개를 갸웃한다."
     },
     {
       "id": "LC-RP-05",
@@ -11243,7 +11255,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공동 근무 순서를 검증한다",
+          "outcome": "역할별 업무표를 짜고 첫 공동 근무에서 순서대로 맞춰 보았다. 동료는 '손발이 척척 맞는다'며 웃었다.",
           "effects": [
             {
               "op": "local.add",
@@ -11286,7 +11298,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "진행할 투어 경로를 준비한다",
+          "outcome": "근무 대신 도시 명소를 도는 가벼운 투어를 제안했다. 동료와 경로를 그리자 키몽이들이 명소 이름을 지어 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -11323,7 +11335,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "무리하지 않는 근무 약속을 만든다",
+          "outcome": "짧은 보조 근무만 함께 하기로 약속했다. 동료는 '무리 없이 오래 가자'며 다음 근무 날짜를 적어 두었다.",
           "effects": [
             {
               "op": "local.add",
@@ -11351,7 +11363,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "같은 거리에서 일하는 가상 동료가 함께 근무해 보자고 제안한다. 둘이 하면 더 재미있겠다며 일정표를 내민다."
     },
     {
       "id": "LC-RP-06",
@@ -11388,7 +11401,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "시민 행사의 운송 기획을 준비한다",
+          "outcome": "행사장을 오가는 셔틀 배차 계획을 세워 시청에 제출했다. 키몽이들은 노선도를 보며 '정류장 이름 귀엽다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -11445,7 +11458,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "새 시민을 위한 투어를 설계한다",
+          "outcome": "새로 온 시민들이 행사장을 둘러볼 투어 코스를 짰다. 안내소 동료가 들를 곳 몇 군데를 더 추천해 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -11496,7 +11509,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "소규모 행사 역할을 준비한다",
+          "outcome": "안내소 한쪽 작은 구역을 맡아 행사 안내문을 준비했다. 키몽이들은 안내문 문구를 같이 고르며 거들었다.",
           "effects": [
             {
               "op": "local.add",
@@ -11538,7 +11551,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시즌 마지막에 도시 축제 행사가 열린다는 소식이 돈다. 시청은 행사를 도울 시민들에게 맡을 일을 묻는다."
     },
     {
       "id": "LC-RP-07",
@@ -11575,7 +11589,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "운행 시험과 안내를 마친다",
+          "outcome": "예약표 순서대로 셔틀을 몰며 정류장 안내까지 마쳐 보았다. 동료들은 '내일도 이대로만'이라며 메모를 건넸다.",
           "effects": [
             {
               "op": "local.add",
@@ -11642,7 +11656,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "접수와 배차 오류를 수정한다",
+          "outcome": "접수부터 배차까지 동선을 따라가며 막히는 곳을 찾아 고쳤다. 키몽이들은 '두 번째가 훨씬 매끄럽다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -11703,7 +11717,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "도움을 받아 맡은 구역을 검수한다",
+          "outcome": "선배 동료와 짧은 구간만 함께 돌며 맡은 구역을 확인했다. 키몽이들은 '내일은 혼자서도 되겠다'며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -11755,7 +11769,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "행사 전날, 시민들이 실제처럼 근무해 보는 모의 근무가 열린다. 코코도 맡은 자리에 서서 시작 신호를 기다린다."
     },
     {
       "id": "LC-RP-08",
@@ -11807,7 +11822,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "직업 역할을 지키며 행사를 마친다",
+          "outcome": "준비한 자리에서 마지막 손님까지 맡은 일을 이어 갔다. 행사가 끝나자 동료들이 하나둘 다가와 수고했다고 말했다.",
           "effects": [
             {
               "op": "local.add",
@@ -11883,7 +11898,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "함께 만든 이야기를 방송에서 회고한다",
+          "outcome": "방송에서 역할극 뒷이야기를 풀며 첫날 견학부터 돌아봤다. 키몽이들은 기억에 남는 장면을 하나씩 꼽았다.",
           "effects": [
             {
               "op": "local.add",
@@ -11944,7 +11959,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "시민 역할의 마무리를 기록한다",
+          "outcome": "동료들에게 한 명씩 인사하고 시민증을 반납하며 역할을 정리했다. 키몽이들은 '코코 시민 수고했다'고 남겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -11990,7 +12005,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "도시 축제 당일, 거리마다 시민 역할 동료들이 바쁘게 오간다. 오늘이 지나면 이번 역할극 시즌도 막을 내린다."
     },
     {
       "id": "LC-SV-01",
@@ -12029,7 +12045,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "거점 주변의 이동 계획을 익힌다",
+          "outcome": "거점 주변을 돌며 다니기 편한 길과 돌아갈 길을 표시했다. 키몽이들은 '길 잃으면 여기로'라며 지도를 외웠다.",
           "effects": [
             {
               "op": "local.add",
@@ -12076,7 +12092,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "모을 자원과 장소를 표시한다",
+          "outcome": "나무와 돌, 열매가 있는 곳을 하나씩 지도에 적어 넣었다. 같은 팀 동료는 '이 지도면 한동안 든든하다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -12117,7 +12133,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "기본 도구와 거점 설명을 받는다",
+          "outcome": "숙련 동료를 따라다니며 기본 도구 쓰는 법과 거점 구조를 배웠다. 키몽이들은 '초보 탐험가 출발'을 외쳤다.",
           "effects": [
             {
               "op": "local.add",
@@ -12149,7 +12165,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "가상 동료들이 협동 생존 정착기에 함께하자고 손을 내민다. 낯선 섬 해안에 첫 공동 거점 자리가 표시되어 있다."
     },
     {
       "id": "LC-SV-02",
@@ -12188,7 +12205,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "탐사 역할과 복귀 규칙을 정한다",
+          "outcome": "탐사 담당을 맡고 해 지기 전에 돌아오기로 동료들과 약속했다. 키몽이들은 '복귀 시간 알람'을 자처했다.",
           "effects": [
             {
               "op": "local.add",
@@ -12240,7 +12257,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "작은 거점 설계를 맡는다",
+          "outcome": "건축 담당이 되어 작은 거점의 첫 설계도를 그렸다. 동료들은 '창문은 바다 쪽으로'라며 의견을 보탰다.",
           "effects": [
             {
               "op": "local.add",
@@ -12286,7 +12303,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "안전한 보조 역할로 정착한다",
+          "outcome": "물자 상자를 정리하는 보조 역할부터 맡았다. 동료들은 '창고가 깔끔해야 다 편하다'며 반겨 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -12323,7 +12340,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "거점에 모닥불이 피워지자 동료들이 역할 나누기에 들어간다. 탐사, 건축, 물자 정리 중 코코의 자리를 정할 차례다."
     },
     {
       "id": "LC-SV-03",
@@ -12362,7 +12380,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "물자를 효율적으로 옮긴다",
+          "outcome": "지름길을 찾아 운반 경로를 줄이고 몇 번에 나눠 옮겼다. 동료들은 '왕복이 확 줄었다'며 짐을 같이 들었다.",
           "effects": [
             {
               "op": "local.add",
@@ -12405,7 +12423,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "필요 물자와 재고 차이를 정리한다",
+          "outcome": "보급 목록과 실제 상자를 맞춰 보며 모자란 물자를 적었다. 키몽이들은 '나무가 부족하다'고 먼저 짚어 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -12442,7 +12460,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "기본 재고를 안전하게 보충한다",
+          "outcome": "거점 근처에서 구할 수 있는 재료만 차곡차곡 모았다. 동료들은 '기본은 든든하다'며 창고를 채워 나갔다.",
           "effects": [
             {
               "op": "local.add",
@@ -12470,7 +12488,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "멀리서 모아 둔 공용 물자를 거점까지 옮겨야 한다. 짐은 많고 길은 구불구불해 동료들이 한숨을 쉰다."
     },
     {
       "id": "LC-SV-04",
@@ -12509,7 +12528,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "서로의 작업 충돌을 줄인다",
+          "outcome": "누가 언제 작업대를 쓸지 공동 시간표를 만들어 붙였다. 동료들은 '이제 안 기다려도 된다'며 고개를 끄덕였다.",
           "effects": [
             {
               "op": "local.add",
@@ -12552,7 +12571,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공용 장비 사용 규칙을 정한다",
+          "outcome": "도끼와 곡괭이를 공용 장비로 정하고 쓰면 제자리에 두기로 했다. 키몽이들은 '반납 확인'을 맡겠다고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -12589,7 +12608,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "작업 충돌을 피하며 참여한다",
+          "outcome": "아무도 손대지 않은 구역으로 가서 그곳 작업을 거들었다. 동료들은 '거기까지 챙겨 줘서 고맙다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -12617,7 +12636,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "동료들이 같은 작업대를 동시에 쓰려다 서로 순서를 기다린다. 거점 안은 할 일은 많은데 손이 자꾸 멈춘다."
     },
     {
       "id": "LC-SV-05",
@@ -12656,7 +12676,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "동행 역할과 복귀 계획을 검증한다",
+          "outcome": "앞장설 사람과 뒤를 볼 사람을 정하고 돌아올 길도 함께 확인했다. 동료들은 '계획이 있으니 든든하다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -12699,7 +12719,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "현재 게임의 이동 경험을 남긴다",
+          "outcome": "숲길 입구를 짧게 오가며 지형과 이동 감각을 직접 익혔다. 키몽이들은 '저 언덕 경치 좋다'며 화면을 감상했다.",
           "effects": [
             {
               "op": "local.add",
@@ -12736,7 +12756,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "탐사 지원과 귀환 확인을 맡는다",
+          "outcome": "거점에 남아 무전으로 길을 알려 주고 돌아오는 동료를 맞았다. 키몽이들은 '관제탑 코코'라는 별명을 붙였다.",
           "effects": [
             {
               "op": "local.add",
@@ -12764,7 +12784,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "섬 안쪽에서 아직 가 보지 못한 숲길이 발견된다. 동료들은 들뜬 얼굴로 누가 먼저 들어가 볼지 의논한다."
     },
     {
       "id": "LC-SV-06",
@@ -12803,7 +12824,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "시즌 말에 완성할 건축 범위를 정한다",
+          "outcome": "시즌 마지막 날까지 완성할 거점의 범위를 함께 그려 정했다. 동료들은 각자 맡을 벽과 지붕에 이름을 적었다.",
           "effects": [
             {
               "op": "local.add",
@@ -12860,7 +12881,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "팀의 시험 탐사 목표를 정한다",
+          "outcome": "다 같이 섬 반대편까지 다녀오는 시험 탐사를 목표로 제안했다. 키몽이들은 '원정대 출발'을 외치며 들떴다.",
           "effects": [
             {
               "op": "local.add",
@@ -12911,7 +12932,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "초보도 완성할 범위를 준비한다",
+          "outcome": "초보도 함께 완성할 수 있는 작은 공동 창고를 목표로 삼았다. 동료들은 '확실한 게 좋다'며 동의했다.",
           "effects": [
             {
               "op": "local.add",
@@ -12953,7 +12974,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시즌 끝이 다가오자 동료들이 마지막 공동 목표를 정하자고 모인다. 모닥불 앞에 커다란 종이가 펼쳐진다."
     },
     {
       "id": "LC-SV-07",
@@ -12992,7 +13014,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "협동 이동 루트를 검증한다",
+          "outcome": "합의한 이동 루트를 처음부터 끝까지 함께 걸어 보았다. 헷갈리는 길목 두 곳을 찾아 동료들과 표시해 두었다.",
           "effects": [
             {
               "op": "local.add",
@@ -13059,7 +13081,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공동 거점 사용 동선을 검증한다",
+          "outcome": "거점 입구부터 창고까지 다니며 동선이 엉키는 곳을 살폈다. 동료들은 문 위치를 조금 옮기자고 제안했다.",
           "effects": [
             {
               "op": "local.add",
@@ -13120,7 +13142,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "도움을 받아 공동 목표를 시험한다",
+          "outcome": "익숙한 구간만 선배 동료와 함께 걸으며 목표를 연습했다. 키몽이들은 '실전도 이렇게만'이라며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -13172,7 +13194,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "공동 목표를 앞두고 동료들이 미리 한 번 맞춰 보기로 한다. 코코도 장비를 챙겨 들고 거점 앞에 선다."
     },
     {
       "id": "LC-SV-08",
@@ -13226,7 +13249,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공동 건축 결과를 소개한다",
+          "outcome": "함께 지은 거점을 방마다 돌며 키몽이들에게 소개했다. 동료들은 자기가 맡은 벽 앞에서 저마다 자랑을 늘어놓았다.",
           "effects": [
             {
               "op": "local.add",
@@ -13302,7 +13325,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "검증된 범위의 협동 탐사를 완주한다",
+          "outcome": "리허설로 다듬은 루트를 따라 동료들과 탐사를 끝까지 걸었다. 돌아온 거점에서 키몽이들이 '어서 와'를 외쳤다.",
           "effects": [
             {
               "op": "local.add",
@@ -13363,7 +13386,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "맡은 지원 기여로 시즌을 마친다",
+          "outcome": "물자 정리와 무전 지원으로 보탠 기록을 시즌 일지에 남겼다. 동료들은 '숨은 일꾼'이라며 박수를 쳤다.",
           "effects": [
             {
               "op": "local.add",
@@ -13409,7 +13432,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시즌 마지막 날, 동료들이 모두 거점 앞에 모인다. 첫날 해안에 찍혀 있던 표시가 이제 작은 마을이 되어 있다."
     },
     {
       "id": "LC-RD-01",
@@ -13446,7 +13470,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "현재 게임의 역할 구성을 익힌다",
+          "outcome": "방어, 회복, 공격 역할이 어떻게 맞물리는지 설명을 들었다. 키몽이들은 '코코는 어디가 어울릴까' 투표를 열었다.",
           "effects": [
             {
               "op": "local.add",
@@ -13493,7 +13517,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "참여 일정과 연습 순서를 확인한다",
+          "outcome": "공대 진행표를 읽으며 연습 날짜와 순서를 달력에 옮겨 적었다. 공대장 동료는 '꼼꼼하다'며 칭찬했다.",
           "effects": [
             {
               "op": "local.add",
@@ -13534,7 +13558,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "필수 안내를 받으며 참여한다",
+          "outcome": "초보 교육반에 들어가 기본 조작과 필수 안내부터 들었다. 같은 반 동료들과 '다 같이 처음'이라며 인사했다.",
           "effects": [
             {
               "op": "local.add",
@@ -13566,7 +13590,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "가상 동료들이 초보만 모인 공격대를 꾸린다며 코코를 부른다. 모집 공지에는 '처음이어도 괜찮다'고 적혀 있다."
     },
     {
       "id": "LC-RD-02",
@@ -13603,7 +13628,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "기믹 역할을 선택한다",
+          "outcome": "보스 기믹을 맡겠다고 손을 들고 패턴 영상을 돌려 보았다. 키몽이들은 '기믹 장인 코코'를 미리 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -13655,7 +13680,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "시도와 복기 메모를 맡는다",
+          "outcome": "시도마다 무슨 일이 있었는지 적는 기록 보조를 맡았다. 동료들은 '복기 노트가 생겨서 다행'이라며 반겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -13701,7 +13726,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "쉬운 역할을 정하고 연습한다",
+          "outcome": "부담이 적은 기본 역할을 고르고 연습장에서 손을 풀었다. 키몽이들은 '기본기부터 탄탄하게'라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -13738,7 +13763,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "첫 모임 날, 공대장 동료가 역할과 공략 담당을 정하자고 한다. 동료들이 하나둘 손을 들고 코코 차례가 온다."
     },
     {
       "id": "LC-RD-03",
@@ -13775,7 +13801,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "실패 원인을 정리해 다음 시도에 쓴다",
+          "outcome": "패턴마다 무엇을 놓쳤는지 메모로 정리해 공대에 공유했다. 동료들은 메모를 보며 다음 시도 순서를 다시 짰다.",
           "effects": [
             {
               "op": "local.add",
@@ -13818,7 +13844,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "자신의 역할을 분리 연습한다",
+          "outcome": "연습 모드에서 자기 역할만 따로 반복해 보았다. 키몽이들은 '방금 움직임 좋았다'며 타이밍을 짚어 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -13855,7 +13881,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "처음 패턴을 복습한다",
+          "outcome": "교육 구간으로 돌아가 첫 패턴을 처음부터 다시 익혔다. 같은 반 동료도 따라와 함께 복습했다.",
           "effects": [
             {
               "op": "local.add",
@@ -13883,7 +13909,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "공대가 보스의 첫 패턴 앞에서 몇 번째 쓰러진다. 동료들은 무엇이 문제인지 몰라 잠시 말이 없어진다."
     },
     {
       "id": "LC-RD-04",
@@ -13920,7 +13947,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공대 연습 약속을 조정한다",
+          "outcome": "모두가 들어올 수 있는 시간대를 찾아 연습 구간을 다시 잡았다. 공대장 동료는 '이 시간이면 된다'며 확정했다.",
           "effects": [
             {
               "op": "local.add",
@@ -13963,7 +13990,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "서로 도울 복습 기회를 만든다",
+          "outcome": "시간이 맞는 동료 몇 명과 작은 복습회를 열었다. 헷갈리는 부분을 묻고 답하다 보니 한 시간이 금방 지나갔다.",
           "effects": [
             {
               "op": "local.add",
@@ -14000,7 +14027,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "부재 구간의 자료를 보관한다",
+          "outcome": "자기 역할의 동선과 주의점을 메모로 남겨 공대 게시판에 올렸다. 동료들은 '빠진 날도 따라가겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -14028,7 +14055,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "공대원들의 방송 시간이 서로 엇갈려 연습 날짜를 잡기 어렵다. 공대 일정표에는 빈칸과 물음표가 늘어 간다."
     },
     {
       "id": "LC-RD-05",
@@ -14065,7 +14093,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "성공한 기믹의 설명 경험을 남긴다",
+          "outcome": "방금 넘긴 기믹을 처음부터 짚어 가며 키몽이들에게 풀어 설명했다. 키몽이들은 '이제 알 것 같다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -14108,7 +14136,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공략 개선 메모를 얻는다",
+          "outcome": "녹화 화면을 보며 동료들과 서로의 동선을 비교했다. 줄일 수 있는 이동 몇 군데를 찾아 공략에 적었다.",
           "effects": [
             {
               "op": "local.add",
@@ -14145,7 +14173,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "실제 통과한 구간만 기록한다",
+          "outcome": "오늘 실제로 지나온 구간만 골라 공대 일지에 기록했다. 동료들은 '한 칸씩 확실하게'라며 맞장구쳤다.",
           "effects": [
             {
               "op": "local.add",
@@ -14173,7 +14201,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "몇 주째 붙잡던 중간 기믹을 공대가 마침내 넘긴다. 음성 채팅에 환호가 터지고 키몽이들의 채팅도 들썩인다."
     },
     {
       "id": "LC-RD-06",
@@ -14210,7 +14239,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "최종 시도의 연습 계획을 만든다",
+          "outcome": "최종 도전에서 맡을 역할을 정하고 연습 순서를 짰다. 동료들은 각자 확인할 패턴을 나눠 적어 갔다.",
           "effects": [
             {
               "op": "local.add",
@@ -14267,7 +14296,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "시청자와 볼 공략 구성을 만든다",
+          "outcome": "키몽이들과 함께 보는 공략 설명 방송을 구성했다. 키몽이들은 '어려운 부분은 천천히'라며 요청을 남겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -14318,7 +14347,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "목표를 교육 구간 완주로 정한다",
+          "outcome": "목표를 교육 구간 완주로 낮추고 연습 범위를 줄였다. 같은 반 동료들은 '이것도 충분히 큰 목표'라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -14360,7 +14389,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시즌 마지막 도전 날짜가 잡히자 공대가 최종 연습 계획을 세운다. 공대장 동료가 남은 연습 횟수를 칠판에 적는다."
     },
     {
       "id": "LC-RD-07",
@@ -14397,7 +14427,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "연습한 최종 기믹을 검증한다",
+          "outcome": "맡은 기믹을 실전 순서대로 몇 번 반복해 보았다. 동료들은 타이밍을 맞춰 주며 '내일도 이 박자'라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -14464,7 +14494,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "기록과 화면 설명을 시험한다",
+          "outcome": "기록 화면을 띄워 놓고 설명 순서를 처음부터 맞춰 보았다. 키몽이들은 '그림으로 보니 이해된다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -14525,7 +14555,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "선택한 교육 목표를 시험한다",
+          "outcome": "낮은 단계부터 하나씩 확인하며 교육 목표를 다시 점검했다. 같은 반 동료가 옆에서 함께 연습해 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -14577,7 +14607,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "최종 도전 전날, 공대가 실전처럼 시범 연습을 한다. 코코도 손을 풀며 자기 차례가 오기를 기다린다."
     },
     {
       "id": "LC-RD-08",
@@ -14634,7 +14665,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "실제 결과에 따라 클리어 또는 재도전 기록을 남긴다",
+          "outcome": "결과 화면을 다 같이 확인하고 그날의 기록을 공대 일지에 옮겼다. 동료들은 서로 수고했다며 다음 약속을 꺼냈다.",
           "effects": [
             {
               "op": "local.add",
@@ -14710,7 +14741,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "실제로 익힌 공략을 설명한다",
+          "outcome": "연습으로 익힌 구간을 하나씩 짚으며 공략을 설명했다. 키몽이들은 첫 패턴에서 막히던 날을 떠올리며 웃었다.",
           "effects": [
             {
               "op": "local.add",
@@ -14771,7 +14802,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "보조와 교육 이력으로 기획을 마무리한다",
+          "outcome": "기록 보조와 교육반에서 배운 구간을 정리하며 시즌을 마쳤다. 동료들은 '다음 공대도 같이 하자'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -14817,7 +14848,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시즌 마지막 공대 날, 최종 도전이 끝나고 결과 화면이 뜬다. 동료들과 키몽이들이 함께 숨을 고르며 화면을 본다."
     },
     {
       "id": "LC-PT-01",
@@ -14855,7 +14887,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공식 신청과 심사 조건을 확인한다",
+          "outcome": "본선 참가 조건과 신청 절차, 심사 기준을 하나씩 읽어 보았다. 키몽이들은 조건 정리표를 같이 만들어 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -14902,7 +14934,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "연습 방송 역할을 신청한다",
+          "outcome": "공식 연습 중계에 참여하겠다고 신청서를 냈다. 운영진은 연습 방송 일정표를 보내며 회신을 기다려 달라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -14943,7 +14975,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "본선 확정 없이 연습 콘텐츠를 시작한다",
+          "outcome": "본선과 별개로 공개 연습 방송부터 열었다. 키몽이들은 '부담 없이 같이 배우자'며 연습 방송을 반겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -14975,7 +15007,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "방송 플랫폼이 여는 공식 게임컵 참가 공고가 올라온다. 가상 동료들이 함께 나가 보자며 공고를 공유한다."
     },
     {
       "id": "LC-PT-02",
@@ -15018,7 +15051,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "참가 자격 확인 후 선수 역할을 정한다",
+          "outcome": "참가 자격을 확인한 뒤 팀 안에서 맡을 선수 포지션을 정했다. 동료들은 '자리가 정해지니 실감 난다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15075,7 +15108,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "개인 시점의 공개 범위를 확인한다",
+          "outcome": "개인 시점 방송을 맡고 어디까지 화면을 보여도 되는지 확인했다. 키몽이들은 '코코 시점 기대된다'고 남겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -15121,7 +15154,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "초보 연습전 역할로 진행한다",
+          "outcome": "초보끼리 하는 교육 매치에서 맡을 역할을 골랐다. 함께 배우는 동료들과 첫 연습 날짜를 맞췄다.",
           "effects": [
             {
               "op": "local.add",
@@ -15158,7 +15191,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "게임컵 운영진이 대진 방식과 팀 역할 안내문을 보내온다. 같은 팀 동료들이 화상 회의에 모여 안내문을 펼친다."
     },
     {
       "id": "LC-PT-03",
@@ -15196,7 +15230,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "이용 가능한 기능과 규칙을 정리한다",
+          "outcome": "규정집을 한 장짜리 요약표로 정리해 팀 대화방에 올렸다. 동료들은 '이것만 보면 되겠다'며 고마워했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15239,7 +15273,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "불명확한 규칙을 확인한다",
+          "outcome": "애매한 조항을 모아 운영진에게 보낼 질문지로 정리했다. 돌아온 답변을 동료들과 읽으며 표시해 두었다.",
           "effects": [
             {
               "op": "local.add",
@@ -15276,7 +15310,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "규정 이해를 보완한다",
+          "outcome": "기본 교육 영상을 처음부터 다시 보며 규정을 복습했다. 키몽이들은 퀴즈를 내며 이해를 도와주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -15304,7 +15338,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "게임컵 규정집이 생각보다 두껍고 낯선 용어가 가득하다. 동료들도 몇 줄 읽다가 서로 얼굴을 쳐다본다."
     },
     {
       "id": "LC-PT-04",
@@ -15342,7 +15377,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "선수 연습 기록을 남긴다",
+          "outcome": "맡은 포지션 움직임만 집중해 연습하고 기록을 남겼다. 동료들은 '어제보다 자리 잡기가 빨라졌다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15385,7 +15420,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "중복 지시를 줄이는 규칙을 시험한다",
+          "outcome": "누가 언제 말할지 소통 순서를 정하고 연습에서 시험했다. 지시가 겹치는 일이 줄자 동료들이 고개를 끄덕였다.",
           "effects": [
             {
               "op": "local.add",
@@ -15422,7 +15457,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "현재 수준에 맞는 연습을 마친다",
+          "outcome": "실력에 맞는 쉬운 교육 매치에 들어가 손을 풀었다. 키몽이들은 '한 판 한 판이 다 공부'라며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15450,7 +15485,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "운영진이 마련한 공식 연습 경기 날이 돌아온다. 같은 팀 동료들이 헤드셋을 쓰고 대기실에 모인다."
     },
     {
       "id": "LC-PT-05",
@@ -15488,7 +15524,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "허용된 중계 화면 구성을 시험한다",
+          "outcome": "허용된 범위 안에서 시점 전환을 미리 연습해 보았다. 키몽이들은 '전환이 부드럽다'며 화면을 확인해 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -15531,7 +15567,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "관전자를 위한 기본 설명을 만든다",
+          "outcome": "처음 보는 관전자를 위해 경기 기본 설명을 준비했다. 키몽이들은 '이 설명이면 처음 봐도 알겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15568,7 +15604,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "확인된 기본 구성을 유지한다",
+          "outcome": "운영진이 확인해 준 기본 화면 구성을 그대로 쓰기로 했다. 동료들은 '깔끔하고 안전하다'며 동의했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15596,7 +15632,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "공식 중계와 개인 시점 방송을 함께 하려니 화면 구성이 고민이다. 운영진 안내에는 허용 범위가 꼼꼼히 적혀 있다."
     },
     {
       "id": "LC-PT-06",
@@ -15644,7 +15681,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "본선 자격이 있는 경우 경기 계획을 준비한다",
+          "outcome": "본선 자격이 있을 때 쓸 수 있도록 경기 계획을 꼼꼼히 준비했다. 동료들은 맡을 역할과 작전을 다시 확인했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15701,7 +15738,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "본선 자격이 없으면 교육·소개 편성을 준비한다",
+          "outcome": "자격과 상관없이 할 수 있는 연습전 소개 방송을 기획했다. 키몽이들은 '본선 아니어도 볼거리 많다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15752,7 +15789,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "확인된 참여 범위에서 기획을 준비한다",
+          "outcome": "자기 경기 영상만 돌려 보며 확인된 참여 범위의 방송을 준비했다. 동료들은 '자기 몫부터 챙기자'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15794,7 +15831,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "게임컵 본선 일정이 확정되며 팀마다 방송 준비가 바빠진다. 동료들은 각자의 참가 경로에 맞춰 계획을 세운다."
     },
     {
       "id": "LC-PT-07",
@@ -15832,7 +15870,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "출전 역할과 시점 송출을 검증한다",
+          "outcome": "출전 역할과 개인 시점 송출을 순서대로 점검했다. 운영진이 송출 상태를 확인해 주자 동료들이 한숨 돌렸다.",
           "effects": [
             {
               "op": "local.add",
@@ -15899,7 +15937,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "현재 팀 전술을 시험한다",
+          "outcome": "현재 팀 전술을 시범으로 한 번 돌려 보았다. 동료들은 고칠 점 하나를 찾아 작전판에 표시했다.",
           "effects": [
             {
               "op": "local.add",
@@ -15960,7 +15998,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "지원 역할의 시범을 마친다",
+          "outcome": "지원 역할로 맡은 교육 범위만 시범으로 점검했다. 동료들은 '자기 자리를 확실히 챙겼다'며 고마워했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16012,7 +16050,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "본선 전날, 운영진이 마지막 사전 점검 시간을 연다. 같은 팀 동료들이 송출 화면과 작전판을 함께 띄운다."
     },
     {
       "id": "LC-PT-08",
@@ -16075,7 +16114,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "우승 여부를 실제 경기 결과로만 표시한다",
+          "outcome": "운영진이 확정한 경기 결과를 그대로 화면에 띄워 소개했다. 키몽이들은 결과와 함께 경기 장면을 떠올렸다.",
           "effects": [
             {
               "op": "local.add",
@@ -16151,7 +16190,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "공식 참가·연습 참가를 구분해 회고한다",
+          "outcome": "공식 경기와 연습 경기를 나눠 팀과 함께 과정을 복기했다. 동료들은 가장 기억에 남는 순간을 하나씩 꼽았다.",
           "effects": [
             {
               "op": "local.add",
@@ -16212,7 +16251,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "참가 경로에 맞는 뒤풀이를 마친다",
+          "outcome": "함께한 동료와 운영진에게 맡았던 역할별로 감사 인사를 전했다. 키몽이들도 채팅으로 박수를 보탰다.",
           "effects": [
             {
               "op": "local.add",
@@ -16258,7 +16297,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "공식 게임컵 일정이 모두 끝나고 결과가 발표된다. 같은 팀 동료들이 뒤풀이 방송에 모여 지난 경기를 돌아본다."
     },
     {
       "id": "LC-ST-01",
@@ -16296,7 +16336,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "가상의 주최자가 제안한 선수 경로를 확인한다",
+          "outcome": "주최자 동료가 제안한 선수 참가 조건을 하나씩 확인했다. 키몽이들은 '조건 꼼꼼히 보는 거 좋다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16343,7 +16383,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "규칙 안내와 진행 역할을 제안한다",
+          "outcome": "규칙 안내와 진행을 돕겠다고 주최자에게 답장을 보냈다. 주최자 동료는 '든든한 진행 보조가 생겼다'고 반겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -16384,7 +16424,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "비초청 초보도 가능한 연습을 시작한다",
+          "outcome": "초청 여부와 상관없이 열린 공개 연습전에 들어갔다. 처음 보는 참가자들과 인사하며 손을 풀었다.",
           "effects": [
             {
               "op": "local.add",
@@ -16416,7 +16456,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "친분 있는 가상 동료 방송인이 친선전을 연다며 초대장을 보낸다. 초대장에는 선수, 진행 보조, 공개 연습 자리가 적혀 있다."
     },
     {
       "id": "LC-ST-02",
@@ -16459,7 +16500,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "팀의 역할을 균형 있게 정한다",
+          "outcome": "공격과 수비가 한쪽으로 쏠리지 않게 역할을 고르게 나눴다. 동료들은 '균형이 딱 맞는다'며 만족했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16516,7 +16557,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "교육 동행 역할을 정한다",
+          "outcome": "초보 동료와 숙련 동료를 짝지어 서로 배울 수 있게 했다. 짝이 된 동료들은 곧바로 연습 약속을 잡았다.",
           "effects": [
             {
               "op": "local.add",
@@ -16562,7 +16603,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "확인된 범위의 팀 역할로 시작한다",
+          "outcome": "팀이 정해 준 쉬운 역할을 맡아 연습을 시작했다. 키몽이들은 '자기 자리 지키는 게 최고'라며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16599,7 +16640,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "친선전 팀이 정해지고 주최자가 자체 규칙을 발표한다. 같은 팀 동료들이 모여 역할을 어떻게 나눌지 의논한다."
     },
     {
       "id": "LC-ST-03",
@@ -16637,7 +16679,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "주최자가 확인할 규칙 메모를 만든다",
+          "outcome": "애매한 장면을 정리해 주최자에게 확인을 부탁하는 메모를 보냈다. 주최자는 다음 공지에 답을 싣겠다고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16680,7 +16722,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "규칙 적용 사례를 시험한다",
+          "outcome": "시범 매치로 같은 장면을 재현해 규칙이 어떻게 적용되는지 확인했다. 동료들은 '이제 알겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16717,7 +16759,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "임의 변경 없이 규칙을 적용한다",
+          "outcome": "주최자가 정한 기본 해석을 그대로 따르기로 했다. 동료들도 '정해진 대로 하자'며 경기를 이어 갔다.",
           "effects": [
             {
               "op": "local.add",
@@ -16745,7 +16787,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "연습 중에 자체 규칙으로 판단하기 애매한 장면이 생긴다. 동료들이 서로 다르게 해석하며 잠시 경기가 멈춘다."
     },
     {
       "id": "LC-ST-04",
@@ -16783,7 +16826,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "팀이 지킬 수 있는 연습 순서를 만든다",
+          "outcome": "모두 들어올 수 있는 짧은 연습 구간을 찾아 순서를 합의했다. 동료들은 '짧아도 알차게'라며 일정을 고정했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16826,7 +16869,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "현재 게임의 연습 자료를 남긴다",
+          "outcome": "개인 연습 때 쓴 메모와 영상을 팀 공유 폴더에 올렸다. 동료들은 '혼자 볼 때도 도움이 된다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16863,7 +16906,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "지킬 수 있는 시간만 약속한다",
+          "outcome": "확실히 지킬 수 있는 연습에만 참여하겠다고 알렸다. 동료들은 '솔직하게 말해 줘서 고맙다'고 답했다.",
           "effects": [
             {
               "op": "local.add",
@@ -16891,7 +16934,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "팀 연습 경기 일정이 동료들의 다른 방송과 겹친다. 단체 대화방에는 '그날은 어렵다'는 말이 줄줄이 이어진다."
     },
     {
       "id": "LC-ST-05",
@@ -16929,7 +16973,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "허용된 추가 미션을 수행한다",
+          "outcome": "팀 작전 회의를 열어 허용된 범위 안에서 미션을 함께 풀었다. 주최자는 '이 방법은 생각 못 했다'며 웃었다.",
           "effects": [
             {
               "op": "local.add",
@@ -16972,7 +17016,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "동의한 팀과 가벼운 시범을 만든다",
+          "outcome": "동의한 팀들과 짧고 재미있는 시범 장면을 꾸며 보였다. 키몽이들은 '친선전다운 장면'이라며 좋아했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17009,7 +17053,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "확인된 규칙대로 참여한다",
+          "outcome": "미션의 기본 규칙대로만 차분히 참여했다. 동료들은 '흔들리지 않는 코코'라며 박수를 보냈다.",
           "effects": [
             {
               "op": "local.add",
@@ -17037,7 +17081,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "연습 경기 도중 주최자가 깜짝 미션을 발표한다. 시청자 채팅창과 팀 음성 채팅이 동시에 술렁인다."
     },
     {
       "id": "LC-ST-06",
@@ -17085,7 +17130,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "초청 또는 참가 자격 확인 후 경기 계획을 만든다",
+          "outcome": "선수 참가가 확정되면 쓸 수 있게 경기 작전을 준비했다. 동료들은 작전판에 각자의 움직임을 그려 넣었다.",
           "effects": [
             {
               "op": "local.add",
@@ -17142,7 +17187,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "자격이 없는 경우에도 보조 편성을 준비한다",
+          "outcome": "선수 자격과 관계없이 진행 보조로 설 순서표를 만들었다. 주최자 동료는 '진행이 훨씬 수월하겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17193,7 +17238,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "교육 목적의 마무리를 준비한다",
+          "outcome": "초보끼리 교류하는 경기로 마무리 범위를 정했다. 함께 배운 동료들은 '마지막까지 즐겁게'를 약속했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17235,7 +17280,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "친선전 본 경기가 다가오며 주최자가 마지막 편성을 공지한다. 동료들은 각자 맡을 자리에서 준비를 시작한다."
     },
     {
       "id": "LC-ST-07",
@@ -17273,7 +17319,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "소통과 전술을 실제 시험한다",
+          "outcome": "준비한 작전을 시범에서 맞춰 보며 소통 순서를 확인했다. 동료들은 고칠 점 한 가지를 바로 짚었다.",
           "effects": [
             {
               "op": "local.add",
@@ -17340,7 +17386,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "진행 보조의 순서와 규칙을 검수한다",
+          "outcome": "진행 보조로서 경기 순서와 규칙 안내를 처음부터 점검했다. 주최자 동료는 '이 순서로 가자'며 확정했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17401,7 +17447,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "팀의 쉬운 역할을 검증한다",
+          "outcome": "팀이 맡겨 준 쉬운 역할만 집중해서 연습했다. 키몽이들은 '자기 몫은 걱정 없다'며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17453,7 +17499,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "본 경기 직전, 팀마다 짧은 시범 시간이 주어진다. 같은 팀 동료들이 마지막으로 소통과 작전을 맞춰 본다."
     },
     {
       "id": "LC-ST-08",
@@ -17516,7 +17563,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "실제 경기 기록으로만 승패를 표시한다",
+          "outcome": "공식 기록으로 남은 팀 경기 결과를 함께 돌아보았다. 동료들은 기억에 남는 장면을 하나씩 이야기했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17592,7 +17639,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "친선 상대와 다음 협동 약속을 만든다",
+          "outcome": "다음 교류 때 맡고 싶은 역할을 친선 상대에게 제안했다. 상대 팀 동료는 '다음엔 같은 편도 좋다'고 답했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17653,7 +17700,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "진행·교육 참여도 별도 기록으로 보존한다",
+          "outcome": "진행과 교육으로 참여한 소감을 정리해 남기고 방송을 마쳤다. 키몽이들은 '다음 친선전도 같이 보자'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17699,7 +17746,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "친선전이 모두 끝나고 참가자들이 대기실에 다시 모인다. 주최자 동료가 마지막 인사를 건네며 방송을 마무리한다."
     },
     {
       "id": "LC-CO-01",
@@ -17736,7 +17784,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "조리와 전달 동선을 정리한다",
+          "outcome": "조리대에서 계산대까지 음식이 오가는 길을 종이에 그렸다. 동료들은 '이대로면 부딪힐 일 없겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17783,7 +17831,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "손님 응대 순서를 익힌다",
+          "outcome": "손님맞이부터 계산까지 서빙 순서를 동료와 한 번씩 연습했다. 키몽이들은 채팅으로 '어서 오세요'를 외쳤다.",
           "effects": [
             {
               "op": "local.add",
@@ -17824,7 +17872,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "작은 식당의 규칙을 익힌다",
+          "outcome": "가장 간단한 기본 메뉴 몇 가지로 영업 규칙부터 익혔다. 키몽이들은 '첫 메뉴는 소박해야 제맛'이라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -17856,7 +17904,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "가상 동료들과 협동 요리 게임 속 식당을 열기로 한다. 가게 이름은 키몽이들이 지어 준 '키몽이 식당'이다."
     },
     {
       "id": "LC-CO-02",
@@ -17893,7 +17942,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "현재 게임의 조리 역할을 정한다",
+          "outcome": "주방에 서서 재료 손질과 조리를 맡기로 했다. 키몽이들은 '셰프 코코'를 연호하며 첫 요리를 기다렸다.",
           "effects": [
             {
               "op": "local.add",
@@ -17945,7 +17994,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "주방과 홀의 전달을 맡는다",
+          "outcome": "주방과 홀 사이에서 음식을 주고받는 조율 역할을 맡았다. 동료들은 '가운데가 든든하다'며 반겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -17991,7 +18040,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "쉬운 역할로 팀에 합류한다",
+          "outcome": "보조 테이블에서 접시 정리와 재료 채우기를 맡아 합류했다. 동료들은 '보조가 있어야 주방이 돈다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -18028,7 +18077,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "첫 영업을 앞두고 동료들이 주방과 홀 역할을 나누기로 한다. 앞치마를 두른 코코가 역할표 앞에 선다."
     },
     {
       "id": "LC-CO-03",
@@ -18065,7 +18115,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "대기 주문의 작업 흐름을 개선한다",
+          "outcome": "같은 재료가 들어가는 주문끼리 묶어 한 번에 조리했다. 동료들은 '손이 덜 간다'며 속도를 맞춰 따라왔다.",
           "effects": [
             {
               "op": "local.add",
@@ -18108,7 +18158,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "완성 음식 전달을 나눈다",
+          "outcome": "완성된 음식을 누가 어느 테이블로 나를지 나눴다. 키몽이들은 '3번 테이블 아직!'을 외치며 함께 챙겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -18145,7 +18195,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "현재 주문부터 마무리한다",
+          "outcome": "새 주문은 잠시 받지 않고 밀린 주문부터 하나씩 내보냈다. 동료들은 숨을 고르며 차분히 접시를 채웠다.",
           "effects": [
             {
               "op": "local.add",
@@ -18173,7 +18223,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "영업 시작과 동시에 주문표가 우르르 쏟아진다. 주방에는 냄비 끓는 소리와 동료들의 외침이 뒤섞인다."
     },
     {
       "id": "LC-CO-04",
@@ -18210,7 +18261,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "조리와 서빙 경로를 짧게 만든다",
+          "outcome": "조리대와 테이블 위치를 옮겨 오가는 길을 짧게 만들었다. 동료들은 '걸음이 반으로 줄었다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -18253,7 +18304,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "팀원 사이의 경로 충돌을 줄인다",
+          "outcome": "역할마다 서 있을 대기 칸을 바닥에 표시했다. 서로 비켜 줄 일이 줄자 키몽이들이 '질서 정연'이라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -18290,7 +18341,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "사용 중인 구역을 안전하게 정돈한다",
+          "outcome": "지금 쓰는 구역부터 차근차근 정리해 통로를 넓혔다. 동료들은 '하나씩 하니 오히려 빠르다'며 거들었다.",
           "effects": [
             {
               "op": "local.add",
@@ -18318,7 +18369,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "식당 안 테이블 배치 탓에 동료들끼리 자꾸 어깨를 부딪친다. 접시를 든 채 길을 비켜 주느라 주문이 밀린다."
     },
     {
       "id": "LC-CO-05",
@@ -18355,7 +18407,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "가능한 메뉴의 조리 과정을 검증한다",
+          "outcome": "영업 전에 새 메뉴를 시험 조리해 보며 과정을 확인했다. 동료들은 맛보는 시늉을 하며 의견을 나눴다.",
           "effects": [
             {
               "op": "local.add",
@@ -18398,7 +18450,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "팀이 감당할 수 있는 메뉴를 고른다",
+          "outcome": "팀이 감당할 수 있도록 메뉴 수를 조정해 골랐다. 키몽이들은 '많은 것보다 맛있는 것'이라며 동의했다.",
           "effects": [
             {
               "op": "local.add",
@@ -18435,7 +18487,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "확인된 기본 메뉴로 운영한다",
+          "outcome": "이번에는 익숙한 기본 메뉴를 그대로 유지하기로 했다. 동료들은 '손에 익은 게 최고'라며 고개를 끄덕였다.",
           "effects": [
             {
               "op": "local.add",
@@ -18463,7 +18515,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "같은 팀 동료가 새 메뉴를 넣어 보자고 제안한다. 키몽이들도 채팅으로 먹고 싶은 메뉴를 줄줄이 적는다."
     },
     {
       "id": "LC-CO-06",
@@ -18500,7 +18553,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "정해진 작업량의 특별 영업을 준비한다",
+          "outcome": "처리할 주문 수를 정해 두고 협동 특집 영업을 준비했다. 동료들은 각자 맡을 메뉴를 나눠 연습에 들어갔다.",
           "effects": [
             {
               "op": "local.add",
@@ -18557,7 +18610,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "신입이 참여할 교육 구성을 만든다",
+          "outcome": "새로 온 동료가 함께할 수 있는 교육 영업을 구성했다. 신입 동료는 '배우면서 할 수 있겠다'며 안도했다.",
           "effects": [
             {
               "op": "local.add",
@@ -18608,7 +18661,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "완주 가능한 작은 목표를 정한다",
+          "outcome": "끝까지 마칠 수 있는 짧은 기본 영업으로 목표를 정했다. 키몽이들은 '마무리는 가볍고 따뜻하게'라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -18650,7 +18703,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시즌 마지막 영업을 특별하게 꾸미자는 의견이 나온다. 동료들과 키몽이들이 저마다 아이디어를 꺼낸다."
     },
     {
       "id": "LC-CO-07",
@@ -18687,7 +18741,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "현재 메뉴의 조리를 시험한다",
+          "outcome": "현재 메뉴를 주방에서 순서대로 시험 조리해 보았다. 동료들은 막히는 단계를 찾아 조리 순서를 살짝 바꿨다.",
           "effects": [
             {
               "op": "local.add",
@@ -18754,7 +18808,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "팀의 전달 순서를 검증한다",
+          "outcome": "홀과 주방이 음식을 주고받는 신호를 정해 맞춰 보았다. 동료들은 '이 신호면 내일도 안 헷갈리겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -18815,7 +18869,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "도움을 받아 작은 영업을 시험한다",
+          "outcome": "적은 주문만 받아 선배 동료의 도움으로 작은 영업을 시험했다. 키몽이들은 '첫 손님 대접 완료'를 외쳤다.",
           "effects": [
             {
               "op": "local.add",
@@ -18867,7 +18921,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "마지막 영업 전날, 동료들이 모의 주문으로 손발을 맞춰 본다. 키몽이들은 채팅으로 가상 주문을 하나씩 불러 준다."
     },
     {
       "id": "LC-CO-08",
@@ -18919,7 +18974,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "실제 처리한 주문과 분담을 기록한다",
+          "outcome": "실제로 처리한 주문과 각자 맡은 분담을 영업 일지에 기록했다. 동료들은 서로의 몫을 읽어 주며 웃었다.",
           "effects": [
             {
               "op": "local.add",
@@ -18995,7 +19050,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "검증한 메뉴와 개선 과정을 소개한다",
+          "outcome": "시험해 본 메뉴와 고쳐 온 조리 과정을 키몽이들에게 소개했다. 키몽이들은 첫날 메뉴와 비교하며 감탄했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19056,7 +19111,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "교육·보조 목표의 완주를 기록한다",
+          "outcome": "맡았던 작은 영업과 교육 목표를 정리하며 시즌을 닫았다. 동료들은 '다음 식당도 같이 열자'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19102,7 +19157,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "마지막 영업이 끝나고 식당에 고요가 찾아온다. 동료들은 앞치마를 벗으며 오늘의 주문표를 한데 모은다."
     },
     {
       "id": "LC-VR-01",
@@ -19139,7 +19195,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "제출 범위와 부스 규칙을 확인한다",
+          "outcome": "부스 크기와 제출할 작품 범위, 전시 규칙을 꼼꼼히 확인했다. 동료들은 '규격부터 보는 게 맞다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19186,7 +19242,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "방문객 이동 흐름을 익힌다",
+          "outcome": "전시장을 걸어 다니며 관람객이 어떻게 움직일지 살폈다. 키몽이들은 '입구에서 오른쪽으로 많이 가겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19227,7 +19283,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "작은 참가·안내 경로를 확인한다",
+          "outcome": "관람 안내 설명부터 들으며 작게 참가할 방법을 알아봤다. 안내 담당 동료가 자리를 몇 군데 추천해 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -19259,7 +19315,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "가상 공간 전시회에 참가할 제작단을 모은다는 안내가 온다. 가상 동료들이 전시장 지도를 펼치며 코코를 부른다."
     },
     {
       "id": "LC-VR-02",
@@ -19296,7 +19353,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "직접 만든 작품의 전시 역할을 정한다",
+          "outcome": "직접 만든 작품으로 부스를 꾸미겠다고 손을 들었다. 키몽이들은 '어떤 작품일지 궁금하다'며 기대를 보였다.",
           "effects": [
             {
               "op": "local.add",
@@ -19348,7 +19405,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "방문객 안내 역할을 정한다",
+          "outcome": "관람객을 맞고 길을 알려 주는 안내 역할을 맡았다. 동료들은 '안내가 친절하면 전시가 산다'며 반겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -19394,7 +19451,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "간단한 설명 패널로 참여한다",
+          "outcome": "작은 설명 글 패널 하나를 맡아 참여하기로 했다. 키몽이들은 '글솜씨 보여 줄 차례'라며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19431,7 +19488,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "제작단 첫 회의에서 각자 맡을 전시 역할을 정한다. 동료들이 작품, 안내, 글 패널 중 하나씩 고르기 시작한다."
     },
     {
       "id": "LC-VR-03",
@@ -19468,7 +19526,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "관람객이 읽기 쉬운 글을 만든다",
+          "outcome": "꼭 전할 내용만 남기고 문장을 짧게 다듬었다. 동료들은 '한눈에 들어온다'며 다시 읽어 보았다.",
           "effects": [
             {
               "op": "local.add",
@@ -19511,7 +19569,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "설명과 관람의 순서를 정리한다",
+          "outcome": "설명을 앞뒤로 나눠 관람 순서에 맞게 배치했다. 키몽이들은 '걸으면서 읽기 좋겠다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19548,7 +19606,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "확인된 설명만 남긴다",
+          "outcome": "확인된 내용만 담은 짧은 기본 설명으로 바꿨다. 동료들은 '깔끔해서 오히려 좋다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19576,7 +19634,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "부스 설명을 쓰다 보니 글이 화면 두 장을 넘어간다. 시험 관람을 한 동료가 '다 읽기 전에 지나가겠다'고 한다."
     },
     {
       "id": "LC-VR-04",
@@ -19613,7 +19672,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "혼잡한 구역을 분산한다",
+          "outcome": "다른 통로로 가는 안내판을 세우고 관람객을 나눠 보냈다. 한산하던 부스에도 발길이 닿자 동료들이 반겼다.",
           "effects": [
             {
               "op": "local.add",
@@ -19656,7 +19715,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "순서 있는 관람 경로를 만든다",
+          "outcome": "관람객을 작은 묶음으로 나눠 순서대로 들어가게 했다. 키몽이들은 '놀이공원 줄 서기 같다'며 웃었다.",
           "effects": [
             {
               "op": "local.add",
@@ -19693,7 +19752,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "작은 인원으로 관람을 진행한다",
+          "outcome": "한 팀씩 직접 안내하며 천천히 관람을 이어 갔다. 관람객들은 설명을 자세히 들을 수 있어 좋아했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19721,7 +19780,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "시험 개장 날, 관람객이 한 통로로만 몰려 줄이 길어진다. 반대편 부스는 한산해 동료들이 걱정스레 지켜본다."
     },
     {
       "id": "LC-VR-05",
@@ -19758,7 +19818,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "허용된 작품과 사용 범위를 확인한다",
+          "outcome": "함께 전시할 작품과 사용 범위를 동료에게 하나씩 확인받았다. 동료는 '이렇게 물어봐 줘서 고맙다'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19801,7 +19861,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "전시 주제와 설명을 연결한다",
+          "outcome": "각자 직접 만든 작품끼리 공통 주제를 찾아 하나로 묶었다. 키몽이들은 주제 이름 후보를 내놓으며 거들었다.",
           "effects": [
             {
               "op": "local.add",
@@ -19838,7 +19898,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "추가 사용 동의가 없어도 참여한다",
+          "outcome": "이번에는 자기 작품만 전시하기로 하고 정중히 답했다. 동료는 '다음에 기회 되면 같이 하자'고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -19866,7 +19926,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "다른 제작단 동료가 작품을 함께 전시하자고 제안한다. 서로의 작품을 어디까지 써도 되는지 먼저 정해야 한다."
     },
     {
       "id": "LC-VR-06",
@@ -19903,7 +19964,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "검수할 전시 프로그램을 준비한다",
+          "outcome": "직접 만든 작품으로 하나의 테마 전시를 꾸려 계획서에 담았다. 동료들은 검수 날짜를 함께 정해 주었다.",
           "effects": [
             {
               "op": "local.add",
@@ -19965,7 +20026,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "작품을 이해할 안내 구성을 만든다",
+          "outcome": "작품을 차근차근 소개하는 관람 안내 방송을 구성했다. 키몽이들은 '같이 걸으며 보는 느낌'이라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -20021,7 +20082,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "제출 가능한 작은 공개물을 정한다",
+          "outcome": "제출할 수 있는 작은 패널 발표로 공개 범위를 정했다. 동료들은 '작아도 알찬 발표'라며 응원했다.",
           "effects": [
             {
               "op": "local.add",
@@ -20068,7 +20129,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "전시 공개일을 앞두고 제작단이 공개 프로그램을 짠다. 동료들은 각자 무엇을 보여 줄지 계획서를 낸다."
     },
     {
       "id": "LC-VR-07",
@@ -20105,7 +20167,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "제출 조건과 관람 흐름을 검증한다",
+          "outcome": "부스 크기와 제출 조건, 관람 동선을 하나씩 대조해 보았다. 어긋난 곳 한 군데를 찾아 동료와 함께 고쳤다.",
           "effects": [
             {
               "op": "local.add",
@@ -20172,7 +20234,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "사전 관람 피드백으로 설명을 수정한다",
+          "outcome": "미리 초대한 관람객에게 작품 설명을 들려주고 의견을 받았다. 받은 의견대로 문장 몇 개를 다듬었다.",
           "effects": [
             {
               "op": "local.add",
@@ -20233,7 +20295,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "작은 전시 범위를 검증한다",
+          "outcome": "글 패널 한 장부터 차근차근 검수했다. 동료들은 '하나씩 하니 놓친 게 없다'며 확인 도장을 찍었다.",
           "effects": [
             {
               "op": "local.add",
@@ -20285,7 +20347,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "전시 공개 전날, 제작단이 마지막 검수에 나선다. 동료들이 부스마다 돌며 규격과 설명을 하나씩 확인한다."
     },
     {
       "id": "LC-VR-08",
@@ -20337,7 +20400,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "정해진 전시와 안내를 완료한다",
+          "outcome": "사용을 허락받은 작품들로 마지막 안내를 이어 갔다. 폐장 종이 울리자 동료들과 키몽이들이 서로 인사했다.",
           "effects": [
             {
               "op": "local.add",
@@ -20413,7 +20476,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "독자 작품의 제작 과정을 소개한다",
+          "outcome": "직접 만든 작품의 스케치부터 완성까지 과정을 공개했다. 키몽이들은 '이렇게 만들었구나' 하며 감탄했다.",
           "effects": [
             {
               "op": "local.add",
@@ -20474,7 +20537,7 @@
           "validateQualificationForChosenRole": true,
           "showWhenEventVisible": true,
           "disableWhenAnyConditionFails": true,
-          "outcome": "맡은 패널과 안내 기여를 기록한다",
+          "outcome": "맡았던 패널과 안내 기여를 전시 일지에 정리해 남겼다. 동료들은 '다음 전시도 같은 제작단으로'라고 했다.",
           "effects": [
             {
               "op": "local.add",
@@ -20520,7 +20583,8 @@
             }
           ]
         }
-      ]
+      ],
+      "body": "전시 마지막 날, 폐장 전 관람 시간이 시작된다. 제작단 동료들은 각자의 부스에서 마지막 손님을 맞는다."
     }
   ],
   "moneyEvents": [
