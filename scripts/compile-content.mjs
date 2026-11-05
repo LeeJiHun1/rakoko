@@ -1,4 +1,18 @@
+// 실행하면 바로 src/data/catalog.json 을 다시 쓴다(import 만 해도 실행됨 — 검사용으로 import 하지 말 것).
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
+// 서술형 문장 끝 '…다' 를 연결형 '…고' 로 (점검한다→점검하고, 띄운다→띄우고, 적는다→적고, 번다→벌고)
+// ㄹ 탈락 동사는 어절 전체가 일치할 때만 복원한다('띄운다'가 '띄울고'가 되지 않게).
+const L_IRREGULAR = {'번다': '벌', '만든다': '만들', '연다': '열', '논다': '놀', '판다': '팔', '민다': '밀', '건다': '걸', '든다': '들', '끈다': '끌'};
+export function toConnective(text) {
+  const m = text.match(/(\S+)다$/);
+  if (!m) return text + '고';
+  const word = m[1] + '다', head = text.slice(0, -word.length);
+  if (Object.hasOwn(L_IRREGULAR, word)) return head + L_IRREGULAR[word] + '고';
+  if (word.endsWith('는다')) return head + word.slice(0, -2) + '고';
+  const last = word.at(-2), code = last.charCodeAt(0) - 0xAC00;
+  if (code >= 0 && code < 11172 && code % 28 === 4) return head + word.slice(0, -2) + String.fromCharCode(last.charCodeAt(0) - 4) + '고'; // 받침 ㄴ 제거
+  return head + word.slice(0, -1) + '고';
+}
 const read = async name=>JSON.parse(await readFile(`outputs/${name}`,'utf8'));
 const [pool,play,cards,creative,ending,requirements,long,money,economy,status,dialogue] = await Promise.all([
   'rakoko_draw_pool.design.json','rakoko_event_play_rules.design.json','rakoko_event_cards.json',
@@ -6,6 +20,8 @@ const [pool,play,cards,creative,ending,requirements,long,money,economy,status,di
   'rakoko_long_content.design.json','rakoko_money_events.design.json','rakoko_economy.design.json',
   'rakoko_status.design.json','rakoko_kimongi_dialogue.design.json'
 ].map(read));
+// 손으로 쓴 문구 보강(사건 본문·결과 문구). 없으면 원래 생성 규칙만 쓴다.
+const overrides = await readFile('outputs/rakoko_text_overrides.json', 'utf8').then(JSON.parse, () => ({events: {}}));
 const source = new Map([...cards.cards,...creative.events].map(e=>[e.id,e]));
 const rule = new Map(play.entries.map(e=>[e.id,e]));
 const openings={
@@ -18,7 +34,7 @@ const openings={
 const events=pool.entries.filter(e=>e.trigger==='random').map(e=>{
   const src=source.get(e.id)||{}, r=rule.get(e.id);
   return {...e,provenance:e.id.startsWith('CE')?'fiction':'adaptation',
-    body:src.game_prompt||openings[e.group]||'오늘의 코너에 새로운 이야깃거리가 찾아왔다. 키몽이들과 함께 다음 장면을 골라 보자.',
+    body:overrides.events[e.id]?.body||src.game_prompt||openings[e.group]||'오늘의 코너에 새로운 이야깃거리가 찾아왔다. 키몽이들과 함께 다음 장면을 골라 보자.',
     repeat:r.repeat,
     choices:r.choices.map((c,i)=>{
       const original=src.choices?.[i];
@@ -27,7 +43,7 @@ const events=pool.entries.filter(e=>e.trigger==='random').map(e=>{
       if(stat==='gameSkill'&&!e.route.includes('G'))stat='planning';
       const gain=/공개|소개|홍보|발표|공유/.test(text)?{awareness:1,[stat]:1}:{[stat]:2};
       return {id:c.id,text,requirements:c.eligibility.all,gain,
-        outcome:original?.result||(!original?.outcome?.startsWith('미정')?original?.outcome:null)||`${text.replace(/다$/,'고')}, 오늘의 코너를 이어갔다.`,
+        outcome:overrides.events[e.id]?.outcomes?.[c.id]||original?.result||(!original?.outcome?.startsWith('미정')?original?.outcome:null)||`${toConnective(text)}, 오늘의 코너를 이어갔다.`,
         promise:/다음|미룬|미룬다|보류|대체 화면/.test(text)};
     })};
 });

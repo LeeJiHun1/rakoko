@@ -3352,7 +3352,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "하나씩 점검한고, 오늘의 코너를 이어갔다.",
+          "outcome": "하나씩 점검하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3362,7 +3362,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "안내 화면을 띄운고, 오늘의 코너를 이어갔다.",
+          "outcome": "안내 화면을 띄우고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3372,7 +3372,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "다음 방송 숙제로 적는고, 오늘의 코너를 이어갔다.",
+          "outcome": "다음 방송 숙제로 적고, 오늘의 코너를 이어갔다.",
           "promise": true
         }
       ]
@@ -3405,7 +3405,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "연결을 점검한고, 오늘의 코너를 이어갔다.",
+          "outcome": "연결을 점검하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3415,7 +3415,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "잡담으로 시간을 번고, 오늘의 코너를 이어갔다.",
+          "outcome": "잡담으로 시간을 벌고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3431,7 +3431,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "임시 화면으로 전환한고, 오늘의 코너를 이어갔다.",
+          "outcome": "임시 화면으로 전환하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3464,7 +3464,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "사진부터 풀어본고, 오늘의 코너를 이어갔다.",
+          "outcome": "사진부터 풀어보고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3480,7 +3480,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "시선 장비를 먼저 시험한고, 오늘의 코너를 이어갔다.",
+          "outcome": "시선 장비를 먼저 시험하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3490,7 +3490,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "시청자와 의견을 비교한고, 오늘의 코너를 이어갔다.",
+          "outcome": "시청자와 의견을 비교하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3523,7 +3523,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "짧게 사과하고 시작한고, 오늘의 코너를 이어갔다.",
+          "outcome": "짧게 사과하고 시작하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3539,7 +3539,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "오늘 순서를 조정한고, 오늘의 코너를 이어갔다.",
+          "outcome": "오늘 순서를 조정하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3549,7 +3549,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "알림부터 정리한고, 오늘의 코너를 이어갔다.",
+          "outcome": "알림부터 정리하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3582,7 +3582,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "기본 조작을 익힌고, 오늘의 코너를 이어갔다.",
+          "outcome": "기본 조작을 익히고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3592,7 +3592,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "일단 한 판 해본고, 오늘의 코너를 이어갔다.",
+          "outcome": "일단 한 판 해보고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3602,7 +3602,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "시청자 팁 하나만 받는고, 오늘의 코너를 이어갔다.",
+          "outcome": "시청자 팁 하나만 받고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3635,7 +3635,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "짧은 설명을 받는고, 오늘의 코너를 이어갔다.",
+          "outcome": "짧은 설명을 받고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3645,7 +3645,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "장면을 다시 본고, 오늘의 코너를 이어갔다.",
+          "outcome": "장면을 다시 보고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3655,7 +3655,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "이해한 대로 설명해본고, 오늘의 코너를 이어갔다.",
+          "outcome": "이해한 대로 설명해보고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3688,7 +3688,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "새 글부터 본고, 오늘의 코너를 이어갔다.",
+          "outcome": "새 글부터 보고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3698,7 +3698,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "오늘 주제를 고른고, 오늘의 코너를 이어갔다.",
+          "outcome": "오늘 주제를 고르고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3708,7 +3708,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "마음에 남은 글을 표시한고, 오늘의 코너를 이어갔다.",
+          "outcome": "마음에 남은 글을 표시하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3741,7 +3741,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "조작을 먼저 익힌고, 오늘의 코너를 이어갔다.",
+          "outcome": "조작을 먼저 익히고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3751,7 +3751,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "짧게 한 판 해본고, 오늘의 코너를 이어갔다.",
+          "outcome": "짧게 한 판 해보고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3761,7 +3761,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "휴식 시간을 정한고, 오늘의 코너를 이어갔다.",
+          "outcome": "휴식 시간을 정하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3794,7 +3794,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "OX 표시를 쓴고, 오늘의 코너를 이어갔다.",
+          "outcome": "OX 표시를 쓰고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3804,7 +3804,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "글자를 크게 한고, 오늘의 코너를 이어갔다.",
+          "outcome": "글자를 크게 하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3814,7 +3814,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "질문 수를 줄인고, 오늘의 코너를 이어갔다.",
+          "outcome": "질문 수를 줄이고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3853,7 +3853,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "균형 있게 배치한고, 오늘의 코너를 이어갔다.",
+          "outcome": "균형 있게 배치하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3869,7 +3869,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "재미있는 조합을 만든고, 오늘의 코너를 이어갔다.",
+          "outcome": "재미있는 조합을 만들고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3879,7 +3879,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "시청자 추천을 하나 반영한고, 오늘의 코너를 이어갔다.",
+          "outcome": "시청자 추천을 하나 반영하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3912,7 +3912,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "작은 기획을 고른고, 오늘의 코너를 이어갔다.",
+          "outcome": "작은 기획을 고르고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3928,7 +3928,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "후보를 투표한고, 오늘의 코너를 이어갔다.",
+          "outcome": "후보를 투표하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3938,7 +3938,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "준비물부터 적는고, 오늘의 코너를 이어갔다.",
+          "outcome": "준비물부터 적고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -3977,7 +3977,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "미니게임을 적는고, 오늘의 코너를 이어갔다.",
+          "outcome": "미니게임을 적고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -3993,7 +3993,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "참여 방식을 고민한고, 오늘의 코너를 이어갔다.",
+          "outcome": "참여 방식을 고민하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4003,7 +4003,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "아이디어만 보관한고, 오늘의 코너를 이어갔다.",
+          "outcome": "아이디어만 보관하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4036,7 +4036,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "상태를 확인한고, 오늘의 코너를 이어갔다.",
+          "outcome": "상태를 확인하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4046,7 +4046,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "진행 상황을 알린고, 오늘의 코너를 이어갔다.",
+          "outcome": "진행 상황을 알리고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4062,7 +4062,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "저장된 자료를 꺼낸고, 오늘의 코너를 이어갔다.",
+          "outcome": "저장된 자료를 꺼내고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4095,7 +4095,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "디자인의 색을 본고, 오늘의 코너를 이어갔다.",
+          "outcome": "디자인의 색을 보고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4105,7 +4105,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "마음에 드는 의상을 고른고, 오늘의 코너를 이어갔다.",
+          "outcome": "마음에 드는 의상을 고르고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4115,7 +4115,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "첫인상 메모를 남긴고, 오늘의 코너를 이어갔다.",
+          "outcome": "첫인상 메모를 남기고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4148,7 +4148,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "문제를 다시 읽는고, 오늘의 코너를 이어갔다.",
+          "outcome": "문제를 다시 읽고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4158,7 +4158,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "힌트를 하나 쓴고, 오늘의 코너를 이어갔다.",
+          "outcome": "힌트를 하나 쓰고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4168,7 +4168,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "잠깐 다른 관점으로 본고, 오늘의 코너를 이어갔다.",
+          "outcome": "잠깐 다른 관점으로 보고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4201,7 +4201,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "쉬운 곡을 고른고, 오늘의 코너를 이어갔다.",
+          "outcome": "쉬운 곡을 고르고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4211,7 +4211,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "박자부터 맞춘고, 오늘의 코너를 이어갔다.",
+          "outcome": "박자부터 맞추고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4221,7 +4221,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "짧은 코너로 진행한고, 오늘의 코너를 이어갔다.",
+          "outcome": "짧은 코너로 진행하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4260,7 +4260,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "역할을 나눈고, 오늘의 코너를 이어갔다.",
+          "outcome": "역할을 나누고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4270,7 +4270,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "합을 먼저 맞춘고, 오늘의 코너를 이어갔다.",
+          "outcome": "합을 먼저 맞추고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4280,7 +4280,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "쉬운 목표부터 시작한고, 오늘의 코너를 이어갔다.",
+          "outcome": "쉬운 목표부터 시작하고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4313,7 +4313,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "해결한 항목을 지운고, 오늘의 코너를 이어갔다.",
+          "outcome": "해결한 항목을 지우고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4323,7 +4323,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "남은 증상을 기록한고, 오늘의 코너를 이어갔다.",
+          "outcome": "남은 증상을 기록하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4333,7 +4333,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "안정적인 코너를 고른고, 오늘의 코너를 이어갔다.",
+          "outcome": "안정적인 코너를 고르고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4366,7 +4366,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "먼저 백업한고, 오늘의 코너를 이어갔다.",
+          "outcome": "먼저 백업하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4376,7 +4376,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "자료 목록을 정리한고, 오늘의 코너를 이어갔다.",
+          "outcome": "자료 목록을 정리하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4386,7 +4386,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "교체 일정을 따로 잡는고, 오늘의 코너를 이어갔다.",
+          "outcome": "교체 일정을 따로 잡고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4419,7 +4419,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "시험 소리를 낸고, 오늘의 코너를 이어갔다.",
+          "outcome": "시험 소리를 내고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4429,7 +4429,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "시청자 응답을 기다린고, 오늘의 코너를 이어갔다.",
+          "outcome": "시청자 응답을 기다리고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4439,7 +4439,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "설정을 다시 본고, 오늘의 코너를 이어갔다.",
+          "outcome": "설정을 다시 보고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ]
@@ -4472,7 +4472,7 @@
           "gain": {
             "planning": 2
           },
-          "outcome": "준비한 주제로 돌아간고, 오늘의 코너를 이어갔다.",
+          "outcome": "준비한 주제로 돌아가고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4482,7 +4482,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "진행 기준을 짧게 알린고, 오늘의 코너를 이어갔다.",
+          "outcome": "진행 기준을 짧게 알리고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4492,7 +4492,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "다음 코너로 넘어간고, 오늘의 코너를 이어갔다.",
+          "outcome": "다음 코너로 넘어가고, 오늘의 코너를 이어갔다.",
           "promise": true
         }
       ]
@@ -4519,7 +4519,7 @@
           "gain": {
             "gameSkill": 2
           },
-          "outcome": "도전 요령 한 줄을 남긴고, 오늘의 코너를 이어갔다.",
+          "outcome": "도전 요령 한 줄을 남기고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4529,7 +4529,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "남은 시간을 신청 질문에 쓴고, 오늘의 코너를 이어갔다.",
+          "outcome": "남은 시간을 신청 질문에 쓰고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ],
@@ -4568,7 +4568,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "배치 그림으로 설명한고, 오늘의 코너를 이어갔다.",
+          "outcome": "배치 그림으로 설명하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4578,7 +4578,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "짧게 바로잡고 넘어간고, 오늘의 코너를 이어갔다.",
+          "outcome": "짧게 바로잡고 넘어가고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ],
@@ -4617,7 +4617,7 @@
           "gain": {
             "community": 2
           },
-          "outcome": "다음 목표를 투표한고, 오늘의 코너를 이어갔다.",
+          "outcome": "다음 목표를 투표하고, 오늘의 코너를 이어갔다.",
           "promise": true
         },
         {
@@ -4627,7 +4627,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "지난 선택 결과를 불러온고, 오늘의 코너를 이어갔다.",
+          "outcome": "지난 선택 결과를 불러오고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ],
@@ -4666,7 +4666,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "조작부터 복습한고, 오늘의 코너를 이어갔다.",
+          "outcome": "조작부터 복습하고, 오늘의 코너를 이어갔다.",
           "promise": false
         },
         {
@@ -4676,7 +4676,7 @@
           "gain": {
             "operation": 2
           },
-          "outcome": "기억나는 구간부터 시범을 보인고, 오늘의 코너를 이어갔다.",
+          "outcome": "기억나는 구간부터 시범을 보이고, 오늘의 코너를 이어갔다.",
           "promise": false
         }
       ],
