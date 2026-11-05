@@ -3,8 +3,8 @@
 import {emptyRecords} from './audience.js';
 import {DEFAULT_SKILL, INITIAL_CASH, PREPARATIONS_PER_BROADCAST, START_DATE} from './constants.js';
 
-/** 저장 형식 버전. 올리면 save.js MIGRATIONS 에 변환을 추가한다. (2: records, 3: 신의상 제안·조기 공개 후속, 4: 준비 소홀·공개 실패) */
-export const SCHEMA_VERSION = 4;
+/** 저장 형식 버전. 올리면 save.js MIGRATIONS 에 변환을 추가한다. (2: records, 3: 신의상 제안·조기 공개 후속, 4: 준비 소홀·공개 실패, 5: 이번 달 미션) */
+export const SCHEMA_VERSION = 5;
 
 export function newGame(seed = Date.now() >>> 0) {
   return {
@@ -19,7 +19,7 @@ export function newGame(seed = Date.now() >>> 0) {
     promises: [], journal: [], celebrations: [], story: {}, project: null, projectArchive: [], module: null, moduleArchive: [],
     experienceRecords: [], experienceCounts: {}, experienceCountsByGame: {},
     reachedEndings: [], lastEnding: null, lastEndingCheck: null, deferUntil: null, endingSeenEver: false, commands: [],
-    records: emptyRecords(), outfitStarted: {}, outfitFollowup: null, outfitNeglect: {}, outfitRevealFailed: {}, outfitPreparedToday: false,
+    records: emptyRecords(), outfitStarted: {}, outfitFollowup: null, outfitNeglect: {}, outfitRevealFailed: {}, outfitPreparedToday: false, missions: null,
   };
 }
 

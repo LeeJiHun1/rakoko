@@ -2,6 +2,7 @@
 import {CORNER_BASE_STAT} from './constants.js';
 import {activeBonus, buyOption} from './purchases.js';
 import {rollDonation} from './audience.js';
+import {bumpMission} from './missions.js';
 import {gain} from './growth.js';
 import {commitModuleChoice} from './module.js';
 import {gradeOutcome, prepBonus, rollGrade, scaleGains} from './outcome.js';
@@ -112,9 +113,10 @@ export function applyChoice(s, id, catalog) {
   const corner = s.plan[s.slot];
   gain(s, CORNER_BASE_STAT[corner], 1, segmentGame);
   if (corner === 'G') s.gameHistory[s.gameId] = {last: s.broadcastIndex};
-  if (s.result.grade === 'great') s.records.greats++;
+  if (s.result.grade === 'great') { s.records.greats++; bumpMission(s, 'greats'); }
   const donation = rollDonation(s, activeBonus(s, 'donation'));
-  if (donation) s.result.donation = donation;
+  if (donation) { s.result.donation = donation; bumpMission(s, 'donation'); }
+  bumpMission(s, 'corner', {corner});
   s.result.changes = Object.fromEntries(Object.entries({...s.stats, gameSkill: skill(s, segmentGame)}).map(([k, v]) => [k, v - before[k]]).filter(([, v]) => v));
   // reactions() 가 s.result.chatContext 를 먼저 기록한 뒤 reactions 가 붙는다(저장 키 순서 유지).
   s.result.reactions = reactions(s, c);

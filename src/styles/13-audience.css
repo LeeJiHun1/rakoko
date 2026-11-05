@@ -37,3 +37,14 @@
 .viewer-peak em.growth{color:#76666f}
 .viewer-peak em.growth.up{color:#46705c;font-weight:700}
 .viewer-peak em.growth.down{color:#9a4560}
+.mission-card{margin:12px 0;padding:14px 16px;border-radius:12px;background:#fffdf8;border:1px solid var(--line);display:grid;gap:8px}
+.mission-card.empty p{margin:0;font-size:calc(12px * var(--text-scale));color:#76666f}
+.mission-card.all-done{background:linear-gradient(135deg,#f3f8f4,#fffaf0);border-color:#c9dccf}
+.mission-head{display:flex;justify-content:space-between;align-items:baseline}
+.mission-head b{color:#9a4560}
+.mission-row{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:calc(13px * var(--text-scale))}
+.mission-row .meter{grid-column:1/-1;height:5px;background:#efe6df;border-radius:5px;overflow:hidden}
+.mission-row .meter i{display:block;height:100%;background:#c19f67}
+.mission-row.done span{color:#46705c;font-weight:700}
+.mission-row.done .meter i{background:#5f8a76}
+.mission-row small,.mission-note{color:#76666f;font-size:calc(11px * var(--text-scale))}

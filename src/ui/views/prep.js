@@ -47,6 +47,14 @@ function activeEffectList(state) {
   return `<div class="active-effects"><span class="eyebrow">적용 중인 준비물 효과</span>${list.map(e=>`<p><b>${escape(e.title)}</b> · ${EFFECT_LABELS[e.kind]} · ${escape(e.remaining)}회 남음</p>`).join('')}</div>`;
 }
 
+/** 이번 달 미션 카드(첫 방송을 시작하면 생김) */
+function missionCard(state) {
+  const m = state.missions;
+  if (!m || m.month !== state.date.slice(0, 7)) return `<div class="mission-card empty"><span class="eyebrow">이번 달 미션</span><p>이번 달 첫 방송을 켜면 미션 3개가 도착해요.</p></div>`;
+  const done = m.list.filter(x => x.done).length;
+  return `<div class="mission-card${m.allDone?' all-done':''}"><div class="mission-head"><span class="eyebrow">${escape(Number(m.month.slice(5)))}월의 미션</span><b>${escape(done)}/${escape(m.list.length)}${m.allDone?' · 모두 달성!':''}</b></div>${m.list.map(x=>`<div class="mission-row ${x.done?'done':''}"><span>${x.done?'✓':'·'} ${escape(x.label)}</span><small>${escape(x.progress)}/${escape(x.target)}</small><div class="meter"><i data-meter="${escape(Math.round(x.progress/x.target*100))}"></i></div></div>`).join('')}<small class="mission-note">달성할 때마다 방송 자금, 3개 모두 달성하면 단골 시청층이 늘어요.</small></div>`;
+}
+
 function finaleNote(state, catalog) {
   if (state.project?.step !== 3) return '';
   const locks = finaleLocks(state, catalog);
@@ -65,6 +73,7 @@ export function prep() {
   <div class="prep-grid simple-preps">${prepButtons(state)}</div>${activeEffectList(state)}
   <div class="simple-broadcast-start">${btn('방송 켜기 <span>→</span>','start','','button primary full')}<p>준비를 건너뛰고 바로 시작해도 괜찮아요.</p></div>
   ${projectMini()}
+  ${missionCard(state)}
   ${state.project&&state.project.step<3&&!state.plan.includes('S')?`<p class="next-task">기획을 진행하려면 특별 기획 코너가 필요해요. ${btn('편성에 넣기','includeProject','','text-button')}</p>`:''}
   <details class="optional-options"><summary>코너·게임 바꾸기 <small>선택사항</small></summary><p class="view-description">기본 편성은 ${summary}. 원하는 경우에만 바꿔주세요.</p>
   <div class="program">${programSlots(state, calendar)}</div>

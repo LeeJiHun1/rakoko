@@ -1,6 +1,7 @@
 // 신의상: 방송 중 제안 이벤트 → 시작(비용 200만원 전액, +25) → 준비 행동으로 진행(무료·+25) → 공개 예약 → 공개(해금) → 무료 환복.
 // 준비 중(40%↑)에는 의상당 한 번 유출 사건이 날 수 있다. 설계: outputs/rakoko_outfit_feature_design.md
 import {LEAK_MIN_PROGRESS, OUTFIT_COST, OUTFIT_PROGRESS_STEP} from './constants.js';
+import {bumpMission} from './missions.js';
 import {random} from './rng.js';
 
 /** 방송당 제안 이벤트 확률 (진행 중인 의상이 없을 때) */
@@ -90,6 +91,7 @@ export function prepareOutfit(s) {
   if (s.outfitProgress[s.crafting] >= 100) throw Error('준비가 끝났어요. 공개 방송을 예약해주세요.');
   addProgress(s, s.crafting);
   s.outfitPreparedToday = true;
+  bumpMission(s, 'outfit');
 }
 
 /** 방송당 한 번 제안 이벤트를 굴린다. 진행 중인 의상이 없고, 남은 의상이 있고, 비용 전액을 낼 수 있을 때만. */

@@ -1,6 +1,7 @@
 // 특별 기획: 시작 → 자료(0) → 시범(1) → 피드백(2) → 완료(3) → 마지막 특집 예약.
 import {endingUnlocked, firstEndingDate} from './dates.js';
 import {awardExperience, gain} from './growth.js';
+import {bumpMission} from './missions.js';
 import {unmet} from './requirements.js';
 import {clone, setPath} from './util.js';
 
@@ -45,6 +46,7 @@ export function advanceProject(s, c, catalog) {
   s.project.step++;
   s.project.lastProgress = s.broadcastIndex;
   s.project.log.push({date: s.date, text: c.outcome});
+  bumpMission(s, 'projectStep');
   if (s.project.step === 1 && def.experienceId === PROMISE_EXPERIENCE) s.project.promise = {createdBroadcast: s.broadcastIndex, fulfilled: false};
   if (s.project.step === 2 && s.project.promise) s.project.promise.fulfilled = true;
   if (s.project.step === PROJECT_DONE_STEP) {

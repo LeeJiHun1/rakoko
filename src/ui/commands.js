@@ -2,7 +2,7 @@
 import {dispatch} from '../engine.js';
 import * as storage from '../storage.js';
 import {showCredits} from './dialogs.js';
-import {clickSound} from './feedback.js';
+import {clickSound, playCue, toast} from './feedback.js';
 import {focusScene, render} from './render.js';
 import {store} from './store.js';
 import {announceSaved} from './sync.js';
@@ -16,7 +16,9 @@ export async function runCommand(type, params = {}) {
   let saving = false;
   const previousPhase = store.state.phase;
   try {
+    const doneBefore = new Set((store.state.missions?.list || []).filter(m => m.done).map(m => store.state.missions.month + m.id));
     const next = dispatch(store.state, {...params, type, commandId: newCommandId()}, store.catalog);
+    const newlyDone = (next.missions?.list || []).filter(m => m.done && !doneBefore.has(next.missions.month + m.id));
     saving = true;
     await storage.save(next, store.state);
     store.state = next;
@@ -27,6 +29,7 @@ export async function runCommand(type, params = {}) {
     render();
     if (store.state.phase !== previousPhase) focusScene();
     if (store.state.phase === 'credits') showCredits();
+    if (newlyDone.length) { setTimeout(() => toast(`미션 달성! ${newlyDone.map(m => m.label).join(' · ')}${next.missions.allDone ? ' — 이번 달 미션 모두 달성!' : ''}`), 60); playCue('record'); }
   } catch (e) {
     store.saveError = saving;
     store.busy = false;

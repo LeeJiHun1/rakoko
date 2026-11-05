@@ -7,6 +7,7 @@ import {baseViewers, broadcastGrade, GRADE_AWARENESS, GRADE_INCOME, growthPoint,
 import {gain} from './growth.js';
 import {activeBonus} from './purchases.js';
 import {updateNeglect} from './outfit.js';
+import {bumpMission, refreshMissions} from './missions.js';
 import {deliverOrders, settleIncome, snapshotIncome} from './economy.js';
 import {offerEndingIfReady} from './ending.js';
 import {nextEvent} from './events/next.js';
@@ -44,6 +45,9 @@ function settle(s, catalog) {
   if (s.module?.phase === 'closed') { s.moduleArchive.push(clone(s.module)); s.module = null; }
   s.phase = 'wrap';
   s.result = {gross, cost, net, grade, viewers, donations, newRecords, fame, growth};
+  bumpMission(s, 'broadcasts');
+  if (['S', 'A'].includes(grade)) bumpMission(s, 'topGrade');
+  if (newRecords.includes('viewers') && s.completedBroadcasts > 1) bumpMission(s, 'record');
   s.event = null;
   offerEndingIfReady(s, catalog);
 }
@@ -84,6 +88,7 @@ export const commands = {
     s.planBeforeReservations = clone(s.plan);
     reserveSpecials(s);
     snapshotIncome(s, catalog);
+    refreshMissions(s);
     if (s.module) s.module.usedThisBroadcast = 0;
     nextEvent(s, catalog);
   }},
