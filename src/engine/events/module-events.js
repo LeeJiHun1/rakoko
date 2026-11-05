@@ -26,7 +26,7 @@ export function moduleEvent(s, catalog) {
   const repeats = definitions.filter(e => e.trigger === 'module_recurring' && (m.repeatLast[e.id] == null || m.participation - m.repeatLast[e.id] >= 2));
   const def = (m.lastAdvance !== s.broadcastIndex && !m.practiceOnly ? advance : null) || repeats[0];
   if (!def) return null;
-  return event(s, 'module', def.title, '가상 동료들과 이어 가는 장기 콘텐츠. 실제로 맡은 역할과 시험한 범위만 이번 기록에 남긴다.',
+  return event(s, 'module', def.title, def.body || '가상 동료들과 이어 가는 장기 콘텐츠. 실제로 맡은 역할과 시험한 범위만 이번 기록에 남긴다.',
     def.choices.map(c => ({id: c.id, text: c.text, outcome: c.outcome, requirements: c.eligibility.all, effects: c.effects})),
     {definitionId: def.id, moduleProgression: def.trigger === 'module_progression'});
 }

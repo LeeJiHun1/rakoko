@@ -22,6 +22,9 @@ const [pool,play,cards,creative,ending,requirements,long,money,economy,status,di
 ].map(read));
 // 손으로 쓴 문구 보강(사건 본문·결과 문구). 없으면 원래 생성 규칙만 쓴다.
 const overrides = await readFile('outputs/rakoko_text_overrides.json', 'utf8').then(JSON.parse, () => ({events: {}}));
+// 장기 콘텐츠 사건 본문·결과 보강(없으면 원래 데이터 그대로)
+const moduleOverrides = await readFile('outputs/rakoko_module_text_overrides.json', 'utf8').then(JSON.parse, () => ({events: {}}));
+const withModuleText = e => { const o = moduleOverrides.events[e.id]; return o ? {...e, ...(o.body ? {body: o.body} : {}), choices: e.choices.map(c => ({...c, outcome: o.outcomes?.[c.id] || c.outcome}))} : e; };
 const source = new Map([...cards.cards,...creative.events].map(e=>[e.id,e]));
 const rule = new Map(play.entries.map(e=>[e.id,e]));
 const openings={
@@ -94,7 +97,7 @@ const projects=ending.events.flatMap(event=>event.choices.map(choice=>{
 const catalog={version:'0.1.0',generatedBy:'scripts/compile-content.mjs',
   provenance:'공개 자료에서 착안한 비공식 창작 게임. 실제 발언·방송 결과 재현이 아님.',
   events,projects,endingEvents:ending.events,experienceDefinitions:requirements.experienceDefinitions,
-  modules:long.modules,moduleEvents:long.events,moneyEvents:money.events,economy,status,
+  modules:long.modules,moduleEvents:long.events.map(withModuleText),moneyEvents:money.events,economy,status,
   reactions:dialogue.examples,
   outfits:[['base','기본 의상','오늘도 코코답게.','assets/characters/rakoko-base-v1.png'],
     ['ghost','유령 의상','하늘하늘한 천의 작은 장난.','assets/events/outfit-reveals/rakoko-ghost-v1.png'],
