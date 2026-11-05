@@ -47,6 +47,10 @@ const pools={
     '손이 생각보다 먼저 갔네 ㅋㅋ','그 키는 아니었다 ㅋㅋㅋ','아 나도 깜짝 놀랐네','일단 진정하고 다시 가자','이번 키는 기억해 두자',
     '방금은 손도 당황했겠는데','다음엔 천천히 누르자','이런 장면도 일지에 남는 거야?','ㅋㅋ 괜찮아 이어가자'
   ],
+  shopping:[
+    '지갑 열리는 소리 들린다 ㅋㅋ','이건 투자지 투자','장비 좋아지면 방송도 좋아지지','오 그거 사는 거야?','다음 방송 기대된다',
+    '현명한 소비 인정','참는 것도 능력이다 ㅋㅋ','택배 언제 와?','이번엔 패스도 괜찮아','장바구니만 담아 두자'
+  ],
   donation:[
     '응원 감사합니다아아','ㄷㄷ 응원 들어왔다','고마운 키몽이 등장','방금 응원 메시지 귀엽다 ㅋㅋ','오 이 타이밍에?',
     '응원 받고 기운 내자','다들 마음이 따뜻하네','감사 인사 크게 해줘!','이 응원 일지에 남겨야 해','훈훈하다'
@@ -136,6 +140,7 @@ const pools={
 };
 export const CHAT_POOLS=Object.fromEntries(Object.entries(pools).map(([context,lines])=>[context,lines.map((text,i)=>({id:`${context}:${i}`,text}))]));
 export function chatContext(event,selected,result,module){
+  if(event.kind==='shop')return 'shopping';
   if(event.kind==='leak')return result.kind==='reveal'?'leak_early':'leak_partial';
   if(event.kind==='reveal')return 'outfit_reveal';
   if(event.kind==='calendar')return event.celebrationType==='birthday'?'birthday':'anniversary';

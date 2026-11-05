@@ -32,6 +32,7 @@ function reasonFor(s, r, catalog, gameId) {
     const id = r.path.split('.').at(-1);
     return `${catalog?.experienceDefinitions[id]?.label || '선행 경험'} 필요`;
   }
+  if (r.path === 'economy.cash') return `방송 자금 부족 (필요 ${Number(r.value).toLocaleString('ko-KR')}원)`;
   if (r.path.startsWith('story.')) return '현재 기획의 준비·검증이 더 필요해요';
   if (r.path.includes('playerConfirmed')) return '선수 참가 자격이 필요해요';
   if (r.path.includes('roleTrack')) return '현재 참가 역할과 맞지 않아요';

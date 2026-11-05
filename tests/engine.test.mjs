@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {newGame,dispatch,unmet,skill,addDays,nextMilestone,yearsPlayed,finaleLocks,projectProgressLocks,validateSave,migrateSave,loadSave,DEADLINE,STYLES,prepBonus} from '../src/engine.js';
 import {assignStyles,rollGrade,scaleGains,oddsFor} from '../src/engine/outcome.js';
-import {broadcastGrade} from '../src/engine/audience.js';
+import {broadcastGrade,GRADE_INCOME} from '../src/engine/audience.js';
+import {offerWeight,priceTier,unlockedTier} from '../src/engine/purchases.js';
 const catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
 let serial=0,passed=0,failed=0;
 const copy=x=>JSON.parse(JSON.stringify(x));
@@ -15,13 +16,13 @@ function finish(s,prefer){
     assert(++guard<20,'broadcast did not terminate');
     if(s.phase==='result'){s=act(s,'advance');continue;}
     const choices=available(s);assert(choices.length,`No valid choice in ${s.event.kind} ${s.event.title}`);
-    const selected=prefer?.(s,choices)||choices.find(c=>!c.postpone&&c.id!=='later')||choices[0];
+    const selected=prefer?.(s,choices)||(s.event.kind==='shop'?choices.find(c=>c.id==='skip'):null)||choices.find(c=>!c.postpone&&c.id!=='later')||choices[0];
     s=act(s,'choose',{id:selected.id});
   }return s;
 }
 function next(s,days=7){if(s.phase==='ending')s=act(s,'deferEnding');assert.equal(s.phase,'wrap');return act(s,'date',{date:addDays(s.date,days)});}
 test('initial date, resources and no mutation',()=>{let s=newGame(10),before=copy(s);const n=act(s,'start');assert.deepEqual(s,before);assert.equal(n.date,'2026-01-18');assert.equal(n.cash,3000000);assert.equal(n.phase,'event');});
-test('broadcast income snapshots pre-growth stats and settles once',()=>{let s=finish(newGame(20));assert.equal(s.cash,3270000);assert.equal(s.journal.length,1);assert.equal(s.ledger.length,1);assert.equal(s.journal[0].income.gross,300000);assert.throws(()=>act(s,'advance'));});
+test('broadcast income snapshots pre-growth stats and settles once',()=>{let s=finish(newGame(20));const j=s.journal[0];assert.equal(s.cash,3000000+j.income.net+j.donations);assert.equal(s.journal.length,1);assert.equal(s.ledger.filter(x=>x.id.startsWith('income:')).length,1);assert.equal(j.income.gross,Math.round(300000*GRADE_INCOME[j.grade]));assert.equal(j.events.length,3);assert.throws(()=>act(s,'advance'));});
 test('same command is idempotent',()=>{let s=newGame(30),c={type:'prepare',action:'data',commandId:'same'};s=dispatch(s,c,catalog);const n=dispatch(s,c,catalog);assert.equal(n,s);assert.equal(n.preparations,1);assert.equal(n.stats.planning,17);});
 test('saved RNG reproduces same choices and reactions',()=>{let s=act(newGame(40),'start'),c={type:'choose',id:available(s)[0].id,commandId:'persisted'};assert.deepEqual(dispatch(s,c,catalog),dispatch(copy(s),c,catalog));});
 test('positive gains capped per stat per broadcast',()=>{let s=newGame(50);s=act(s,'prepare',{action:'data'});s=act(s,'prepare',{action:'data'});for(let i=0;i<3;i++)s=act(s,'plan',{index:i,corner:'S'});s=finish(s);assert(s.stats.planning<=21);assert(Object.values(s.gainTotals).every(x=>x<=6));});
@@ -58,6 +59,8 @@ test('styled choice result records grade and miss grants no choice growth',()=>{
 test('broadcast grade, viewers, records and journal fields',()=>{assert.equal(broadcastGrade([{grade:'great'},{grade:'great'},{}]),'S');assert.equal(broadcastGrade([{grade:'great'},{},{}]),'A');assert.equal(broadcastGrade([{},{},{}]),'B');assert.equal(broadcastGrade([{grade:'miss'},{grade:'miss'},{}]),'C');let s=finish(newGame(190));const j=s.journal[0];assert(['S','A','B','C'].includes(j.grade));assert(j.viewers>0);assert.equal(s.records.bestViewers,j.viewers);assert.equal(s.records.bestGross,j.income.gross);assert(s.result.newRecords.includes('viewers'));});
 test('virtual donations only come from played corners and are recorded',()=>{let hit=null;for(let seed=1;seed<300&&!hit;seed++){let s=newGame(seed);for(let b=0;b<3&&!hit;b++){const before=s.cash;s=finish(s);const d=s.journal.at(-1).donations;if(d>0){hit={s,d};assert.equal(s.records.donationTotal>=d,true);assert(s.ledger.some(x=>x.id.startsWith('donation:')));}s=next(s);}}assert(hit,'응원 이벤트를 찾지 못함');let s=newGame(7);const cash=s.cash;s=act(s,'date',{date:'2026-08-01'});assert.equal(s.cash,cash);assert.equal(s.records.donations,0);});
 test('schema 1 saves migrate to 2 with records restored from journal',()=>{let s=finish(newGame(195));const v1=copy(s);v1.schemaVersion=1;delete v1.records;const up=loadSave(v1,catalog);assert.equal(up.schemaVersion,2);assert.equal(up.records.bestGross,s.journal[0].income.gross);assert.equal(up.records.donations,0);});
+
+test('purchases appear as broadcast interludes, never consume a corner, and pricier items come later',()=>{const early={completedBroadcasts:0},late={completedBroadcasts:30};const tiers=catalog.moneyEvents.map(e=>[e,priceTier(e)]);assert.equal(unlockedTier(early),0);assert.equal(unlockedTier(late),3);for(const [e,t] of tiers){if(t>=2)assert.equal(offerWeight(early,e),0,e.id);if(t===3)assert(offerWeight(late,e)>offerWeight(late,tiers.find(([,x])=>x===0)[0]));}let found=null;for(let seed=1;seed<200&&!found;seed++){let s=act(newGame(seed),'start');let guard=0;while(['event','result'].includes(s.phase)&&guard++<20){if(s.phase==='result'){s=act(s,'advance');continue;}if(s.event.kind==='shop'){const buy=s.event.choices.find(c=>c.purchase&&!unmet(s,c.requirements,catalog).length);const slot=s.slot,cash=s.cash;s=act(s,'choose',{id:buy.id});assert.equal(s.slot,slot);assert(s.cash<cash);assert.equal(s.currentLog.length,slot);assert(s.purchases.at(-1).effects.length);s=act(s,'advance');assert.equal(s.slot,slot);assert.notEqual(s.event.kind,'shop');found=s;continue;}s=act(s,'choose',{id:available(s)[0].id});}if(found){while(['event','result'].includes(found.phase)){if(found.phase==='result'){found=act(found,'advance');continue;}found=act(found,'choose',{id:available(found)[0].id});}assert.equal(found.journal[0].events.length,3);}}assert(found,'구매 막간을 찾지 못함');});
 
 // Real reachability witnesses: never inject stats, story flags or experiences.
 function witness(def,seed){
@@ -97,8 +100,9 @@ function witness(def,seed){
     s=finish(s,(s,choices)=>{
       if(s.event.kind==='project')return choices.find(c=>!c.postpone);
       if(s.event.kind==='leak')return choices.find(c=>c.id==='hide');
+      if(s.event.kind==='shop')return choices.find(c=>c.id==='skip');
       return choices.slice().sort((a,b)=>{
-        const score=c=>Object.entries(c.gain||{}).reduce((v,[k,n])=>v+n*Math.max(0,(wanted[k]||0)-(k==='gameSkill'?game():s.stats[k])),0);
+        const score=c=>Object.entries(c.gain||{}).reduce((v,[k,n])=>v+n*Math.max(0,(wanted[k]||0)-(k==='gameSkill'?game():s.stats[k])),0)*(c.style?(oddsFor(c.style,prepBonus(s)).great*STYLES[c.style].greatScale+(1-oddsFor(c.style,prepBonus(s)).great-oddsFor(c.style,prepBonus(s)).miss)):1);
         return score(b)-score(a);
       })[0];
     });

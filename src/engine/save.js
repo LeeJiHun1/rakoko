@@ -43,7 +43,9 @@ const RECORD_CHECKS = {
     && (j.viewers == null || isInt(j.viewers, 0, 1e9)) && (j.grade == null || ['S', 'A', 'B', 'C'].includes(j.grade)) && (j.donations == null || Number.isSafeInteger(j.donations)),
   projectArchive: (p, catalog) => isProject(p, catalog),
   reachedEndings: e => isStr(e?.id, 64) && isStr(e.title) && optStr(e.epilogue) && optStr(e.resolution),
-  purchases: p => isStr(p?.id, 80) && isStr(p.choice) && Number.isSafeInteger(p.cost) && isInt(p.dueBroadcast, 0, 20000) && ['pending', 'delivered'].includes(p.status),
+  purchases: p => isStr(p?.id, 80) && isStr(p.choice) && Number.isSafeInteger(p.cost) && isInt(p.dueBroadcast, 0, 20000) && ['pending', 'delivered'].includes(p.status)
+    && (p.effects == null || (Array.isArray(p.effects) && p.effects.every(e => ['odds', 'viewers', 'donation'].includes(e?.kind) && Number.isFinite(e.amount) && isInt(e.broadcasts, 1, 100))))
+    && (p.deliveredAt == null || isInt(p.deliveredAt, 0, 20000)),
 };
 
 function isProject(p, catalog) {

@@ -4,6 +4,7 @@ import {celebrationKey, celebrationOn} from './dates.js';
 import {scheduleDate} from './calendar.js';
 import {applyChoice} from './choices.js';
 import {broadcastGrade, GRADE_INCOME, peakViewers, updateRecords} from './audience.js';
+import {activeBonus} from './purchases.js';
 import {deliverOrders, settleIncome, snapshotIncome} from './economy.js';
 import {offerEndingIfReady} from './ending.js';
 import {nextEvent} from './events/next.js';
@@ -23,7 +24,7 @@ function reserveSpecials(s) {
 function settle(s, catalog) {
   const grade = broadcastGrade(s.currentLog);
   const {gross, cost, net} = settleIncome(s, catalog, GRADE_INCOME[grade]);
-  const viewers = peakViewers(s, grade);
+  const viewers = peakViewers(s, grade, activeBonus(s, 'viewers'));
   const newRecords = updateRecords(s, {viewers, gross, grade});
   const donations = s.currentLog.reduce((a, r) => a + (r.donation?.amount || 0), 0);
   s.completedBroadcasts++;
@@ -80,6 +81,7 @@ export const commands = {
   }},
   advance: {run(s, c, catalog) {
     if (s.phase !== 'result') throw Error('결과를 먼저 확인해주세요.');
+    if (s.result?.interlude) { nextEvent(s, catalog, {allowShop: false}); return; } // 막간 뒤에는 같은 코너 진행
     s.slot++;
     if (s.slot < SEGMENTS_PER_BROADCAST) nextEvent(s, catalog);
     else settle(s, catalog);

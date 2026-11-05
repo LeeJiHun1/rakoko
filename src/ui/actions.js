@@ -98,7 +98,6 @@ const RETURN_TO_BROADCAST = ['start', 'project', 'joinModule', 'resumeProject'];
 const COMMAND_TOASTS = {
   craftAndPrepare: '새 옷의 준비도가 25 올랐어요.',
   prepare: '오늘의 준비를 기록했어요.',
-  purchase: '주문을 기록했어요. 도착한 준비물은 기획 노트에서 확인해요.',
   equip: '새로운 분위기로, 오늘의 코코.',
 };
 

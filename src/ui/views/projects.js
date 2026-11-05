@@ -1,6 +1,6 @@
-// 목표 고르기 화면: 기획 선택·보류 · 장기 콘텐츠 · 상점 · 주문 기록.
-import {projectLocks} from '../../engine.js';
-import {btn, compact, escape, money} from '../dom.js';
+// 목표 고르기 화면: 기획 선택·보류 · 장기 콘텐츠 · 주문 기록. (구매는 방송 중 랜덤 사건으로만 등장)
+import {effectText, projectLocks} from '../../engine.js';
+import {btn, escape, money} from '../dom.js';
 import {currentProject, gameName, store} from '../store.js';
 import {projectMini} from './project-mini.js';
 
@@ -34,13 +34,9 @@ function moduleList(state, catalog) {
   return `<details class="optional-options"><summary>장기 콘텐츠에 참여하기 <small>마을·협동·대회</small></summary><p class="view-description">다른 가상 동료들과 여러 방송에 걸쳐 진행해요. 한 번에 하나씩 참여할 수 있어요.</p><div class="module-grid">${catalog.modules.map((m,i)=>`<article><span class="module-symbol">${MODULE_SYMBOLS[i]}</span><h3>${escape(m.name)}</h3><p>최소 5회 참여 · 초보도 가능</p>${btn('참여하기','joinModule',`data-id="${m.id}" ${state.phase!=='prep'||(state.module&&!state.module.expired)?'disabled':''}`,'button small secondary')}</article>`).join('')}</div></details>`;
 }
 
-function shop(state, catalog) {
-  return `<details class="optional-options"><summary>장비·외주·행사 준비 <small>선택 구매</small></summary><p class="view-description">필요할 때만 구매하세요. 납품은 실제로 방송을 마쳐야 진행돼요. 주문 확정 후 취소·환급은 없어요.</p><div class="shop-list">${catalog.moneyEvents.map(e=>`<details><summary>${escape(e.title)}<span>${compact(Math.min(...e.choices.filter(c=>c.cost?.amount).map(c=>c.cost.amount)))}원부터</span></summary>${e.choices.filter(c=>c.cost?.amount).map(c=>`<div class="shop-choice"><span>${escape(c.text)}<b>${money(c.cost.amount)}</b></span>${btn('주문','purchase',`data-event="${e.id}" data-id="${c.id}" ${state.phase!=='prep'||state.cash<c.cost.amount?'disabled':''}`,'button small secondary')}</div>`).join('')}<p class="shop-note">원하지 않으면 구매하지 않고 넘어가도 괜찮아요.</p></details>`).join('')}</div></details>`;
-}
-
 function orders(state) {
   if (!state.purchases.length) return '';
-  return `<details class="optional-options"><summary>주문 기록 <small>${state.purchases.length}건</small></summary><div class="order-list">${state.purchases.slice().reverse().map(p=>`<div><span>${escape(p.choice)}<small>${money(p.cost)}</small></span><b>${p.status==='delivered'?'준비물 도착':`${escape(Math.max(0,p.dueBroadcast-state.completedBroadcasts))}회 방송 뒤 도착`}</b></div>`).join('')}</div></details>`;
+  return `<details class="optional-options"><summary>주문 기록 <small>${state.purchases.length}건</small></summary><div class="order-list">${state.purchases.slice().reverse().map(p=>`<div><span>${escape(p.choice)}<small>${money(p.cost)}</small></span><b>${p.status==='delivered'?(p.effects?.length?escape(effectText(p.effects)):'준비물 도착'):`${escape(Math.max(0,p.dueBroadcast-state.completedBroadcasts))}회 방송 뒤 도착`}</b></div>`).join('')}</div></details>`;
 }
 
 export function projects() {
@@ -52,6 +48,5 @@ export function projects() {
   ${pausedProjects(state, catalog)}
   ${activeModule(state)}
   ${moduleList(state, catalog)}
-  ${shop(state, catalog)}
   ${orders(state)}`;
 }

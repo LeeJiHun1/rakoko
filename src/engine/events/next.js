@@ -1,10 +1,11 @@
 // 다음 코너의 사건 결정. 우선순위:
 // ① 예약(기념일 → 의상 공개 → 마지막 특집) ② 특별 기획 단계 ③ 장기 콘텐츠 ④ 약속 메모 ⑤ 의상 유출 ⑥ 일반 사건
 import {LEAK_MIN_PROGRESS} from '../constants.js';
+import {effectsFor, effectText, rollShopOffer} from '../purchases.js';
 import {random} from '../rng.js';
 import {pickGeneral} from './general.js';
 import {moduleEvent} from './module-events.js';
-import {calendarEvent, finaleEvent, LEAK_CHANCE, leakEvent, projectEvent, promiseEvent, revealEvent} from './scripted.js';
+import {calendarEvent, finaleEvent, LEAK_CHANCE, leakEvent, projectEvent, promiseEvent, revealEvent, shopEvent} from './scripted.js';
 
 const duePromise = s => s.promises.find(p => p.status === 'pending' && p.dueBroadcast <= s.broadcastIndex && p.createdBroadcast < s.broadcastIndex);
 
@@ -31,7 +32,14 @@ function chooseEvent(s, catalog) {
   return pickGeneral(s, catalog);
 }
 
-export function nextEvent(s, catalog) {
-  s.event = chooseEvent(s, catalog);
+/** 코너 시작 전, 예약이 없는 코너면 방송당 한 번 구매 막간을 굴린다(막간은 코너를 소비하지 않는다). */
+function shopInterlude(s, catalog) {
+  if (s.reservations[s.slot]) return null;
+  const def = rollShopOffer(s, catalog);
+  return def ? shopEvent(s, def, effectsFor, effectText) : null;
+}
+
+export function nextEvent(s, catalog, {allowShop = true} = {}) {
+  s.event = (allowShop && shopInterlude(s, catalog)) || chooseEvent(s, catalog);
   s.phase = 'event';
 }

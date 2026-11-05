@@ -1,5 +1,5 @@
 // 방송 준비 화면: 준비 행동 2회 · 방송 켜기 · (선택) 편성/게임 변경 · 마지막 특집 예약.
-import {celebrationOn, CORNERS, finaleLocks} from '../../engine.js';
+import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks} from '../../engine.js';
 import {btn, escape} from '../dom.js';
 import {store} from '../store.js';
 import {projectMini} from './project-mini.js';
@@ -22,6 +22,13 @@ function programSlots(state, calendar) {
   return state.plan.map((corner,i)=>{const reserved=reservedLabel(state,i,calendar);return `<div class="program-slot"><span class="slot-no">${i+1}</span><select data-change="plan" data-index="${i}" aria-label="${i+1}번째 코너" ${reserved?'disabled':''}>${Object.entries(CORNERS).map(([key,label])=>`<option value="${key}" ${key===(reserved?'S':corner)?'selected':''}>${key==='S'&&reserved?reserved:label}</option>`).join('')}</select></div>`;}).join('');
 }
 
+/** 지금 적용 중인 구매 효과 (대략 표시) */
+function activeEffectList(state) {
+  const list = activeEffects(state);
+  if (!list.length) return '';
+  return `<div class="active-effects"><span class="eyebrow">적용 중인 준비물 효과</span>${list.map(e=>`<p><b>${escape(e.title)}</b> · ${EFFECT_LABELS[e.kind]} · ${escape(e.remaining)}회 남음</p>`).join('')}</div>`;
+}
+
 function finaleNote(state, catalog) {
   if (state.project?.step !== 3) return '';
   const locks = finaleLocks(state, catalog);
@@ -35,7 +42,7 @@ export function prep() {
   return `<div class="simple-flow" aria-label="방송 진행 순서"><span class="active">1 준비</span><i>→</i><span>2 방송</span><i>→</i><span>3 일지</span></div>
   <p class="simple-guide">준비를 최대 2번 고른 뒤, <b>방송 켜기</b>를 눌러주세요.</p>
   <div class="section-heading space-top"><h2>오늘은 무엇을 준비할까요?</h2><span class="remaining"><b>${state.preparations}</b>번 남음</span></div>
-  <div class="prep-grid simple-preps">${prepButtons(state)}</div>
+  <div class="prep-grid simple-preps">${prepButtons(state)}</div>${activeEffectList(state)}
   <div class="simple-broadcast-start">${btn('방송 켜기 <span>→</span>','start','','button primary full')}<p>준비를 건너뛰고 바로 시작해도 괜찮아요.</p></div>
   ${projectMini()}
   ${state.project&&state.project.step<3&&!state.plan.includes('S')?`<p class="next-task">기획을 진행하려면 특별 기획 코너가 필요해요. ${btn('편성에 넣기','includeProject','','text-button')}</p>`:''}

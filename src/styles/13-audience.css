@@ -20,3 +20,7 @@
 .journal-grade{color:#b85b75}
 .record-line{display:flex;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px dashed #ded5d0;font-size:12px;color:var(--muted)}
 .record-line b{color:var(--ink)}
+.choice-price{color:#b08a3e}
+.active-effects{margin:12px 0 4px;padding:12px 14px;border-radius:10px;background:#f3f7f4;border:1px solid #d5e4da}
+.active-effects p{margin:4px 0 0;font-size:12px;color:#4f6b5c}
+.shop-effect{display:block;font-size:11px;color:#5f8a76;margin-top:2px}

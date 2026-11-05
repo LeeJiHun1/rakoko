@@ -1,4 +1,5 @@
-// 방송 수입 정산 · 구매 · 대회 상금. 금액은 모두 정수(가상 원화).
+// 방송 수입 정산 · 구매(상점 명령) · 납품 · 대회 상금. 금액은 모두 정수(가상 원화). 구매 효과는 purchases.js.
+import {buyOption} from './purchases.js';
 /** gradeFactor: 방송 등급 배율(S 1.3 ~ C 0.9). 금액은 정수로 반올림. */
 export function settleIncome(s, catalog, gradeFactor = 1) {
   const cfg = catalog.economy.income, snap = s.incomeSnapshot, segments = s.currentLog.length;
@@ -19,7 +20,7 @@ export function snapshotIncome(s, catalog) {
 }
 
 export function deliverOrders(s) {
-  for (const order of s.purchases) if (order.status === 'pending' && order.dueBroadcast <= s.completedBroadcasts) order.status = 'delivered';
+  for (const order of s.purchases) if (order.status === 'pending' && order.dueBroadcast <= s.completedBroadcasts) { order.status = 'delivered'; order.deliveredAt = s.completedBroadcasts; }
 }
 
 export function awardTournamentPrize(s, m, catalog) {
@@ -33,15 +34,7 @@ export const commands = {
   purchase: {prepOnly: true, run(s, c, catalog) {
     const e = catalog.moneyEvents.find(e => e.id === c.eventId), option = e?.choices.find(x => x.id === c.choiceId);
     if (!option) throw Error('상품을 찾을 수 없어요.');
-    const cost = option.cost?.amount || 0;
-    if (!cost) return;
-    const target = e.id + ':' + (s.project?.instanceId || s.gameId);
-    if (s.purchases.some(x => x.target === target)) throw Error('이 기획에 이미 주문한 항목이에요.');
-    if (s.cash < cost) throw Error('잔액이 부족해요. 이번 구매는 포기할 수 있어요.');
-    const p = option.effects.find(x => x.op === 'purchase.record');
-    s.cash -= cost;
-    s.purchases.push({id: `order:${s.broadcastIndex}:${s.purchases.length}`, target, title: e.title, choice: option.text, cost,
-      status: p.deliveryAfterBroadcasts ? 'pending' : 'delivered', dueBroadcast: s.completedBroadcasts + (p.deliveryAfterBroadcasts || 0)});
-    s.ledger.push({id: `purchase:${target}`, date: s.date, net: -cost});
+    if (!(option.cost?.amount || 0)) return;
+    buyOption(s, e, option);
   }},
 };

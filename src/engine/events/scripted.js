@@ -50,6 +50,15 @@ export function finaleEvent(s) {
   ]);
 }
 
+/** 코너 사이 구매 막간. 유료 선택지는 잔액 조건으로 잠기고, 넘기기는 항상 가능. */
+export function shopEvent(s, def, effectsFor, effectText) {
+  const paid = def.choices.filter(c => c.cost?.amount);
+  return event(s, 'shop', def.title, '코너 사이 잠깐, 방송에 쓸 만한 것을 발견했다. 지금 투자하면 다음 방송들이 달라질지도?', [
+    ...paid.map((o, i) => choice(o.id, o.text, `${o.text} — 주문 완료!`, {requirements: [{path: 'economy.cash', op: 'gte', value: o.cost.amount}], cost: o.cost.amount, effectSummary: effectText(effectsFor(def.id, i)), purchase: true})),
+    choice('skip', '이번에는 넘긴다', '이번에는 지갑을 지켰다. 다음 기회에 생각해 보자.'),
+  ], {moneyEventId: def.id});
+}
+
 export function promiseEvent(s, promise) {
   return event(s, 'promise', '지난 방송에서 적어 둔 다음에', `‘${promise.title}’라는 메모가 오늘의 코너를 기다리고 있다.`, [
     choice('fulfill', '약속했던 작은 기획을 진행한다', '지난 메모를 따라 코너를 진행하고 결과를 기록했다.', {gain: {planning: 1}}),

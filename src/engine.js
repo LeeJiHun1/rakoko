@@ -12,3 +12,4 @@ export {dispatch} from './engine/dispatch.js';
 export {validateSave, migrateSave, loadSave} from './engine/save.js';
 export {GATED_EVENT_IDS} from './engine/events/eligibility.js';
 export {STYLES, prepBonus} from './engine/outcome.js';
+export {activeBonus, activeEffects, effectsFor, effectText, EFFECT_LABELS} from './engine/purchases.js';
