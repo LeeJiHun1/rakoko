@@ -1,0 +1,1942 @@
+{
+  "version": "2.0",
+  "status": "design_only",
+  "events": [
+    {
+      "id": "ME-001",
+      "title": "새 게임을 구매할까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.new_game_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-001-C1",
+          "text": "새 게임을 구매한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 80000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 80000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 80000,
+              "reason": "requested_game_purchase"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "requested_game_purchase",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-001-C2",
+          "text": "저렴한 대체 게임을 구매한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 20000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 20000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 20000,
+              "reason": "budget_game_purchase"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "budget_game_purchase",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-001-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-002",
+      "title": "추가 콘텐츠를 열어볼까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.dlc_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-002-C1",
+          "text": "요청한 확장 콘텐츠를 구매한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 30000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 30000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 30000,
+              "reason": "requested_dlc_purchase"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "requested_dlc_purchase",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-002-C2",
+          "text": "작은 추가 팩만 구매한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 15000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 15000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 15000,
+              "reason": "small_addon_purchase"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "small_addon_purchase",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-002-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-003",
+      "title": "마이크 수리를 맡길까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.mic_service_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-003-C1",
+          "text": "전문 수리를 맡긴다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 150000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 150000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 150000,
+              "reason": "mic_repair_service"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "mic_repair_service",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-003-C2",
+          "text": "이번 방송용 장비를 빌린다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 50000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 50000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 50000,
+              "reason": "mic_rental_service"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "mic_rental_service",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-003-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-004",
+      "title": "추가 녹화 공간이 필요하다",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.recording_archive_expansion_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-004-C1",
+          "text": "녹화·백업 저장 장치를 구매한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 500000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 500000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 500000,
+              "reason": "recording_storage_purchase"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "recording_storage_purchase",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-004-C2",
+          "text": "한 기획용 보관 공간만 빌린다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 100000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 100000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 100000,
+              "reason": "recording_storage_rental"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "recording_storage_rental",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": "project_close"
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-004-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-005",
+      "title": "특집 썸네일을 의뢰할까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.thumbnail_commission_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-005-C1",
+          "text": "독자 썸네일을 의뢰한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 50000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 50000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 50000,
+              "reason": "thumbnail_commission"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "thumbnail_commission",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-005-C2",
+          "text": "소규모 수정 작업을 의뢰한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 20000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 20000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 20000,
+              "reason": "thumbnail_revision"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "thumbnail_revision",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-005-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-006",
+      "title": "새 방송 화면을 주문할까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.overlay_commission_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-006-C1",
+          "text": "맞춤 화면 구성을 의뢰한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 250000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 250000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 250000,
+              "reason": "overlay_commission"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "overlay_commission",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-006-C2",
+          "text": "필요한 패널만 의뢰한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 80000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 80000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 80000,
+              "reason": "overlay_panel_commission"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "overlay_panel_commission",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-006-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-007",
+      "title": "특집 소품을 마련할까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.broadcast_props_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-007-C1",
+          "text": "계획한 소품 세트를 구매한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 300000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 300000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 300000,
+              "reason": "props_full_purchase"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "props_full_purchase",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-007-C2",
+          "text": "핵심 소품만 구매한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 100000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 100000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 100000,
+              "reason": "props_small_purchase"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "props_small_purchase",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-007-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-008",
+      "title": "소규모 행사의 공간을 빌릴까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.event_venue_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-008-C1",
+          "text": "공간·기본 음향·운영 묶음을 대여한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 5000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 5000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 5000000,
+              "reason": "venue_full_rental"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "venue_full_rental",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": "target_broadcast_end"
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-008-C2",
+          "text": "작은 공간 중심으로 축소 대여한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 1000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 1000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 1000000,
+              "reason": "venue_small_rental"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "venue_small_rental",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": "target_broadcast_end"
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-008-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-009",
+      "title": "팬 참여 기획의 기념품",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.commemorative_goods_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-009-C1",
+          "text": "계획한 수량의 기념품을 제작한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 1500000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 1500000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 1500000,
+              "reason": "goods_full_production"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "goods_full_production",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-009-C2",
+          "text": "작은 수량으로 제작한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 300000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 300000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 300000,
+              "reason": "goods_small_production"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "goods_small_production",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-009-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-010",
+      "title": "가상 전시용 독자 에셋",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.exhibit_asset_commission_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-010-C1",
+          "text": "맞춤 전시 에셋 묶음을 의뢰한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 2000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 2000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 2000000,
+              "reason": "exhibit_full_commission"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "exhibit_full_commission",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-010-C2",
+          "text": "한 작품의 보조 에셋만 의뢰한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 500000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 500000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 500000,
+              "reason": "exhibit_small_commission"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "exhibit_small_commission",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-010-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-011",
+      "title": "독자 영상의 편집 지원",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.video_edit_service_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-011-C1",
+          "text": "방송 요약·하이라이트 묶음을 의뢰한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 500000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 500000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 500000,
+              "reason": "video_edit_full"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "video_edit_full",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-011-C2",
+          "text": "일부 구간의 정리만 의뢰한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 150000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 150000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 150000,
+              "reason": "video_edit_partial"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "video_edit_partial",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 1,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-011-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-012",
+      "title": "합동 방송 장비를 빌릴까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.collab_equipment_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-012-C1",
+          "text": "다인 송출장비·운영 묶음을 예약한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 2000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 2000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 2000000,
+              "reason": "collab_equipment_full_rental"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "collab_equipment_full_rental",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": "target_broadcast_end"
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-012-C2",
+          "text": "필수 장비만 예약한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 500000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 500000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 500000,
+              "reason": "collab_equipment_small_rental"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "collab_equipment_small_rental",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "available",
+              "deliveryAfterBroadcasts": 0,
+              "rentalUntil": "target_broadcast_end"
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-012-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-013",
+      "title": "방송 작업실을 확장할까",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.studio_expansion_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-013-C1",
+          "text": "방음·장비·작업환경을 함께 구축한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 15000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 15000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 15000000,
+              "reason": "studio_full_expansion"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "studio_full_expansion",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 3,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-013-C2",
+          "text": "핵심 작업환경만 개선한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 5000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 5000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 5000000,
+              "reason": "studio_small_expansion"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "studio_small_expansion",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 3,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-013-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-014",
+      "title": "온라인 특집 공연 제작",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.online_show_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-014-C1",
+          "text": "무대·영상·송출 제작 묶음을 맡긴다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 30000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 30000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 30000000,
+              "reason": "online_show_full"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "online_show_full",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 3,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-014-C2",
+          "text": "작은 무대 구성으로 제작한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 8000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 8000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 8000000,
+              "reason": "online_show_small"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "online_show_small",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 3,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-014-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-015",
+      "title": "직접 여는 스트리머 대회",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.hosted_tournament_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-015-C1",
+          "text": "운영·중계·게임용 상금 예산을 집행한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 50000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 50000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 50000000,
+              "reason": "hosted_cup_full"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "hosted_cup_full",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 4,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-015-C2",
+          "text": "소규모 친선전 예산으로 줄인다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 10000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 10000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 10000000,
+              "reason": "hosted_cup_small"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "hosted_cup_small",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 4,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-015-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    },
+    {
+      "id": "ME-016",
+      "title": "큰 팬 행사 개최 준비",
+      "provenance": "fictional_game_design",
+      "eligibility": {
+        "all": [
+          {
+            "path": "needs.large_fan_event_requested",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "costBasis": "game_balance_not_real_market_price",
+      "snapshotTargetsAndPricesBeforePresenting": true,
+      "route": "relevant_preparation_request_or_contextual_general_slot",
+      "countsAsIncomeEligibleSegmentByItself": false,
+      "repeat": {
+        "maxSuccessfulPurchasesPerProjectAndTarget": 1,
+        "abandonConsumesPurchaseLimit": false,
+        "afterAbandon": "manual_reopen_or_new_project_only"
+      },
+      "choices": [
+        {
+          "id": "ME-016-C1",
+          "text": "장소·제작·운영을 묶어 준비한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 80000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 80000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 80000000,
+              "reason": "fan_event_full"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "fan_event_full",
+              "scope": "full",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.requestedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 4,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-016-C2",
+          "text": "인원과 구성을 줄여 준비한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 20000000
+          },
+          "eligibility": {
+            "all": [
+              {
+                "path": "economy.cash",
+                "op": "gte",
+                "value": 20000000
+              }
+            ]
+          },
+          "showWhenEventVisible": true,
+          "disableWhenAnyConditionFails": true,
+          "effects": [
+            {
+              "op": "cash.debit",
+              "amount": 20000000,
+              "reason": "fan_event_small"
+            },
+            {
+              "op": "purchase.record",
+              "itemOrServiceId": "fan_event_small",
+              "scope": "reduced",
+              "bindProjectAndTarget": true,
+              "targetBinding": "event.reducedTargetId",
+              "deliveryStatus": "paid_pending_delivery",
+              "deliveryAfterBroadcasts": 4,
+              "rentalUntil": null
+            }
+          ],
+          "automaticallyGrantsEndingOrExperience": false
+        },
+        {
+          "id": "ME-016-ABANDON",
+          "text": "이번 이벤트는 포기한다",
+          "cost": {
+            "wallet": "economy.cash",
+            "amount": 0
+          },
+          "eligibility": {
+            "all": []
+          },
+          "effects": [
+            {
+              "op": "paidEvent.abandon",
+              "grantsPurchase": false,
+              "grantsProgress": false,
+              "chargesCash": false,
+              "createsMandatoryPromise": false,
+              "returnTo": "preparation_or_parent_broadcast_content"
+            }
+          ],
+          "alwaysAvailable": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "engineVersion": "0.1.0",
+  "generatedAt": "2026-11-05T04:41:14.453Z",
+  "passed": 56,
+  "failed": 0,
+  "witnesses": [
+    {
+      "endingId": "END-001",
+      "broadcasts": 5,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 20,
+        "community": 36,
+        "planning": 43,
+        "operation": 29
+      },
+      "cash": 4468000
+    },
+    {
+      "endingId": "END-002",
+      "broadcasts": 5,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 20,
+        "community": 34,
+        "planning": 44,
+        "operation": 29
+      },
+      "cash": 4444000
+    },
+    {
+      "endingId": "END-003",
+      "broadcasts": 19,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 41,
+        "community": 72,
+        "planning": 85,
+        "operation": 62
+      },
+      "cash": 14800000
+    },
+    {
+      "endingId": "END-004",
+      "broadcasts": 16,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 42,
+        "community": 64,
+        "planning": 89,
+        "operation": 44
+      },
+      "cash": 12250000
+    },
+    {
+      "endingId": "END-005",
+      "broadcasts": 12,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 36,
+        "community": 54,
+        "planning": 68,
+        "operation": 42
+      },
+      "cash": 9092000
+    },
+    {
+      "endingId": "END-006",
+      "broadcasts": 7,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 25,
+        "community": 44,
+        "planning": 55,
+        "operation": 27
+      },
+      "cash": 5464000
+    },
+    {
+      "endingId": "END-007",
+      "broadcasts": 10,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 33,
+        "community": 63,
+        "planning": 49,
+        "operation": 52
+      },
+      "cash": 7872000
+    },
+    {
+      "endingId": "END-008",
+      "broadcasts": 10,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 31,
+        "community": 70,
+        "planning": 63,
+        "operation": 32
+      },
+      "cash": 7964000
+    },
+    {
+      "endingId": "END-009",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 34,
+        "community": 44,
+        "planning": 76,
+        "operation": 47
+      },
+      "cash": 8160000
+    },
+    {
+      "endingId": "END-010",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 36,
+        "community": 52,
+        "planning": 77,
+        "operation": 37
+      },
+      "cash": 8374000
+    },
+    {
+      "endingId": "END-011",
+      "broadcasts": 12,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 36,
+        "community": 48,
+        "planning": 74,
+        "operation": 58
+      },
+      "cash": 8572000
+    },
+    {
+      "endingId": "END-012",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 36,
+        "community": 44,
+        "planning": 62,
+        "operation": 64
+      },
+      "cash": 8196000
+    },
+    {
+      "endingId": "END-013",
+      "broadcasts": 37,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 50,
+        "community": 100,
+        "planning": 100,
+        "operation": 100
+      },
+      "cash": 58012000
+    },
+    {
+      "endingId": "END-014",
+      "broadcasts": 18,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 40,
+        "community": 82,
+        "planning": 87,
+        "operation": 46
+      },
+      "cash": 14588000
+    },
+    {
+      "endingId": "END-015",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 34,
+        "community": 43,
+        "planning": 71,
+        "operation": 50
+      },
+      "cash": 5806000
+    },
+    {
+      "endingId": "END-016",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 34,
+        "community": 65,
+        "planning": 66,
+        "operation": 34
+      },
+      "cash": 6540000
+    },
+    {
+      "endingId": "END-017",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 36,
+        "community": 52,
+        "planning": 55,
+        "operation": 68
+      },
+      "cash": 8376000
+    },
+    {
+      "endingId": "END-018",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 36,
+        "community": 46,
+        "planning": 71,
+        "operation": 53
+      },
+      "cash": 8186000
+    },
+    {
+      "endingId": "END-019",
+      "broadcasts": 10,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 33,
+        "community": 58,
+        "planning": 69,
+        "operation": 32
+      },
+      "cash": 7724000
+    },
+    {
+      "endingId": "END-020",
+      "broadcasts": 9,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 31,
+        "community": 54,
+        "planning": 63,
+        "operation": 31
+      },
+      "cash": 6944000
+    },
+    {
+      "endingId": "END-021",
+      "broadcasts": 10,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 31,
+        "community": 60,
+        "planning": 65,
+        "operation": 31
+      },
+      "cash": 7364000
+    },
+    {
+      "endingId": "END-022",
+      "broadcasts": 10,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 33,
+        "community": 66,
+        "planning": 62,
+        "operation": 35
+      },
+      "cash": 7512000
+    },
+    {
+      "endingId": "END-023",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 33,
+        "community": 69,
+        "planning": 53,
+        "operation": 52
+      },
+      "cash": 8696000
+    },
+    {
+      "endingId": "END-024",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 34,
+        "community": 64,
+        "planning": 70,
+        "operation": 35
+      },
+      "cash": 8558000
+    },
+    {
+      "endingId": "END-025",
+      "broadcasts": 19,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 45,
+        "community": 69,
+        "planning": 100,
+        "operation": 53
+      },
+      "cash": 17290000
+    },
+    {
+      "endingId": "END-026",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 35,
+        "community": 44,
+        "planning": 79,
+        "operation": 47
+      },
+      "cash": 8172000
+    },
+    {
+      "endingId": "END-027",
+      "broadcasts": 200,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 65,
+        "community": 100,
+        "planning": 100,
+        "operation": 100
+      },
+      "cash": 498834000
+    },
+    {
+      "endingId": "END-028",
+      "broadcasts": 9,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 30,
+        "community": 62,
+        "planning": 60,
+        "operation": 29
+      },
+      "cash": 6740000
+    },
+    {
+      "endingId": "END-029",
+      "broadcasts": 8,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 28,
+        "community": 40,
+        "planning": 54,
+        "operation": 47
+      },
+      "cash": 6100000
+    },
+    {
+      "endingId": "END-030",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 34,
+        "community": 44,
+        "planning": 72,
+        "operation": 57
+      },
+      "cash": 8176000
+    },
+    {
+      "endingId": "END-031",
+      "broadcasts": 11,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 33,
+        "community": 46,
+        "planning": 70,
+        "operation": 53
+      },
+      "cash": 8160000
+    },
+    {
+      "endingId": "END-032",
+      "broadcasts": 12,
+      "date": "2027-01-18",
+      "stats": {
+        "awareness": 39,
+        "community": 56,
+        "planning": 85,
+        "operation": 38
+      },
+      "cash": 9200000
+    }
+  ]
+}

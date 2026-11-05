@@ -1,0 +1,139 @@
+# 게임 완성도 조사 출처대장
+
+2026-11-05 · 18개 제작자/개발사/표준·플랫폼 1차 자료
+
+문헌의 설명과 이 게임에 적용할 제안을 분리한다. 링크를 모은 것만으로 구현/도달성/접근성 통과를 주장하지 않는다.
+
+## QS-01 · Storylets: You Want Them
+
+- 발행 주체: Emily Short
+- [원문](https://emshort.blog/2019/11/29/storylets-you-want-them/) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 짧은 서사 단위를 내용·등장 전제·상태 효과로 정의하며, 반복 구조와 성장·분기 후 재결합을 함께 구성할 수 있다.
+- 프로젝트 적용 해석: 사건 수보다 조건→선택→결과→후속의 완결 여부로 완성도를 센다. 방송일지의 재등장 사건도 직전 선택을 반영하게 한다.
+
+## QS-02 · Storylets and Saliency Primer
+
+- 발행 주체: Yarn Spinner 3.1 official docs
+- [원문](https://docs.yarnspinner.dev/3.1/write-yarn-scripts/advanced-scripting/storylets-and-saliency-a-primer) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 내장 선정 전략은 조건에 맞지 않는 항목을 먼저 제외한다. 맥락 적합성과 최근 미등장 이력을 함께 고려하는 전략을 설명한다.
+- 프로젝트 적용 해석: 필수 조건을 가중치로 완화하지 않는다. 같은 조건을 통과한 일반 사건에 한해 기존 가중치·쿨다운·최근 이력을 적용한다. Yarn 도입 결정은 아니다.
+
+## QS-03 · How to Write Intentional Choices
+
+- 발행 주체: Choice of Games / Becky Slitt
+- [원문](https://www.choiceofgames.com/2016/12/how-to-write-intentional-choices/) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 선택 전 의도·가능한 결과·검사 능력·상대적 어려움을 알 수 있어야 한다. 불리한 결과와 난도가 다른 선택은 특히 설명이 필요하다.
+- 프로젝트 적용 해석: 돈·행동 소모, 관련 스테이터스, 성공/실패 범위와 종결 여부를 선택 문구 가까이 표시한다. 반전 장면 전체를 미리 공개하라는 뜻은 아니다.
+
+## QS-04 · End Game and Victory Design
+
+- 발행 주체: Choice of Games / Adam Strong-Morse
+- [원문](https://www.choiceofgames.com/2016/11/end-game-and-victory-design/) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 단일 승패 대신 서로 다른 목표와 마지막 분기로 앞선 선택의 의미를 결말에 남기는 설계를 논한다.
+- 프로젝트 적용 해석: 33결말을 점수 칭호로 끝내지 않고, 실제 도전·운영 방식·키몽이와의 약속을 다른 마지막 장면과 후일담으로 회수한다. 현재 엔딩 수와 조건은 보존한다.
+
+## QS-05 · Testing ChoiceScript Games Automatically
+
+- 발행 주체: Choice of Games
+- [원문](https://www.choiceofgames.com/make-your-own-games/testing-choicescript-games-automatically/) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 무작위 플레이와 조건/선택 분기 검사, 수동 플레이가 서로 다른 결함을 찾는다. 자동 검사 하나만으로 모든 경로나 실제 경험을 보증할 수 없다.
+- 프로젝트 적용 해석: JSON 정적 참조 검사, 각 결말의 실제 도달 경로, 고정 시드 다회 플레이, 사람의 읽기/조작 검증을 나눈다. ChoiceScript 실행 도구를 현재 JSON에 그대로 적용하지 않는다.
+
+## QS-06 · Running Your Ink
+
+- 발행 주체: inkle official repository
+- [원문](https://github.com/inkle/ink/blob/master/Documentation/RunningYourInk.md) · 확인 상태: `body_reviewed_including_raw`
+- 원문에서 확인: 서사 런타임의 상태 저장·복원과 게임 UI 연동을 구분하고, 대사 태그로 표시·연출 메타데이터를 연결하는 방법을 설명한다.
+- 프로젝트 적용 해석: 진행 상태와 화면 연출을 분리하고, 동일 저장 상태가 같은 선택·반응을 복원하도록 한다. 필요한 표정/음향은 콘텐츠 메타데이터로 관리한다. ink로 엔진을 교체하라는 결론은 아니다.
+
+## QS-07 · Work with IndexedDB
+
+- 발행 주체: Google web.dev
+- [원문](https://web.dev/articles/indexeddb) · 확인 상태: `body_reviewed`
+- 원문에서 확인: IndexedDB의 데이터 연산은 트랜잭션 안에서 수행하며 여러 연산의 원자적 읽기·수정·쓰기가 가능하다.
+- 프로젝트 적용 해석: 비용 차감·보상·경험·약속·난수·명령 ID를 같은 저장 커밋으로 묶고 저장 성공 뒤 화면을 이동한다. 트랜잭션 중 외부 요청을 기다리지 않는다.
+
+## QS-08 · Page Lifecycle API
+
+- 발행 주체: Chrome for Developers
+- [원문](https://developer.chrome.com/docs/web-platform/page-lifecycle-api) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 특히 모바일에서는 종료 이벤트가 오지 않을 수 있다. 숨김 전환을 고려하고 unload에 마지막 저장을 맡기지 말아야 한다.
+- 프로젝트 적용 해석: 선택마다 우선 저장하고 숨김 전환은 보조 저장으로 쓴다. 앱 강제 종료 후에도 마지막 성공 커밋에서 이어지고, 복귀만으로 날짜·수입이 늘어나지 않아야 한다.
+
+## QS-09 · Storage quotas and eviction criteria
+
+- 발행 주체: Mozilla MDN
+- [원문](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 저장은 출처별로 관리되며 기본 저장은 best-effort다. 용량 부족·저장 제거·비공개 모드 등으로 데이터가 사라지거나 쓰기가 실패할 수 있다.
+- 프로젝트 적용 해석: 일지 내보내기/가져오기와 저장 실패 복구를 제공한다. 영구 저장 요청의 승인 여부를 확인하고 로컬 저장을 영구 보장으로 안내하지 않는다. 게임 UI에 불필요한 경고를 반복하지 않는다.
+
+## QS-10 · Understanding WCAG 2.2 SC 1.4.3 Contrast (Minimum)
+
+- 발행 주체: W3C WAI
+- [원문](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 일반 텍스트의 최소 대비 4.5:1, 큰 텍스트 3:1을 설명한다. 비활성 컨트롤에는 예외가 있다.
+- 프로젝트 적용 해석: 대사·잔액·잠금 이유는 일반 텍스트로 읽히게 한다. 잠긴 버튼의 회색 표시와 별도로 이유 문장은 4.5:1을 목표로 한다. 부분 항목 확인으로 전체 WCAG 준수를 주장하지 않는다.
+
+## QS-11 · Understanding WCAG 2.2 SC 2.5.8 Target Size (Minimum)
+
+- 발행 주체: W3C WAI
+- [원문](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 포인터 목표 영역은 원칙적으로 24×24 CSS px 이상이며 간격·인라인 등 예외가 있다. 중요한 조작에는 더 큰 목표가 유리하다.
+- 프로젝트 적용 해석: 이 게임의 주요 선택·다음·포기는 44px 이상의 클릭 높이를 제작 목표로 제안한다. 44px을 이 AA 항목의 의무 수치라고 쓰지 않는다.
+
+## QS-12 · Understanding WCAG 2.2 SC 1.4.10 Reflow
+
+- 발행 주체: W3C WAI
+- [원문](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 세로 스크롤 콘텐츠는 320 CSS px 폭에서 정보·기능 손실 없이 재배치하는 기준을 설명한다. 의미상 2차원 배치가 필요한 부분에는 예외가 있다.
+- 프로젝트 적용 해석: 텍스트 중심의 대사·선택·조건 패널은 320px에서 한 열로 배치하고 가로 스크롤 없이 읽게 한다. 캐릭터 장식이 선택지를 가리지 않게 한다.
+
+## QS-13 · Understanding WCAG 2.2 SC 2.1.1 Keyboard
+
+- 발행 주체: W3C WAI
+- [원문](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 포인터로 수행하는 기능에는 원칙적으로 키보드로 가능한 동등한 조작이 필요하다.
+- 프로젝트 적용 해석: 준비부터 엔딩·일지·환복·저장까지 Tab/Enter/Space로 진행할 수 있게 하고, 잠금 이유를 마우스 호버만으로 설명하지 않는다.
+
+## QS-14 · Xbox Accessibility Guideline 101: Text display
+
+- 발행 주체: Microsoft Game Dev
+- [원문](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/101) · 확인 상태: `body_reviewed_despite_generic_auth_banner`
+- 원문에서 확인: 게임 내 필수 텍스트의 크기·확대·가독성·스타일 선택을 다룬다. 장식 글꼴을 쓰는 경우 읽기 쉬운 대안을 제공하도록 안내한다.
+- 프로젝트 적용 해석: 픽셀 폰트는 제목·짧은 표시에 우선 사용하고 본문은 읽기 쉬운 한글 글꼴을 선택할 수 있게 한다. 본문 확대 200%를 제안하며 물리 픽셀 가이드를 웹 CSS px에 그대로 대입하지 않는다.
+
+## QS-15 · Web Vitals
+
+- 발행 주체: Google web.dev
+- [원문](https://web.dev/articles/vitals) · 확인 상태: `body_reviewed`
+- 원문에서 확인: 좋음 기준으로 LCP 2.5초 이하·INP 200ms 이하·CLS 0.1 이하를 제시하며 실제 사용자 경험의 75백분위수를 기기군별로 평가한다.
+- 프로젝트 적용 해석: 이미지 영역을 미리 확보하고 현재 필요한 외형만 우선 로드한다. 초기 실험실 측정과 실제 사용자 지표를 구분한다. 저장 커밋 완료 시간은 INP와 별도로 측정한다.
+
+## QS-16 · UI Audio
+
+- 발행 주체: Kenney
+- [원문](https://kenney.nl/assets/ui-audio) · 확인 상태: `landing_page_and_license_label_reviewed_archive_unavailable`
+- 원문에서 확인: 공식 페이지는 UI 효과음 50개와 CC0 표기를 제공한다.
+- 프로젝트 적용 해석: 클릭·확정·잠금·완료 같은 비언어 UI 효과음 후보. 다운로드는 제한 응답으로 미확보이며 청취·최종 선정·게임 연결은 하지 않았다.
+
+## QS-17 · 글꼴 임베딩 관련 안내
+
+- 발행 주체: Neo둥근모 project
+- [원문](https://neodgm.dalgona.dev/embedding_fonts.html) · 확인 상태: `body_reviewed_and_font_license_downloaded`
+- 원문에서 확인: 앱·게임 임베딩을 안내하며 해당 글꼴의 저작권 고지와 라이선스 전문을 포함하도록 명시한다.
+- 프로젝트 적용 해석: 공식 v1.601 WOFF2와 해당 버전 LICENSE를 후보 폴더에 보관했다. 설치·게임 연결·한글 화면 가독성 검증은 미실시다.
+
+## QS-18 · Noto Sans KR OFL.txt
+
+- 발행 주체: Google Fonts official repository
+- [원문](https://github.com/google/fonts/blob/main/ofl/notosanskr/OFL.txt) · 확인 상태: `license_body_reviewed_and_downloaded`
+- 원문에서 확인: Noto Sans KR 배포 폴더의 SIL Open Font License 1.1과 원 저작권 표기를 확인했다.
+- 프로젝트 적용 해석: 읽기 쉬운 본문용 한글 글꼴 후보로 기록한다. 이번에는 라이선스만 확보했고 실제 Noto Sans KR 폰트 파일은 받지 않았다.
+
+## 접근 제한 기록
+
+- [https://web.dev/articles/storage-for-the-web](https://web.dev/articles/storage-for-the-web): `web_tool_timeout`. 동일 주제의 MDN 원문으로 보완. 해당 본문을 새로 읽었다고 세지 않음.
+- [https://kenney.nl/assets/interface-sounds](https://kenney.nl/assets/interface-sounds): `web_tool_restricted_url`. 확인된 UI Audio 페이지로 범위를 한정.
+- [https://kenney.nl/media/pages/assets/ui-audio/490d233f68-1677590494/kenney_ui-audio.zip](https://kenney.nl/media/pages/assets/ui-audio/490d233f68-1677590494/kenney_ui-audio.zip): `web_tool_restricted_and_direct_http_error`. 반복 우회 없이 중단. 다운로드/청취 완료로 세지 않음.
+
+라이선스 파일과 폰트 후보의 실제 다운로드·해시는 `work/rakoko/quality_sources/vendor_candidates/manifest.json`을 따른다. 다운로드 실패 항목은 확보 파일에 포함하지 않는다.

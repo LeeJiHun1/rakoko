@@ -1,0 +1,80 @@
+{
+  "base": "../../characters/rakoko-base-v1.png",
+  "generator": "built-in image_gen",
+  "status": "pixel-style static game adaptations, not exact costume reproductions",
+  "outfits": [
+    {
+      "id": "police",
+      "file": "rakoko-police-v1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "source": "https://www.youtube.com/watch?v=W71-NPzpO-I&t=1100s",
+      "observed_broadcast_date": "2026-09-02",
+      "first_reveal_date_confirmed": false,
+      "reference": "../../references/rakoko-police-vod.jpg",
+      "adaptation": true
+    },
+    {
+      "id": "maid",
+      "file": "rakoko-maid-v1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "source": "https://www.youtube.com/watch?v=W_Tpz9rSEa8&t=1500s",
+      "observed_broadcast_date": "2026-06-28",
+      "first_reveal_date_confirmed": false,
+      "reference": "../../references/rakoko-maid-vod.jpg",
+      "adaptation": true
+    },
+    {
+      "id": "ghost",
+      "file": "rakoko-ghost-v1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "source": "https://www.youtube.com/watch?v=wIqlX3yvzXE&t=900s",
+      "observed_broadcast_date": "2026-10-31",
+      "first_reveal_date_confirmed": false,
+      "reference": "../../references/rakoko-ghost-vod.jpg",
+      "adaptation": true
+    },
+    {
+      "id": "nun",
+      "file": "rakoko-nun-v1.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "source": "https://www.youtube.com/watch?v=mv6RPN9pI3k&t=930s",
+      "observed_broadcast_date": "2026-09-03",
+      "first_reveal_date_confirmed": false,
+      "reference": "../../references/rakoko-nun-vod.jpg",
+      "adaptation": true
+    }
+  ],
+  "shared_backgrounds": {
+    "closed": "../outfit-journal/stage-closed-v1.png",
+    "open": "../outfit-journal/stage-open-v1.png"
+  },
+  "journal_costume_event_enabled": false
+}

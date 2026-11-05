@@ -1,0 +1,80 @@
+{
+  "id": "outfit_journal_01",
+  "fictional_game_outfit": true,
+  "generator": "built-in image_gen",
+  "status": "static pixel-style assets; not grid-normalized animation sheets",
+  "assets": [
+    {
+      "file": "outfit-unlock-icon-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "rakoko-journal-full-v1.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "file": "rakoko-journal-portrait-v1.png",
+      "width": 1306,
+      "height": 1205,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "stage-closed-v1.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_extrema": null
+    },
+    {
+      "file": "stage-open-v1.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "alpha_extrema": null
+    }
+  ],
+  "sequence": [
+    {
+      "state": "teaser",
+      "background": "stage-closed-v1.png"
+    },
+    {
+      "state": "reveal",
+      "background": "stage-open-v1.png",
+      "character": "rakoko-journal-full-v1.png",
+      "anchor": [
+        0.5,
+        0.88
+      ],
+      "character_height_ratio": 0.73
+    },
+    {
+      "state": "dialogue",
+      "background": "stage-open-v1.png",
+      "portrait": "rakoko-journal-portrait-v1.png"
+    },
+    {
+      "state": "unlocked",
+      "icon": "outfit-unlock-icon-v1.png",
+      "outfit_id": "journal_01"
+    }
+  ],
+  "enabled": false,
+  "reason": "User corrected event scope to observed ghost, maid, police and nun outfits; journal outfit retained as unused fictional proposal."
+}

@@ -1,0 +1,15 @@
+{
+  "name": "rakoko-broadcast-journal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "라코코의 방송일지 — 비공식 선택형 팬게임",
+  "engines": { "node": ">=16.15" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "build": "node scripts/build.mjs",
+    "test": "node tests/engine.test.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

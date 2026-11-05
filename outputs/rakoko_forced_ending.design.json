@@ -1,0 +1,58 @@
+{
+  "version": "1.1",
+  "eventId": "EF-FORCED-10Y",
+  "endingId": "END-FORCED-10Y",
+  "title": "10년의 방송, 둘의 엔딩",
+  "provenance": "fictional_game_scenario",
+  "trigger": {
+    "completedAnniversariesAtLeast": 10,
+    "deadline": "2036-01-18",
+    "noEndingEverSeenInRun": true
+  },
+  "priority": "before_calendar_offer_random_ending_and_new_broadcast",
+  "eligibleStatRequirements": [],
+  "eligibleExperienceRequirements": [],
+  "probability": 1,
+  "allowDecline": false,
+  "continueBeforeCredits": false,
+  "continueSameRunAfterCredits": false,
+  "partner": {
+    "pool": [
+      "kimongi_npc_01",
+      "kimongi_npc_02",
+      "kimongi_npc_03",
+      "kimongi_npc_04",
+      "kimongi_npc_05",
+      "kimongi_npc_06",
+      "kimongi_npc_07",
+      "kimongi_npc_08"
+    ],
+    "type": "fictional_kimongi_game_character",
+    "selection": "seeded_once_commit_before_presentation",
+    "referencesRealViewerAccount": false,
+    "populationContext": "one_member_of_multiple_kimongi",
+    "poolRepresentsEntireAudience": false
+  },
+  "resolution": "10년을 함께해 온 가상의 키몽이 NPC 한 명과 서로의 마음을 확인하고 결혼식을 올린다.",
+  "epilogue": "두 사람의 일상과 키몽이들의 축하를 보여주고, 10년의 방송일지를 닫으며 크레딧으로 끝난다.",
+  "saveFields": [
+    "forcedEndingInstanceId",
+    "spouseNpcId",
+    "triggerDeadline",
+    "triggerDate",
+    "endingId",
+    "runCompleted"
+  ],
+  "onDateJumpAcrossDeadline": "intercept_and_stop_at_deadline_before_creating_next_broadcast",
+  "onLoadAlreadyOverdue": "trigger_before_next_command_preserve_existing_date_and_snapshot",
+  "onAfterPreviousEnding": "do_not_trigger",
+  "completedRunActions": [
+    "view_journal",
+    "replay_reached_endings",
+    "start_separate_new_run"
+  ],
+  "showDeadlineFromCompletedAnniversary": 9,
+  "previewDeadlineInterceptOnDateSelection": true,
+  "cashCost": 0,
+  "requiresMinimumAssets": false
+}

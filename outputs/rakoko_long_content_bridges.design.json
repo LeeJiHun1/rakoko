@@ -1,0 +1,134 @@
+{
+  "version": "1.0",
+  "status": "design_binding_engine_pending",
+  "rules": {
+    "evaluateAfterActualResult": true,
+    "idempotencyKey": [
+      "experienceId",
+      "sourceEventInstanceId",
+      "resultId"
+    ],
+    "preserveSourceGameAndProject": true,
+    "directlySetsEndingPreparation": false,
+    "autoEndsRun": false
+  },
+  "producers": [
+    {
+      "experienceId": "EX-024",
+      "sourceChoiceIds": [
+        "LC-MC-07-C1",
+        "LC-MC-07-C2",
+        "LC-MC-07-C3"
+      ],
+      "requiresResult": {
+        "projectKind": "original_minigame_booth",
+        "actualPlaytestCompleted": true,
+        "validationPassed": true
+      },
+      "meaning": "직접 만든 참여형 미니게임의 시험을 실제 진행한 때만 인정"
+    },
+    {
+      "experienceId": "EX-004",
+      "sourceChoiceIds": [
+        "LC-RD-05-C1"
+      ],
+      "requiresResult": {
+        "patternActuallyCleared": true,
+        "explanatoryDemoCompleted": true
+      },
+      "gameScope": "source_module_game_id",
+      "meaning": "실제 통과한 기믹을 같은 게임의 설명형 시범으로 마쳤을 때"
+    },
+    {
+      "experienceId": "EX-003",
+      "sourceChoiceIds": [
+        "LC-RD-07-C1"
+      ],
+      "requiresResult": {
+        "objectiveTier": "advanced",
+        "actualPracticeVerified": true
+      },
+      "gameScope": "source_module_game_id",
+      "meaning": "현재 게임의 고난도 구간을 실제 검증했을 때만 인정"
+    },
+    {
+      "experienceId": "EX-016",
+      "sourceChoiceIds": [
+        "LC-VR-07-C1",
+        "LC-VR-07-C2",
+        "LC-VR-07-C3"
+      ],
+      "requiresResult": {
+        "projectKind": "original_theme_gallery",
+        "audiencePreviewCompleted": true,
+        "contentUseConfirmed": true,
+        "validationPassed": true
+      },
+      "meaning": "자신의 작품 또는 사용 동의된 작품으로 전시 시범을 실제 마쳤을 때"
+    },
+    {
+      "experienceId": "EX-027",
+      "sourceChoiceIds": [
+        "LC-PT-08-C1",
+        "LC-PT-08-C2",
+        "LC-ST-08-C1",
+        "LC-ST-08-C2"
+      ],
+      "requiresResult": {
+        "externalParticipationConfirmed": true,
+        "promisedScheduleMet": true,
+        "participationActuallyCompleted": true
+      },
+      "meaning": "가상 외부 특집의 참가·일정 약속을 실제 이행한 경우. 우승 여부와 별개"
+    },
+    {
+      "experienceId": "EX-028",
+      "sourceChoiceIds": [
+        "LC-CO-08-C1",
+        "LC-CO-08-C2",
+        "LC-CO-08-C3"
+      ],
+      "requiresResult": {
+        "ownProgrammePlannedBefore": true,
+        "promisedScheduleMet": true,
+        "plannedScopeCompleted": true
+      },
+      "meaning": "자체 편성한 협동 영업을 약속한 범위와 일정대로 마쳤을 때"
+    }
+  ],
+  "endingProjectSuggestions": {
+    "LC-MC": [
+      "EF-012",
+      "EF-008"
+    ],
+    "LC-RP": [
+      "EF-007",
+      "EF-014"
+    ],
+    "LC-SV": [
+      "EF-002",
+      "EF-007"
+    ],
+    "LC-RD": [
+      "EF-002",
+      "EF-003"
+    ],
+    "LC-PT": [
+      "EF-007",
+      "EF-014"
+    ],
+    "LC-ST": [
+      "EF-007",
+      "EF-014"
+    ],
+    "LC-CO": [
+      "EF-015",
+      "EF-016"
+    ],
+    "LC-VR": [
+      "EF-005",
+      "EF-008"
+    ]
+  },
+  "suggestionPolicy": "Only offer optional project templates after completion; ordinary ending stats, experiences and current-project preparation still required."
+}

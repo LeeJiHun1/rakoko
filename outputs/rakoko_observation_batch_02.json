@@ -1,0 +1,252 @@
+{
+  "as_of": "2026-11-03",
+  "record_count": 12,
+  "distinct_videos": 12,
+  "scope": "추가 자막 문맥 관찰. 독립 사건·새 영상 전수 검토 수가 아님.",
+  "records": [
+    {
+      "id": "OBS2-001",
+      "title": "첫 방송에서 정규 시각 안내",
+      "video_id": "Kv03yHk6Fe8",
+      "broadcast_date": "2026-01-18",
+      "start_seconds": 1434,
+      "end_seconds": 1470,
+      "source_url": "https://www.youtube.com/watch?v=Kv03yHk6Fe8&t=1434s",
+      "evidence": "B",
+      "source_summary": "방송 시간을 오후 2시 반으로 안내하는 자막 문맥.",
+      "uncertainty": "이 날짜의 안내다. 이후 전 기간의 실제 시작 시각이나 현재 일정을 뜻하지 않는다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-00003"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-002",
+      "title": "구독 기능 신청 후 공지 계획",
+      "video_id": "R_Yp_Hrs1Jc",
+      "broadcast_date": "2026-01-19",
+      "start_seconds": 8671,
+      "end_seconds": 8708,
+      "source_url": "https://www.youtube.com/watch?v=R_Yp_Hrs1Jc&t=8671s",
+      "evidence": "B",
+      "source_summary": "구독 기능을 신청하고 열린 시각을 공지해야 한다는 자막 문맥.",
+      "uncertainty": "플랫폼의 실제 자격 요건·승인 절차를 확인한 자료가 아니며 해당 발언의 맥락만 기록한다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-00051"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-003",
+      "title": "다시보기 날짜 정정 요청",
+      "video_id": "-KemMFgrOII",
+      "broadcast_date": "2026-01-22",
+      "start_seconds": 3136,
+      "end_seconds": 3161,
+      "source_url": "https://www.youtube.com/watch?v=-KemMFgrOII&t=3136s",
+      "evidence": "B",
+      "source_summary": "다시보기 썸네일 날짜가 잘못됐으니 고쳐 달라는 질문·요청이 자막에 등장한다.",
+      "uncertainty": "요청자가 누구인지, 날짜가 실제 틀렸는지, 이후 수정됐는지는 미확인. 질문을 곧바로 발생 사실로 승격하지 않는다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-00132",
+        "IDX-00133"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-004",
+      "title": "방송 시각 착각으로 이른 시작 설명",
+      "video_id": "Ei7wO4NO65Q",
+      "broadcast_date": "2026-02-07",
+      "start_seconds": 16540,
+      "end_seconds": 16615,
+      "source_url": "https://www.youtube.com/watch?v=Ei7wO4NO65Q&t=16540s",
+      "evidence": "B",
+      "source_summary": "방송 시간을 착각해 의도치 않게 일찍 켰다는 설명과 다음 날 시작 시각을 고민하는 자막 문맥.",
+      "uncertainty": "실제 예정·시작 시각의 분 단위 차이는 미확인. 다른 지각 사례와 구분한다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-00486"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-005",
+      "title": "첫 업로드 이후 썸네일 변경 시도",
+      "video_id": "IVYVjRo8wek",
+      "broadcast_date": "2026-03-02",
+      "start_seconds": 8475,
+      "end_seconds": 8590,
+      "source_url": "https://www.youtube.com/watch?v=IVYVjRo8wek&t=8475s",
+      "evidence": "B",
+      "source_summary": "본채널에 첫 영상이 올라왔다는 이야기 뒤, 썸네일을 바꿔 본 적이 없다며 변경을 시도하고 이후 바꿔 놨다는 자막이 이어진다.",
+      "uncertainty": "최초 업로드 날짜·파일·정확한 작업 주체와 실제 저장 화면은 미확인. 변경을 시도했다는 말과 저장 완료 화면은 다르다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-00729"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-006",
+      "title": "방송 테마 배경 제작 요청",
+      "video_id": "_wog0wu6d8A",
+      "broadcast_date": "2026-03-05",
+      "start_seconds": 1299,
+      "end_seconds": 1345,
+      "source_url": "https://www.youtube.com/watch?v=_wog0wu6d8A&t=1299s",
+      "evidence": "B",
+      "source_summary": "시청자가 좋아할 것 같아 배경을 제작진에게 그려 달라고 요청해 준비했다는 자막 문맥.",
+      "uncertainty": "작가의 이름·보수·작업 기간은 수집하지 않는다. 요청과 결과물 원본의 연결은 화면 대조 전이다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-00892",
+        "IDX-00893"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-007",
+      "title": "알람과 휴대전화 전원 설명",
+      "video_id": "IFrj8Y0V1ag",
+      "broadcast_date": "2026-04-12",
+      "start_seconds": 1088,
+      "end_seconds": 1125,
+      "source_url": "https://www.youtube.com/watch?v=IFrj8Y0V1ag&t=1088s",
+      "evidence": "B",
+      "source_summary": "자기 전에 알람을 맞추지만 휴대전화가 꺼져 있을 줄은 몰랐다고 설명하는 자막 문맥.",
+      "uncertainty": "기기 전원·알람 설정을 실제 확인하지 않았다. 의료적 설명과 벌칙 내용은 이 관찰에서 제외한다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-01516"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-008",
+      "title": "썸네일 색상 피드백",
+      "video_id": "28oEgK4mT-o",
+      "broadcast_date": "2026-05-10",
+      "start_seconds": 936,
+      "end_seconds": 980,
+      "source_url": "https://www.youtube.com/watch?v=28oEgK4mT-o&t=936s",
+      "evidence": "B",
+      "source_summary": "진행 중 썸네일 피드백을 하겠다며 색상이 애매하다고 말하고 배경·PSD 파일을 언급하는 자막 문맥.",
+      "uncertainty": "수정 요청의 정확한 내용과 이후 최종 이미지 변경은 미확인.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-02002"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-009",
+      "title": "컴퓨터 문제와 자료 업로드 지연 설명",
+      "video_id": "1HIh-ekHAaw",
+      "broadcast_date": "2026-08-10",
+      "start_seconds": 23845,
+      "end_seconds": 23900,
+      "source_url": "https://www.youtube.com/watch?v=1HIh-ekHAaw&t=23845s",
+      "evidence": "B",
+      "source_summary": "자료를 업로드해야 하는데 컴퓨터 때문에 정신이 없었다며 설명하는 자막 문맥.",
+      "uncertainty": "어떤 자료가 언제 실제 올라갔는지, 지연 원인의 전부가 컴퓨터였는지는 미확인.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-03506"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-010",
+      "title": "생일 축전 소개와 게시 예정 언급",
+      "video_id": "NVwuL1_SHZY",
+      "broadcast_date": "2026-09-10",
+      "start_seconds": 3570,
+      "end_seconds": 3640,
+      "source_url": "https://www.youtube.com/watch?v=NVwuL1_SHZY&t=3570s",
+      "evidence": "B",
+      "source_summary": "썸네일 제작자가 축전도 그려 줬다는 소개와 카페에 올릴 예정이라는 자막 문맥.",
+      "uncertainty": "원본 축전·게시물·작가 귀속을 직접 대조하지 않았다. 공개 예정 발언을 실제 게시 완료로 기록하지 않는다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-04165",
+        "IDX-04166"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-011",
+      "title": "행사 기간 아침 방송 예고",
+      "video_id": "PYaZJJC2z8c",
+      "broadcast_date": "2026-10-12",
+      "start_seconds": 2900,
+      "end_seconds": 2970,
+      "source_url": "https://www.youtube.com/watch?v=PYaZJJC2z8c&t=2900s",
+      "evidence": "B",
+      "source_summary": "10월 16~18일 행사 참여로 평소 시각의 방송이 어려워 아침에 방송하겠다는 안내. 오전 7시 반과 9시 또는 9시 반을 언급하는 자막 문맥.",
+      "uncertainty": "예정 안내다. 실제 시작·종료 시각을 확인한 기록이 아니다. 행사 참가 사실은 기존 공식 프로그램 근거와 연결한다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-04600"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    },
+    {
+      "id": "OBS2-012",
+      "title": "다음 팬미팅 요청과 개최 미정 응답",
+      "video_id": "kbxwJpapjCo",
+      "broadcast_date": "2026-10-21",
+      "start_seconds": 13750,
+      "end_seconds": 13820,
+      "source_url": "https://www.youtube.com/watch?v=kbxwJpapjCo&t=13750s",
+      "evidence": "B",
+      "source_summary": "다음 팬미팅을 요청하는 말 뒤, 언제 할 수 있을지 아직 모른다는 취지의 자막 문맥.",
+      "uncertainty": "합의·개최 확정·예약 시작의 증거가 아니다. 재개최 약속으로 분류하지 않는다.",
+      "audio_checked": false,
+      "screen_checked": false,
+      "speaker_checked": false,
+      "retrieval_ids": [
+        "IDX-04701",
+        "IDX-04702"
+      ],
+      "adoption_decision": null,
+      "game_design_fiction": null
+    }
+  ]
+}

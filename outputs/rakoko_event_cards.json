@@ -1,0 +1,942 @@
+{
+  "version": "0.2",
+  "as_of": "2026-11-03",
+  "cards": [
+    {
+      "id": "RK-001",
+      "title": "첫 방송, 대본은 어디로",
+      "category": "방송 준비",
+      "evidence": "B",
+      "date": "2026-01-18",
+      "source_url": "https://www.youtube.com/watch?v=Kv03yHk6Fe8&t=720s",
+      "start_seconds": 720,
+      "end_seconds": 980,
+      "source_fact": "첫 방송에서 카메라 설정과 준비한 진행이 어긋나는 이야기가 나온다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "방송은 켰는데 준비한 순서가 꼬였다.",
+      "choices": [
+        {
+          "text": "설정부터 고친다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "시청자에게 설명한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "즉석 자기소개로 이어간다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "Kv03yHk6Fe8",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-002",
+      "title": "구독 버튼 공사 중",
+      "category": "방송 준비",
+      "evidence": "B",
+      "date": "2026-01-22",
+      "source_url": "https://www.youtube.com/watch?v=-KemMFgrOII&t=350s",
+      "start_seconds": 350,
+      "end_seconds": 410,
+      "source_fact": "구독·후원 기능과 방송 설정을 다루는 맥락이 있다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "새 기능을 켜려는데 설정할 것이 남았다.",
+      "choices": [
+        {
+          "text": "하나씩 점검한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "안내 화면을 띄운다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "다음 방송 숙제로 적는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "-KemMFgrOII",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-003",
+      "title": "불은 켜졌는데 화면이 없다",
+      "category": "장비",
+      "evidence": "B",
+      "date": "2026-02-04",
+      "source_url": "https://www.youtube.com/watch?v=krtLTwub6GA&t=231s",
+      "start_seconds": 231,
+      "end_seconds": 310,
+      "source_fact": "모니터에 전원은 들어오지만 화면이 보이지 않고 설정·재시동을 시도하는 내용이 있다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "모니터가 까만 화면으로 버틴다.",
+      "choices": [
+        {
+          "text": "연결을 점검한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "잡담으로 시간을 번다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "임시 화면으로 전환한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "krtLTwub6GA",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-004",
+      "title": "AI 사진 감별단",
+      "category": "참여 콘텐츠",
+      "evidence": "B",
+      "date": "2026-01-20",
+      "source_url": "https://www.youtube.com/watch?v=xnIhJoOfnds&t=4945s",
+      "start_seconds": 4945,
+      "end_seconds": 5010,
+      "source_fact": "AI 사진 맞히기와 시선 추적 장비를 준비했다는 설명이 있다. 실제 정답률은 확인하지 않았다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "AI 사진 맞히기에 시선 추적 장비까지 준비했다.",
+      "choices": [
+        {
+          "text": "사진부터 풀어본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "시선 장비를 먼저 시험한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "시청자와 의견을 비교한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "xnIhJoOfnds",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-005",
+      "title": "2만을 앞둔 새로고침",
+      "category": "기념일",
+      "evidence": "B",
+      "date": "2026-03-08",
+      "source_url": "https://www.youtube.com/watch?v=D0Wlk4JmEqI&t=5560s",
+      "start_seconds": 5560,
+      "end_seconds": 5880,
+      "source_fact": "팔로워 2만에 가까워지는 수치와 반응이 나온다. 정확한 달성 화면은 미확인이다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "기념 숫자가 코앞이다.",
+      "choices": [
+        {
+          "text": "작게 카운트다운한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "평소 진행을 이어간다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "감사 멘트를 준비한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "D0Wlk4JmEqI",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-006",
+      "title": "시작 시간이 지나버렸다",
+      "category": "방송 준비",
+      "evidence": "B",
+      "date": "2026-05-10",
+      "source_url": "https://www.youtube.com/watch?v=28oEgK4mT-o&t=140s",
+      "start_seconds": 140,
+      "end_seconds": 210,
+      "source_fact": "늦은 시작에 대한 사과와 설명이 있다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "예정 시각보다 늦게 방송을 켰다.",
+      "choices": [
+        {
+          "text": "짧게 사과하고 시작한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "오늘 순서를 조정한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "알림부터 정리한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "28oEgK4mT-o",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-007",
+      "title": "오늘은 테란 신입",
+      "category": "게임 도전",
+      "evidence": "B",
+      "date": "2026-05-02",
+      "source_url": "https://www.youtube.com/watch?v=jG12zrEQclU&t=20s",
+      "start_seconds": 20,
+      "end_seconds": 85,
+      "source_fact": "테란을 해본 적이 없다는 말과 종족 연습 이야기가 나온다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "익숙하지 않은 종족을 골랐다.",
+      "choices": [
+        {
+          "text": "기본 조작을 익힌다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "일단 한 판 해본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "시청자 팁 하나만 받는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "jG12zrEQclU",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-008",
+      "title": "야구 설명이 더 필요해",
+      "category": "참여 콘텐츠",
+      "evidence": "B",
+      "date": "2026-05-08",
+      "source_url": "https://www.youtube.com/watch?v=W37OpZpPGnY&t=10950s",
+      "start_seconds": 10950,
+      "end_seconds": 11130,
+      "source_fact": "야구의 아웃과 응원 맥락을 질문하고 야구를 잘 모른다고 말하는 내용이 있다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "웃긴 야구 장면을 보는데 웃음 포인트가 궁금하다.",
+      "choices": [
+        {
+          "text": "짧은 설명을 받는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "장면을 다시 본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "이해한 대로 설명해본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "W37OpZpPGnY",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-009",
+      "title": "카페 구경 시간",
+      "category": "팬 소통",
+      "evidence": "B",
+      "date": "2026-06-01",
+      "source_url": "https://www.youtube.com/watch?v=Na1CmLwB4Xg&t=18900s",
+      "start_seconds": 18900,
+      "end_seconds": 18950,
+      "source_fact": "잠깐 자리를 비운 뒤 팬카페를 보겠다는 진행 안내가 있다. 게시물 수나 밀린 분량은 미확인이다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "이제 팬카페를 볼 차례다.",
+      "choices": [
+        {
+          "text": "새 글부터 본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "오늘 주제를 고른다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "마음에 남은 글을 표시한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "Na1CmLwB4Xg",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-010",
+      "title": "복싱 방송 준비 운동",
+      "category": "게임 도전",
+      "evidence": "B",
+      "date": "2026-06-04",
+      "source_url": "https://www.youtube.com/watch?v=ChKm2pt_clM&t=10610s",
+      "start_seconds": 10610,
+      "end_seconds": 10670,
+      "source_fact": "복싱 게임을 할 예정이며 진행 방식을 고민하는 설명이 있다. 실제 운동량과 승패는 미확인이다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "오늘 게임은 복싱이다.",
+      "choices": [
+        {
+          "text": "조작을 먼저 익힌다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "짧게 한 판 해본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "휴식 시간을 정한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "ChKm2pt_clM",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-011",
+      "title": "QnA 편집 회의",
+      "category": "방송 준비",
+      "evidence": "B",
+      "date": "2026-06-11",
+      "source_url": "https://www.youtube.com/watch?v=ix7-CJW3Mjc&t=945s",
+      "start_seconds": 945,
+      "end_seconds": 990,
+      "source_fact": "QnA와 관련해 OX 표시와 글꼴 같은 편집 이야기가 나온다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "QnA 화면을 더 읽기 쉽게 꾸미려 한다.",
+      "choices": [
+        {
+          "text": "OX 표시를 쓴다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "글자를 크게 한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "질문 수를 줄인다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "ix7-CJW3Mjc",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-012",
+      "title": "스타 대결 입장",
+      "category": "게임 도전",
+      "evidence": "B",
+      "date": "2026-06-14",
+      "source_url": "https://www.youtube.com/watch?v=Ap5-jzSIDjA&t=3380s",
+      "start_seconds": 3380,
+      "end_seconds": 3530,
+      "source_fact": "햇살살과의 대결을 앞둔 인사와 준비 맥락이 있다. 최종 점수는 이 구간으로 검증하지 않았다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "대결 시간이 다가왔다.",
+      "choices": [
+        {
+          "text": "익숙한 전략을 고른다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "손을 푼다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "상대와 가볍게 인사한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "Ap5-jzSIDjA",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-013",
+      "title": "내 맘대로 국가대표",
+      "category": "참여 콘텐츠",
+      "evidence": "B",
+      "date": "2026-07-01",
+      "source_url": "https://www.youtube.com/watch?v=f4h-tei9Tyw&t=11210s",
+      "start_seconds": 11210,
+      "end_seconds": 11320,
+      "source_fact": "월드컵 포메이션 콘텐츠를 찾아왔고 포메이션을 정하는 진행이 있다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "내 마음대로 팀 배치를 정할 수 있다.",
+      "choices": [
+        {
+          "text": "균형 있게 배치한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "재미있는 조합을 만든다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "시청자 추천을 하나 반영한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "f4h-tei9Tyw",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-014",
+      "title": "콘텐츠 회의도 콘텐츠",
+      "category": "방송 준비",
+      "evidence": "B",
+      "date": "2026-07-11",
+      "source_url": "https://www.youtube.com/watch?v=Sd9Oc8NZvb8&t=6070s",
+      "start_seconds": 6070,
+      "end_seconds": 6155,
+      "source_fact": "방송 중 콘텐츠와 준비 자료를 고민하는 맥락이 있다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "다음 방송 아이디어를 같이 정해보자.",
+      "choices": [
+        {
+          "text": "작은 기획을 고른다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "후보를 투표한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "준비물부터 적는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "Sd9Oc8NZvb8",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-015",
+      "title": "운동회 기획 메모",
+      "category": "팬 소통",
+      "evidence": "B",
+      "date": "2026-07-11",
+      "source_url": "https://www.youtube.com/watch?v=Sd9Oc8NZvb8&t=4244s",
+      "start_seconds": 4244,
+      "end_seconds": 4315,
+      "source_fact": "체육관을 활용하는 팬 행사 아이디어를 이야기한다. 실제 개최 사실은 아니다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "팬들과 할 수 있는 가벼운 행사를 상상한다.",
+      "choices": [
+        {
+          "text": "미니게임을 적는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "참여 방식을 고민한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "아이디어만 보관한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "Sd9Oc8NZvb8",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-016",
+      "title": "201일 특별 수업",
+      "category": "기념일",
+      "evidence": "B",
+      "date": "2026-08-06",
+      "source_url": "https://www.youtube.com/watch?v=tDOxvs7LDm8&t=240s",
+      "start_seconds": 240,
+      "end_seconds": 370,
+      "source_fact": "201일 특별방송 제목과 입학식처럼 진행을 준비했다는 자막 맥락이 있다. 자막의 숫자 인식에 오류가 있다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "기념 방송을 특별 수업처럼 열어본다.",
+      "choices": [
+        {
+          "text": "출석을 부른다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "짧은 소개를 한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "기념 사진 화면을 만든다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "tDOxvs7LDm8",
+      "audio_verified": false,
+      "visual_verified": true,
+      "visual_note": "201일 방송 약 15분 구간에 3개 게이지와 여러 활동 버튼이 있는 화면. 각 버튼의 기능은 자막 설명과 구분한다."
+    },
+    {
+      "id": "RK-017",
+      "title": "인터넷과 밀당 중",
+      "category": "장비",
+      "evidence": "B",
+      "date": "2026-08-09",
+      "source_url": "https://www.youtube.com/watch?v=iGDA_9ecpr0&t=450s",
+      "start_seconds": 450,
+      "end_seconds": 740,
+      "source_fact": "인터넷 문제와 방송 진행에 관한 설명이 있다. 원인이나 완전한 해결 여부는 미확인이다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "연결 상태가 불안하다.",
+      "choices": [
+        {
+          "text": "상태를 확인한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "진행 상황을 알린다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "저장된 자료를 꺼낸다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "iGDA_9ecpr0",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-018",
+      "title": "캐릭터 구경이 즐거워",
+      "category": "참여 콘텐츠",
+      "evidence": "B",
+      "date": "2026-08-12",
+      "source_url": "https://www.youtube.com/watch?v=ba0mj_kqP_M&t=7560s",
+      "start_seconds": 7560,
+      "end_seconds": 7620,
+      "source_fact": "명조 캐릭터를 구경하다 예쁘다고 느꼈다는 설명이 있다. 외모로 성격이나 운명을 단정하는 소재는 제외한다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "처음 보는 게임 캐릭터를 구경한다.",
+      "choices": [
+        {
+          "text": "디자인의 색을 본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "마음에 드는 의상을 고른다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "첫인상 메모를 남긴다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "ba0mj_kqP_M",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-019",
+      "title": "첫 생일 축하 알림",
+      "category": "기념일",
+      "evidence": "B",
+      "date": "2026-09-10",
+      "source_url": "https://www.youtube.com/watch?v=NVwuL1_SHZY&t=60s",
+      "start_seconds": 60,
+      "end_seconds": 350,
+      "source_fact": "생일 축하와 감사 인사가 이어지는 맥락이 있다. 상품 판매 성과는 미확인이다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "축하 메시지가 도착했다.",
+      "choices": [
+        {
+          "text": "감사 인사를 한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "메시지를 천천히 읽는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "기념 화면을 띄운다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "NVwuL1_SHZY",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-020",
+      "title": "트리가드, 한 번 더",
+      "category": "게임 도전",
+      "evidence": "B",
+      "date": "2026-10-10",
+      "source_url": "https://www.youtube.com/watch?v=k4H4epY3pxo&t=28830s",
+      "start_seconds": 28830,
+      "end_seconds": 29100,
+      "source_fact": "트리가드 도전의 반복 시도 맥락이 있다. 전체 시도 수나 총 소요 시간은 미확인이다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "보스에게 또 막혔다.",
+      "choices": [
+        {
+          "text": "패턴 하나만 익힌다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "잠깐 쉬었다 온다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "장비를 점검한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": "RK-020→RK-021: 하나의 보스 도전에서 이어지는 연속 카드",
+      "source_group": "k4H4epY3pxo",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-021",
+      "title": "드디어 넘어섰다",
+      "category": "게임 도전",
+      "evidence": "B",
+      "date": "2026-10-10",
+      "source_url": "https://www.youtube.com/watch?v=k4H4epY3pxo&t=29495s",
+      "start_seconds": 29495,
+      "end_seconds": 29545,
+      "source_fact": "성공으로 해석되는 자막 반응과, 뒤이어 황금 할버드 보상 표시가 있는 원본 화면을 확인했다. 처치 동작 전체와 정확한 환호 발화자는 미확인이다.",
+      "verification_needed": "원음·화면과 발화자 확인",
+      "game_prompt": "여러 번 도전한 끝에 성공의 순간이 왔다.",
+      "choices": [
+        {
+          "text": "짧게 환호한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "시청자에게 감사한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "도전 기록을 남긴다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": "RK-020→RK-021: 하나의 보스 도전에서 이어지는 연속 카드",
+      "source_group": "k4H4epY3pxo",
+      "audio_verified": false,
+      "visual_verified": true,
+      "visual_note": "8:11:43~8:12:08 부근에 황금 할버드 획득 표시를 관찰. 처치 동작 전체·시도 횟수·성공 발언 화자는 미확인."
+    },
+    {
+      "id": "RK-022",
+      "title": "퍼즐 탐정 출근",
+      "category": "게임 도전",
+      "evidence": "B",
+      "date": "2026-02-07",
+      "source_url": "https://www.youtube.com/watch?v=q1ZG65-Ujy4&t=13169s",
+      "start_seconds": 13169,
+      "end_seconds": 13340,
+      "source_fact": "모자 길이 퍼즐에서 힌트와 시각적 비교를 거쳐 답을 고르는 자막 문맥이 있다. 퍼즐 화면도 별도로 확인했다. 발화자와 정확한 반응은 미확정이다.",
+      "verification_needed": "원음·화자·연속 화면 대조 필요",
+      "game_prompt": "퍼즐 게임을 시작한다.",
+      "choices": [
+        {
+          "text": "문제를 다시 읽는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "힌트를 하나 쓴다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "잠깐 다른 관점으로 본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "q1ZG65-Ujy4",
+      "audio_verified": false,
+      "visual_verified": true
+    },
+    {
+      "id": "RK-023",
+      "title": "짐볼 노래방 개장",
+      "category": "참여 콘텐츠",
+      "evidence": "B",
+      "date": "2026-03-01",
+      "source_url": "https://www.youtube.com/watch?v=Ro0DbUCnsM0&t=2060s",
+      "start_seconds": 2060,
+      "end_seconds": 2640,
+      "source_fact": "노래방 진행과 곡 선택을 이야기하는 자막 문맥이 있다. 마이크를 든 아바타와 곡 요청 패널 화면을 확인했다. 실제 가창·짐볼 동작은 음성·연속 화면 대조 전이다.",
+      "verification_needed": "원음·화자·연속 화면 대조 필요",
+      "game_prompt": "몸을 움직이며 노래하는 방송을 기획한다.",
+      "choices": [
+        {
+          "text": "쉬운 곡을 고른다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "박자부터 맞춘다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "짧은 코너로 진행한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "Ro0DbUCnsM0",
+      "audio_verified": false,
+      "visual_verified": true
+    },
+    {
+      "id": "RK-024",
+      "title": "셋이 모이면 무슨 일이",
+      "category": "합방",
+      "evidence": "B",
+      "date": "2026-09-09",
+      "source_url": "https://www.youtube.com/watch?v=hLRRdR9IMkM&t=5913s",
+      "start_seconds": 5913,
+      "end_seconds": 6045,
+      "source_fact": "색과 슬라이더 위치를 전달하며 협동하는 자막 문맥을 읽었다. 게임 화면과 세 아바타 아이콘도 별도로 확인했다. 각 발언의 화자는 미확정이다.",
+      "verification_needed": "원음·화자·연속 화면 대조 필요",
+      "game_prompt": "세 사람이 함께할 방송을 준비한다.",
+      "choices": [
+        {
+          "text": "역할을 나눈다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "합을 먼저 맞춘다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        },
+        {
+          "text": "쉬운 목표부터 시작한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 게임 설계 항목"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "source_group": "hLRRdR9IMkM",
+      "audio_verified": false,
+      "visual_verified": true
+    },
+    {
+      "id": "RK-025",
+      "title": "고친 것과 남은 것",
+      "category": "장비",
+      "game_prompt": "점검표에 해결한 문제와 남은 문제가 섞여 있다.",
+      "choices": [
+        {
+          "text": "해결한 항목을 지운다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "남은 증상을 기록한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "안정적인 코너를 고른다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "evidence": "B",
+      "date": "2026-08-08",
+      "source_url": "https://www.youtube.com/watch?v=yaSuAocNYDw&t=697s",
+      "start_seconds": 697,
+      "end_seconds": 770,
+      "source_fact": "모션 장비의 충전·연결 문제는 해결했다고 설명하고 간헐적 끊김은 남았다고 구분하는 자막 문맥이 있다. 실제 기술 원인과 복구 상태는 확정하지 않는다.",
+      "verification_needed": "원음·화자·연속 화면 대조 필요",
+      "source_group": "yaSuAocNYDw",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-026",
+      "title": "교체 전에 백업부터",
+      "category": "방송 준비",
+      "game_prompt": "장비를 바꾸기 전에 남겨야 할 자료가 있다.",
+      "choices": [
+        {
+          "text": "먼저 백업한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "자료 목록을 정리한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "교체 일정을 따로 잡는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "evidence": "B",
+      "date": "2026-08-10",
+      "source_url": "https://www.youtube.com/watch?v=1HIh-ekHAaw&t=3273s",
+      "start_seconds": 3273,
+      "end_seconds": 3360,
+      "source_fact": "새 저장장치가 도착했지만 교체 전 백업이 필요하다고 말하는 자막 문맥이 있다. 실제 교체·백업 완료 여부는 미확인이다.",
+      "verification_needed": "원음·화자·연속 화면 대조 필요",
+      "source_group": "1HIh-ekHAaw",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-027",
+      "title": "게임 소리 들리나요",
+      "category": "장비",
+      "game_prompt": "화면은 준비됐고 이제 소리를 확인할 차례다.",
+      "choices": [
+        {
+          "text": "시험 소리를 낸다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "시청자 응답을 기다린다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "설정을 다시 본다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "evidence": "B",
+      "date": "2026-06-04",
+      "source_url": "https://www.youtube.com/watch?v=ChKm2pt_clM&t=12147s",
+      "start_seconds": 12147,
+      "end_seconds": 12190,
+      "source_fact": "수박게임을 틀어 소리가 잘 들리는지 묻고 응답에 반응하는 자막 문맥이 있다. 실제 출력 음량은 미확인이다.",
+      "verification_needed": "원음·화자·연속 화면 대조 필요",
+      "source_group": "ChKm2pt_clM",
+      "audio_verified": false,
+      "visual_verified": false
+    },
+    {
+      "id": "RK-028",
+      "title": "팬미팅 준비를 돌아보며",
+      "category": "팬 소통",
+      "game_prompt": "기념 행사의 다음 준비를 정리한다.",
+      "choices": [
+        {
+          "text": "필요한 수량을 다시 적는다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "진행 순서를 점검한다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "다음 행사의 메모로 남긴다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "evidence": "B",
+      "date": "2026-10-17",
+      "source_url": "https://www.youtube.com/watch?v=t3Y8PL9bSjk&t=271s",
+      "start_seconds": 271,
+      "end_seconds": 310,
+      "source_fact": "행사 준비 수량을 더 늘릴 걸 그랬다는 자막 문맥이 있다. 주최 측 공식 프로그램에도 라코코 팬미팅이 등재돼 있다. 실제 수량·판매량·참석 인원은 미확인이다.",
+      "verification_needed": "원음·화자·연속 화면 대조 필요",
+      "source_group": "t3Y8PL9bSjk",
+      "audio_verified": false,
+      "visual_verified": false,
+      "external_sources": [
+        "https://www.dcfair.co.kr/"
+      ]
+    },
+    {
+      "id": "RK-029",
+      "title": "흐름을 다른 주제로",
+      "category": "팬 소통",
+      "game_prompt": "채팅의 장난 때문에 준비한 이야기가 밀린다.",
+      "choices": [
+        {
+          "text": "준비한 주제로 돌아간다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "진행 기준을 짧게 알린다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        },
+        {
+          "text": "다음 코너로 넘어간다",
+          "outcome": "미정: 실제 결과를 뜻하지 않는 창작 설계"
+        }
+      ],
+      "eligibility": "초안: 플레이테스트 전",
+      "chain": null,
+      "evidence": "B",
+      "date": "2026-01-20",
+      "source_url": "https://www.youtube.com/watch?v=xnIhJoOfnds&t=9982s",
+      "start_seconds": 9982,
+      "end_seconds": 10035,
+      "source_fact": "과한 채팅은 일부러 반응하지 않고 다른 주제로 이끄는 방법을 설명하는 자막 문맥이 있다. 이후 실제 분위기가 안정됐다는 결과는 미확인이다.",
+      "verification_needed": "원음·화자·연속 화면 대조 필요",
+      "source_group": "xnIhJoOfnds",
+      "audio_verified": false,
+      "visual_verified": false
+    }
+  ],
+  "source_groups": 25,
+  "audio_verified_cards": 0,
+  "visual_supported_cards": 5
+}

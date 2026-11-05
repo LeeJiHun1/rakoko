@@ -1,0 +1,53 @@
+{
+  "startDate": "2026-01-18",
+  "startDateConfirmedByUser": true,
+  "birthdayMonthDay": "09-10",
+  "countStartAsDayOne": true,
+  "defaultBroadcastIntervalDaysProposal": 7,
+  "previousJan02SettingDiscarded": true,
+  "fixedTwelveBroadcastSeasonDiscarded": true,
+  "milestones": [
+    {
+      "id": "day100",
+      "date": "2026-04-27"
+    },
+    {
+      "id": "day200",
+      "date": "2026-08-05"
+    },
+    {
+      "id": "day201",
+      "date": "2026-08-06"
+    },
+    {
+      "id": "birthday2026",
+      "date": "2026-09-10"
+    },
+    {
+      "id": "day300",
+      "date": "2026-11-13"
+    },
+    {
+      "id": "anniversary1",
+      "date": "2027-01-18"
+    }
+  ],
+  "wikiRead": "https://www.namu.moe/w/%EB%9D%BC%EC%BD%94%EC%BD%94",
+  "originalWikiAccess": "unavailable",
+  "skipDatePolicy": "retain_date_and_offer_late_celebration",
+  "status": "design_only",
+  "calendarSlotPolicy": {
+    "protect": "reserved_outfit_reveal",
+    "onOffer": [
+      "use_empty_slot",
+      "replace_selected_general_slot",
+      "defer",
+      "journal_only"
+    ]
+  },
+  "endingPolicy": "independent_random_event_after_first_anniversary",
+  "anniversaryAutoEndingDiscarded": true,
+  "missedAnnualCelebrations": "latest_birthday_and_latest_anniversary_only_older_items_journal_only",
+  "forcedEndingDeadlineWhenNoEndingSeen": "2036-01-18",
+  "interceptDateJumpAtForcedEndingDeadline": true
+}

@@ -1,0 +1,70 @@
+{
+  "version": "0.1",
+  "purpose": "라코코 방송일지 게임용 근거와 창작 규칙을 분리해 기록하는 템플릿",
+  "record_type": "event_observation",
+  "id": null,
+  "source": {
+    "broadcast_date": null,
+    "video_id": null,
+    "url": null,
+    "start_seconds": null,
+    "end_seconds": null,
+    "discovery_method": "cached_transcript / external_lead / vod_review",
+    "external_original_url": null,
+    "external_published_at": null,
+    "external_author_type": null
+  },
+  "verification": {
+    "grade": null,
+    "grade_definitions": {"A": "원음·화면·발화자 대조", "B": "자동자막 문맥 검토", "C": "제목·외부 단서"},
+    "audio_checked": false,
+    "screen_checked": false,
+    "speaker_checked": false,
+    "uncertainties": [],
+    "alternative_interpretations": []
+  },
+  "observed": {
+    "segment_type": null,
+    "preceding_goal": null,
+    "trigger": null,
+    "speaker_role": null,
+    "proposed_actions": [],
+    "performed_action": null,
+    "rejected_actions": [],
+    "immediate_result": null,
+    "reaction_start_seconds": null,
+    "reaction_end_seconds": null,
+    "reaction_summary": null,
+    "next_segment": null,
+    "publicly_stated_constraints": [],
+    "equipment_or_materials": [],
+    "public_cost_if_explicit": null,
+    "promised_followup": null,
+    "followup_evidence_ids": [],
+    "chain_id": null,
+    "counterexample_ids": []
+  },
+  "sampling": {
+    "reviewed_broadcasts_in_group": null,
+    "reviewed_minutes_in_group": null,
+    "matching_observations_in_group": null,
+    "selection_bias_notes": null
+  },
+  "game_design_fiction": {
+    "adopt": null,
+    "exclusion_reason": null,
+    "category": null,
+    "prompt": null,
+    "eligible_phase": [],
+    "requires_flags": [],
+    "excludes_flags": [],
+    "once_per_run": null,
+    "cooldown_ticks": null,
+    "choices": [
+      {"text": null, "resource_cost": {}, "immediate_effect": {}, "set_flags": [], "schedule_followup": [], "result_variants": []}
+    ],
+    "base_weight_for_playtest": null,
+    "weight_is_real_person_probability": false,
+    "recap_tags": []
+  }
+}

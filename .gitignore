@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+*.log
+__pycache__/
+.env
+.env.*
+!.env.example
+playtest-saves/
+
+# 방송 캡처·참조 원본 (시청자 닉네임 노출·저작권) — 로컬 보관만
+assets/references/
+outputs/*.jpg

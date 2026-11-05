@@ -1,0 +1,643 @@
+{
+  "as_of": "2026-11-03",
+  "candidates": [
+    {
+      "id": "EXT-001",
+      "people": [
+        "통깡이"
+      ],
+      "title": "생일 팬게임 선물",
+      "date": "2025-06-28",
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "생일 축하용 통깡런과 점프 회피 방식이 위키에 기록되어 있다.",
+      "source_url": "https://m.namu.moe/w/통깡이/팬게임",
+      "adaptation_structure": "선물 도착→규칙 익히기→기념 기록",
+      "verification_needed": "제작자 배포 글과 실제 플레이 구간",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-002",
+      "people": [
+        "침착맨"
+      ],
+      "title": "팬이 만든 삼국지 게임",
+      "date": "2026-10-24",
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "공개 영상 목록에서 팬 제작 삼국지 게임 두 작품을 다룬 제목을 확인했다.",
+      "source_url": "https://www.koreachannels.com/ko/channel/chimchakman-gamefull",
+      "adaptation_structure": "팬 작품 소개→취향에 맞는 코너로 편성",
+      "verification_needed": "업로드일과 방송일 구분, 본편 규칙·반응",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-003",
+      "people": [
+        "케인"
+      ],
+      "title": "밈으로 만든 여러 장르의 팬게임",
+      "date": null,
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "팬게임 목록에 방송 시뮬레이션·퍼즐·액션 등 서로 다른 방식의 작품들이 기록되어 있다.",
+      "source_url": "https://m.namu.moe/w/케인(인터넷 방송인)/팬 게임",
+      "adaptation_structure": "같은 방송 소재를 짧은 미니게임으로 바꾸는 방식",
+      "verification_needed": "현재 배포 여부·제작자 원문·실제 플레이",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-004",
+      "people": [
+        "징버거"
+      ],
+      "title": "생일선물 팬게임 방송",
+      "date": "2026-10-08",
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "공개 방송 기록에 생일선물 팬게임 제목이 남아 있다.",
+      "source_url": "https://poonggo.com/station/jingburger1/history",
+      "adaptation_structure": "생일 코너에 팬 작품을 배치",
+      "verification_needed": "게임명·내용·방송 중 반응. 제목만으로 감동·성공 추정 금지",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-005",
+      "people": [
+        "아이네"
+      ],
+      "title": "화이트데이 팬게임",
+      "date": null,
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "팬게임 플레이 목록과 영상 소개 미러에 화이트데이 관련 작품이 연결된다.",
+      "source_url": "https://socialcounts.org/youtube-video-live-view-count/tvz3TJ7Ca1E",
+      "adaptation_structure": "기념일에 맞춘 작은 팬 참여 콘텐츠",
+      "verification_needed": "본편 내용과 화자, 배포 원문",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-006",
+      "people": [
+        "우왁굳"
+      ],
+      "title": "연말 공모전에서 팬게임 소개",
+      "date": "2023-01-29",
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "외부 소개 글에서 공모전 팬게임과 제작자 배포 글을 연결한다.",
+      "source_url": "https://imoneed.tistory.com/155",
+      "adaptation_structure": "공모→작품 소개→팬 아이디어를 다음 코너로",
+      "verification_needed": "게시일은 소개 글 기준. 원래 공모전·플레이 날짜 미확정",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-007",
+      "people": [
+        "따효니"
+      ],
+      "title": "팬게임을 방송 일정에 편성",
+      "date": "2025-02-03",
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "캘린더에 킁리단의 분노 팬게임을 포함한 일정과 원 공지 링크가 있다.",
+      "source_url": "https://dal.wiki/t/v1c2BaT1zEvn/e/ioehrhm7uz7n",
+      "adaptation_structure": "팬 작품 도착→정규 일정에 편성",
+      "verification_needed": "예정과 실제 실행 구분·본편 결과",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-008",
+      "people": [
+        "라디유"
+      ],
+      "title": "받은 팬게임을 방송 소재로",
+      "date": "2026-10-20",
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "공개 방송 제목 기록에 팬게임을 받았다는 내용이 있다.",
+      "source_url": "https://weflview.com/channel/chzzk/68f895c59a1043bc5019b5e08c83a5c5",
+      "adaptation_structure": "준비한 방송에 팬 작품 코너를 추가",
+      "verification_needed": "게임 종류·제작자·실제 플레이 구간",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-009",
+      "people": [
+        "연두"
+      ],
+      "title": "방송 밈을 담은 생일 팬게임",
+      "date": null,
+      "category": "팬게임",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "위키는 생일 팬게임 연과같이에 기존 방송 밈이 활용됐다고 서술한다.",
+      "source_url": "https://seore.org/w/연두(인터넷 방송인)",
+      "adaptation_structure": "검증한 고유 소재를 미니 콘텐츠로 연결",
+      "verification_needed": "원 제작·배포 글·생일 방송. 인격 구분 설정은 각색에 사용하지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-010",
+      "people": [
+        "머독"
+      ],
+      "title": "팝콘집 경영 팬게임",
+      "date": "2017",
+      "category": "팬게임 구조 참고",
+      "evidence_grade": "C",
+      "evidence_kind": "개발자 공개 소개",
+      "source_fact": "개발자 소개에서 클릭·고용·경매를 결합한 팬게임임을 확인했다.",
+      "source_url": "https://goldmetal.itch.io/mdps",
+      "adaptation_structure": "고유 방송 소재를 반복 운영 규칙으로 확장",
+      "verification_needed": "개발자 설명 확인. 실제 방송 해프닝의 원영상은 별도 검증",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-011",
+      "people": [
+        "머독"
+      ],
+      "title": "퀴즈와 여러 엔딩을 결합한 팬게임",
+      "date": "2018",
+      "category": "팬게임 구조 참고",
+      "evidence_grade": "C",
+      "evidence_kind": "개발자 공개 소개",
+      "source_fact": "개발자 페이지에 퀴즈 유형과 복수 엔딩이 소개되어 있다.",
+      "source_url": "https://goldmetal.itch.io/pdmd",
+      "adaptation_structure": "퀴즈 성적과 선택에서 서로 다른 회고",
+      "verification_needed": "개발자 설명 확인. 전 문항·모든 엔딩을 플레이한 것은 아님",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-012",
+      "people": [
+        "레바"
+      ],
+      "title": "방송인 캐릭터를 쓴 액션 팬게임",
+      "date": null,
+      "category": "팬게임 구조 참고",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "아카이브에 개발자와 액션 장르가 기재된 게임이 있다.",
+      "source_url": "https://flasharch.com/ko/archive/play/1d12ef808a9f977b46c4b11a3a6e28af",
+      "adaptation_structure": "같은 캐릭터를 유지하며 장르를 바꾸는 사례",
+      "verification_needed": "방송인 대상 팬게임과 다른 IP 기반 팬게임의 중첩 구분",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-013",
+      "people": [
+        "소니쇼"
+      ],
+      "title": "초보자를 위한 대회 기획",
+      "date": null,
+      "category": "학습·대회",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "기사에서 포챔스 유치원 운동회가 초보 스트리머의 학습·대결 콘텐츠였다고 설명한다.",
+      "source_url": "https://www.gameple.co.kr/news/articleView.html?idxno=216113",
+      "adaptation_structure": "배우기→작은 연습→친선 대결",
+      "verification_needed": "원 공지·참가자·규칙·본편 날짜. 기사 원문 재접속은 403",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-014",
+      "people": [
+        "남봉"
+      ],
+      "title": "함께 참여하는 게임 서버 주최",
+      "date": null,
+      "category": "서버·협업",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "같은 기사에서 코블몬 기반 봉켓몬 합동 콘텐츠 주최를 언급한다.",
+      "source_url": "https://www.gameple.co.kr/news/articleView.html?idxno=216113",
+      "adaptation_structure": "참가 준비→서버 활동→활동 회고",
+      "verification_needed": "일정·원 공지·개별 행동과 결과",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-015",
+      "people": [
+        "비챤",
+        "우왁굳",
+        "아이네",
+        "징버거",
+        "릴파",
+        "주르르",
+        "고세구"
+      ],
+      "title": "시청자 투표가 반영되는 영상 선택 콘텐츠",
+      "date": "2025-02-15",
+      "category": "시청자 참여",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "플랫폼 소개에서 준비 영상의 선택과 실시간 투표가 결합된 콘텐츠를 확인했다.",
+      "source_url": "https://pick.sooplive.com/daily/view/161565",
+      "adaptation_structure": "제안→투표→화면 반영→다른 결과",
+      "verification_needed": "날짜는 소개 기사. 실제 방송 구간·각 참여자의 발화는 미확인. 연애 설정을 복사하지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-016",
+      "people": [
+        "고세구",
+        "우왁굳",
+        "아이네",
+        "징버거",
+        "릴파",
+        "주르르",
+        "비챤"
+      ],
+      "title": "방송 클립을 활용한 기념 합방",
+      "date": "2024-12-17",
+      "category": "회고·합방",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "콘텐츠 목록에 데뷔 기념일의 클립 캐치 합방이 기록되어 있다.",
+      "source_url": "https://www.namu.moe/w/고세구/콘텐츠",
+      "adaptation_structure": "이전 장면을 알아보기→새 농담→회고",
+      "verification_needed": "원본 영상·실제 규칙. 참가자마다 별개 사건으로 부풀리지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-017",
+      "people": [
+        "고세구"
+      ],
+      "title": "눈사람 만들기 컨테스트",
+      "date": null,
+      "category": "창작 참여",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "콘텐츠 목록에 해당 제목이 있다.",
+      "source_url": "https://www.namu.moe/w/고세구/콘텐츠",
+      "adaptation_structure": "작은 주제 제안→작품 감상→다음 아이디어",
+      "verification_needed": "제목 단계. 결과·참가 규모·방식 미확인",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-018",
+      "people": [
+        "릴파"
+      ],
+      "title": "단독 공연과 방송 회고",
+      "date": "2024-07-12~13",
+      "category": "준비·공연",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "공개 공연 기록에서 공연과 이후 녹화본 송출 구성이 확인된다.",
+      "source_url": "https://www.namu.moe/w/LILPACON : Going Out - SOOPER CONCERT",
+      "adaptation_structure": "선곡→연습→작은 무대→함께 돌아보기",
+      "verification_needed": "제작 준비 과정·방송 반응. 행사 규모를 그대로 옮기지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-019",
+      "people": [
+        "아이네"
+      ],
+      "title": "방송 장비 문제로 재시작",
+      "date": null,
+      "category": "장비 해프닝",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "위키에 컴퓨터·장비 문제 때문에 방송을 껐다 켠 사례가 서술되어 있다.",
+      "source_url": "https://www.alphawiki.org/raw/아이네?uuid=9747839f-045a-4ce4-a5cb-05c07a9087a9",
+      "adaptation_structure": "문제 발견→재접속→다른 코너로 수습",
+      "verification_needed": "정확한 날짜·원인·복구 행동. 관련 오컬트 명칭은 게임에 사용하지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-020",
+      "people": [
+        "라디유"
+      ],
+      "title": "장비 구매 경로가 돌아간 해프닝",
+      "date": null,
+      "category": "준비 해프닝",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "콘텐츠 정리 문서에 국내 장비를 해외 경로로 구입한 이야기가 있다.",
+      "source_url": "https://m.namu.moe/w/라디유/콘텐츠 및 게임",
+      "adaptation_structure": "구매 전 사양 확인→준비 방식 선택",
+      "verification_needed": "금액·관세·경위 원영상 확인. 가격이나 손해를 사실로 확정하지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-021",
+      "people": [
+        "김도"
+      ],
+      "title": "예상보다 길어진 게임과 엔딩 도전",
+      "date": "2019",
+      "category": "게임 도전",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "2019년 기록에는 Reventure의 추가 엔딩을 찾아 도전을 이어간 내용이 있다.",
+      "source_url": "https://dark.namu.moe/w/김도/플레이한 게임/2019년",
+      "adaptation_structure": "끝인 줄 알았는데 새 목표→재계획→후기",
+      "verification_needed": "방송 날짜·목표 발견·계속하기 판단·실제 완료 구간",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-022",
+      "people": [
+        "녹두로"
+      ],
+      "title": "팬게임 플레이가 다른 사람의 플레이로 이어짐",
+      "date": "2024-06-19",
+      "category": "게임 확산",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "개인 리뷰가 녹두로의 포케로그 영상을 보고 게임을 시작했다고 기록한다.",
+      "source_url": "https://camelpage.tistory.com/entry/게임-리뷰-PokéRogue",
+      "adaptation_structure": "방송 소재→시청자도 도전→후기 도착",
+      "verification_needed": "리뷰 작성자의 경험. 스트리머 고유 팬게임으로 잘못 분류하지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-023",
+      "people": [
+        "침착맨",
+        "서새봄",
+        "후추",
+        "승우아빠",
+        "매직박"
+      ],
+      "title": "여러 사람이 함께하는 게임 캠프",
+      "date": "2026-10-21",
+      "category": "협업·기획",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "공개 영상 목록에 참가자와 캠프 구성 제목이 기록되어 있다.",
+      "source_url": "https://creatorafterwork.com/channel/UC027x98NgUBw9K4aPT8k0mg/videos/",
+      "adaptation_structure": "함께 목표 정하기→역할 배분→작은 마무리",
+      "verification_needed": "업로드일과 개최일 대조. 장시간/수면 제한은 우리 게임에 옮기지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    },
+    {
+      "id": "EXT-024",
+      "people": [
+        "풍월량"
+      ],
+      "title": "팬게임 개발 과정 공개",
+      "date": "2026-10",
+      "category": "팬게임 제작 단서",
+      "evidence_grade": "C",
+      "evidence_kind": "외부 기록",
+      "source_fact": "치지직 목록에 풍월량 팬게임 개발 시리즈가 남아 있다.",
+      "source_url": "https://m.chzzk.naver.com/videos?tags=유니티",
+      "adaptation_structure": "작품 제작 중간 소식→완성 후 소개",
+      "verification_needed": "풍월량 본인이 실제 플레이한 사건은 아직 확인하지 않음",
+      "vod_audio_screen_verified": false,
+      "rakoko_real_event": false,
+      "release_ready": false
+    }
+  ],
+  "tournament_participation_registry": [
+    {
+      "person": "매드라이프",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "민기 THE 프린세스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "박옥자누나",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "민기 THE 프린세스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "델로략국",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "민기 THE 프린세스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "금휘",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "민기 THE 프린세스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "이글콥",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "민기 THE 프린세스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "크캣",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "내적팀밀감",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "쁘허",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "내적팀밀감",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "형독",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "내적팀밀감",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "루시아",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "내적팀밀감",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "고차비",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "내적팀밀감",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "푸린",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "%%이글스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "멋사",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "%%이글스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "너불",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "%%이글스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "루다",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "%%이글스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "백곰파",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "%%이글스",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "행수",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "제홍 THE 퀸",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "류제홍",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "제홍 THE 퀸",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "연리",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "제홍 THE 퀸",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "렘쨩",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "제홍 THE 퀸",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    },
+    {
+      "person": "둥그레",
+      "event": "2024 자낳대: 사이퍼즈",
+      "team": "제홍 THE 퀸",
+      "scope": "참가·팀 편성 기록 확인. 개인 해프닝 수집 완료 아님.",
+      "source_url": "https://www.namu.moe/w/2024 자낳대: 사이퍼즈"
+    }
+  ],
+  "unique_named_subjects": 44,
+  "named_subjects": [
+    "고세구",
+    "고차비",
+    "금휘",
+    "김도",
+    "남봉",
+    "너불",
+    "녹두로",
+    "델로략국",
+    "둥그레",
+    "따효니",
+    "라디유",
+    "레바",
+    "렘쨩",
+    "루다",
+    "루시아",
+    "류제홍",
+    "릴파",
+    "매드라이프",
+    "매직박",
+    "머독",
+    "멋사",
+    "박옥자누나",
+    "백곰파",
+    "비챤",
+    "쁘허",
+    "서새봄",
+    "소니쇼",
+    "승우아빠",
+    "아이네",
+    "연두",
+    "연리",
+    "우왁굳",
+    "이글콥",
+    "주르르",
+    "징버거",
+    "침착맨",
+    "케인",
+    "크캣",
+    "통깡이",
+    "푸린",
+    "풍월량",
+    "행수",
+    "형독",
+    "후추"
+  ],
+  "individual_vod_verifications": 0
+}

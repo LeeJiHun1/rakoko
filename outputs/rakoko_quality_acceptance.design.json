@@ -1,0 +1,602 @@
+{
+  "version": "1.0",
+  "asOf": "2026-11-05",
+  "status": "proposed_acceptance_not_runtime_verified",
+  "research": "rakoko_game_quality_research.md",
+  "audit": "rakoko_quality_gap_audit.json",
+  "sources": [
+    {
+      "id": "QS-01",
+      "title": "Storylets: You Want Them",
+      "url": "https://emshort.blog/2019/11/29/storylets-you-want-them/",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-02",
+      "title": "Storylets and Saliency Primer",
+      "url": "https://docs.yarnspinner.dev/3.1/write-yarn-scripts/advanced-scripting/storylets-and-saliency-a-primer",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-03",
+      "title": "How to Write Intentional Choices",
+      "url": "https://www.choiceofgames.com/2016/12/how-to-write-intentional-choices/",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-04",
+      "title": "End Game and Victory Design",
+      "url": "https://www.choiceofgames.com/2016/11/end-game-and-victory-design/",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-05",
+      "title": "Testing ChoiceScript Games Automatically",
+      "url": "https://www.choiceofgames.com/make-your-own-games/testing-choicescript-games-automatically/",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-06",
+      "title": "Running Your Ink",
+      "url": "https://github.com/inkle/ink/blob/master/Documentation/RunningYourInk.md",
+      "readStatus": "body_reviewed_including_raw"
+    },
+    {
+      "id": "QS-07",
+      "title": "Work with IndexedDB",
+      "url": "https://web.dev/articles/indexeddb",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-08",
+      "title": "Page Lifecycle API",
+      "url": "https://developer.chrome.com/docs/web-platform/page-lifecycle-api",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-09",
+      "title": "Storage quotas and eviction criteria",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-10",
+      "title": "Understanding WCAG 2.2 SC 1.4.3 Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-11",
+      "title": "Understanding WCAG 2.2 SC 2.5.8 Target Size (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-12",
+      "title": "Understanding WCAG 2.2 SC 1.4.10 Reflow",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-13",
+      "title": "Understanding WCAG 2.2 SC 2.1.1 Keyboard",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-14",
+      "title": "Xbox Accessibility Guideline 101: Text display",
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/101",
+      "readStatus": "body_reviewed_despite_generic_auth_banner"
+    },
+    {
+      "id": "QS-15",
+      "title": "Web Vitals",
+      "url": "https://web.dev/articles/vitals",
+      "readStatus": "body_reviewed"
+    },
+    {
+      "id": "QS-16",
+      "title": "UI Audio",
+      "url": "https://kenney.nl/assets/ui-audio",
+      "readStatus": "landing_page_and_license_label_reviewed_archive_unavailable"
+    },
+    {
+      "id": "QS-17",
+      "title": "글꼴 임베딩 관련 안내",
+      "url": "https://neodgm.dalgona.dev/embedding_fonts.html",
+      "readStatus": "body_reviewed_and_font_license_downloaded"
+    },
+    {
+      "id": "QS-18",
+      "title": "Noto Sans KR OFL.txt",
+      "url": "https://github.com/google/fonts/blob/main/ofl/notosanskr/OFL.txt",
+      "readStatus": "license_body_reviewed_and_downloaded"
+    }
+  ],
+  "gameRuleOverrides": {},
+  "gameEngineImplementedByThisResearch": false,
+  "proposedTargets": {
+    "playtime": {
+      "basis": "project_proposal_not_external_average_not_user_confirmed",
+      "firstNormalEndingMinutes": [
+        15,
+        25
+      ],
+      "familiarReplayMinutes": [
+        10,
+        15
+      ],
+      "firstBroadcastReviewTargetMinutes": 3,
+      "allEndingsRequiredToFitSameDuration": false,
+      "wallClockAutoEnd": false
+    },
+    "humanPilot": {
+      "basis": "small_project_pilot_not_population_estimate",
+      "fanParticipants": 4,
+      "lessFamiliarParticipants": 4,
+      "externalRecruitmentAuthorizedByThisFile": false,
+      "automatedTelemetryRequired": false
+    },
+    "randomizedProgressionBudget": {
+      "basis": "proposed_engine_test_budget",
+      "seedCount": 200,
+      "broadcastsPerRun": 52,
+      "styles": [
+        "talk",
+        "game",
+        "fan_planning",
+        "mixed"
+      ],
+      "totalBroadcasts": 41600,
+      "executed": false
+    },
+    "accessibility": {
+      "normalTextContrast": 4.5,
+      "largeTextContrast": 3,
+      "targetSizeScMinimumCssPx": 24,
+      "mainControlHeightProjectTargetCssPx": 44,
+      "textPanelReflowWidthCssPx": 320,
+      "bodyTextScalePercent": 200,
+      "targetMinimumHasScExceptions": true,
+      "fullWcagComplianceClaim": false
+    },
+    "webVitals": {
+      "LCPSecondsAtMost": 2.5,
+      "INPMillisecondsAtMost": 200,
+      "CLSAtMost": 0.1,
+      "assessment": "field_75th_percentile_segment_mobile_desktop",
+      "measured": false
+    },
+    "endingWitnesses": {
+      "normalOutcomeCount": 32,
+      "forcedOutcomeCount": 1,
+      "requiresNewRunToFinalChoiceWitness": true,
+      "debugStatInjectionAloneIsNotWitness": true
+    }
+  },
+  "cases": [
+    {
+      "id": "QA-001",
+      "priority": "P0",
+      "area": "progression",
+      "title": "새 게임과 날짜 경계",
+      "basis": "existing_project_rule",
+      "setup": "별도 run을 시작하고 생일·주년으로 날짜를 이동한다.",
+      "expected": "시작2026-01-18·생일9/10. 날짜 이동만으로 능력·현금·경험·주문 납품이 늘지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-002",
+      "priority": "P0",
+      "area": "progression",
+      "title": "빠른 날짜 이동과 후반 사건",
+      "basis": "unresolved_design_decision",
+      "setup": "초기 능력에서241일 이후로 이동하고 일반 진행과 비교한다.",
+      "expected": "현재 날짜 의존과 경험 단계의 불일치를 기록한다. 단계 분리안을 정하기 전에는 해결로 처리하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-003",
+      "priority": "P0",
+      "area": "choices",
+      "title": "수치 제한의 경계와 설명",
+      "basis": "existing_project_rule",
+      "setup": "필요값n에 대해n-1/n/n+1, 경험 부족, 다른 gameId로 표시와 확정을 시험한다.",
+      "expected": "표시와 선택 가능 여부가 일치한다. 현재/필요값·부족 경험을 읽을 수 있고 확정 때 다시 검사한다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-004",
+      "priority": "P0",
+      "area": "choices",
+      "title": "초기 상태의 진행 막힘 방지",
+      "basis": "existing_project_rule",
+      "setup": "낮은 능력·잔액0·상위 선택 모두 잠금 상태로 일반/유료 사건을 연다.",
+      "expected": "일반 상황에서는 진행·보류·명시적 포기가 가능하다. 유료 동등 성과는 무료로 얻지 않는다.10년 강제 엔딩의 거절 불가는 유지한다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-005",
+      "priority": "P1",
+      "area": "choices",
+      "title": "선택 의도와 실제 결과",
+      "basis": "project_application_of_QS03",
+      "setup": "처음 보는 사람이 선택 전 목적·비용·관련 능력을 설명하고 결과를 확인한다.",
+      "expected": "문구와 효과가 대응한다. 미루기로 완성되거나 포기로 구매되면 안 된다. 문구만 다른 같은 결과는 그 의도를 명시한다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-03"
+      ]
+    },
+    {
+      "id": "QA-006",
+      "priority": "P0",
+      "area": "economy",
+      "title": "잔액·가격·규모 경계",
+      "basis": "existing_project_rule",
+      "setup": "가격-1/동일/+1과 규모24/25·44/45·64/65·84/85를 통과한다.",
+      "expected": "부족하면 거절·포기, 동일 잔액이면1회 결제. 최고 해금 규모를 보존하고 방송 시작 스냅샷으로1회 정산한다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-007",
+      "priority": "P0",
+      "area": "economy",
+      "title": "결제 후 납품·기한·취소",
+      "basis": "unresolved_design_decision",
+      "setup": "발주 뒤 미착수 취소·착수 후 취소·기한 초과·정상/강제 엔딩을 발생시킨다.",
+      "expected": "미리 표시한 정책대로 처리하고 중복 환급이 없다. 미정 정책은 검증 통과로 처리하지 않는다. 이미 지불한 의상 준비의 비환급·진행 보존은 유지한다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-008",
+      "priority": "P0",
+      "area": "progression",
+      "title": "무료 조작의 상태 보존",
+      "basis": "existing_project_rule",
+      "setup": "설정·일지·도움말·공개 의상 환복·기존 기록 재생을 반복한다.",
+      "expected": "행동·코너·현금을 소모하지 않고 능력·보상·RNG를 다시 적용하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-009",
+      "priority": "P0",
+      "area": "endings",
+      "title": "일반32결말의 실제 도달 경로",
+      "basis": "existing_project_rule",
+      "setup": "결말마다 새 게임→경험 생산 선택→수치 도달→현재 기획→종결 선택을 기록한다.",
+      "expected": "32개 각각 재현 로그가 있다. 능력 디버그 주입·엔딩 화면 직접 열기로 대체하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-010",
+      "priority": "P0",
+      "area": "endings",
+      "title": "서로 다른 게임의 경험 구분",
+      "basis": "existing_project_rule",
+      "setup": "게임A에서 얻은EX-003/004/005/014를 게임B의 기획에 사용한다.",
+      "expected": "gameId가 다르면 조건을 충족하지 않는다. 전역 경험 표시가 해당 게임의 조건을 덮어쓰지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-011",
+      "priority": "P0",
+      "area": "endings",
+      "title": "일반 엔딩의 수락과 미달 선택",
+      "basis": "existing_project_rule",
+      "setup": "이야기 조건·경험은 있지만 수치가 부족해 엔딩 사건의 종결 선택 둘 다 잠긴 상태를 만든다.",
+      "expected": "이유를 확인하고 계속할 수 있다. 단순 추첨 당첨만으로 끝나지 않고 명시한 종결 선택만 크레딧으로 간다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-012",
+      "priority": "P0",
+      "area": "endings",
+      "title": "준비 완료한 마지막 기획 예약",
+      "basis": "existing_project_rule",
+      "setup": "첫1주년 이후 현재 마무리 기획 조건을 채우고 마지막 특집을 예약한다.",
+      "expected": "적격이면 기존 코너 규칙으로 확정 진행한다. 의상·달력의 확보 슬롯을 임의로 덮어쓰지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-013",
+      "priority": "P0",
+      "area": "endings",
+      "title": "10년 강제 결말과 기존 엔딩 예외",
+      "basis": "existing_project_rule",
+      "setup": "무엔딩·잔액0·낮은 능력으로2036-01-18을 넘기는 날짜를 선택한다. 일반 엔딩을 본 계속 run과 비교한다.",
+      "expected": "무엔딩 run은 당일에 멈추고 다수 중 가상 키몽이1명과 강제 결혼한다. 거절·비용·수치 제한이 없고 기존 엔딩을 본 run에는 재강제하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-014",
+      "priority": "P0",
+      "area": "endings",
+      "title": "같은 일지 계속하기",
+      "basis": "existing_project_rule",
+      "setup": "일반 결말 후 계속하여 의상·준비·약속·현금·경험을 확인한다.",
+      "expected": "보존 대상은 유지되고 현재 마무리 기획은 새 맥락으로 전환한다. 별도 새 run과 혼동하거나 재감상 보상을 주지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-015",
+      "priority": "P1",
+      "area": "endings",
+      "title": "결말의 감정적 차이와 기록 회수",
+      "basis": "project_application_of_QS04",
+      "setup": "능력이 비슷한 서로 다른 결말2개를 선택 기록과 함께 읽는다.",
+      "expected": "제목 외에 마지막 선택·장면·후일담이 다르고 실제 경험·약속을 회수한다. 하지 않은 실적을 만들지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-04"
+      ]
+    },
+    {
+      "id": "QA-016",
+      "priority": "P0",
+      "area": "repetition",
+      "title": "family·기능군 간격",
+      "basis": "existing_project_rule",
+      "setup": "같은family의RK/CE를 가까이 두고 같은 기능군을 같은 방송·다음2회에 요구한다.",
+      "expected": "공유family 간격과 기능군 제외를 지킨다. 일반 사건 간격을 장기 모듈의 별도 참여 규칙에 잘못 적용하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-017",
+      "priority": "P1",
+      "area": "repetition",
+      "title": "맥락이 다른 반복",
+      "basis": "existing_project_variant_target",
+      "setup": "같은 소재를 재발·이전 대응 완료·다른 기획의3가지 문맥으로 읽는다.",
+      "expected": "기억과 실제 상태가 달라진다. 미경험 콜백·최초 보상 중복이 없고 단순한 어미 교환으로 끝내지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-018",
+      "priority": "P0",
+      "area": "repetition",
+      "title": "약속 대기열과 예약 충돌",
+      "basis": "existing_project_rule",
+      "setup": "의상 공개·기념일 예약과 여러 도래 약속을 같은 방송에 둔다.",
+      "expected": "기존 우선순위·슬롯 수를 지키고 맞지 않는 약속을 버리지 않는다. 대표 일지로 선택하지 않은 약속도 남긴다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-019",
+      "priority": "P1",
+      "area": "balance",
+      "title": "대표 전략의 여러 회차 진행",
+      "basis": "project_test_budget_proposal",
+      "setup": "고정200시드×52방송×잡담/게임/팬 기획/혼합4방침으로 계산한다.",
+      "expected": "선정 이유·반복·대기열·성장·지출·경험 도달을 기록한다.41,600방송은 향후 검사 예산이지 이번 실행 수가 아니다. 무작위만으로 모든 엔딩 도달을 증명하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-020",
+      "priority": "P0",
+      "area": "long_content",
+      "title": "초보의 장기 콘텐츠 경로",
+      "basis": "existing_project_rule",
+      "setup": "낮은 능력으로8모듈의 보조 역할 경로를 시작하고 최소5참여 방송을 진행한다.",
+      "expected": "실제 참여로 단계를 진행한다. 날짜 건너뛰기로 작업·참여·EX가 완료되지 않고 선수 조건 미달에서 우승하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-021",
+      "priority": "P0",
+      "area": "long_content",
+      "title": "대회 결과와 상금 검증",
+      "basis": "existing_project_rule",
+      "setup": "참가 미확정·보조 역할·1승·2승·재접속을 비교한다.",
+      "expected": "선수 자격과 실제2승 완료일 때만 우승·개인 몫 상금을1회 준다. 서버 통화는 방송 현금으로 환전하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-022",
+      "priority": "P0",
+      "area": "save",
+      "title": "중복 클릭과 같은 명령 재전송",
+      "basis": "existing_project_rule",
+      "setup": "구매·의상 준비·결과 확정을 빠르게2회 수행하고 같은commandId를 재전송한다.",
+      "expected": "비용·행동·보상·EX·약속은1번만 적용한다. 재전송은 저장한 결과를 반환한다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-023",
+      "priority": "P0",
+      "area": "save",
+      "title": "저장 실패와 커밋 전후 종료",
+      "basis": "project_application_of_QS07_QS08",
+      "setup": "쓰기 거부·용량 부족·커밋 직전/직후 탭 종료를 주입하고 재개한다.",
+      "expected": "모든 변경이 함께 있거나 이전 상태로 돌아간다. 저장 실패 때 성공 화면으로 이동하지 않고 마지막 정상 상태를 보존한다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-07",
+        "QS-08"
+      ]
+    },
+    {
+      "id": "QA-024",
+      "priority": "P0",
+      "area": "save",
+      "title": "두 탭과 오래된revision",
+      "basis": "existing_project_rule",
+      "setup": "같은run을 두 탭에서 열고 같은revision부터 서로 다른 선택을 확정한다.",
+      "expected": "뒤늦은 오래된 쓰기를 거절하고 다른 탭의 성공 결과를 덮어쓰지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-025",
+      "priority": "P0",
+      "area": "save",
+      "title": "불러오기 재현과 콘텐츠 갱신",
+      "basis": "existing_project_rule",
+      "setup": "사건 당첨/미당첨·부분 유출·엔딩 검사·배우자 선정 전후를 저장하고 콘텐츠 갱신 후에도 재개한다.",
+      "expected": "결과·화자·순서·의상·대상이 같고 기존 스냅샷으로 마무리한다. 보상 재적용은 없다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-026",
+      "priority": "P0",
+      "area": "save",
+      "title": "일지 내보내기·가져오기·복구",
+      "basis": "project_application_of_QS09",
+      "setup": "내보내기→별도 환경 가져오기와 구버전·파손·과대·알 수 없는 참조·HTML 같은 문구를 시험한다.",
+      "expected": "기존run을 깨뜨리지 않고 검증·변환한다. 원본을 보존하고 텍스트를 실행하지 않는다. 날짜·현금·의상·약속이 왕복 후 같다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-09"
+      ]
+    },
+    {
+      "id": "QA-027",
+      "priority": "P0",
+      "area": "save",
+      "title": "백그라운드와 뒤로가기",
+      "basis": "project_application_of_QS08",
+      "setup": "휴대폰에서 다른 앱으로 이동 후 종료하고 브라우저 뒤로/앞으로 이동 후 재개한다.",
+      "expected": "마지막 성공 커밋에서 이어간다. 숨겨진 동안 날짜·비용·수입·난수가 자동 진행하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-08"
+      ]
+    },
+    {
+      "id": "QA-028",
+      "priority": "P1",
+      "area": "accessibility",
+      "title": "키보드와 포커스",
+      "basis": "project_application_of_QS13",
+      "setup": "마우스 없이 시작→선택→일지→날짜→환복→저장을 진행하고 대화상자를 열고 닫는다.",
+      "expected": "필수 조작이 가능하고 포커스가 보인다. 닫은 뒤 적절한 위치로 돌아가며 잠금 이유가 호버에 의존하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-13"
+      ]
+    },
+    {
+      "id": "QA-029",
+      "priority": "P1",
+      "area": "accessibility",
+      "title": "작은 화면과 글자 확대",
+      "basis": "project_application_of_QS11_QS12_QS14",
+      "setup": "320 CSS px 폭·본문200% 확대·긴 한글 조건문으로 조작한다.",
+      "expected": "본문과 선택이 잘리지 않는다. 주요 버튼 높이44px은 제작 목표이며 작은 아이콘은24px 최소/간격 규칙도 점검한다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-11",
+        "QS-12",
+        "QS-14"
+      ]
+    },
+    {
+      "id": "QA-030",
+      "priority": "P1",
+      "area": "accessibility",
+      "title": "본문과 조건 설명의 대비",
+      "basis": "external_guidance_QS10",
+      "setup": "모든 배경·의상·명암 설정에서 본문과 잠금 설명의 대비를 측정한다.",
+      "expected": "일반 설명4.5:1·큰 글자 기준의 제목3:1을 확인한다. 잠금 정보를 색만으로 전하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-10"
+      ]
+    },
+    {
+      "id": "QA-031",
+      "priority": "P1",
+      "area": "presentation",
+      "title": "음소거·동작 줄이기·군중 표시",
+      "basis": "existing_project_rule_and_quality_proposal",
+      "setup": "SFX/BGM 음소거·동작 줄이기·반응 접기·즉시 표시를 선택한다.",
+      "expected": "결과 의미를 잃지 않고 필수 클릭·대기가 늘지 않는다.2줄 이상 반응은 기존 최소2가상 화자 규칙을 따른다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-032",
+      "priority": "P1",
+      "area": "presentation",
+      "title": "이미지 실패와 부분 유출 범위",
+      "basis": "existing_project_rule",
+      "setup": "이미지404·로딩 지연·의상 미공개/일부 유출/공개 완료를 표시한다.",
+      "expected": "대체 이름·재시도와 진행이 가능하다. 일부 유출에 전신이나 미공개 지식을 보여주지 않고 로딩으로 선택 위치가 튀지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-033",
+      "priority": "P1",
+      "area": "performance",
+      "title": "로딩·입력·레이아웃 안정",
+      "basis": "external_guidance_QS15",
+      "setup": "PC/모바일 조건을 고정하고 초기 표시와 반복 선택을 측정한다.",
+      "expected": "LCP≤2.5초·INP≤200ms·CLS≤0.1을 목표로 한다. 실험실 결과를 실사용75백분위 달성이라고 표시하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-15"
+      ]
+    },
+    {
+      "id": "QA-034",
+      "priority": "P1",
+      "area": "playtest",
+      "title": "처음과 재플레이의 속도",
+      "basis": "project_playtest_proposal",
+      "setup": "우선 팬4명·사전 지식 적은4명 정도로 첫 플레이와 재플레이를 관찰한다.",
+      "expected": "읽기·설정·반복·대기·엔딩까지 시간을 나눠 기록하고 잠금 이유·다음 준비 이해를 확인한다. 첫 일반 엔딩15~25분안을 검토하며 모집단 평균으로 주장하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    },
+    {
+      "id": "QA-035",
+      "priority": "P1",
+      "area": "assets",
+      "title": "글꼴·그림·음향 최종 점검",
+      "basis": "project_production_proposal_QS14_QS16_QS17_QS18",
+      "setup": "실제 표시 크기의 눈·머리·의상 구분·알파 경계, 한글 글리프, 선택/확정/잠금/완료음을 확인한다.",
+      "expected": "글자 깨짐 없이 읽기 쉬운 대체 글꼴과 필요한 고지를 제공한다. 미확보·미청취 음원을 채택 완료로 표시하지 않는다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": [
+        "QS-14",
+        "QS-16",
+        "QS-17",
+        "QS-18"
+      ]
+    },
+    {
+      "id": "QA-036",
+      "priority": "P1",
+      "area": "content_integrity",
+      "title": "제외 소재와 엔딩 안내 범위",
+      "basis": "existing_project_rule",
+      "setup": "사건·변주·후일담·채팅 반응을 읽고 새 게임의 엔딩 안내를 확인한다.",
+      "expected": "오컬트 서사·심각한 사건·타 인물 환생은 제외한다. 미경험 실적·미도달 결말을 단정하지 않되 현재 기획의 다음 준비는 알 수 있다.",
+      "executionStatus": "not_run_no_game_engine",
+      "sourceIds": []
+    }
+  ]
+}

@@ -1,0 +1,6091 @@
+{
+  "version": "1.0",
+  "status": "design_only_not_executable_effects",
+  "rules": {
+    "originalStoryConditionsStillRequired": true,
+    "statLocksDoNotReplaceSetupConditions": true,
+    "adaptationAfterFamilyPreviouslySeen": false,
+    "creativeRecurrenceAfterAdaptationAllowedAfterCooldown": true,
+    "familySharedCooldown": true,
+    "groupExcludedFollowingBroadcasts": 2,
+    "sameFamilyMaximumPerBroadcast": 1,
+    "repeatedFixedAchievementOrUnlockRewards": false,
+    "uniqueAwarenessGainPerFamilyPerRun": true,
+    "repeatInstancesHaveNewIdsAndReuseSavedOutcomesOnResume": true
+  },
+  "entries": [
+    {
+      "id": "CE-001",
+      "family": "CE-001",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-001-C1",
+          "sourceChoiceIndex": 0,
+          "text": "연결을 확인한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-001-C2",
+          "sourceChoiceIndex": 1,
+          "text": "대체 화면으로 이어간다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-001-C3",
+          "sourceChoiceIndex": 2,
+          "text": "잡담으로 바꾼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "CE-002",
+      "family": "CE-002",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-002-C1",
+          "sourceChoiceIndex": 0,
+          "text": "시험 소리를 낸다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-002-C2",
+          "sourceChoiceIndex": 1,
+          "text": "자막 설명으로 진행한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-002-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다른 코너로 바꾼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "CE-003",
+      "family": "CE-003",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-003-C1",
+          "sourceChoiceIndex": 0,
+          "text": "화면을 다시 맞춘다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-003-C2",
+          "sourceChoiceIndex": 1,
+          "text": "중요 부분만 설명한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-003-C3",
+          "sourceChoiceIndex": 2,
+          "text": "자료를 뒤로 미룬다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "CE-004",
+      "family": "CE-004",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-004-C1",
+          "sourceChoiceIndex": 0,
+          "text": "알림을 끈다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-004-C2",
+          "sourceChoiceIndex": 1,
+          "text": "짧은 효과음으로 받아친다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-004-C3",
+          "sourceChoiceIndex": 2,
+          "text": "잠시 쉬며 설정한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "CE-005",
+      "family": "CE-005",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-005-C1",
+          "sourceChoiceIndex": 0,
+          "text": "위치를 바로잡는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-005-C2",
+          "sourceChoiceIndex": 1,
+          "text": "앉아서 이어간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-005-C3",
+          "sourceChoiceIndex": 2,
+          "text": "말 없는 시범으로 바꾼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "CE-006",
+      "family": "CE-006",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-006-C1",
+          "sourceChoiceIndex": 0,
+          "text": "로컬 자료를 꺼낸다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-006-C2",
+          "sourceChoiceIndex": 1,
+          "text": "진행 상황을 안내한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-006-C3",
+          "sourceChoiceIndex": 2,
+          "text": "이어할 날짜를 정한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "CE-007",
+      "family": "CE-007",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-007-C1",
+          "sourceChoiceIndex": 0,
+          "text": "최근 파일을 찾는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-007-C2",
+          "sourceChoiceIndex": 1,
+          "text": "키워드로 진행한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-007-C3",
+          "sourceChoiceIndex": 2,
+          "text": "시청자 질문부터 받는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-008",
+      "family": "CE-008",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-008-C1",
+          "sourceChoiceIndex": 0,
+          "text": "바로 수정한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-008-C2",
+          "sourceChoiceIndex": 1,
+          "text": "말로 고쳐 읽는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-008-C3",
+          "sourceChoiceIndex": 2,
+          "text": "정정 메모를 붙인다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-009",
+      "family": "CE-009",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-009-C1",
+          "sourceChoiceIndex": 0,
+          "text": "목차 기준으로 합친다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-009-C2",
+          "sourceChoiceIndex": 1,
+          "text": "최신 파일만 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-009-C3",
+          "sourceChoiceIndex": 2,
+          "text": "두 버전을 비교한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-010",
+      "family": "CE-010",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-010-C1",
+          "sourceChoiceIndex": 0,
+          "text": "기다리며 투표한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-010-C2",
+          "sourceChoiceIndex": 1,
+          "text": "다른 게임을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-010-C3",
+          "sourceChoiceIndex": 2,
+          "text": "오프라인 연습을 보여준다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-011",
+      "family": "CE-011",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-011-C1",
+          "sourceChoiceIndex": 0,
+          "text": "순서를 줄인다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-011-C2",
+          "sourceChoiceIndex": 1,
+          "text": "핵심 코너부터 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-011-C3",
+          "sourceChoiceIndex": 2,
+          "text": "짧은 인사 뒤 시작한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-012",
+      "family": "CE-012",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-012-C1",
+          "sourceChoiceIndex": 0,
+          "text": "핵심만 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-012-C2",
+          "sourceChoiceIndex": 1,
+          "text": "두 회차로 나눈다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-012-C3",
+          "sourceChoiceIndex": 2,
+          "text": "선택 투표를 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-013",
+      "family": "CE-013",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-013-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧게 답한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-013-C2",
+          "sourceChoiceIndex": 1,
+          "text": "경험 이야기로 푼다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-013-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 QnA에 넣는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-014",
+      "family": "CE-014",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-014-C1",
+          "sourceChoiceIndex": 0,
+          "text": "바로 감상한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-014-C2",
+          "sourceChoiceIndex": 1,
+          "text": "모아서 소개한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-014-C3",
+          "sourceChoiceIndex": 2,
+          "text": "감사 인사만 남긴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-015",
+      "family": "CE-015",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-015-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧게 재투표한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-015-C2",
+          "sourceChoiceIndex": 1,
+          "text": "둘을 섞는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              },
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-015-C3",
+          "sourceChoiceIndex": 2,
+          "text": "하나는 다음에 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 50
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "CE-016",
+      "family": "CE-016",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-016-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧게 설명한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-016-C2",
+          "sourceChoiceIndex": 1,
+          "text": "그림으로 보여준다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-016-C3",
+          "sourceChoiceIndex": 2,
+          "text": "오늘 용어 하나만 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-017",
+      "family": "CE-017",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-017-C1",
+          "sourceChoiceIndex": 0,
+          "text": "후보 세 개를 추린다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-017-C2",
+          "sourceChoiceIndex": 1,
+          "text": "한 가지 조건으로 거른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-017-C3",
+          "sourceChoiceIndex": 2,
+          "text": "파일럿 투표를 연다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              },
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-018",
+      "family": "CE-018",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-018-C1",
+          "sourceChoiceIndex": 0,
+          "text": "한 가지씩 시험한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-018-C2",
+          "sourceChoiceIndex": 1,
+          "text": "공식 설명을 확인한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-018-C3",
+          "sourceChoiceIndex": 2,
+          "text": "내 방식으로 해본다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-019",
+      "family": "CE-019",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-019-C1",
+          "sourceChoiceIndex": 0,
+          "text": "다시 배운다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-019-C2",
+          "sourceChoiceIndex": 1,
+          "text": "연습장에서 익힌다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-019-C3",
+          "sourceChoiceIndex": 2,
+          "text": "쉬운 단계로 시작한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.4
+        }
+      ]
+    },
+    {
+      "id": "CE-020",
+      "family": "CE-020",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-020-C1",
+          "sourceChoiceIndex": 0,
+          "text": "키 배치를 확인한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-020-C2",
+          "sourceChoiceIndex": 1,
+          "text": "한 번 더 도전한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-020-C3",
+          "sourceChoiceIndex": 2,
+          "text": "쉬었다 재개한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-021",
+      "family": "CE-021",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-021-C1",
+          "sourceChoiceIndex": 0,
+          "text": "조건을 다시 읽는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-021-C2",
+          "sourceChoiceIndex": 1,
+          "text": "힌트 하나를 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-021-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다른 문제부터 푼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-022",
+      "family": "CE-022",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-022-C1",
+          "sourceChoiceIndex": 0,
+          "text": "익숙한 전략을 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-022-C2",
+          "sourceChoiceIndex": 1,
+          "text": "새 전략을 시험한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 40
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-022-C3",
+          "sourceChoiceIndex": 2,
+          "text": "시청자 팁 하나를 반영한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 40
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "CE-023",
+      "family": "CE-023",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-023-C1",
+          "sourceChoiceIndex": 0,
+          "text": "집중해서 재도전한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 45
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-023-C2",
+          "sourceChoiceIndex": 1,
+          "text": "여기서 기록을 남긴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-023-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 회차에 준비한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 40
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "CE-024",
+      "family": "CE-024",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-024-C1",
+          "sourceChoiceIndex": 0,
+          "text": "돌아가 저장한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-024-C2",
+          "sourceChoiceIndex": 1,
+          "text": "다음 지점까지 간다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-024-C3",
+          "sourceChoiceIndex": 2,
+          "text": "여기서 코너를 정리한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-025",
+      "family": "CE-025",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-025-C1",
+          "sourceChoiceIndex": 0,
+          "text": "역할을 나눈다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-025-C2",
+          "sourceChoiceIndex": 1,
+          "text": "라운드마다 바꾼다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-025-C3",
+          "sourceChoiceIndex": 2,
+          "text": "자유롭게 해본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-026",
+      "family": "CE-026",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-026-C1",
+          "sourceChoiceIndex": 0,
+          "text": "한 명씩 설명한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-026-C2",
+          "sourceChoiceIndex": 1,
+          "text": "시범부터 보인다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-026-C3",
+          "sourceChoiceIndex": 2,
+          "text": "짧은 규칙표를 띄운다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-027",
+      "family": "CE-027",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-027-C1",
+          "sourceChoiceIndex": 0,
+          "text": "공유 대상을 맞춘다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-027-C2",
+          "sourceChoiceIndex": 1,
+          "text": "같은 장면을 말로 찾는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-027-C3",
+          "sourceChoiceIndex": 2,
+          "text": "공통 로비로 돌아간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-028",
+      "family": "CE-028",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-028-C1",
+          "sourceChoiceIndex": 0,
+          "text": "각자 출력량을 조절한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-028-C2",
+          "sourceChoiceIndex": 1,
+          "text": "역할을 자막으로 표시한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-028-C3",
+          "sourceChoiceIndex": 2,
+          "text": "짧게 음성 확인을 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-029",
+      "family": "CE-029",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-029-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧게 해본다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-029-C2",
+          "sourceChoiceIndex": 1,
+          "text": "다음 합방에 넣는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-029-C3",
+          "sourceChoiceIndex": 2,
+          "text": "원래 목표를 마친다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-030",
+      "family": "CE-030",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-030-C1",
+          "sourceChoiceIndex": 0,
+          "text": "작은 목표로 나눈다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-030-C2",
+          "sourceChoiceIndex": 1,
+          "text": "역할 하나씩 연습한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-030-C3",
+          "sourceChoiceIndex": 2,
+          "text": "친선 규칙으로 바꾼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-031",
+      "family": "CE-031",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-031-C1",
+          "sourceChoiceIndex": 0,
+          "text": "본론으로 돌아간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-031-C2",
+          "sourceChoiceIndex": 1,
+          "text": "잡담 특집으로 바꾼다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              },
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-031-C3",
+          "sourceChoiceIndex": 2,
+          "text": "짧게 쉬고 넘어간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-032",
+      "family": "CE-032",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-032-C1",
+          "sourceChoiceIndex": 0,
+          "text": "주제를 연결한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-032-C2",
+          "sourceChoiceIndex": 1,
+          "text": "준비한 주제로 돌아간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-032-C3",
+          "sourceChoiceIndex": 2,
+          "text": "새 주제를 적어둔다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-033",
+      "family": "CE-033",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-033-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧은 버전으로 한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-033-C2",
+          "sourceChoiceIndex": 1,
+          "text": "다음에 나눠 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-033-C3",
+          "sourceChoiceIndex": 2,
+          "text": "정리 방송으로 바꾼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-034",
+      "family": "CE-034",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-034-C1",
+          "sourceChoiceIndex": 0,
+          "text": "즉흥 멘트로 잇는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              },
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-034-C2",
+          "sourceChoiceIndex": 1,
+          "text": "순서를 뒤집는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-034-C3",
+          "sourceChoiceIndex": 2,
+          "text": "비하인드를 말한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-035",
+      "family": "CE-035",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-035-C1",
+          "sourceChoiceIndex": 0,
+          "text": "직접 한 번 보인다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-035-C2",
+          "sourceChoiceIndex": 1,
+          "text": "한 문장으로 요약한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-035-C3",
+          "sourceChoiceIndex": 2,
+          "text": "질문 하나만 받는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-036",
+      "family": "CE-036",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-036-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧은 투표를 연다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-036-C2",
+          "sourceChoiceIndex": 1,
+          "text": "일지 한 장을 돌아본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-036-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 목표를 정한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-037",
+      "family": "CE-037",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-037-C1",
+          "sourceChoiceIndex": 0,
+          "text": "정식 코너로 키운다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 45
+              },
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-037-C2",
+          "sourceChoiceIndex": 1,
+          "text": "오늘만의 장면으로 둔다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-037-C3",
+          "sourceChoiceIndex": 2,
+          "text": "시청자와 이름을 정한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 50
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "CE-038",
+      "family": "CE-038",
+      "trigger": "result_reaction",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "challengeResultId",
+        "maxPerContext": 1
+      },
+      "choices": [
+        {
+          "id": "CE-038-C1",
+          "sourceChoiceIndex": 0,
+          "text": "고맙다고 말한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-038-C2",
+          "sourceChoiceIndex": 1,
+          "text": "팁 메모를 남긴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-038-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다른 방법도 비교한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-039",
+      "family": "CE-039",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-039-C1",
+          "sourceChoiceIndex": 0,
+          "text": "한 번 받아친다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-039-C2",
+          "sourceChoiceIndex": 1,
+          "text": "코너 이름으로 쓴다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              },
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-039-C3",
+          "sourceChoiceIndex": 2,
+          "text": "웃고 원래 진행한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-040",
+      "family": "CE-040",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-040-C1",
+          "sourceChoiceIndex": 0,
+          "text": "이번에 진행한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-040-C2",
+          "sourceChoiceIndex": 1,
+          "text": "작게 시험한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-040-C3",
+          "sourceChoiceIndex": 2,
+          "text": "예정 날짜를 유지한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-041",
+      "family": "CE-041",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-041-C1",
+          "sourceChoiceIndex": 0,
+          "text": "메모대로 해본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-041-C2",
+          "sourceChoiceIndex": 1,
+          "text": "시청자와 확인한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-041-C3",
+          "sourceChoiceIndex": 2,
+          "text": "오늘 방식으로 고친다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-042",
+      "family": "CE-042",
+      "trigger": "result_reaction",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "challengeResultId",
+        "maxPerContext": 1
+      },
+      "choices": [
+        {
+          "id": "CE-042-C1",
+          "sourceChoiceIndex": 0,
+          "text": "다음 단계에 간다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-042-C2",
+          "sourceChoiceIndex": 1,
+          "text": "같은 구간을 굳힌다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-042-C3",
+          "sourceChoiceIndex": 2,
+          "text": "오늘 기록을 남긴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-043",
+      "family": "CE-043",
+      "trigger": "post_broadcast_random",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "broadcastOutputId",
+        "maxPerContext": 1,
+        "minimumBroadcastGap": 4
+      },
+      "choices": [
+        {
+          "id": "CE-043-C1",
+          "sourceChoiceIndex": 0,
+          "text": "도전 장면을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-043-C2",
+          "sourceChoiceIndex": 1,
+          "text": "참여 장면을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-043-C3",
+          "sourceChoiceIndex": 2,
+          "text": "즉흥 장면을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-044",
+      "family": "CE-044",
+      "trigger": "post_broadcast_random",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "broadcastOutputId",
+        "maxPerContext": 1,
+        "minimumBroadcastGap": 4
+      },
+      "choices": [
+        {
+          "id": "CE-044-C1",
+          "sourceChoiceIndex": 0,
+          "text": "제목을 고친다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-044-C2",
+          "sourceChoiceIndex": 1,
+          "text": "설명을 덧붙인다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-044-C3",
+          "sourceChoiceIndex": 2,
+          "text": "업로드를 보류한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-045",
+      "family": "CE-045",
+      "trigger": "post_broadcast_random",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "broadcastOutputId",
+        "maxPerContext": 1,
+        "minimumBroadcastGap": 4
+      },
+      "choices": [
+        {
+          "id": "CE-045-C1",
+          "sourceChoiceIndex": 0,
+          "text": "날짜를 확인한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-045-C2",
+          "sourceChoiceIndex": 1,
+          "text": "제목에서 날짜를 뺀다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-045-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 준비에 확인한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-046",
+      "family": "CE-046",
+      "trigger": "post_broadcast_random",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "broadcastOutputId",
+        "maxPerContext": 1,
+        "minimumBroadcastGap": 4
+      },
+      "choices": [
+        {
+          "id": "CE-046-C1",
+          "sourceChoiceIndex": 0,
+          "text": "회차별로 정리한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-046-C2",
+          "sourceChoiceIndex": 1,
+          "text": "코너별로 묶는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-046-C3",
+          "sourceChoiceIndex": 2,
+          "text": "이번 파일에 메모한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-047",
+      "family": "CE-047",
+      "trigger": "post_broadcast_random",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "broadcastOutputId",
+        "maxPerContext": 1,
+        "minimumBroadcastGap": 4
+      },
+      "choices": [
+        {
+          "id": "CE-047-C1",
+          "sourceChoiceIndex": 0,
+          "text": "정확히 고친다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-047-C2",
+          "sourceChoiceIndex": 1,
+          "text": "짧은 표현으로 바꾼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-047-C3",
+          "sourceChoiceIndex": 2,
+          "text": "그 장면은 소리 없이 둔다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-048",
+      "family": "CE-048",
+      "trigger": "post_broadcast_random",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "broadcastOutputId",
+        "maxPerContext": 1,
+        "minimumBroadcastGap": 4
+      },
+      "choices": [
+        {
+          "id": "CE-048-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧게 재구성한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 40
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-048-C2",
+          "sourceChoiceIndex": 1,
+          "text": "다음 방송에 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-048-C3",
+          "sourceChoiceIndex": 2,
+          "text": "보관만 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-049",
+      "family": "CE-049",
+      "trigger": "outfit_leak_hook",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "outfitId",
+        "maxPerContext": 1
+      },
+      "choices": [
+        {
+          "id": "CE-049-C1",
+          "sourceChoiceIndex": 0,
+          "text": "화면을 바꾸고 준비한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-049-C2",
+          "sourceChoiceIndex": 1,
+          "text": "티저로 받아친다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-049-C3",
+          "sourceChoiceIndex": 2,
+          "text": "지금 공개한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-049-C4",
+          "sourceChoiceIndex": 3,
+          "text": "확인하며 수습한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-050",
+      "family": "CE-050",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-050-C1",
+          "sourceChoiceIndex": 0,
+          "text": "전신 구도를 잡는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 20
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-050-C2",
+          "sourceChoiceIndex": 1,
+          "text": "소품부터 소개한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-050-C3",
+          "sourceChoiceIndex": 2,
+          "text": "대화 중심으로 연습한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-051",
+      "family": "CE-051",
+      "trigger": "scheduled_event_variation",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "scheduledOccurrenceKey",
+        "maxPerContext": 1
+      },
+      "choices": [
+        {
+          "id": "CE-051-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧게 센다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-051-C2",
+          "sourceChoiceIndex": 1,
+          "text": "실루엣 질문을 받는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-051-C3",
+          "sourceChoiceIndex": 2,
+          "text": "바로 소개한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-052",
+      "family": "CE-052",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-052-C1",
+          "sourceChoiceIndex": 0,
+          "text": "색상부터 소개한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-052-C2",
+          "sourceChoiceIndex": 1,
+          "text": "장식 이야기를 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-052-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 의상 코너에 넣는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-053",
+      "family": "CE-053",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-053-C1",
+          "sourceChoiceIndex": 0,
+          "text": "밝은 배경을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-053-C2",
+          "sourceChoiceIndex": 1,
+          "text": "차분한 배경을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-053-C3",
+          "sourceChoiceIndex": 2,
+          "text": "시청자 투표로 고른다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-054",
+      "family": "CE-054",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-054-C1",
+          "sourceChoiceIndex": 0,
+          "text": "바로 갈아입는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-054-C2",
+          "sourceChoiceIndex": 1,
+          "text": "다음 코너에 입는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-054-C3",
+          "sourceChoiceIndex": 2,
+          "text": "지금 옷을 유지한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-055",
+      "family": "CE-055",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-055-C1",
+          "sourceChoiceIndex": 0,
+          "text": "근거부터 말한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-055-C2",
+          "sourceChoiceIndex": 1,
+          "text": "시청자와 비교한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-055-C3",
+          "sourceChoiceIndex": 2,
+          "text": "정답부터 확인한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-056",
+      "family": "CE-056",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-056-C1",
+          "sourceChoiceIndex": 0,
+          "text": "글자를 키운다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-056-C2",
+          "sourceChoiceIndex": 1,
+          "text": "OX 대신 문장으로 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-056-C3",
+          "sourceChoiceIndex": 2,
+          "text": "질문 수를 줄인다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-057",
+      "family": "CE-057",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-057-C1",
+          "sourceChoiceIndex": 0,
+          "text": "간단히 그린다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-057-C2",
+          "sourceChoiceIndex": 1,
+          "text": "말로 예를 든다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-057-C3",
+          "sourceChoiceIndex": 2,
+          "text": "시청자 추측을 받는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-058",
+      "family": "CE-058",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-058-C1",
+          "sourceChoiceIndex": 0,
+          "text": "규칙을 고친다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              },
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-058-C2",
+          "sourceChoiceIndex": 1,
+          "text": "짧게 시범한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-058-C3",
+          "sourceChoiceIndex": 2,
+          "text": "예외 처리만 정한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-059",
+      "family": "CE-059",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-059-C1",
+          "sourceChoiceIndex": 0,
+          "text": "색 조합을 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-059-C2",
+          "sourceChoiceIndex": 1,
+          "text": "실루엣을 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-059-C3",
+          "sourceChoiceIndex": 2,
+          "text": "첫인상을 비교한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-060",
+      "family": "CE-060",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-060-C1",
+          "sourceChoiceIndex": 0,
+          "text": "박자부터 맞춘다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-060-C2",
+          "sourceChoiceIndex": 1,
+          "text": "쉬운 곡으로 바꾼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-060-C3",
+          "sourceChoiceIndex": 2,
+          "text": "짧은 구간만 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-061",
+      "family": "CE-061",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-061-C1",
+          "sourceChoiceIndex": 0,
+          "text": "주제 특집으로 읽는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              },
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-061-C2",
+          "sourceChoiceIndex": 1,
+          "text": "서로 다른 글을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-061-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 특집으로 예약한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 50
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "CE-062",
+      "family": "CE-062",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-062-C1",
+          "sourceChoiceIndex": 0,
+          "text": "한 장 안내를 만든다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-062-C2",
+          "sourceChoiceIndex": 1,
+          "text": "짧은 퀴즈를 만든다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-062-C3",
+          "sourceChoiceIndex": 2,
+          "text": "방송 도입에 설명한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 50
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "CE-063",
+      "family": "CE-063",
+      "trigger": "random",
+      "repeat": {
+        "mode": "recurring",
+        "minimumBroadcastGap": 5,
+        "contextKey": null,
+        "maxPerContext": null,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-063-C1",
+          "sourceChoiceIndex": 0,
+          "text": "주제를 합친다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-063-C2",
+          "sourceChoiceIndex": 1,
+          "text": "서로 다른 날에 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-063-C3",
+          "sourceChoiceIndex": 2,
+          "text": "새 후보를 받는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 50
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "CE-064",
+      "family": "CE-064",
+      "trigger": "scheduled_event_variation",
+      "repeat": {
+        "mode": "per_context",
+        "contextKey": "scheduledOccurrenceKey",
+        "maxPerContext": 1
+      },
+      "choices": [
+        {
+          "id": "CE-064-C1",
+          "sourceChoiceIndex": 0,
+          "text": "메시지부터 배치한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-064-C2",
+          "sourceChoiceIndex": 1,
+          "text": "지난 장면부터 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-064-C3",
+          "sourceChoiceIndex": 2,
+          "text": "작은 도전을 넣는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              },
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-065",
+      "family": "CE-065",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-065-C1",
+          "sourceChoiceIndex": 0,
+          "text": "목록을 다시 적는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-065-C2",
+          "sourceChoiceIndex": 1,
+          "text": "진행 순서를 점검한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-065-C3",
+          "sourceChoiceIndex": 2,
+          "text": "소규모로 바꾼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-066",
+      "family": "CE-066",
+      "trigger": "random",
+      "repeat": {
+        "mode": "per_context",
+        "minimumBroadcastGap": 8,
+        "contextKey": "currentProjectId",
+        "maxPerContext": 1,
+        "authoredVariantCount": 1,
+        "targetVariantCount": 3,
+        "sourceFactRepeats": false
+      },
+      "choices": [
+        {
+          "id": "CE-066-C1",
+          "sourceChoiceIndex": 0,
+          "text": "주제별로 묶는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-066-C2",
+          "sourceChoiceIndex": 1,
+          "text": "받은 순서로 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-066-C3",
+          "sourceChoiceIndex": 2,
+          "text": "일부는 다음에 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-067",
+      "family": "CE-067",
+      "trigger": "conditional_followup",
+      "repeat": {
+        "mode": "per_parent_instance",
+        "maxPerParent": 1
+      },
+      "choices": [
+        {
+          "id": "CE-067-C1",
+          "sourceChoiceIndex": 0,
+          "text": "준비한 대본을 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-067-C2",
+          "sourceChoiceIndex": 1,
+          "text": "방식을 바꿔 메모로 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-067-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 회차로 미룬다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-068",
+      "family": "CE-068",
+      "trigger": "conditional_followup",
+      "repeat": {
+        "mode": "per_parent_instance",
+        "maxPerParent": 1
+      },
+      "choices": [
+        {
+          "id": "CE-068-C1",
+          "sourceChoiceIndex": 0,
+          "text": "소개한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-068-C2",
+          "sourceChoiceIndex": 1,
+          "text": "작품 묶음에 넣는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-068-C3",
+          "sourceChoiceIndex": 2,
+          "text": "편성을 다시 잡는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-069",
+      "family": "CE-069",
+      "trigger": "conditional_followup",
+      "repeat": {
+        "mode": "per_parent_instance",
+        "maxPerParent": 1
+      },
+      "choices": [
+        {
+          "id": "CE-069-C1",
+          "sourceChoiceIndex": 0,
+          "text": "바로 도전한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-069-C2",
+          "sourceChoiceIndex": 1,
+          "text": "연습 후 예약한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-069-C3",
+          "sourceChoiceIndex": 2,
+          "text": "오늘은 다른 목표를 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-070",
+      "family": "CE-070",
+      "trigger": "conditional_followup",
+      "repeat": {
+        "mode": "per_parent_instance",
+        "maxPerParent": 1
+      },
+      "choices": [
+        {
+          "id": "CE-070-C1",
+          "sourceChoiceIndex": 0,
+          "text": "점검한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-070-C2",
+          "sourceChoiceIndex": 1,
+          "text": "임시 설정을 유지한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-070-C3",
+          "sourceChoiceIndex": 2,
+          "text": "안정 코너를 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-071",
+      "family": "CE-071",
+      "trigger": "conditional_followup",
+      "repeat": {
+        "mode": "per_parent_instance",
+        "maxPerParent": 1
+      },
+      "choices": [
+        {
+          "id": "CE-071-C1",
+          "sourceChoiceIndex": 0,
+          "text": "진행한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-071-C2",
+          "sourceChoiceIndex": 1,
+          "text": "다른 후보와 비교한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-071-C3",
+          "sourceChoiceIndex": 2,
+          "text": "보관한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "CE-072",
+      "family": "CE-072",
+      "trigger": "conditional_followup",
+      "repeat": {
+        "mode": "per_parent_instance",
+        "maxPerParent": 1
+      },
+      "choices": [
+        {
+          "id": "CE-072-C1",
+          "sourceChoiceIndex": 0,
+          "text": "한 번 받아친다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-072-C2",
+          "sourceChoiceIndex": 1,
+          "text": "새 상황에 변형한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              },
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "CE-072-C3",
+          "sourceChoiceIndex": 2,
+          "text": "넘어간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-001",
+      "family": "RK-001",
+      "trigger": "open",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-001-C1",
+          "sourceChoiceIndex": 0,
+          "text": "설정부터 고친다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-001-C2",
+          "sourceChoiceIndex": 1,
+          "text": "시청자에게 설명한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-001-C3",
+          "sourceChoiceIndex": 2,
+          "text": "즉석 자기소개로 이어간다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-002",
+      "family": "RK-002",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-002-C1",
+          "sourceChoiceIndex": 0,
+          "text": "하나씩 점검한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-002-C2",
+          "sourceChoiceIndex": 1,
+          "text": "안내 화면을 띄운다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-002-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 방송 숙제로 적는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-003",
+      "family": "CE-001",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-003-C1",
+          "sourceChoiceIndex": 0,
+          "text": "연결을 점검한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-003-C2",
+          "sourceChoiceIndex": 1,
+          "text": "잡담으로 시간을 번다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-003-C3",
+          "sourceChoiceIndex": 2,
+          "text": "임시 화면으로 전환한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "RK-004",
+      "family": "CE-055",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-004-C1",
+          "sourceChoiceIndex": 0,
+          "text": "사진부터 풀어본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-004-C2",
+          "sourceChoiceIndex": 1,
+          "text": "시선 장비를 먼저 시험한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-004-C3",
+          "sourceChoiceIndex": 2,
+          "text": "시청자와 의견을 비교한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-005",
+      "family": "RK-005",
+      "trigger": "milestone",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-005-C1",
+          "sourceChoiceIndex": 0,
+          "text": "작게 카운트다운한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-005-C2",
+          "sourceChoiceIndex": 1,
+          "text": "평소 진행을 이어간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-005-C3",
+          "sourceChoiceIndex": 2,
+          "text": "감사 멘트를 준비한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-006",
+      "family": "CE-011",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-006-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧게 사과하고 시작한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-006-C2",
+          "sourceChoiceIndex": 1,
+          "text": "오늘 순서를 조정한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-006-C3",
+          "sourceChoiceIndex": 2,
+          "text": "알림부터 정리한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-007",
+      "family": "RK-007",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-007-C1",
+          "sourceChoiceIndex": 0,
+          "text": "기본 조작을 익힌다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-007-C2",
+          "sourceChoiceIndex": 1,
+          "text": "일단 한 판 해본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-007-C3",
+          "sourceChoiceIndex": 2,
+          "text": "시청자 팁 하나만 받는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.4
+        }
+      ]
+    },
+    {
+      "id": "RK-008",
+      "family": "RK-008",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-008-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧은 설명을 받는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-008-C2",
+          "sourceChoiceIndex": 1,
+          "text": "장면을 다시 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-008-C3",
+          "sourceChoiceIndex": 2,
+          "text": "이해한 대로 설명해본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-009",
+      "family": "RK-009",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-009-C1",
+          "sourceChoiceIndex": 0,
+          "text": "새 글부터 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-009-C2",
+          "sourceChoiceIndex": 1,
+          "text": "오늘 주제를 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-009-C3",
+          "sourceChoiceIndex": 2,
+          "text": "마음에 남은 글을 표시한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-010",
+      "family": "RK-010",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-010-C1",
+          "sourceChoiceIndex": 0,
+          "text": "조작을 먼저 익힌다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-010-C2",
+          "sourceChoiceIndex": 1,
+          "text": "짧게 한 판 해본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-010-C3",
+          "sourceChoiceIndex": 2,
+          "text": "휴식 시간을 정한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.4
+        }
+      ]
+    },
+    {
+      "id": "RK-011",
+      "family": "CE-056",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-011-C1",
+          "sourceChoiceIndex": 0,
+          "text": "OX 표시를 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-011-C2",
+          "sourceChoiceIndex": 1,
+          "text": "글자를 크게 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-011-C3",
+          "sourceChoiceIndex": 2,
+          "text": "질문 수를 줄인다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-012",
+      "family": "RK-012",
+      "trigger": "event",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-012-C1",
+          "sourceChoiceIndex": 0,
+          "text": "익숙한 전략을 고른다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-012-C2",
+          "sourceChoiceIndex": 1,
+          "text": "손을 푼다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-012-C3",
+          "sourceChoiceIndex": 2,
+          "text": "상대와 가볍게 인사한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 40
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "RK-013",
+      "family": "RK-013",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-013-C1",
+          "sourceChoiceIndex": 0,
+          "text": "균형 있게 배치한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-013-C2",
+          "sourceChoiceIndex": 1,
+          "text": "재미있는 조합을 만든다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 35
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-013-C3",
+          "sourceChoiceIndex": 2,
+          "text": "시청자 추천을 하나 반영한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-014",
+      "family": "RK-014",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-014-C1",
+          "sourceChoiceIndex": 0,
+          "text": "작은 기획을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-014-C2",
+          "sourceChoiceIndex": 1,
+          "text": "후보를 투표한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.community",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-014-C3",
+          "sourceChoiceIndex": 2,
+          "text": "준비물부터 적는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-015",
+      "family": "CE-058",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-015-C1",
+          "sourceChoiceIndex": 0,
+          "text": "미니게임을 적는다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-015-C2",
+          "sourceChoiceIndex": 1,
+          "text": "참여 방식을 고민한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-015-C3",
+          "sourceChoiceIndex": 2,
+          "text": "아이디어만 보관한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-016",
+      "family": "RK-016",
+      "trigger": "calendar",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-016-C1",
+          "sourceChoiceIndex": 0,
+          "text": "출석을 부른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-016-C2",
+          "sourceChoiceIndex": 1,
+          "text": "짧은 소개를 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-016-C3",
+          "sourceChoiceIndex": 2,
+          "text": "기념 사진 화면을 만든다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-017",
+      "family": "CE-006",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-017-C1",
+          "sourceChoiceIndex": 0,
+          "text": "상태를 확인한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-017-C2",
+          "sourceChoiceIndex": 1,
+          "text": "진행 상황을 알린다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-017-C3",
+          "sourceChoiceIndex": 2,
+          "text": "저장된 자료를 꺼낸다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "RK-018",
+      "family": "CE-059",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-018-C1",
+          "sourceChoiceIndex": 0,
+          "text": "디자인의 색을 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-018-C2",
+          "sourceChoiceIndex": 1,
+          "text": "마음에 드는 의상을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-018-C3",
+          "sourceChoiceIndex": 2,
+          "text": "첫인상 메모를 남긴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-019",
+      "family": "RK-019",
+      "trigger": "calendar",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-019-C1",
+          "sourceChoiceIndex": 0,
+          "text": "감사 인사를 한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-019-C2",
+          "sourceChoiceIndex": 1,
+          "text": "메시지를 천천히 읽는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-019-C3",
+          "sourceChoiceIndex": 2,
+          "text": "기념 화면을 띄운다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-020",
+      "family": "RK-020",
+      "trigger": "result",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-020-C1",
+          "sourceChoiceIndex": 0,
+          "text": "패턴 하나만 익힌다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-020-C2",
+          "sourceChoiceIndex": 1,
+          "text": "잠깐 쉬었다 온다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-020-C3",
+          "sourceChoiceIndex": 2,
+          "text": "장비를 점검한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 40
+              }
+            ]
+          },
+          "multiplier": 1.3
+        }
+      ]
+    },
+    {
+      "id": "RK-021",
+      "family": "RK-021",
+      "trigger": "result",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-021-C1",
+          "sourceChoiceIndex": 0,
+          "text": "짧게 환호한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-021-C2",
+          "sourceChoiceIndex": 1,
+          "text": "시청자에게 감사한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-021-C3",
+          "sourceChoiceIndex": 2,
+          "text": "도전 기록을 남긴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-022",
+      "family": "CE-021",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-022-C1",
+          "sourceChoiceIndex": 0,
+          "text": "문제를 다시 읽는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-022-C2",
+          "sourceChoiceIndex": 1,
+          "text": "힌트를 하나 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-022-C3",
+          "sourceChoiceIndex": 2,
+          "text": "잠깐 다른 관점으로 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-023",
+      "family": "RK-023",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-023-C1",
+          "sourceChoiceIndex": 0,
+          "text": "쉬운 곡을 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-023-C2",
+          "sourceChoiceIndex": 1,
+          "text": "박자부터 맞춘다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-023-C3",
+          "sourceChoiceIndex": 2,
+          "text": "짧은 코너로 진행한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-024",
+      "family": "RK-024",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-024-C1",
+          "sourceChoiceIndex": 0,
+          "text": "역할을 나눈다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 30
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-024-C2",
+          "sourceChoiceIndex": 1,
+          "text": "합을 먼저 맞춘다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-024-C3",
+          "sourceChoiceIndex": 2,
+          "text": "쉬운 목표부터 시작한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-025",
+      "family": "RK-025",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-025-C1",
+          "sourceChoiceIndex": 0,
+          "text": "해결한 항목을 지운다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-025-C2",
+          "sourceChoiceIndex": 1,
+          "text": "남은 증상을 기록한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-025-C3",
+          "sourceChoiceIndex": 2,
+          "text": "안정적인 코너를 고른다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-026",
+      "family": "RK-026",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-026-C1",
+          "sourceChoiceIndex": 0,
+          "text": "먼저 백업한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-026-C2",
+          "sourceChoiceIndex": 1,
+          "text": "자료 목록을 정리한다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-026-C3",
+          "sourceChoiceIndex": 2,
+          "text": "교체 일정을 따로 잡는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-027",
+      "family": "CE-002",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-027-C1",
+          "sourceChoiceIndex": 0,
+          "text": "시험 소리를 낸다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-027-C2",
+          "sourceChoiceIndex": 1,
+          "text": "시청자 응답을 기다린다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-027-C3",
+          "sourceChoiceIndex": 2,
+          "text": "설정을 다시 본다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.6
+        }
+      ]
+    },
+    {
+      "id": "RK-028",
+      "family": "RK-028",
+      "trigger": "follow",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-028-C1",
+          "sourceChoiceIndex": 0,
+          "text": "필요한 수량을 다시 적는다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-028-C2",
+          "sourceChoiceIndex": 1,
+          "text": "진행 순서를 점검한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.operation",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-028-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 행사의 메모로 남긴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RK-029",
+      "family": "CE-032",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "구체적인 원자료 각색은 한 번만 사용"
+      },
+      "choices": [
+        {
+          "id": "RK-029-C1",
+          "sourceChoiceIndex": 0,
+          "text": "준비한 주제로 돌아간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-029-C2",
+          "sourceChoiceIndex": 1,
+          "text": "진행 기준을 짧게 알린다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RK-029-C3",
+          "sourceChoiceIndex": 2,
+          "text": "다음 코너로 넘어간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RA-001",
+      "family": "RA-001",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "지정 원자료 관찰 각색"
+      },
+      "choices": [
+        {
+          "id": "RA-001-C1",
+          "sourceChoiceIndex": 0,
+          "text": "도전 요령 한 줄을 남긴다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RA-001-C2",
+          "sourceChoiceIndex": 1,
+          "text": "남은 시간을 신청 질문에 쓴다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RA-002",
+      "family": "RA-002",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "지정 원자료 관찰 각색"
+      },
+      "choices": [
+        {
+          "id": "RA-002-C1",
+          "sourceChoiceIndex": 0,
+          "text": "배치 그림으로 설명한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RA-002-C2",
+          "sourceChoiceIndex": 1,
+          "text": "짧게 바로잡고 넘어간다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RA-003",
+      "family": "CE-036",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "지정 원자료 관찰 각색"
+      },
+      "choices": [
+        {
+          "id": "RA-003-C1",
+          "sourceChoiceIndex": 0,
+          "text": "다음 목표를 투표한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RA-003-C2",
+          "sourceChoiceIndex": 1,
+          "text": "지난 선택 결과를 불러온다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": []
+    },
+    {
+      "id": "RA-004",
+      "family": "CE-019",
+      "trigger": "random",
+      "repeat": {
+        "mode": "once_per_run",
+        "maxOccurrencesPerRun": 1,
+        "reason": "지정 원자료 관찰 각색"
+      },
+      "choices": [
+        {
+          "id": "RA-004-C1",
+          "sourceChoiceIndex": 0,
+          "text": "조작부터 복습한다",
+          "eligibility": {
+            "all": [
+              {
+                "path": "stats.planning",
+                "op": "gte",
+                "value": 25
+              }
+            ]
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        },
+        {
+          "id": "RA-004-C2",
+          "sourceChoiceIndex": 1,
+          "text": "기억나는 구간부터 시범을 보인다",
+          "eligibility": {
+            "all": []
+          },
+          "requiresOriginalStoryAndCostConditions": true,
+          "showWhenEventVisible": true,
+          "disableWhenAnyRequirementFails": true,
+          "growthBonusNotYetAssigned": true
+        }
+      ],
+      "statWeightRules": [
+        {
+          "when": {
+            "all": [
+              {
+                "path": "stats.gameSkillById.$game",
+                "op": "gte",
+                "value": 60
+              }
+            ]
+          },
+          "multiplier": 0.4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "version": "3.0",
+  "status": "implementation_defaults_not_playtested",
+  "range": {
+    "min": 0,
+    "max": 100
+  },
+  "stats": {
+    "awareness": {
+      "label": "인지도",
+      "initial": 10,
+      "scope": "runId",
+      "maximumPositiveGainPerBroadcast": 6
+    },
+    "community": {
+      "label": "단골 시청층",
+      "initial": 20,
+      "scope": "runId",
+      "maximumPositiveGainPerBroadcast": 6
+    },
+    "planning": {
+      "label": "기획력",
+      "initial": 15,
+      "scope": "runId",
+      "maximumPositiveGainPerBroadcast": 6
+    },
+    "operation": {
+      "label": "방송 운영력",
+      "initial": 20,
+      "scope": "runId",
+      "maximumPositiveGainPerBroadcast": 6
+    },
+    "gameSkill": {
+      "label": "해당 게임 숙련도",
+      "initial": 10,
+      "scope": "per_game",
+      "maximumPositiveGainPerBroadcast": 6
+    }
+  },
+  "growth": {
+    "dataPreparePlanningPerAction": 2,
+    "gamePracticeSkillPerAction": 2,
+    "screenCheckOperationPerBroadcast": 1,
+    "outfitPrepareStatGain": 0,
+    "talkSegmentCommunity": 1,
+    "gameSegmentBoundSkill": 1,
+    "fanSegmentCommunity": 1,
+    "specialSegmentPlanning": 1,
+    "newIndependentFamilyAwareness": 1,
+    "eventResultBonusMaximum": 2
+  },
+  "rules": {
+    "dateSkipChangesStats": false,
+    "realTimeDecay": false,
+    "freeEquipChangesStats": false,
+    "replayChangesStats": false,
+    "retainOnChapterContinuation": true,
+    "statThresholdSpendsPoints": false,
+    "duplicatesApplyGains": false,
+    "sameResultInstanceAwardOnce": true,
+    "experienceScope": "runId",
+    "gameSkillMissingGameDefaultsToInitialOnlyWhenGameIsChosen": true,
+    "gameConditionRequiresExplicitProjectGameId": true
+  },
+  "experienceReference": "rakoko_ending_requirements.design.json",
+  "saveFields": [
+    "stats",
+    "gameSkillById",
+    "experienceRecords",
+    "experienceCounts",
+    "appliedGrowthInstanceIds",
+    "broadcastGainTotals",
+    "uniqueFamilyAwarenessAwards",
+    "experienceCountsByGame",
+    "economy.cash",
+    "economy.ledger",
+    "economy.settledBroadcastIds",
+    "economy.purchases",
+    "economy.highestUnlockedScaleId"
+  ],
+  "experienceRecordFields": [
+    "experienceId",
+    "sourceEventInstanceId",
+    "broadcastId",
+    "projectId",
+    "gameId",
+    "resultId",
+    "date"
+  ],
+  "negativeChanges": {
+    "automaticOnChallengeFailure": false,
+    "allowedCommunityLossOnExplicitUnannouncedPromiseCancellation": 2,
+    "mustPreviewBeforeChoice": true,
+    "perBroadcastCommunityLossCap": 4
+  },
+  "derivedAudienceMetrics": {
+    "requiredForFirstBuild": false,
+    "directEndingConditions": false
+  },
+  "endingExperienceCountViews": {
+    "global": "experienceCounts.EX-ID",
+    "gameBound": "experienceCountsByGame.$game.EX-ID",
+    "deriveFromRecords": true
+  },
+  "rangeAppliesTo": "competency_stats_only",
+  "resources": {
+    "assetsCash": {
+      "label": "보유 자산 · 방송 자금",
+      "path": "economy.cash",
+      "rulesReference": "rakoko_economy.design.json",
+      "notSubjectToCompetencyRangeOrGainCap": true
+    }
+  }
+}

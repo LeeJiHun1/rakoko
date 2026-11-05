@@ -1,0 +1,529 @@
+{
+  "version": "1.1",
+  "status": "design_only_not_engine_implemented",
+  "premise": "multiple_kimongi_viewers_by_default",
+  "evidenceReport": "rakoko_kimongi_chat_research.md",
+  "guide": "rakoko_kimongi_dialogue_guide.md",
+  "additionalEvidenceReport": "rakoko_additional_collection_02.md",
+  "evidenceGuards": {
+    "titleDoesNotVerifyOutcome": true,
+    "chatAdviceIsNotVerifiedInstruction": true,
+    "audienceMayWaitOrHelpInsteadOfTease": true,
+    "viewerLeakQuestionDoesNotVerifyLeak": true
+  },
+  "gameTextProvenance": "original_fiction_not_replay_quotation",
+  "selection": {
+    "defaultRows": 3,
+    "normalRowsMin": 3,
+    "normalRowsMax": 5,
+    "quietRowsMin": 0,
+    "quietRowsMax": 2,
+    "minimumSpeakersWhenAtLeastTwoRows": 2,
+    "functionalRolesAreNotPermanentPersonalityTypes": true,
+    "recentBeatExclusionCount": 3,
+    "fallback": "generic_context_safe_or_omit",
+    "requiredKnowledgeBeforeSampling": true,
+    "neverFetchRealChatAtRuntime": true,
+    "runtimeGenerativeModelRequired": false,
+    "empiricalMarkerRatesAreNotDrawWeights": true
+  },
+  "presentation": {
+    "noExtraRequiredClicks": true,
+    "allowInstantReveal": true,
+    "allowCollapse": true,
+    "speakerLabels": "fictional_game_ids_only",
+    "sameBaseAssetCanRepresentMultipleIndividuals": true,
+    "crowdDoesNotAlwaysShareOneOpinion": true,
+    "realNicknamesOrProfilesUsed": false
+  },
+  "mechanics": {
+    "dialogueAloneGrantsStatsCashOrExperience": false,
+    "successLineRequiresCommittedOutcome": true,
+    "callbacksRequireCurrentRunExperienceOrPromise": true,
+    "outfitKnowledgeRequiresActualRevealScope": true,
+    "mandatoryHintsAlsoShownInUI": true
+  },
+  "persistence": {
+    "commitWith": "event_outcome",
+    "saveFields": [
+      "reactionBeatId",
+      "templateId",
+      "speakerIds",
+      "lineOrder",
+      "textVariables"
+    ],
+    "reloadOrJournalReplay": "reuse_committed_reaction_no_rng_or_reward_repeat"
+  },
+  "forcedEnding": {
+    "partnerIs": "one_fictional_member_of_the_crowd",
+    "existingPoolIsNotTotalFanPopulation": true,
+    "crowdCelebratesSeparately": true,
+    "existingTriggerAndSpouseSaveRulesUnchanged": true
+  },
+  "examples": [
+    {
+      "id": "KBE001",
+      "key": "greeting",
+      "title": "방송 시작",
+      "conditionToken": "broadcast.started",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "greeting",
+          "text": "코하! 오늘은 뭐부터 해?"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "observation",
+          "text": "책상에 뭔가 늘었는데"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "agreement",
+          "text": "나도 그거 봄"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "laughter",
+          "text": "ㅋㅋㅋ"
+        }
+      ]
+    },
+    {
+      "id": "KBE002",
+      "key": "plan_split",
+      "title": "코너 투표",
+      "conditionToken": "poll.open",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "preference",
+          "text": "나는 게임 먼저 한 표"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "preference",
+          "text": "잡담 조금만 더 하자"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "question",
+          "text": "오늘 도전은 이어서 하는 거야?"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "agreement",
+          "text": "둘 다 보고 싶긴 해"
+        }
+      ]
+    },
+    {
+      "id": "KBE003",
+      "key": "minor_mistake",
+      "title": "가벼운 조작 실수",
+      "conditionToken": "game.harmless_mistake",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "observation",
+          "text": "방금 반대쪽 눌렀다"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "laughter",
+          "text": "ㅋㅋㅋㅋ"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "teasing",
+          "text": "손이 먼저 퇴근했네"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "cheering",
+          "text": "괜찮아 다시 가자"
+        }
+      ]
+    },
+    {
+      "id": "KBE004",
+      "key": "attempt",
+      "title": "도전 진행 중",
+      "conditionToken": "game.attempt_in_progress",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "observation",
+          "text": "이번에는 꽤 오래 버텼다"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "cheering",
+          "text": "조금만 더!"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "expectation",
+          "text": "이번엔 될 것 같은데"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "reaction",
+          "text": "오오"
+        }
+      ]
+    },
+    {
+      "id": "KBE005",
+      "key": "success",
+      "title": "도전 성공 확정",
+      "conditionToken": "game.success_committed",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "celebration",
+          "text": "드디어 해냈다!"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "reaction",
+          "text": "캬"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "observation",
+          "text": "마지막에 침착했던 거 봐"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "laughter",
+          "text": "내가 다 숨 참았네 ㅋㅋ"
+        }
+      ]
+    },
+    {
+      "id": "KBE006",
+      "key": "failure",
+      "title": "재도전 가능한 실패",
+      "conditionToken": "game.failure_committed",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "reaction",
+          "text": "아 아깝다"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "observation",
+          "text": "마지막까지는 좋았는데"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "cheering",
+          "text": "다음 판 가보자"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "preference",
+          "text": "잠깐 쉬었다 해도 돼"
+        }
+      ]
+    },
+    {
+      "id": "KBE007",
+      "key": "tech_recovered",
+      "title": "기술 문제 수습",
+      "conditionToken": "broadcast.audio_recovered",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "observation",
+          "text": "이제 잘 들려"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "agreement",
+          "text": "내 쪽도 돌아왔다"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "teasing",
+          "text": "마이크도 출석 완료"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "laughter",
+          "text": "ㅋㅋㅋ"
+        }
+      ]
+    },
+    {
+      "id": "KBE008",
+      "key": "outfit_leak",
+      "title": "일부만 유출된 의상",
+      "conditionToken": "outfit.partial_leak_visible",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "observation",
+          "text": "방금 화면 구석에 뭐 지나갔어"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "question",
+          "text": "새 옷 힌트야?"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "uncertainty",
+          "text": "난 색만 잠깐 봄"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "teasing",
+          "text": "우리 지금 못 본 척하는 중"
+        }
+      ]
+    },
+    {
+      "id": "KBE009",
+      "key": "outfit_reveal",
+      "title": "신의상 전체 공개 확정",
+      "conditionToken": "outfit.full_reveal_committed",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "celebration",
+          "text": "새 옷 공개다!"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "reaction",
+          "text": "오오"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "question",
+          "text": "다음 방송에도 입을 수 있어?"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "preference",
+          "text": "난 이 옷으로 게임하는 것도 보고 싶다"
+        }
+      ]
+    },
+    {
+      "id": "KBE010",
+      "key": "cannot_afford",
+      "title": "유료 사건 포기",
+      "conditionToken": "purchase.abandoned_insufficient_cash",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "agreement",
+          "text": "이번에는 넘기는구나"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "preference",
+          "text": "있는 장비로도 해보자"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "teasing",
+          "text": "지갑도 준비 시간이 필요해"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "cheering",
+          "text": "다음 기획 때 다시 보자"
+        }
+      ]
+    },
+    {
+      "id": "KBE011",
+      "key": "server_teamwork",
+      "title": "협동 작업 실제 완료",
+      "conditionToken": "long_content.team_task_completed",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "observation",
+          "text": "이번엔 다 같이 끝냈네"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "celebration",
+          "text": "팀워크 좋았다"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "question",
+          "text": "완성한 거 가까이서 보여줘"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "reaction",
+          "text": "오"
+        }
+      ]
+    },
+    {
+      "id": "KBE012",
+      "key": "promise_callback",
+      "title": "이전 약속 회수",
+      "conditionToken": "promise.fulfilled_current_run",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "callback",
+          "text": "그때 하기로 했던 거 오늘 했네"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "agreement",
+          "text": "나 그 약속 기억하고 있었어"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "celebration",
+          "text": "일지에 남길 장면이다"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "laughter",
+          "text": "진짜로 해왔어 ㅋㅋ"
+        }
+      ]
+    },
+    {
+      "id": "KBE013",
+      "key": "anniversary",
+      "title": "주년 방송",
+      "conditionToken": "calendar.anniversary_due",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "celebration",
+          "text": "올해도 축하해!"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "reflection",
+          "text": "일지 쌓인 거 보니까 신기하다"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "question",
+          "text": "오늘 예전 기록도 보는 거야?"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "cheering",
+          "text": "다음 장도 같이 보자"
+        }
+      ]
+    },
+    {
+      "id": "KBE014",
+      "key": "birthday",
+      "title": "생일 방송",
+      "conditionToken": "calendar.birthday_due",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "celebration",
+          "text": "생일 축하해 코코!"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "reaction",
+          "text": "짝짝짝"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "question",
+          "text": "오늘 첫 코너 뭐야?"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "teasing",
+          "text": "초 불기 전에 소원부터!"
+        }
+      ]
+    },
+    {
+      "id": "KBE015",
+      "key": "closing",
+      "title": "방송 마무리",
+      "conditionToken": "broadcast.closing",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "farewell",
+          "text": "오늘도 고생했어"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "reflection",
+          "text": "마지막 판이 계속 생각날 듯"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "farewell",
+          "text": "코바!"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "question",
+          "text": "다음 편성은 일지에 올라와?"
+        }
+      ]
+    },
+    {
+      "id": "KBE016",
+      "key": "marriage_crowd",
+      "title": "10년 강제 엔딩의 주변 키몽이들",
+      "conditionToken": "forced_ending.spouse_committed",
+      "provenance": "original_game_writing",
+      "lines": [
+        {
+          "speakerSlot": "A",
+          "function": "celebration",
+          "text": "둘 다 축하해!"
+        },
+        {
+          "speakerSlot": "B",
+          "function": "reflection",
+          "text": "우리 일지가 여기까지 왔네"
+        },
+        {
+          "speakerSlot": "C",
+          "function": "teasing",
+          "text": "단체사진 찍을 때 앞줄 비워줘"
+        },
+        {
+          "speakerSlot": "D",
+          "function": "reaction",
+          "text": "짝짝짝"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "version": "2.0",
+  "status": "implementation_defaults_not_playtested",
+  "label": "보유 자산 · 방송 자금",
+  "currency": "fictional_KRW",
+  "initialCash": 3000000,
+  "cashPath": "economy.cash",
+  "cashMinimum": 0,
+  "cashMaximum": 9000000000000,
+  "integerOnly": true,
+  "competencyRangeAndGrowthCapApply": false,
+  "income": {
+    "source": "completed_broadcast",
+    "statSnapshot": "broadcast_start_after_preparation",
+    "base": 50000,
+    "perAwarenessPoint": 2000,
+    "perCommunityPoint": 2000,
+    "perCompletedSegment": 30000,
+    "threeSegmentCompletionBonus": 100000,
+    "operatingCostPerSettledBroadcast": 30000,
+    "scaleMetric": "min_awareness_community",
+    "scaleTiers": [
+      {
+        "id": "starter",
+        "label": "시작 단계",
+        "minimumScore": 0,
+        "multiplier": 1
+      },
+      {
+        "id": "growing",
+        "label": "성장 방송",
+        "minimumScore": 25,
+        "multiplier": 2
+      },
+      {
+        "id": "established",
+        "label": "중견 방송",
+        "minimumScore": 45,
+        "multiplier": 5
+      },
+      {
+        "id": "major",
+        "label": "대형 방송",
+        "minimumScore": 65,
+        "multiplier": 12
+      },
+      {
+        "id": "leading",
+        "label": "최상위 방송",
+        "minimumScore": 85,
+        "multiplier": 25
+      }
+    ],
+    "unlockTierAt": "broadcast_start_after_preparation",
+    "retainHighestUnlockedTier": true,
+    "tierSnapshotOnStart": true,
+    "multiplyGrossAndOperatingCost": true,
+    "zeroCompletedSegmentsPays": 0,
+    "requiresBroadcastClosed": true,
+    "settlementKey": [
+      "runId",
+      "broadcastId",
+      "incomeSettlement"
+    ],
+    "settlementBeforeEndingCheck": true,
+    "maximumSupportedSegments": 3
+  },
+  "outfitPreparation": {
+    "costPerAction": 500000,
+    "progressPerPaidAction": 25,
+    "whenInsufficientCash": "do_not_consume_action_or_advance_progress",
+    "allowSkipCurrentPreparation": true,
+    "equipUnlockedOutfitCost": 0,
+    "revealFee": 0,
+    "preservePreviouslyPaidProgress": true
+  },
+  "tournamentAwards": [
+    {
+      "moduleId": "LC-PT",
+      "winnerPrize": 5000000
+    },
+    {
+      "moduleId": "LC-ST",
+      "winnerPrize": 2000000
+    }
+  ],
+  "tournamentPrizeBasis": "fictional_individual_share_not_entire_team_pool",
+  "awardRequirements": {
+    "playerConfirmed": true,
+    "roleTrack": "player",
+    "matchesWonAtLeast": 2,
+    "competitionActuallyCompleted": true,
+    "awardOncePerCompetitionInstance": true
+  },
+  "paidChoices": {
+    "requireCashAtCommit": true,
+    "disableWhenInsufficient": true,
+    "showPriceAndCurrentCash": true,
+    "allowAbandon": true,
+    "abandonGrantsPaidOutcome": false,
+    "abandonChargesCash": false,
+    "automaticDebt": false,
+    "silentPartialPayment": false,
+    "futureIncomeUsableBeforeSettlement": false
+  },
+  "separateWallets": [
+    "module_server_currency",
+    "module_resources"
+  ],
+  "moduleCurrencyConvertsToBroadcastCash": false,
+  "defaultUnpricedChoiceCost": 0,
+  "dateSkipChargesCash": false,
+  "dateSkipEarnsCash": false,
+  "randomUnacceptedCashLoss": false,
+  "freeEquipChangesCash": false,
+  "replayChangesCash": false,
+  "forcedTenYearWeddingCost": 0,
+  "retainOnChapterContinuation": true,
+  "resetOnlyOnSeparateNewRun": true,
+  "commitOrder": [
+    "verify_revision_and_conditions",
+    "verify_funds",
+    "apply_cash_and_story_atomically",
+    "save_ledger_and_command_id",
+    "present_result"
+  ],
+  "ledgerFields": [
+    "transactionId",
+    "runId",
+    "broadcastId",
+    "eventInstanceId",
+    "choiceId",
+    "category",
+    "amount",
+    "balanceAfter",
+    "gameDate",
+    "ruleVersion"
+  ],
+  "purchaseFields": [
+    "purchaseId",
+    "projectId",
+    "itemOrServiceId",
+    "scope",
+    "deliveryStatus",
+    "paidTransactionId"
+  ],
+  "migration": {
+    "missingCash": "grant_initial_cash_once_with_opening_ledger_entry",
+    "retroactiveBroadcastIncome": false,
+    "preserveOriginalSave": true,
+    "existingCashAndLedger": "preserve_nominal_values_no_automatic_scale_up",
+    "pendingChoicePrices": "honor_saved_price_snapshot",
+    "oldPurchasesRepriced": false
+  },
+  "choicePoliciesReference": "rakoko_money_events.design.json"
+}

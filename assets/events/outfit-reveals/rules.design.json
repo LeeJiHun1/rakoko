@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "status": "design_only",
+  "confirmed": {
+    "outfits": [
+      "ghost",
+      "maid",
+      "police",
+      "nun"
+    ],
+    "initiallyUnlocked": [
+      "base"
+    ],
+    "equipDuringPreparation": true,
+    "equipDuringBroadcast": true,
+    "equipCost": 0,
+    "equipActionCost": 0,
+    "partialLeakAutoUnlock": false,
+    "leakResponseChoice": true,
+    "permanentUnlockAfterFullReveal": true
+  },
+  "tunableProposals": {
+    "maxConcurrentPreparations": 1,
+    "readyProgress": 100,
+    "leakEligibleProgress": 40,
+    "leakChancePerEligibleBroadcast": 0.08,
+    "checkedLeakChance": 0.03,
+    "maxLeaksPerOutfit": 1,
+    "recoveryAccidentChance": 0.25,
+    "checkedRecoveryAccidentChance": 0.1,
+    "progressPerPreparationAction": 25
+  },
+  "leakChoices": [
+    "resume_preparation",
+    "treat_as_teaser",
+    "reveal_now",
+    "attempt_recovery"
+  ],
+  "revealModes": [
+    "planned",
+    "early_manual",
+    "early_accident"
+  ],
+  "saveRequirements": [
+    "persist_roll_before_presenting",
+    "idempotent_reveal",
+    "replace_scheduled_reveal_after_early_unlock",
+    "persist_equipped_outfit"
+  ],
+  "design": "../../../outputs/rakoko_outfit_feature_design.md",
+  "integration": {
+    "revealAutoEquip": false,
+    "persistNegativeLeakChecks": true,
+    "skipLeakOnRevealSlot": true,
+    "preparationSwitchPreservesProgress": true,
+    "preparationSwitchPreservesLeakHistory": true,
+    "replaceScheduledSlotOnEarlyReveal": true,
+    "commitBeforePresentation": true,
+    "preserveWardrobeOnSeasonContinuation": true,
+    "resetWardrobeOnlyOnNewRun": true,
+    "preparationRequiresAffordableCash": true,
+    "insufficientCashConsumesAction": false,
+    "insufficientCashAdvancesProgress": false,
+    "unlockedOutfitEquipStillFree": true
+  },
+  "economyRules": "../../../outputs/rakoko_economy.design.json",
+  "preparationCashCostPath": "outfitPreparation.costPerAction"
+}
