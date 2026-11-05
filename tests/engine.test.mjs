@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {newGame,dispatch,unmet,skill,addDays,nextMilestone,yearsPlayed,finaleLocks,projectProgressLocks,validateSave,DEADLINE} from '../src/engine.js';
+import {newGame,dispatch,unmet,skill,addDays,nextMilestone,yearsPlayed,finaleLocks,projectProgressLocks,validateSave,migrateSave,loadSave,DEADLINE} from '../src/engine.js';
 const catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
 let serial=0,passed=0,failed=0;
 const copy=x=>JSON.parse(JSON.stringify(x));
@@ -44,6 +44,8 @@ test('paid orders do not grant experience and delivery needs completed broadcast
 for(const m of catalog.modules)test(`novice path completes ${m.id} without fake victory`,()=>{let s=newGame(150);s=act(s,'joinModule',{id:m.id});s=act(s,'game',{gameId:m.gameId});for(let i=0;i<3;i++)s=act(s,'plan',{index:i,corner:'G'});for(let i=0;i<5;i++){s=finish(s,(s,c)=>s.event.kind==='module'?c.find(x=>x.id.endsWith('-C3')):undefined);if(i<4)s=next(s);}assert.equal(s.module,null);assert.equal(s.moduleArchive.length,1);assert.equal(s.moduleArchive[0].participation,5);assert.equal(s.moduleArchive[0].prizeAwarded,undefined);assert.equal(s.phase,'wrap');});
 test('invalid imports are rejected without evaluation',()=>{for(const change of [s=>s.cash=-1,s=>s.stats.planning=101,s=>s.plan=['T'],s=>s.seed=-1,s=>delete s.commands]){const s=newGame(160);change(s);assert.throws(()=>validateSave(s,catalog));}let s=finish(newGame(170));s.journal[0].events[0].title='<script>not executed</script>';assert.equal(validateSave(copy(s),catalog).journal[0].events[0].title,'<script>not executed</script>');});
 test('shared save cannot smuggle markup into numeric/record fields',()=>{const base=finish(newGame(171));const attacks=[s=>{s.projectArchive=[{id:'END-001',paused:true,instanceId:'x',step:'<img src=x onerror=alert(1)>',log:[]}];},s=>{s.journal[0].id='<img src=x onerror=alert(2)>';},s=>{s.journal[0].date='<b>';},s=>{s.module={id:'LC-PT',name:'m',phase:'working',deadline:'<i>',participation:1};},s=>{s.lastEnding={id:'E',title:'t',projectLog:[{date:'<svg>',text:'x'}]};},s=>{s.purchases=[{id:'o',choice:'c',cost:1,dueBroadcast:'<x>',status:'pending'}];}];for(const attack of attacks){const s=copy(base);attack(s);assert.throws(()=>validateSave(s,catalog));}});
+
+test('save migration upgrades old schema and rejects newer schema with a clear message',()=>{const s=newGame(180);assert.equal(migrateSave(s),s);assert.equal(loadSave(copy(s),catalog).runId,s.runId);const future={...copy(s),schemaVersion:99};assert.throws(()=>loadSave(future,catalog),/더 새로운 버전/);const old={...copy(s),schemaVersion:0};const up=migrateSave(old,{0:x=>({...x,schemaVersion:1,migrated:true})});assert.equal(up.schemaVersion,1);assert(up.migrated);assert.equal(old.migrated,undefined);});
 
 // Real reachability witnesses: never inject stats, story flags or experiences.
 function witness(def,seed){

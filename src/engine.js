@@ -9,5 +9,5 @@ export {unmet} from './engine/requirements.js';
 export {projectLocks, projectProgressLocks, finaleLocks} from './engine/project.js';
 export {scheduleDate} from './engine/calendar.js';
 export {dispatch} from './engine/dispatch.js';
-export {validateSave} from './engine/save.js';
+export {validateSave, migrateSave, loadSave} from './engine/save.js';
 export {GATED_EVENT_IDS} from './engine/events/eligibility.js';

@@ -1,7 +1,7 @@
 // 버튼(data-action)·입력(data-change) 처리표.
 // - UI_ACTIONS: 화면 전환·대화상자처럼 UI 안에서 끝나는 동작
 // - 그 밖의 data-action 은 같은 이름의 엔진 명령으로 실행한다(runCommand).
-import {addDays, newGame, nextMilestone, validateSave} from '../engine.js';
+import {addDays, loadSave, newGame, nextMilestone} from '../engine.js';
 import * as storage from '../storage.js';
 import {replaceState, runCommand} from './commands.js';
 import {openAbout, openCollection, openConfirmNew, openDatePicker, openEndingConfirm, openImportConfirm, openSettings, showCredits, updateDateWarning} from './dialogs.js';
@@ -10,7 +10,7 @@ import {clickSound, toast} from './feedback.js';
 import {closeDialog} from './modal.js';
 import {preferences, savePreferences} from './preferences.js';
 import {focusScene, goView, render} from './render.js';
-import {clearPendingImport, exportSave, getPendingImport, readImportFile} from './save-files.js';
+import {clearPendingImport, downloadJournal, exportSave, getPendingImport, readImportFile} from './save-files.js';
 import {store} from './store.js';
 import {announceSaved} from './sync.js';
 
@@ -33,7 +33,7 @@ const UI_ACTIONS = {
   async reload() {
     const loaded = await storage.load();
     if (!loaded) return;
-    store.state = validateSave(loaded, store.catalog);
+    store.state = loadSave(loaded, store.catalog);
     store.stale = false;
     store.saveError = false;
     render();
@@ -69,6 +69,22 @@ const UI_ACTIONS = {
   },
   ending: button => openEndingConfirm(button.dataset.id),
   confirmEnding: button => runCommand('ending', {id: button.dataset.id}),
+  // 부팅 실패 화면 전용
+  bootRetry: () => location.reload(),
+  async bootExportRaw() {
+    const raw = await storage.load();
+    if (!raw) { toast('저장된 일지가 없어요.'); return; }
+    downloadJournal(raw, 'rakoko-journal-original.json');
+    toast('저장된 원본을 파일로 내보냈어요.');
+  },
+  async bootReset() {
+    if (!confirm('새 일지로 시작할까요? 지금 저장본은 백업 칸에 한 번 보관돼요.')) return;
+    if (!store.catalog) { location.reload(); return; }
+    await replaceState(newGame());
+    announceSaved(store.state);
+    render();
+    toast('새 일지를 펼쳤어요. 이전 저장본은 백업 칸에 보관했어요.');
+  },
   async continue() {
     await runCommand('continue');
     closeDialog();

@@ -2,8 +2,28 @@
 import {CORNERS, PHASES} from './constants.js';
 import {isValidIsoDate} from './dates.js';
 import {SCHEMA_VERSION} from './state.js';
+import {clone} from './util.js';
 
 const LIST_KEYS = ['journal', 'commands', 'promises', 'purchases', 'experienceRecords', 'reachedEndings', 'projectArchive', 'moduleArchive', 'celebrations', 'seenOnce'];
+
+/**
+ * 저장 형식 변환표. MIGRATIONS[v] 는 schemaVersion v 저장본을 v+1 로 바꿔 돌려준다.
+ * state.js 의 SCHEMA_VERSION 을 올릴 때 반드시 여기에 변환을 추가하고 테스트를 붙인다.
+ * 예) 1: s => ({...s, schemaVersion: 2, newField: 기본값}),
+ */
+export const MIGRATIONS = {};
+
+/** 예전 형식 저장본을 현재 형식으로 올린다. 더 새로운 버전의 저장본은 거부한다. */
+export function migrateSave(raw, migrations = MIGRATIONS) {
+  if (!raw || typeof raw !== 'object') return raw;
+  if (Number.isInteger(raw.schemaVersion) && raw.schemaVersion > SCHEMA_VERSION) throw Error('더 새로운 버전의 게임에서 만든 일지예요. 페이지를 새로고침해 최신 버전으로 열어주세요.');
+  let s = raw;
+  while (Number.isInteger(s.schemaVersion) && s.schemaVersion < SCHEMA_VERSION && Object.hasOwn(migrations, s.schemaVersion)) s = migrations[s.schemaVersion](clone(s));
+  return s;
+}
+
+/** 저장소·파일에서 읽은 값을 쓸 수 있는 상태로: 변환 → 검증. */
+export const loadSave = (raw, catalog) => validateSave(migrateSave(raw), catalog);
 
 const MODULE_PHASES = ['invited', 'orientation', 'working', 'project_ready', 'rehearsed', 'closed'];
 const isInt = (v, min, max) => Number.isInteger(v) && v >= min && v <= max;
