@@ -1,0 +1,11 @@
+/* 결과 편차: 선택지 성향 라벨 · 결과 등급 표시 (F1) */
+.choice-style{display:block;margin-top:4px;font-size:11px;letter-spacing:.02em;color:#8a7a84}
+.choice-style.style-safe{color:#5f8a76}
+.choice-style.style-steady{color:#b08a3e}
+.choice-style.style-bold{color:#b85b75;font-weight:700}
+.odds-note{margin:-4px 0 14px;font-size:12px;color:#5f8a76}
+.result-heading.grade-great{color:#b85b75}
+.result-heading.grade-great span{background:#b85b75;color:#fff}
+.result-heading.grade-miss{color:#8a7a84}
+.result-card.grade-great{border-color:#d9a4b5;box-shadow:0 0 0 3px #b85b7522,0 8px 22px #b85b7526}
+.result-card.grade-miss{background:#f6f2ee}

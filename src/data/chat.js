@@ -47,6 +47,16 @@ const pools={
     '손이 생각보다 먼저 갔네 ㅋㅋ','그 키는 아니었다 ㅋㅋㅋ','아 나도 깜짝 놀랐네','일단 진정하고 다시 가자','이번 키는 기억해 두자',
     '방금은 손도 당황했겠는데','다음엔 천천히 누르자','이런 장면도 일지에 남는 거야?','ㅋㅋ 괜찮아 이어가자'
   ],
+  hype:[
+    '와 미쳤다 ㅋㅋㅋㅋ','방금 거 클립 각이다','ㄹㅇ 대박','이게 되네?!','소리 질렀다 지금','오늘 방송 레전드 찍었다',
+    '박수 박수 박수','방금 장면 다시 보여줘','손 떨리는 거 나만 그럼?','이 맛에 방송 보지','코코 오늘 폼 미쳤다',
+    '역시 믿고 있었다고','채팅창 터지는 거 봐 ㅋㅋ','이건 일지에 크게 써야 해','와 소름 돋았어'
+  ],
+  blooper:[
+    'ㅋㅋㅋㅋ 괜찮아 괜찮아','이것도 방송의 맛이지','방금 거 은근 웃겼음 ㅋㅋ','다음엔 된다 진짜로','표정 봐 ㅋㅋㅋ',
+    '아깝다 거의 다 왔는데','실패도 클립감이다','우리 다 봤어 ㅋㅋ','침착하게 다시 가보자','이런 날도 있어야 레전드가 나오지',
+    '괜찮아 아무도 못 봤어 (다 봄)','웃음 하나는 확실히 챙겼다','방금 건 연습이었던 걸로','다음 코너에서 만회하자','그래도 시도한 게 멋있었어'
+  ],
   match_win:[
     '캬 이겼다!','마지막까지 잘 봤어','우리 팀 해냈네','ㅊㅊㅊㅊ','준비한 게 경기에서 나왔네','나도 숨 참고 봤다 ㅋㅋ',
     '결과 뜨니까 실감 나네','좋아 이 판은 가져왔다','방금 경기 다시 보고 싶다'
@@ -128,6 +138,8 @@ export function chatContext(event,selected,result,module){
   if(event.kind==='routine')return 'routine';
   if(event.kind==='match')return selected.id==='withdraw'?'module_finish':module?.matches.at(-1)?.won?'match_win':'match_loss';
   if(event.kind==='module')return module?.phase==='closed'?'module_finish':['orientation','working'].includes(module?.phase)&&module?.participation<=2?'module_intro':'module_work';
+  if(result?.grade==='great')return 'hype';
+  if(result?.grade==='miss')return 'blooper';
   if(/다음|미루|보류/.test(selected.text))return 'postpone';
   if(/잡담/.test(selected.text))return 'talk_switch';
   if(/대체|전환|다른 코너/.test(selected.text))return 'tech_alternative';

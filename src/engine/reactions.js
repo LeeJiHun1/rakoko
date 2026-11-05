@@ -2,11 +2,13 @@
 import {CHAT_POOLS, chatContext} from '../data/chat.js';
 import {random} from './rng.js';
 
-const HISTORY = 24, LINES = 3, SPEAKERS = 8;
+const HISTORY = 24, SPEAKERS = 8;
+/** 대성공이면 채팅이 몰아친다 */
+const linesFor = result => result?.grade === 'great' ? 5 : 3;
 
 export function reactions(s, selected) {
   const context = chatContext(s.event, selected, s.result, s.module);
-  const pool = CHAT_POOLS[context] || CHAT_POOLS.general;
+  const pool = CHAT_POOLS[context] || CHAT_POOLS.general, LINES = linesFor(s.result);
   s.reactionHistory ??= [];
   let recent = new Set(s.reactionHistory.slice(-HISTORY).map(x => x.text));
   let candidates = pool.filter(x => !recent.has(x.text));

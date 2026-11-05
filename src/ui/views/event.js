@@ -1,5 +1,5 @@
 // 방송 중 화면: 사건 카드 + 선택지(잠금 사유 표시).
-import {CORNERS, projectProgressLocks, unmet} from '../../engine.js';
+import {CORNERS, prepBonus, projectProgressLocks, STYLES, unmet} from '../../engine.js';
 import {escape, tag} from '../dom.js';
 import {store} from '../store.js';
 
@@ -11,8 +11,16 @@ function choiceLocks(event, c) {
   return locks;
 }
 
+/** 선택지 성향 라벨(대략 표시 — 정확한 확률은 숨김) */
+const styleTag = c => Object.hasOwn(STYLES, c.style) ? `<span class="choice-style style-${c.style}" title="${STYLES[c.style].hint}">${STYLES[c.style].label} · ${STYLES[c.style].hint}</span>` : '';
+
+function oddsNote(e) {
+  if (!e.choices.some(c => c.style && c.style !== 'safe') || prepBonus(store.state) <= 0) return '';
+  return '<p class="odds-note">✦ 오늘 준비 덕분에 보통·모험 선택이 조금 유리해요</p>';
+}
+
 export function choices(event) {
-  return `<div class="choices">${event.choices.map((c,i)=>{const locks=choiceLocks(event,c);return `<div class="choice-wrap"><button class="choice" data-action="${event.kind==='ending'?'ending':'choose'}" data-id="${escape(c.id)}" ${locks.length?'disabled':''}><span class="choice-number">${String(i+1).padStart(2,'0')}</span><span>${escape(c.text)}</span><span class="choice-arrow">${locks.length?'⌑':'↗'}</span></button>${locks.length?`<p class="lock-reason">잠금 · ${escape([...new Set(locks)].join(' · '))}</p>`:''}</div>`;}).join('')}</div>`;
+  return `<div class="choices">${event.choices.map((c,i)=>{const locks=choiceLocks(event,c);return `<div class="choice-wrap"><button class="choice" data-action="${event.kind==='ending'?'ending':'choose'}" data-id="${escape(c.id)}" ${locks.length?'disabled':''}><span class="choice-number">${String(i+1).padStart(2,'0')}</span><span>${escape(c.text)}${styleTag(c)}</span><span class="choice-arrow">${locks.length?'⌑':'↗'}</span></button>${locks.length?`<p class="lock-reason">잠금 · ${escape([...new Set(locks)].join(' · '))}</p>`:''}</div>`;}).join('')}</div>`;
 }
 
 function eventTag(e) {
@@ -24,5 +32,5 @@ function eventTag(e) {
 export function eventScreen() {
   const {state} = store, e = state.event;
   return `<div class="broadcast-progress">${[0,1,2].map((i)=>`<span class="${i===state.slot?'current':i<state.slot?'done':''}">${i<state.slot?'✓':String(i+1).padStart(2,'0')} ${CORNERS[state.plan[i]]}</span>`).join('')}</div>
-  <article class="event-card"><div class="event-meta">${tag(eventTag(e))}<span>SCENE ${String(state.slot+1).padStart(2,'0')}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.</p>`;
+  <article class="event-card"><div class="event-meta">${tag(eventTag(e))}<span>SCENE ${String(state.slot+1).padStart(2,'0')}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${oddsNote(e)}${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.</p>`;
 }

@@ -2,6 +2,7 @@
 import {CORNER_BASE_STAT} from './constants.js';
 import {gain} from './growth.js';
 import {commitModuleChoice} from './module.js';
+import {gradeOutcome, prepBonus, rollGrade, scaleGains} from './outcome.js';
 import {reveal} from './outfit.js';
 import {advanceProject, projectProgressLocks} from './project.js';
 import {reactions} from './reactions.js';
@@ -10,7 +11,8 @@ import {random} from './rng.js';
 import {skill} from './state.js';
 import {clone} from './util.js';
 
-/** 사건 종류(kind)별 고유 효과. routine·finale 은 공통 성장만 있다. */
+/** 사건 종류(kind)별 고유 효과. routine·finale 은 공통 성장만 있다.
+ *  {gain} 을 돌려주면 선택지의 기본 성장(c.gain) 대신 그 값을 쓴다(결과 편차). */
 const KIND_EFFECTS = {
   general(s, e, c) {
     s.familyLast[e.family] = s.broadcastIndex;
@@ -19,6 +21,12 @@ const KIND_EFFECTS = {
     s.familyMemory[e.family] = {choice: c.text, outcome: c.outcome};
     s.seenOnce.push(e.definitionId);
     if (c.promise) s.promises.push({id: `promise:${s.broadcastIndex}:${s.slot}`, title: e.title, status: 'pending', dueBroadcast: s.broadcastIndex + 1, createdBroadcast: s.broadcastIndex});
+    if (!c.style) return undefined;
+    const grade = rollGrade(s, c.style, prepBonus(s));
+    s.result.grade = grade;
+    s.result.style = c.style;
+    if (grade !== 'success') s.result.outcome = gradeOutcome(s, grade, s.result.outcome);
+    return {gain: scaleGains(c.gain, grade, c.style)};
   },
   project(s, e, c, catalog) { if (!c.postpone) advanceProject(s, c, catalog); },
   calendar(s, e) { s.celebrations.push(e.celebrationKey); },
@@ -56,9 +64,9 @@ export function applyChoice(s, id, catalog) {
   const segmentGame = segmentGameOf(s, e);
   const before = {...s.stats, gameSkill: skill(s, segmentGame)};
   s.result = {title: e.title, choice: c.text, outcome: c.outcome || '오늘의 기록을 남겼다.', kind: e.kind, provenance: e.provenance};
-  if (Object.hasOwn(KIND_EFFECTS, e.kind)) KIND_EFFECTS[e.kind](s, e, c, catalog);
+  const effect = (Object.hasOwn(KIND_EFFECTS, e.kind) && KIND_EFFECTS[e.kind](s, e, c, catalog)) || {};
 
-  for (const [key, amount] of Object.entries(c.gain || {})) gain(s, key, amount);
+  for (const [key, amount] of Object.entries(effect.gain ?? c.gain ?? {})) gain(s, key, amount);
   const corner = s.plan[s.slot];
   gain(s, CORNER_BASE_STAT[corner], 1, segmentGame);
   if (corner === 'G') s.gameHistory[s.gameId] = {last: s.broadcastIndex};

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {newGame,dispatch,unmet,skill,addDays,nextMilestone,yearsPlayed,finaleLocks,projectProgressLocks,validateSave,migrateSave,loadSave,DEADLINE} from '../src/engine.js';
+import {newGame,dispatch,unmet,skill,addDays,nextMilestone,yearsPlayed,finaleLocks,projectProgressLocks,validateSave,migrateSave,loadSave,DEADLINE,STYLES,prepBonus} from '../src/engine.js';
+import {assignStyles,rollGrade,scaleGains,oddsFor} from '../src/engine/outcome.js';
 const catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
 let serial=0,passed=0,failed=0;
 const copy=x=>JSON.parse(JSON.stringify(x));
@@ -48,6 +49,10 @@ test('shared save cannot smuggle markup into numeric/record fields',()=>{const b
 test('save migration upgrades old schema and rejects newer schema with a clear message',()=>{const s=newGame(180);assert.equal(migrateSave(s),s);assert.equal(loadSave(copy(s),catalog).runId,s.runId);const future={...copy(s),schemaVersion:99};assert.throws(()=>loadSave(future,catalog),/더 새로운 버전/);const old={...copy(s),schemaVersion:0};const up=migrateSave(old,{0:x=>({...x,schemaVersion:1,migrated:true})});assert.equal(up.schemaVersion,1);assert(up.migrated);assert.equal(old.migrated,undefined);});
 
 test('repeated event keeps its original situation text and adds a recall line',()=>{let s=newGame(5),seen=0;for(let b=0;b<40&&!seen;b++){s=act(s,'start');while(['event','result'].includes(s.phase)){if(s.phase==='result'){s=act(s,'advance');continue;}if(s.event.kind==='general'&&s.familyMemory[s.event.family]){const def=catalog.events.find(e=>e.id===s.event.definitionId);assert(s.event.body.startsWith(def.body));assert(s.event.body.includes(`‘${s.familyMemory[s.event.family].choice}’`));seen++;}s=act(s,'choose',{id:available(s)[0].id});}s=next(s);}assert(seen>0,'반복 사건을 만나지 못함');});
+
+test('every event mixes choice styles deterministically',()=>{for(const e of catalog.events){const a=assignStyles(e.id,copy(e.choices)),b=assignStyles(e.id,copy(e.choices));assert.deepEqual(a.map(c=>c.style),b.map(c=>c.style));assert(a.every(c=>Object.hasOwn(STYLES,c.style)));if(a.length>1)assert(new Set(a.map(c=>c.style)).size>1,e.id);}});
+test('safe never misses and consumes no randomness; bold can boom or miss',()=>{const s={seed:1};assert.equal(rollGrade(s,'safe',0),'success');assert.equal(s.seed,1);const seen={great:0,success:0,miss:0};for(let i=0;i<2000;i++)seen[rollGrade(s,'bold',0)]++;assert(seen.great>500&&seen.miss>600&&seen.success>300,JSON.stringify(seen));assert.deepEqual(scaleGains({planning:2},'miss','bold'),{});assert.deepEqual(scaleGains({planning:1,awareness:1},'great','bold'),{planning:3,awareness:3});assert(oddsFor('bold',prepBonus({checked:true,dataPrepared:2})).miss<STYLES.bold.miss);});
+test('styled choice result records grade and miss grants no choice growth',()=>{let found=false;for(let seed=1;seed<400&&!found;seed++){let s=act(newGame(seed),'start');if(s.event.kind!=='general')continue;const c=s.event.choices.find(c=>c.style==='bold'&&!unmet(s,c.requirements,catalog).length);if(!c)continue;const n=act(s,'choose',{id:c.id});assert(['great','success','miss'].includes(n.result.grade));if(n.result.grade==='miss'){found=true;const corner={T:'community',G:'gameSkill',F:'community',S:'planning'}[s.plan[0]];for(const k of Object.keys(c.gain))if(k!==corner)assert.equal(n.stats[k]??0,s.stats[k]??0);}}assert(found,'모험 선택의 아쉬움 결과를 찾지 못함');});
 
 // Real reachability witnesses: never inject stats, story flags or experiences.
 function witness(def,seed){

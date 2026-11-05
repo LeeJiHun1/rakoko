@@ -2,6 +2,7 @@
 import {CORNERS} from '../constants.js';
 import {random} from '../rng.js';
 import {clone} from '../util.js';
+import {assignStyles} from '../outcome.js';
 import {normalEligible} from './eligibility.js';
 import {choice, event} from './factory.js';
 
@@ -38,6 +39,6 @@ export function pickGeneral(s, catalog) {
     draw -= weights[i];
     if (draw <= 0) { selected = candidates[i]; break; }
   }
-  return event(s, 'general', selected.title, recallBody(s, selected), clone(selected.choices),
+  return event(s, 'general', selected.title, recallBody(s, selected), assignStyles(selected.id, clone(selected.choices)),
     {definitionId: selected.id, family: selected.family, group: selected.group, provenance: selected.provenance});
 }

@@ -34,7 +34,7 @@ const known = {
 const ID_PATTERNS = [[/\b(?:CE|RK|RA)-\d{3}\b/g, 'event'], [/\bEX-\d{3}\b/g, 'experience'], [/\bEF-\d{3}\b/g, 'endingEvent'], [/\bLC-[A-Z]{2}\b/g, 'module'], [/\bEND-\d{3}\b/g, 'project']];
 const missing = [];
 let refs = 0;
-for (const file of files.filter(f => f.startsWith('src/engine') || f.startsWith('src/ui'))) {
+for (const file of files.filter(f => f.startsWith('src/engine') || f.startsWith('src/ui') || f === 'src/data/chat.js')) {
   const text = await readFile(file, 'utf8');
   for (const [pattern, kind] of ID_PATTERNS) for (const id of text.match(pattern) || []) { refs++; if (!known[kind].has(id)) missing.push(`${file}: ${id}`); }
 }
