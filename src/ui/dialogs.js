@@ -42,12 +42,15 @@ export function maybeShowGuide() {
 }
 
 export function openAbout() {
-  openDialog('라코코의 방송일지',`<p class="about-intro">오늘의 방송이<br/><b>내일의 이야기가 되는 곳.</b></p><p>준비하고, 함께 방송하고, 기억할 장면을 남기는 비공식 선택형 팬게임이에요.</p><ul class="about-list"><li>준비 행동은 방송마다 2번, 코너는 3개예요. 선택지의 안정·보통·모험에 따라 결과가 갈려요.</li><li>기획은 특별 코너에서 자료·시범·피드백 순으로 만들고, 방송 150일째부터 결말로 이어져요.</li><li>새 옷은 방송 중 제안 → 준비 → 커튼 공개 → 무료 환복. 준비를 미루면 유출될 수도!</li><li>이번 달 미션, 업적과 사건 도감도 모아 보세요.</li><li>키보드: 숫자 1~4로 선택, Enter 로 다음.</li></ul><p class="modal-description">캐릭터: 사용자 제공 공식 참조를 바탕으로 만든 도트풍 이미지.<br/>픽셀 글꼴: Neo둥근모 · Eunbin Jeong · SIL OFL 1.1.<br/><a href="assets/fonts/neodgm-LICENSE.txt" target="_blank" rel="noopener">글꼴 라이선스 보기</a></p>`);
+  openDialog('라코코의 방송일지',`<p class="about-intro">오늘의 방송이<br/><b>내일의 이야기가 되는 곳.</b></p><p>준비하고, 함께 방송하고, 기억할 장면을 남기는 비공식 선택형 팬게임이에요.</p><ul class="about-list"><li>준비 행동은 방송마다 2번, 코너는 3개예요. 선택지의 안정·보통·모험에 따라 결과가 갈려요.</li><li>기획은 특별 코너에서 자료·시범·피드백 순으로 만들고, 방송 150일째부터 결말로 이어져요.</li><li>새 옷은 방송 중 제안 → 준비 → 커튼 공개 → 무료 환복. 준비를 미루면 유출될 수도!</li><li>이번 달 미션, 업적과 사건 도감도 모아 보세요.</li><li>키보드: 숫자 1~4로 선택, Enter 로 다음.</li></ul><p class="modal-description"><b>v0.2에서 새로워진 점</b> — 선택지 성향과 대성공, 방송 등급·시청자·응원, 방송 중 구매·새 의상 제안, 커튼 공개 연출, 이번 달 미션, 업적·사건 도감, 시청자 추이 결산, 키보드 단축키.</p><p class="modal-description">캐릭터: 사용자 제공 공식 참조를 바탕으로 만든 도트풍 이미지.<br/>픽셀 글꼴: Neo둥근모 · Eunbin Jeong · SIL OFL 1.1.<br/><a href="assets/fonts/neodgm-LICENSE.txt" target="_blank" rel="noopener">글꼴 라이선스 보기</a></p>`);
 }
 
+/** 결말 모음: 33칸(일반 32 + 10년 결말). 못 만난 결말은 제목을 숨기고 어떤 기획으로 갈 수 있는지만 힌트 */
 export function openCollection() {
-  const {state} = store;
-  openDialog('함께 만난 이야기들',`<p class="modal-description">만난 결말 ${state.reachedEndings.length} / ${TOTAL_ENDINGS}. 아직 만나지 않은 이야기는 첫 장면을 위해 남겨 둘게요.</p><div class="collection-list">${state.reachedEndings.length?state.reachedEndings.map(x=>`<article><span>✦</span><h3>${escape(x.title)}</h3><p>${escape(x.epilogue)}</p></article>`).join(''):'<p>아직 마지막 장을 쓰지 않았어요.<br/>지금의 작은 기획부터 함께 만들어 보세요.</p>'}</div>`);
+  const {state, catalog} = store, met = new Map(state.reachedEndings.map(e => [e.id, e]));
+  const card = (id, hint) => { const e = met.get(id); return e ? `<article class="got"><span>✦</span><h3>${escape(e.title)}</h3><p>${escape(e.epilogue)}</p></article>` : `<article class="locked"><span>?</span><h3>???</h3><p>${escape(hint)}</p></article>`; };
+  const cards = catalog.projects.map(p => card(p.id, `기획 「${p.name}」에서 만날 수 있어요`)).join('') + card('END-FORCED-10Y', '결말 없이 10년을 방송하면…');
+  openDialog('함께 만난 이야기들',`<p class="modal-description">만난 결말 ${met.size} / ${TOTAL_ENDINGS}. 한 기획에서도 마지막 선택에 따라 다른 결말을 만날 수 있어요.</p><div class="collection-list">${cards}</div>`);
 }
 
 export function openAchievements() {

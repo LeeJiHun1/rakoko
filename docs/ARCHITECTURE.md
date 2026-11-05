@@ -44,6 +44,11 @@ index.html ─ src/app.js ─ src/ui/boot.js
 | `engine/preparation.js` | 준비 행동 (자료·연습·점검·의상) |
 | `engine/outfit.js` | 신의상: 제안 이벤트(막간)→시작(첫 준비비)→준비→공개 예약→공개(해금만, 자동 환복 없음)·조기 공개 후속, 유출은 의상당 1회 |
 | `project.js` · `module.js` · `economy.js` · `ending.js` · `calendar.js` | 도메인 규칙 + 해당 명령 |
+| `engine/outcome.js` | 선택지 성향(안정·보통·모험)·결과 등급(대성공·성공·아쉬움)·코너별 준비 보너스 |
+| `engine/audience.js` | 기본 시청자·시청자 성장·방송 등급(S~C)·역대 기록·가상 응원 |
+| `engine/purchases.js` | 구매 효과(확률·시청자·응원 N회)·방송 중 구매 막간(가격대 가중치) |
+| `engine/missions.js` | 이번 달 미션 생성·진행·보상 |
+| `engine/achievements.js` | 업적 25종 판정(모든 명령 뒤, dispatch 에서 호출)·사건 도감 |
 | `engine/growth.js` | 능력 성장(방송당 상한)·경험 기록 |
 | `engine/requirements.js` | 카탈로그 조건식 `{path, op, value}` 평가와 잠금 사유 문구 |
 | `engine/reactions.js` | 결과 화면 키몽이 채팅 3줄 |
@@ -76,7 +81,9 @@ index.html ─ src/app.js ─ src/ui/boot.js
 | 일반 사건의 상태 조건 | `events/eligibility.js` `EVENT_GATES` 에 한 줄 (ID 는 `npm run check` 가 카탈로그와 대조) |
 | 수치 조정 | `engine/constants.js` 또는 `catalog.json` `economy` (골든 갱신 필요) |
 | 새 화면/탭 | `ui/views/<이름>.js` → `ui/render.js` `TAB_SCREENS` → `ui/views/layout.js` `TABS` |
-| 상태에 새 필드 | `state.js` `newGame` **끝에** 추가 → `SCHEMA_VERSION` 올리고 `save.js` `MIGRATIONS` 에 변환 + 테스트 → 화면에 그리면 `validateSave` 형식 검사 추가 |
+| 상태에 새 필드 | `state.js` `newGame` **끝에** 추가 → `SCHEMA_VERSION` 올리고 `save.js` `MIGRATIONS` 에 변환 + 테스트 → 화면에 그리면 `validateSave` 형식 검사 추가 (현재 저장 형식 6) |
+| 새 업적 | `engine/achievements.js` `ACHIEVEMENTS` 에 `{id,label,desc,check(s)}` 한 줄 (상태만 보고 판정, 난수 금지) |
+| 새 미션 종류 | `engine/missions.js` `MISSION_TYPES` + 진행 지점에서 `bumpMission(s, id)` |
 | 화면에 저장본 값 표시 | 반드시 `escape()` (공유받은 일지 파일은 신뢰할 수 없는 입력) |
 
 ## 테스트·검사

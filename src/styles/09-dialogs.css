@@ -50,3 +50,12 @@ dialog::backdrop{background:#211b2b99;backdrop-filter:blur(4px)}
 .boot-note{font-size:calc(12px * var(--text-scale));color:var(--muted)}
 .guide-list{padding-left:20px;display:grid;gap:8px;margin:4px 0 12px}
 .guide-list em{font-style:normal;color:#9a4560}
+.collection-list article.locked{opacity:.7;border-style:dashed}
+.collection-list article.locked span{color:#9c8a96}
+.collection-list article.got span{color:#c19f67}
+/* 결말 모음 33칸: 카드 격자 */
+.collection-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.collection-list article{padding:12px;border:1px solid var(--line);border-radius:10px;background:#fffdf9}
+.collection-list article.got{border-color:#d9a4b5;background:#fff7f9}
+.collection-list h3{font-size:calc(14px * var(--text-scale));margin:4px 0}
+.collection-list p{margin:0;font-size:calc(11px * var(--text-scale));color:#76666f}
