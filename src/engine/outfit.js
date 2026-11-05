@@ -1,4 +1,4 @@
-// 신의상: 방송 중 제안 이벤트 → 첫 준비비(시작) → 준비 행동으로 진행(50만원·+25) → 공개 예약 → 공개(해금) → 무료 환복.
+// 신의상: 방송 중 제안 이벤트 → 시작(비용 200만원 전액, +25) → 준비 행동으로 진행(무료·+25) → 공개 예약 → 공개(해금) → 무료 환복.
 // 준비 중(40%↑)에는 의상당 한 번 유출 사건이 날 수 있다. 설계: outputs/rakoko_outfit_feature_design.md
 import {OUTFIT_COST, OUTFIT_PROGRESS_STEP} from './constants.js';
 import {random} from './rng.js';
@@ -28,23 +28,21 @@ export function reveal(s, id, {mode = 'planned'} = {}) {
   if (mode === 'early') s.outfitFollowup = replaced || wasScheduled ? id : null;
 }
 
-function addProgress(s, id) {
-  if (s.cash < OUTFIT_COST) throw Error('의상 준비비 50만원이 부족해요.');
-  s.cash -= OUTFIT_COST;
-  s.outfitProgress[id] = Math.min(100, s.outfitProgress[id] + OUTFIT_PROGRESS_STEP);
-  s.ledger.push({id: `outfit:${s.broadcastIndex}:${s.slot}:${s.preparations}`, date: s.date, net: -OUTFIT_COST});
-}
+const addProgress = (s, id) => { s.outfitProgress[id] = Math.min(100, s.outfitProgress[id] + OUTFIT_PROGRESS_STEP); };
 
-/** 제안 이벤트에서 제작을 시작한다: 첫 준비비를 내고 준비도 +25. */
+/** 제안 이벤트에서 제작을 시작한다: 비용 전액을 한 번에 내고 준비도 +25. 잔액이 부족하면 아무것도 바꾸지 않는다. */
 export function startOutfit(s, id) {
   if (s.wardrobe[id] || isStarted(s, id)) throw Error('이미 준비를 시작한 옷이에요.');
   if (pendingOutfit(s)) throw Error('준비 중인 새 옷을 먼저 공개해주세요.');
+  if (s.cash < OUTFIT_COST) throw Error(`새 의상 비용 ${OUTFIT_COST / 10000}만원이 부족해요.`);
+  s.cash -= OUTFIT_COST;
+  s.ledger.push({id: `outfit:${id}:${s.broadcastIndex}`, date: s.date, net: -OUTFIT_COST});
   addProgress(s, id);
   s.outfitStarted[id] = true;
   s.crafting = id;
 }
 
-/** 준비 행동 1회로 준비도를 올린다. 시작하지 않은 옷·잔액 부족이면 아무것도 바꾸지 않는다. */
+/** 준비 행동 1회로 준비도를 올린다(무료 — 비용은 시작할 때 전액 냈다). 시작하지 않은 옷이면 아무것도 바꾸지 않는다. */
 export function prepareOutfit(s) {
   if (s.wardrobe[s.crafting]) throw Error('이미 공개한 옷이에요.');
   if (!isStarted(s, s.crafting)) throw Error('방송 중 새 의상 제안을 받아 준비를 시작해주세요.');
@@ -52,7 +50,7 @@ export function prepareOutfit(s) {
   addProgress(s, s.crafting);
 }
 
-/** 방송당 한 번 제안 이벤트를 굴린다. 진행 중인 의상이 없고, 남은 의상이 있고, 첫 준비비를 낼 수 있을 때만. */
+/** 방송당 한 번 제안 이벤트를 굴린다. 진행 중인 의상이 없고, 남은 의상이 있고, 비용 전액을 낼 수 있을 때만. */
 export function rollOutfitOffer(s, catalog) {
   if (s.lastOutfitOfferBroadcast === s.broadcastIndex) return null;
   s.lastOutfitOfferBroadcast = s.broadcastIndex;

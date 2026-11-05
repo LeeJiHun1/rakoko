@@ -1,6 +1,5 @@
 // 방송 준비 화면: 준비 행동 2회 · 방송 켜기 · (선택) 편성/게임 변경 · 마지막 특집 예약.
-import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks, OUTFIT_COST, OUTFIT_PROGRESS_STEP, pendingOutfit} from '../../engine.js';
-import {money} from '../dom.js';
+import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks, OUTFIT_PROGRESS_STEP, pendingOutfit} from '../../engine.js';
 import {btn, escape} from '../dom.js';
 import {store} from '../store.js';
 import {projectMini} from './project-mini.js';
@@ -11,8 +10,8 @@ const PREP_ACTIONS = [['data', '▤', '자료 준비', '기획력 +2 · 잡담·
 function outfitAction(state) {
   const id = pendingOutfit(state), p = id ? state.outfitProgress[id] : 0;
   if (!id || p >= 100) return '';
-  const disabled = !state.preparations || state.cash < OUTFIT_COST;
-  return `<button class="prep-action outfit-prep" data-action="prepare" data-kind="outfit" ${disabled?'disabled':''}><span class="action-icon">♧</span><span><b>의상 준비 <small class="secret-tag">비밀</small></b><small>${money(OUTFIT_COST)} · 준비도 ${escape(p)}% → ${escape(Math.min(100,p+OUTFIT_PROGRESS_STEP))}%${state.cash<OUTFIT_COST?' · 자금 부족':''}</small></span><span class="arrow">+</span></button>`;
+  const disabled = !state.preparations;
+  return `<button class="prep-action outfit-prep" data-action="prepare" data-kind="outfit" ${disabled?'disabled':''}><span class="action-icon">♧</span><span><b>의상 준비 <small class="secret-tag">비밀</small></b><small>비용 없음 · 준비도 ${escape(p)}% → ${escape(Math.min(100,p+OUTFIT_PROGRESS_STEP))}%</small></span><span class="arrow">+</span></button>`;
 }
 
 /** 준비를 마친 새 옷: 이번 방송 3번째 코너에서 공개 예약 */

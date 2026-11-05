@@ -21,7 +21,8 @@ export const GAIN_CAP_PER_BROADCAST = 6; // 능력별 방송 1회 성장 상한
 export const DEFAULT_SKILL = 10;
 export const INITIAL_CASH = 3000000;
 
-export const OUTFIT_COST = 500000;
+/** 신의상 비용은 시작할 때 한 번에 전액(사용자 결정 2026-11-05). 이후 준비 행동은 무료(행동 횟수만 사용). */
+export const OUTFIT_COST = 2000000;
 export const OUTFIT_PROGRESS_STEP = 25;
 export const LEAK_MIN_PROGRESS = 40;
 

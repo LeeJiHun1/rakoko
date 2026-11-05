@@ -55,7 +55,7 @@ export function leakEvent(s) {
 /** 방송 중 새 의상 제안(막간 — 코너를 쓰지 않는다). 공개 전이라 이름 대신 단서만 보인다. */
 export function outfitOfferEvent(s, outfitId, cost) {
   return event(s, 'outfitOffer', '새 의상 이야기가 나왔다', `키몽이들이 '다음엔 ${LEAK_CLUES[outfitId]}이 들어간 옷도 보고 싶다'며 채팅창을 채운다. 새 의상을 준비해 볼까?`, [
-    choice('start', `새 의상 제작을 시작한다 · ${(cost / 10000).toLocaleString('ko-KR')}만원`, '의상 기획 노트를 펼치고 첫 준비비를 썼다. 공개 전까지 이름은 비밀이다.', {requirements: [{path: 'economy.cash', op: 'gte', value: cost}], start: true}),
+    choice('start', `새 의상 제작을 시작한다 · ${(cost / 10000).toLocaleString('ko-KR')}만원 (이후 준비는 무료)`, '의상 기획 노트를 펼치고 제작비를 한 번에 맡겼다. 공개 전까지 이름은 비밀이다.', {requirements: [{path: 'economy.cash', op: 'gte', value: cost}], start: true}),
     choice('later', '지금은 미뤄 둔다', '제안은 메모해 두었다. 다음에 또 이야기가 나올지도 모른다.'),
   ], {outfitId});
 }
