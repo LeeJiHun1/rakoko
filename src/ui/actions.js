@@ -1,0 +1,137 @@
+// 버튼(data-action)·입력(data-change) 처리표.
+// - UI_ACTIONS: 화면 전환·대화상자처럼 UI 안에서 끝나는 동작
+// - 그 밖의 data-action 은 같은 이름의 엔진 명령으로 실행한다(runCommand).
+import {addDays, newGame, nextMilestone, validateSave} from '../engine.js';
+import * as storage from '../storage.js';
+import {replaceState, runCommand} from './commands.js';
+import {openAbout, openCollection, openConfirmNew, openDatePicker, openEndingConfirm, openImportConfirm, openSettings, showCredits, updateDateWarning} from './dialogs.js';
+import {$} from './dom.js';
+import {clickSound, toast} from './feedback.js';
+import {closeDialog} from './modal.js';
+import {preferences, savePreferences} from './preferences.js';
+import {focusScene, goView, render} from './render.js';
+import {clearPendingImport, exportSave, getPendingImport, readImportFile} from './save-files.js';
+import {store} from './store.js';
+import {announceSaved} from './sync.js';
+
+const nearestCelebration = date => [nextMilestone(date, 'birthday'), nextMilestone(date, 'anniversary')].sort()[0];
+
+async function moveDate(date) {
+  await runCommand('date', {date});
+  store.view = 'broadcast';
+  render();
+}
+
+const UI_ACTIONS = {
+  broadcast: () => goView('broadcast'),
+  projects: () => goView('projects'),
+  wardrobe: () => goView('wardrobe'),
+  closeModal: () => closeDialog(),
+  credits: () => showCredits(),
+  viewJournal: () => { closeDialog(); store.view = 'journal'; render(); },
+  export: () => exportSave(),
+  async reload() {
+    const loaded = await storage.load();
+    if (!loaded) return;
+    store.state = validateSave(loaded, store.catalog);
+    store.stale = false;
+    store.saveError = false;
+    render();
+    toast('최신 일지를 불러왔어요.');
+  },
+  datePicker: () => openDatePicker(),
+  includeProject: () => runCommand('plan', {index: 1, corner: 'S'}),
+  quickDate(button) { $('#next-date').value = nextMilestone(store.state.date, button.dataset.kind); updateDateWarning(); },
+  async submitDate() {
+    await runCommand('date', {date: $('#next-date').value});
+    if (store.state.phase !== 'credits') closeDialog();
+    store.view = 'broadcast';
+    render();
+  },
+  nextWeek: () => moveDate(addDays(store.state.date, 7)),
+  nextCelebration: () => moveDate(nearestCelebration(store.state.date)),
+  settings: () => openSettings(),
+  about: () => openAbout(),
+  collection: () => openCollection(),
+  confirmNew: () => openConfirmNew(),
+  async new() {
+    await replaceState(newGame());
+    closeDialog();
+    announceSaved(store.state);
+    render();
+  },
+  async commitImport() {
+    await replaceState(getPendingImport());
+    clearPendingImport();
+    closeDialog();
+    render();
+    announceSaved(store.state);
+  },
+  ending: button => openEndingConfirm(button.dataset.id),
+  confirmEnding: button => runCommand('ending', {id: button.dataset.id}),
+  async continue() {
+    await runCommand('continue');
+    closeDialog();
+    store.view = 'broadcast';
+    render();
+  },
+};
+
+/** 명령 후 방송하기 탭으로 돌아가는 동작 */
+const RETURN_TO_BROADCAST = ['start', 'project', 'joinModule', 'resumeProject'];
+const COMMAND_TOASTS = {
+  craftAndPrepare: '새 옷의 준비도가 25 올랐어요.',
+  prepare: '오늘의 준비를 기록했어요.',
+  purchase: '주문을 기록했어요. 도착한 준비물은 기획 노트에서 확인해요.',
+  equip: '새로운 분위기로, 오늘의 코코.',
+};
+
+async function runEngineAction(action, button) {
+  const d = button.dataset;
+  await runCommand(action, {id: d.id, index: Number(d.index), action: d.kind, eventId: d.event, choiceId: d.id, outfitId: d.id});
+  if (RETURN_TO_BROADCAST.includes(action)) { store.view = 'broadcast'; focusScene(); }
+  render();
+  if (Object.hasOwn(COMMAND_TOASTS, action)) toast(COMMAND_TOASTS[action]);
+}
+
+async function onClick(e) {
+  const button = e.target.closest('[data-action],[data-view]');
+  if (!button || button.disabled) return;
+  e.preventDefault();
+  if (button.dataset.view) { goView(button.dataset.view); return; }
+  const action = button.dataset.action;
+  try {
+    if (Object.hasOwn(UI_ACTIONS, action)) await UI_ACTIONS[action](button);
+    else await runEngineAction(action, button);
+  } catch (error) {
+    toast(error.message || '일지를 처리하지 못했어요.');
+  }
+}
+
+const PREFERENCE_INPUTS = ['font-size', 'font-style', 'motion-toggle', 'sound-toggle'];
+
+async function onChange(e) {
+  try {
+    const el = e.target;
+    if (el.dataset.change === 'plan') await runCommand('plan', {index: Number(el.dataset.index), corner: el.value});
+    if (el.dataset.change === 'game') await runCommand('game', {gameId: el.value});
+    if (el.id === 'next-date') updateDateWarning();
+    if (el.id === 'import-file' && el.files[0]) openImportConfirm(await readImportFile(el.files[0]));
+    if (PREFERENCE_INPUTS.includes(el.id)) {
+      preferences.textSize = Number($('#font-size').value);
+      preferences.font = $('#font-style').value;
+      preferences.reducedMotion = $('#motion-toggle').checked;
+      preferences.sound = $('#sound-toggle').checked;
+      savePreferences();
+      render();
+      clickSound();
+    }
+  } catch (error) {
+    toast(error.message);
+  }
+}
+
+export function installEventHandlers() {
+  document.addEventListener('click', onClick);
+  document.addEventListener('change', onChange);
+}

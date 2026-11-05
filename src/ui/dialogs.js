@@ -1,0 +1,52 @@
+// 대화상자 화면: 크레딧 · 날짜 고르기 · 설정 · 안내 · 결말 모음 · 새 일지 · 가져오기 · 결말 확인.
+import {addDays, DEADLINE} from '../engine.js';
+import {$, btn, escape} from './dom.js';
+import {openDialog} from './modal.js';
+import {preferences} from './preferences.js';
+import {outfit, store} from './store.js';
+import {TOTAL_ENDINGS} from './views/journal.js';
+
+export function showCredits() {
+  const e = store.state.lastEnding;
+  if (!e) return;
+  openDialog('한 장의 마지막',`<div class="credits-scene"><span class="eyebrow">${e.forced?'TEN YEARS, ONE JOURNAL':'A CHAPTER TO REMEMBER'}</span><div class="credits-characters"><img src="${outfit().image}" alt="라코코"/>${e.forced?'<img class="spouse" src="assets/characters/kimongi-base-v1.png" alt="다수 중 한 명인 가상 키몽이"/>':''}</div><h1>${escape(e.title)}</h1><p>${escape(e.resolution)}</p><p class="epilogue">${escape(e.epilogue)}</p>${e.projectLog?`<div class="ending-memories">${e.projectLog.map(l=>`<p><span>${l.date}</span>${escape(l.text)}</p>`).join('')}</div>`:''}<span class="credit-thanks">라코코와, 서로 다른 목소리의 모든 키몽이들에게.</span><div class="credits-actions">${!e.forced?btn('같은 일지에서 방송 계속하기','continue','','button primary'):''}${btn('일지 돌아보기','viewJournal','','button secondary')}${btn('일지 내보내기','export','','button secondary')}${btn('새 일지 시작하기','confirmNew','','text-button')}</div></div>`);
+}
+
+export function openDatePicker() {
+  const {state} = store;
+  openDialog('다음 페이지의 날짜',`<p class="modal-description">건너뛴 날짜에는 수입이나 경험이 생기지 않아요. 중간의 생일·주년은 먼저 만나게 돼요.</p><label class="field-label">방송 날짜<input id="next-date" type="date" value="${addDays(state.date,7)}" min="${addDays(state.date,1)}" max="2100-12-31"/></label><div class="quick-dates">${btn('다음 생일','quickDate','data-kind="birthday"','button secondary')}${btn('다음 방송 주년','quickDate','data-kind="anniversary"','button secondary')}</div><p id="deadline-warning" class="ending-warning" hidden>이 날짜로 이동하면 이 일지의 마지막 장이 시작돼요. 현재 기록을 먼저 내보내 두는 것을 권해요.</p>${btn('이 날짜로 이동하기 →','submitDate','','button primary full')}`);
+  updateDateWarning();
+}
+
+/** 10년 기한을 넘기는 날짜를 고르면 경고 표시 */
+export function updateDateWarning() {
+  const node = $('#deadline-warning');
+  if (node) node.hidden = store.state.endingSeenEver || $('#next-date').value < DEADLINE;
+}
+
+export function openSettings() {
+  openDialog('나에게 편한 방송일지',`<label class="setting-row">글자 크기<select id="font-size"><option value="100">기본</option><option value="125">125%</option><option value="150">150%</option><option value="200">200%</option></select></label><label class="setting-row">본문 글꼴<select id="font-style"><option value="readable">읽기 편한 글꼴</option><option value="pixel">픽셀 글꼴</option></select></label><label class="setting-row">동작 줄이기<input id="motion-toggle" type="checkbox" ${preferences.reducedMotion?'checked':''}/></label><label class="setting-row">작은 효과음<input id="sound-toggle" type="checkbox" ${preferences.sound?'checked':''}/></label><div class="settings-files">${btn('일지 내보내기','export','','button secondary')}<label class="button secondary file-label">일지 가져오기<input type="file" id="import-file" accept="application/json,.json"/></label></div><p class="modal-description">이 브라우저에 자동 저장돼요. 다른 PC로 옮길 때는 일지 파일을 내보내 주세요.</p>${btn('새 일지 시작하기','confirmNew','','text-button danger')}`);
+  $('#font-size').value = preferences.textSize;
+  $('#font-style').value = preferences.font;
+}
+
+export function openAbout() {
+  openDialog('라코코의 방송일지',`<p class="about-intro">오늘의 방송이<br/><b>내일의 이야기가 되는 곳.</b></p><p>준비하고, 함께 방송하고, 기억할 장면을 남기는 비공식 선택형 팬게임이에요.</p><ul class="about-list"><li>준비 행동은 방송마다 2번, 코너는 3개예요.</li><li>기획은 특별 코너에서 자료·시범·피드백 순으로 만들어요.</li><li>새 옷은 준비 → 공개 → 무료 환복으로 이어져요.</li></ul><p class="modal-description">캐릭터: 사용자 제공 공식 참조를 바탕으로 만든 도트풍 이미지.<br/>픽셀 글꼴: Neo둥근모 · Eunbin Jeong · SIL OFL 1.1.<br/><a href="assets/fonts/neodgm-LICENSE.txt" target="_blank" rel="noopener">글꼴 라이선스 보기</a></p>`);
+}
+
+export function openCollection() {
+  const {state} = store;
+  openDialog('함께 만난 이야기들',`<p class="modal-description">만난 결말 ${state.reachedEndings.length} / ${TOTAL_ENDINGS}. 아직 만나지 않은 이야기는 첫 장면을 위해 남겨 둘게요.</p><div class="collection-list">${state.reachedEndings.length?state.reachedEndings.map(x=>`<article><span>✦</span><h3>${escape(x.title)}</h3><p>${escape(x.epilogue)}</p></article>`).join(''):'<p>아직 마지막 장을 쓰지 않았어요.<br/>지금의 작은 기획부터 함께 만들어 보세요.</p>'}</div>`);
+}
+
+export function openConfirmNew() {
+  openDialog('새 일지를 펼칠까요?',`<p>지금 기록을 먼저 파일로 남겨 두면 언제든 다시 가져올 수 있어요.</p><div class="modal-actions">${btn('현재 일지 내보내기','export','','button secondary')}${btn('새로운 첫 방송 시작','new','','button primary')}</div>`);
+}
+
+export function openImportConfirm(candidate) {
+  openDialog('일지 가져오기',`<p>${candidate.date} · ${candidate.broadcastIndex}번째 방송의 기록이에요.</p><p>현재 기록은 직전 저장으로 보관하고 이 일지로 이어갑니다. 필요하면 먼저 현재 일지를 내보내 주세요.</p>${btn('현재 일지 내보내기','export','','button secondary')}${btn('이 일지로 이어하기','commitImport','','button primary')}`);
+}
+
+export function openEndingConfirm(choiceId) {
+  openDialog('이 장의 마지막 선택',`<p>이 선택으로 현재 기획을 마무리하고 엔딩·크레딧으로 이어져요.</p>${btn('조금 더 생각하기','closeModal','','button secondary')}${btn('이 이야기로 마무리하기','confirmEnding',`data-id="${escape(choiceId)}"`,'button primary')}`);
+}
