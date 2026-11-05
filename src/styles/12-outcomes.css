@@ -25,4 +25,3 @@
 .outfit-ready .meter{height:6px;background:#efe6df;border-radius:6px;overflow:hidden}
 .outfit-ready .meter i{display:block;height:100%;background:linear-gradient(90deg,#c19f67,#b85b75)}
 .outfit-ready:not(.done){background:#fbf7f2;border-color:var(--line)}
-.neglect-hint{color:#9a4560;font-size:calc(12px * var(--text-scale))}

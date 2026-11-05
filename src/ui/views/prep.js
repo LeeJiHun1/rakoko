@@ -1,5 +1,5 @@
 // 방송 준비 화면: 준비 행동 2회 · 방송 켜기 · (선택) 편성/게임 변경 · 마지막 특집 예약.
-import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks, neglectOf, OUTFIT_PROGRESS_STEP, pendingOutfit} from '../../engine.js';
+import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks, OUTFIT_PROGRESS_STEP, pendingOutfit} from '../../engine.js';
 import {btn, escape} from '../dom.js';
 import {store} from '../store.js';
 import {projectMini} from './project-mini.js';
@@ -14,14 +14,14 @@ function outfitAction(state) {
   return `<button class="prep-action outfit-prep" data-action="prepare" data-kind="outfit" ${disabled?'disabled':''}><span class="action-icon">♧</span><span><b>의상 준비 <small class="secret-tag">비밀</small></b><small>비용 없음 · 준비도 ${escape(p)}% → ${escape(Math.min(100,p+OUTFIT_PROGRESS_STEP))}%</small></span><span class="arrow">+</span></button>`;
 }
 
-/** 준비 중인 새 옷 카드: 준비도·소홀 경고·공개 예약(덜 준비돼도 가능하지만 실패 위험 — 대략 표시) */
+/** 준비 중인 새 옷 카드: 준비도·공개 예약(덜 준비돼도 가능하지만 실패 위험 — 대략 표시). 소홀 점수·유출 위험은 숨김. */
 function outfitReady(state) {
   const id = pendingOutfit(state);
   if (!id) return '';
-  const p = state.outfitProgress[id], done = p >= 100, neglect = neglectOf(state, id);
+  const p = state.outfitProgress[id], done = p >= 100; // 준비 소홀 점수·유출 위험은 화면에 드러내지 않는다(사용자 결정)
   const title = state.outfitReserved ? `이번 방송 3번째 코너에서 공개해요${done?'':' · 준비 부족, 실패 위험'}` : done ? '커튼 뒤에서 새 옷이 기다리고 있어요' : `준비 ${p}% · 지금 공개하면 실패할 수도 있어요`;
   const label = state.outfitReserved ? '공개 예약 해제' : done ? '이번 방송에서 공개하기' : '이대로 공개 예약하기';
-  return `<div class="outfit-ready${done?' done':''}"><span class="eyebrow">${done?'새 의상 준비 완료':'준비 중인 새 의상 · 이름은 비밀'}</span><div class="meter"><i data-meter="${escape(p)}"></i></div><b>${escape(title)}</b>${!done&&neglect?'<small class="neglect-hint">준비를 미루는 중 · 유출 위험이 커지고 있어요</small>':''}${btn(label,'reserveOutfit','',done&&!state.outfitReserved?'button primary small':'button secondary small')}</div>`;
+  return `<div class="outfit-ready${done?' done':''}"><span class="eyebrow">${done?'새 의상 준비 완료':'준비 중인 새 의상 · 이름은 비밀'}</span><div class="meter"><i data-meter="${escape(p)}"></i></div><b>${escape(title)}</b>${btn(label,'reserveOutfit','',done&&!state.outfitReserved?'button primary small':'button secondary small')}</div>`;
 }
 
 function prepButtons(state) {
