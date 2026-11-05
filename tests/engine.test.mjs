@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {newGame,dispatch,unmet,skill,addDays,nextMilestone,yearsPlayed,finaleLocks,projectProgressLocks,validateSave,migrateSave,loadSave,DEADLINE,STYLES,prepBonus} from '../src/engine.js';
+import {newGame,dispatch,unmet,skill,addDays,nextMilestone,yearsPlayed,firstEndingDate,endingUnlocked,finaleLocks,projectProgressLocks,validateSave,migrateSave,loadSave,DEADLINE,STYLES,prepBonus} from '../src/engine.js';
 import {assignStyles,rollGrade,scaleGains,oddsFor} from '../src/engine/outcome.js';
 import {broadcastGrade,GRADE_INCOME} from '../src/engine/audience.js';
 import {offerWeight,priceTier,unlockedTier} from '../src/engine/purchases.js';
@@ -62,6 +62,8 @@ test('schema 1 saves migrate to 2 with records restored from journal',()=>{let s
 
 test('purchases appear as broadcast interludes, never consume a corner, and pricier items come later',()=>{const early={completedBroadcasts:0},late={completedBroadcasts:30};const tiers=catalog.moneyEvents.map(e=>[e,priceTier(e)]);assert.equal(unlockedTier(early),0);assert.equal(unlockedTier(late),3);for(const [e,t] of tiers){if(t>=2)assert.equal(offerWeight(early,e),0,e.id);if(t===3)assert(offerWeight(late,e)>offerWeight(late,tiers.find(([,x])=>x===0)[0]));}let found=null;for(let seed=1;seed<200&&!found;seed++){let s=act(newGame(seed),'start');let guard=0;while(['event','result'].includes(s.phase)&&guard++<20){if(s.phase==='result'){s=act(s,'advance');continue;}if(s.event.kind==='shop'){const buy=s.event.choices.find(c=>c.purchase&&!unmet(s,c.requirements,catalog).length);const slot=s.slot,cash=s.cash;s=act(s,'choose',{id:buy.id});assert.equal(s.slot,slot);assert(s.cash<cash);assert.equal(s.currentLog.length,slot);assert(s.purchases.at(-1).effects.length);s=act(s,'advance');assert.equal(s.slot,slot);assert.notEqual(s.event.kind,'shop');found=s;continue;}s=act(s,'choose',{id:available(s)[0].id});}if(found){while(['event','result'].includes(found.phase)){if(found.phase==='result'){found=act(found,'advance');continue;}found=act(found,'choose',{id:available(found)[0].id});}assert.equal(found.journal[0].events.length,3);}}assert(found,'구매 막간을 찾지 못함');});
 
+test('first ending opens at day 150 instead of the first anniversary',()=>{assert.equal(firstEndingDate(),'2026-06-17');let s=newGame(200);s=act(s,'project',{id:'END-001'});for(let i=0;i<3;i++)s=act(s,'plan',{index:i,corner:'S'});for(let b=0;b<3;b++){s=finish(s);s=next(s);}assert.equal(s.project.step,3);assert(finaleLocks(s,catalog).some(x=>x.includes('150일째')));s=act(s,'date',{date:'2026-06-17'});const locks=finaleLocks(s,catalog);assert(!locks.some(x=>x.includes('150일째')),locks.join());});
+
 // Real reachability witnesses: never inject stats, story flags or experiences.
 function witness(def,seed){
   let s=def.requiresOutfit?unlockedOutfit(seed):newGame(seed);
@@ -79,7 +81,7 @@ function witness(def,seed){
     }
     if(s.phase==='wrap'){
       let target=addDays(s.date,1);
-      if(s.project.step===3&&!unmet(s,def.requirements,catalog).length&&yearsPlayed(s)<1)target='2027-01-18';
+      if(s.project.step===3&&!unmet(s,def.requirements,catalog).length&&!endingUnlocked(s))target=firstEndingDate();
       if(s.deferUntil&&s.date<s.deferUntil)target=s.deferUntil;
       s=act(s,'date',{date:target});
     }

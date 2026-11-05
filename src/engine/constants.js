@@ -25,6 +25,8 @@ export const LEAK_MIN_PROGRESS = 40;
 export const MODULE_DURATION_DAYS = 120;
 export const PLAYER_SKILL_THRESHOLD = 30;
 
+/** 첫 결말(마지막 특집) 허용 시점: 방송 시작 후 150일 ≈ 주 1회 기준 23회차 (사용자 결정 Q3: 한 판 약 20~25회) */
+export const FIRST_ENDING_DAYS = 150;
 export const ENDING_RECHECK_DAYS = 30;
 export const DEFER_ENDING_DAYS = 90;
 export const CONTINUE_COOLDOWN_DAYS = 365;

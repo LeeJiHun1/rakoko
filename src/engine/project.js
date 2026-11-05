@@ -1,5 +1,5 @@
 // 특별 기획: 시작 → 자료(0) → 시범(1) → 피드백(2) → 완료(3) → 마지막 특집 예약.
-import {yearsPlayed} from './dates.js';
+import {endingUnlocked, firstEndingDate} from './dates.js';
 import {awardExperience, gain} from './growth.js';
 import {unmet} from './requirements.js';
 import {clone, setPath} from './util.js';
@@ -28,7 +28,7 @@ export function projectProgressLocks(s, catalog) {
 export function finaleLocks(s, catalog) {
   const reasons = [];
   if (!s.project || s.project.step < PROJECT_DONE_STEP) reasons.push('현재 기획의 자료·시범·피드백을 먼저 마쳐주세요');
-  if (yearsPlayed(s) < 1) reasons.push('첫 1주년부터 마지막 특집을 열 수 있어요');
+  if (!endingUnlocked(s)) reasons.push(`방송 150일째(${firstEndingDate()})부터 마지막 특집을 열 수 있어요`);
   if (s.deferUntil && s.date < s.deferUntil) reasons.push(`${s.deferUntil} 이후 다시 마무리 기획을 정할 수 있어요`);
   if (s.project) {
     const def = findProject(catalog, s.project.id);

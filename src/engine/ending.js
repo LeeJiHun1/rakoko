@@ -1,16 +1,16 @@
 // 결말: 일반 결말 제안(정산 직후) · 마지막 선택 · 미루기 · 계속하기 · 10년 강제 결말.
-import {CONTINUE_COOLDOWN_DAYS, DEFER_ENDING_DAYS, ENDING_RECHECK_DAYS} from './constants.js';
-import {addDays, daysBetween, yearsPlayed} from './dates.js';
+import {CONTINUE_COOLDOWN_DAYS, DEFER_ENDING_DAYS, ENDING_RECHECK_DAYS, FIRST_ENDING_DAYS} from './constants.js';
+import {addDays, daysBetween, daysPlayed, endingUnlocked} from './dates.js';
 import {unmet} from './requirements.js';
 import {random} from './rng.js';
 import {clone} from './util.js';
 
-/** 예약이 없으면 30일마다 확률(1주년 5% + 해마다 3%, 최대 35%)로 결말을 제안한다. */
-const endingChance = s => Math.min(.35, .05 + (yearsPlayed(s) - 1) * .03);
+/** 예약이 없으면 30일마다 확률(150일째 5% + 120일마다 3%p, 최대 35%)로 결말을 제안한다. */
+const endingChance = s => Math.min(.35, .05 + Math.floor((daysPlayed(s) - FIRST_ENDING_DAYS) / 120) * .03);
 
 /** 방송 정산 직후 호출. 조건이 맞으면 phase 를 'ending' 으로 바꾼다. */
 export function offerEndingIfReady(s, catalog) {
-  if (!s.project || s.project.step < 3 || yearsPlayed(s) < 1) return;
+  if (!s.project || s.project.step < 3 || !endingUnlocked(s)) return;
   const e = catalog.endingEvents.find(e => e.id === s.project.eventId);
   if (unmet(s, e.eligibility.all, catalog).length || !e.choices.some(c => !unmet(s, c.prerequisites.all, catalog).length)) return;
   if (s.deferUntil && s.date < s.deferUntil) return;

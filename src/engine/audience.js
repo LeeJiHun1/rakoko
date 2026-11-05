@@ -4,6 +4,8 @@ import {random} from './rng.js';
 
 const GRADE_SCORE = {great: 3, success: 2, miss: 1};
 export const GRADE_INCOME = {S: 1.3, A: 1.15, B: 1, C: .9};
+/** 잘 된 방송은 이름을 알린다: 등급별 인지도 (인지도 성장 경로가 좁던 문제 보완, F4) */
+export const GRADE_AWARENESS = {S: 2, A: 1, B: 0, C: 0};
 const GRADE_VIEWERS = {S: 1.5, A: 1.25, B: 1, C: .85};
 const TIER_VIEWERS = [1, 2, 4, 8, 15];
 const GRADE_RANK = {C: 0, B: 1, A: 2, S: 3};
