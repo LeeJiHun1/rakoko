@@ -6,7 +6,7 @@
 ## 지금 상태 (마지막 갱신: 2026-11-05)
 
 - 브랜치: `refactor/modular-structure` (기준선 `main` = `1668cdb`)
-- 진행 중: **없음 — 완성도 단계 G1~G6·시각 다듬기 V1 완료. 에셋(docs/ASSET-REQUESTS.md) 받으면 V2 연결.**
+- 진행 중: **B2 장기 콘텐츠 문구 보강**. 사용자가 저장소 안에서 에셋 제작 중(`assets/backgrounds/`, `assets/characters/rakoko-face-*.png`, `work/asset-production/`) — 넘겨받기 전까지 손대지·커밋하지 않음(git add 는 경로 지정).
 - 공개 전 사용자 결정 대기: 원격이 public 이라 push 즉시 공개 · 커밋 작성자 이메일 · 채팅 수집기/인용 공개 여부 (AUDIT S10·S11) 리팩터링·검토 수정 11단계 완료, 사용자 결정 6건 수령. 엔진(2)·UI(3)·CSS(4) 분리 완료 — 골든 8시드·UI 76단계 HTML·스크린샷 10쌍 모두 일치
 - 기획 검토: `docs/DESIGN-REVIEW.md` 작성 완료 → **사용자 결정 6건 대기** (아래 「결정 대기」)
 - 검증 명령: `npm test` (엔진 56건 + 골든 8시드) · `npm run check` · `npm run build`
@@ -51,7 +51,9 @@
 | G5 | 지난 기록 시청자 추이 그래프·결산 | 완료 `e948c53` |
 | G6 | 결말 모음 33칸·v0.2·문서·README 정리, 최종 플레이 검토 | 완료 `24fb6e0` |
 | V1 | 시각 다듬기(에셋 없이 CSS·SVG): 방송 중 스튜디오 채팅·시청자 오버레이, 코너 색, 카드·버튼 연출 | 완료 `aaf0411` |
-| V2 | 에셋 연결(사용자에게 요청: `docs/ASSET-REQUESTS.md`) | 에셋 대기 |
+| V2 | 에셋 연결(요청: `docs/ASSET-REQUESTS.md` v1 — 사용자 작업 중이라 수정 금지, 변경·추가는 `docs/ASSET-REQUESTS-v2.md`: 표정 초상 의상별 5×5, 사건 삽화·등급 도장·응원·사운드 등) | 에셋 대기 |
+| B1 | 보완: 편성 궁합·대표 장면 클립·결말 뒤 대기 120일·일지 나눠 보기 | 완료 `2877c7e` |
+| B2 | 장기 콘텐츠 사건 본문 64·결과 192 보강(작가 에이전트) — 연결 코드 `02d24e2` | 진행 중 |
 | — | `refactor/modular-structure` → `main` 병합·push 는 사용자 확인 후 | 대기 |
 
 ## 구조 문서
