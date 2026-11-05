@@ -5,7 +5,7 @@ import {rollDonation} from './audience.js';
 import {gain} from './growth.js';
 import {commitModuleChoice} from './module.js';
 import {gradeOutcome, prepBonus, rollGrade, scaleGains} from './outcome.js';
-import {reveal} from './outfit.js';
+import {reveal, startOutfit} from './outfit.js';
 import {advanceProject, projectProgressLocks} from './project.js';
 import {reactions} from './reactions.js';
 import {unmet} from './requirements.js';
@@ -32,15 +32,18 @@ const KIND_EFFECTS = {
   },
   project(s, e, c, catalog) { if (!c.postpone) advanceProject(s, c, catalog); },
   calendar(s, e) { s.celebrations.push(e.celebrationKey); },
-  reveal(s, e) { reveal(s, e.outfitId); },
+  reveal(s, e) { reveal(s, e.outfitId); s.result.unlockedOutfit = e.outfitId; },
+  /** 유출 대응: 대응 종류를 기록(공개 대사에 반영), '지금 공개'·수습 실패는 조기 공개 */
   leak(s, e, c) {
-    s.leaked[e.outfitId] = true;
-    if (c.risk && random(s) < c.risk) {
-      reveal(s, e.outfitId);
-      s.result.outcome = '앗, 전체 화면까지 나와 버렸다! 예상보다 이른 공개였지만 새 옷은 옷장에 남았다.';
-      s.result.kind = 'reveal';
-    }
+    s.leaked[e.outfitId] = c.id;
+    const early = c.id === 'now' || (c.risk && random(s) < c.risk);
+    if (!early) return;
+    reveal(s, e.outfitId, {mode: 'early'});
+    if (c.id !== 'now') s.result.outcome = '앗, 전체 화면까지 나와 버렸다! 예상보다 이른 공개였지만 새 옷은 옷장에 남았다.';
+    s.result.kind = 'reveal';
+    s.result.unlockedOutfit = e.outfitId;
   },
+  outfitFollowup(s) { s.outfitFollowup = null; },
   promise(s, e, c) {
     const p = s.promises.find(x => x.id === e.promiseId);
     if (c.id === 'fulfill') p.status = 'fulfilled';
@@ -56,11 +59,17 @@ function segmentGameOf(s, e) {
   return s.project && e.kind === 'project' ? s.project.gameId : s.gameId;
 }
 
-/** 구매 막간: 코너가 아니므로 성장·응원·코너 기록 없이 결과만 남기고 같은 코너로 돌아간다. */
-function applyShopChoice(s, e, c, catalog) {
-  const def = catalog.moneyEvents.find(x => x.id === e.moneyEventId), option = def?.choices.find(x => x.id === c.id);
-  if (c.purchase) buyOption(s, def, option);
-  s.result = {title: e.title, choice: c.text, outcome: c.purchase ? `${c.outcome} ${c.effectSummary}` : c.outcome, kind: 'shop', interlude: true, changes: {}};
+/** 막간(구매·새 의상 제안): 코너가 아니므로 성장·응원·코너 기록 없이 결과만 남기고 같은 코너로 돌아간다. */
+function applyInterludeChoice(s, e, c, catalog) {
+  let outcome = c.outcome;
+  if (e.kind === 'shop') {
+    const def = catalog.moneyEvents.find(x => x.id === e.moneyEventId), option = def?.choices.find(x => x.id === c.id);
+    if (c.purchase) { buyOption(s, def, option); outcome = `${c.outcome} ${c.effectSummary}`; }
+  } else if (c.start) {
+    startOutfit(s, e.outfitId);
+    outcome = `${c.outcome} 준비도 ${s.outfitProgress[e.outfitId]}%.`;
+  }
+  s.result = {title: e.title, choice: c.text, outcome, kind: e.kind, interlude: true, changes: {}};
   s.result.reactions = reactions(s, c);
   s.phase = 'result';
 }
@@ -68,10 +77,10 @@ function applyShopChoice(s, e, c, catalog) {
 export function applyChoice(s, id, catalog) {
   const e = s.event, c = e.choices.find(c => c.id === id);
   if (!c) throw Error('선택지를 찾을 수 없어요.');
-  if (e.kind === 'shop') {
+  if (['shop', 'outfitOffer'].includes(e.kind)) {
     const locks = unmet(s, c.requirements || [], catalog);
     if (locks.length) throw Error(locks.join(' · '));
-    applyShopChoice(s, e, c, catalog);
+    applyInterludeChoice(s, e, c, catalog);
     return;
   }
   const reasons = unmet(s, c.requirements || [], catalog, e.kind === 'module' ? s.module?.gameId : undefined);

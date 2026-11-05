@@ -15,6 +15,8 @@ const LIST_KEYS = ['journal', 'commands', 'promises', 'purchases', 'experienceRe
 export const MIGRATIONS = {
   /** 1 → 2: 역대 기록(records) 추가. 지난 일지의 최고 수입은 복원하고 나머지는 0에서 시작 */
   1: s => ({...s, schemaVersion: 2, records: {...emptyRecords(), bestGross: Math.max(0, ...s.journal.map(j => j.income?.gross || 0))}}),
+  /** 2 → 3: 신의상 시작 기록(준비도가 있던 옷은 시작한 것으로), 조기 공개 후속 코너 */
+  2: s => ({...s, schemaVersion: 3, outfitStarted: Object.fromEntries(Object.entries(s.outfitProgress || {}).filter(([id, p]) => p > 0 && !s.wardrobe?.[id]).map(([id]) => [id, true])), outfitFollowup: null}),
 };
 
 /** 예전 형식 저장본을 현재 형식으로 올린다. 더 새로운 버전의 저장본은 거부한다. */
@@ -80,7 +82,10 @@ function validateShape(s, catalog) {
   if (s.project && !gameIds.includes(s.project.gameId)) fail('현재 기획을 확인할 수 없어요.');
   if (!onlyKeys(s.wardrobe, outfitIds) || !Object.values(s.wardrobe).every(v => v === true) || !s.wardrobe[s.equipped]) fail('옷장 기록이 올바르지 않아요.');
   if (!onlyKeys(s.outfitProgress, outfitIds) || !Object.values(s.outfitProgress).every(v => isInt(v, 0, 100))) fail('옷장 기록이 올바르지 않아요.');
-  if (!isPlainObject(s.reservations) || !Object.entries(s.reservations).every(([k, v]) => ['0', '1', '2'].includes(k) && ['calendar', 'outfit', 'finale'].includes(v))) fail('예약 기록이 올바르지 않아요.');
+  if (!isPlainObject(s.reservations) || !Object.entries(s.reservations).every(([k, v]) => ['0', '1', '2'].includes(k) && ['calendar', 'outfit', 'finale', 'outfitFollowup'].includes(v))) fail('예약 기록이 올바르지 않아요.');
+  if (!onlyKeys(s.outfitStarted, outfitIds) || !Object.values(s.outfitStarted).every(v => v === true)) fail('옷장 기록이 올바르지 않아요.');
+  if (!(s.outfitFollowup == null || outfitIds.includes(s.outfitFollowup))) fail('옷장 기록이 올바르지 않아요.');
+  if (!onlyKeys(s.leaked, outfitIds) || !Object.values(s.leaked).every(v => v === true || ['hide', 'teaser', 'risky', 'now'].includes(v))) fail('옷장 기록이 올바르지 않아요.');
   if (!isInt(s.dataPrepared, 0, 2) || !(s.practicedToday == null || isInt(s.practicedToday, 0, 2))) fail('준비 기록이 올바르지 않아요.');
   if (['event', 'ending'].includes(s.phase) && !isStr(s.event?.title)) fail('진행 중 사건이 없어요.');
   if (s.phase === 'result' && !isResult(s.result)) fail('선택 결과 기록이 올바르지 않아요.');

@@ -19,6 +19,8 @@ function reserveSpecials(s) {
   if (type && !s.celebrations.includes(celebrationKey(type, s.date))) s.reservations[RESERVATION_SLOT.calendar] = 'calendar';
   if (s.outfitReserved && !s.wardrobe[s.crafting]) s.reservations[RESERVATION_SLOT.outfit] = 'outfit';
   if (s.finaleScheduled) s.reservations[RESERVATION_SLOT.finale] = 'finale';
+  // 조기 공개로 미뤄진 소개 코너: 공개 자리(3번째)가 비면 거기, 아니면 첫 코너
+  if (s.outfitFollowup) { const slot = s.reservations[RESERVATION_SLOT.outfit] ? (s.reservations[0] ? null : 0) : RESERVATION_SLOT.outfit; if (slot != null) s.reservations[slot] = 'outfitFollowup'; }
   for (const key of Object.keys(s.reservations)) s.plan[Number(key)] = 'S';
 }
 

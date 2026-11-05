@@ -42,7 +42,8 @@ index.html ─ src/app.js ─ src/ui/boot.js
 | `engine/events/module-events.js` | 장기 콘텐츠 사건·대회 경기 |
 | `engine/events/factory.js` | `event()`·`choice()` 객체 생성 |
 | `engine/preparation.js` | 준비 행동 (자료·연습·점검·의상) |
-| `engine/outfit.js` · `project.js` · `module.js` · `economy.js` · `ending.js` · `calendar.js` | 도메인 규칙 + 해당 명령 |
+| `engine/outfit.js` | 신의상: 제안 이벤트(막간)→시작(첫 준비비)→준비→공개 예약→공개(해금만, 자동 환복 없음)·조기 공개 후속, 유출은 의상당 1회 |
+| `project.js` · `module.js` · `economy.js` · `ending.js` · `calendar.js` | 도메인 규칙 + 해당 명령 |
 | `engine/growth.js` | 능력 성장(방송당 상한)·경험 기록 |
 | `engine/requirements.js` | 카탈로그 조건식 `{path, op, value}` 평가와 잠금 사유 문구 |
 | `engine/reactions.js` | 결과 화면 키몽이 채팅 3줄 |

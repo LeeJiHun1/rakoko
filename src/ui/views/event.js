@@ -29,11 +29,14 @@ function eventTag(e) {
   if (e.kind === 'project') return '작은 기획의 한 단계';
   if (e.kind === 'module') return '함께 이어가는 콘텐츠';
   if (e.kind === 'shop') return '코너 사이 잠깐, 장보기';
+  if (e.kind === 'outfitOffer') return '코너 사이 잠깐, 새 의상 제안';
+  if (e.kind === 'outfitFollowup') return '공개 코너 대신';
+  if (e.kind === 'reveal') return '신의상 공개';
   return e.provenance === 'adaptation' ? '방송에서 착안한 이야기' : '오늘 찾아온 이야기';
 }
 
 export function eventScreen() {
   const {state} = store, e = state.event;
   return `<div class="broadcast-progress">${[0,1,2].map((i)=>`<span class="${i===state.slot?'current':i<state.slot?'done':''}">${i<state.slot?'✓':String(i+1).padStart(2,'0')} ${CORNERS[state.plan[i]]}</span>`).join('')}</div>
-  <article class="event-card"><div class="event-meta">${tag(eventTag(e))}<span>SCENE ${escape(String(Number(state.slot)+1).padStart(2,'0'))}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${oddsNote(e)}${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.</p>`;
+  <article class="event-card"><div class="event-meta">${tag(eventTag(e))}<span>SCENE ${escape(String(Number(state.slot)+1).padStart(2,'0'))}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${e.kind==='reveal'?'<div class="reveal-stage"><img src="assets/events/outfit-journal/stage-closed-v1.png" alt="닫힌 무대 커튼" width="1672" height="941"/></div>':''}${oddsNote(e)}${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.</p>`;
 }

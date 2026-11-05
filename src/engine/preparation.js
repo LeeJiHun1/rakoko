@@ -1,6 +1,6 @@
 // 방송 전 준비 행동(방송마다 2회): 자료 준비 · 게임 연습 · 화면 점검 · 의상 준비.
 import {gain} from './growth.js';
-import {isCraftable, prepareOutfit} from './outfit.js';
+import {isCraftable, isStarted, prepareOutfit} from './outfit.js';
 
 const PREPARE_ACTIONS = {
   data(s) { gain(s, 'planning', 2); s.dataPrepared++; },
@@ -21,6 +21,7 @@ export const commands = {
   /** 옷장 화면의 "제작하기": 준비할 의상을 바꾸고 바로 의상 준비 1회 */
   craftAndPrepare: {prepOnly: true, run(s, c, catalog) {
     if (!isCraftable(catalog, c.outfitId)) throw Error('의상을 골라주세요.');
+    if (!isStarted(s, c.outfitId)) throw Error('방송 중 새 의상 제안을 받아 준비를 시작해주세요.');
     if (s.crafting !== c.outfitId) s.outfitReserved = false;
     s.crafting = c.outfitId;
     prepare(s, 'outfit');

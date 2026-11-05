@@ -50,6 +50,14 @@ const pools={
     '손이 생각보다 먼저 갔네 ㅋㅋ','그 키는 아니었다 ㅋㅋㅋ','아 나도 깜짝 놀랐네','일단 진정하고 다시 가자','이번 키는 기억해 두자',
     '방금은 손도 당황했겠는데','다음엔 천천히 누르자','이런 장면도 일지에 남는 거야?','ㅋㅋ 괜찮아 이어가자'
   ],
+  outfit_offer:[
+    '새 옷?! 무조건 찬성','어떤 옷일지 벌써 궁금하다','공개 날 꼭 올게','힌트 더 줘 ㅋㅋ','이름은 비밀이라니 더 궁금해',
+    '준비하는 과정도 보여줘','설렌다 진짜','다음 의상 기대 중','천천히 준비해도 기다릴게','벌써 공개 날짜 정하고 싶다'
+  ],
+  outfit_followup:[
+    '그때 너무 급했지 ㅋㅋ','디테일 이제야 보이네','다시 봐도 예쁘다','별명 투표 재밌다','소매 장식 귀엽다',
+    '급공개도 추억이지','오늘 제대로 본다','이 옷 자주 입어줘','이제야 실감 난다','그날 채팅 난리였는데 ㅋㅋ'
+  ],
   shopping:[
     '지갑 열리는 소리 들린다 ㅋㅋ','이건 투자지 투자','장비 좋아지면 방송도 좋아지지','오 그거 사는 거야?','다음 방송 기대된다',
     '현명한 소비 인정','참는 것도 능력이다 ㅋㅋ','택배 언제 와?','이번엔 패스도 괜찮아','장바구니만 담아 두자',
@@ -150,6 +158,8 @@ const pools={
 export const CHAT_POOLS=Object.fromEntries(Object.entries(pools).map(([context,lines])=>[context,lines.map((text,i)=>({id:`${context}:${i}`,text}))]));
 export function chatContext(event,selected,result,module){
   if(event.kind==='shop')return 'shopping';
+  if(event.kind==='outfitOffer')return 'outfit_offer';
+  if(event.kind==='outfitFollowup')return 'outfit_followup';
   if(event.kind==='leak')return result.kind==='reveal'?'leak_early':'leak_partial';
   if(event.kind==='reveal')return 'outfit_reveal';
   if(event.kind==='calendar')return event.celebrationType==='birthday'?'birthday':'anniversary';

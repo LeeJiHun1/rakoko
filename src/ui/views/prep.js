@@ -1,13 +1,29 @@
 // 방송 준비 화면: 준비 행동 2회 · 방송 켜기 · (선택) 편성/게임 변경 · 마지막 특집 예약.
-import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks} from '../../engine.js';
+import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks, OUTFIT_COST, OUTFIT_PROGRESS_STEP, pendingOutfit} from '../../engine.js';
+import {money} from '../dom.js';
 import {btn, escape} from '../dom.js';
 import {store} from '../store.js';
 import {projectMini} from './project-mini.js';
 
 const PREP_ACTIONS = [['data', '▤', '자료 준비', '기획력 +2 · 잡담·팬 참여·특별 기획 코너가 유리'], ['practice', '▣', '게임 연습', '숙련 +2 · 게임 도전 코너가 크게 유리'], ['check', '◉', '화면 점검', '운영력 +1 · 모든 코너의 실수 감소']];
 
+/** 준비 중인 새 옷이 있으면 네 번째 준비 행동 '의상 준비' */
+function outfitAction(state) {
+  const id = pendingOutfit(state), p = id ? state.outfitProgress[id] : 0;
+  if (!id || p >= 100) return '';
+  const disabled = !state.preparations || state.cash < OUTFIT_COST;
+  return `<button class="prep-action outfit-prep" data-action="prepare" data-kind="outfit" ${disabled?'disabled':''}><span class="action-icon">♧</span><span><b>의상 준비 <small class="secret-tag">비밀</small></b><small>${money(OUTFIT_COST)} · 준비도 ${escape(p)}% → ${escape(Math.min(100,p+OUTFIT_PROGRESS_STEP))}%${state.cash<OUTFIT_COST?' · 자금 부족':''}</small></span><span class="arrow">+</span></button>`;
+}
+
+/** 준비를 마친 새 옷: 이번 방송 3번째 코너에서 공개 예약 */
+function outfitReady(state) {
+  const id = pendingOutfit(state);
+  if (!id || state.outfitProgress[id] < 100) return '';
+  return `<div class="outfit-ready"><span class="eyebrow">새 의상 준비 완료</span><b>${state.outfitReserved?'이번 방송 3번째 코너에서 공개해요':'커튼 뒤에서 새 옷이 기다리고 있어요'}</b>${btn(state.outfitReserved?'공개 예약 해제':'이번 방송에서 공개하기','reserveOutfit','',state.outfitReserved?'button secondary small':'button primary small')}</div>`;
+}
+
 function prepButtons(state) {
-  return PREP_ACTIONS.map(([id,icon,title,sub])=>{const disabled=!state.preparations||(id==='check'&&state.checked);return `<button class="prep-action" data-action="prepare" data-kind="${id}" ${disabled?'disabled':''}><span class="action-icon">${icon}</span><span><b>${title}</b><small>${sub}</small></span><span class="arrow">${id==='check'&&state.checked?'✓':'+'}</span></button>`;}).join('');
+  return PREP_ACTIONS.map(([id,icon,title,sub])=>{const disabled=!state.preparations||(id==='check'&&state.checked);return `<button class="prep-action" data-action="prepare" data-kind="${id}" ${disabled?'disabled':''}><span class="action-icon">${icon}</span><span><b>${title}</b><small>${sub}</small></span><span class="arrow">${id==='check'&&state.checked?'✓':'+'}</span></button>`;}).join('') + outfitAction(state);
 }
 
 /** 예약된 특집이 들어갈 코너는 편성 변경을 막고 이름을 바꿔 보여준다. */
@@ -42,6 +58,7 @@ export function prep() {
   return `<div class="simple-flow" aria-label="방송 진행 순서"><span class="active">1 준비</span><i>→</i><span>2 방송</span><i>→</i><span>3 일지</span></div>
   <p class="simple-guide">준비를 최대 2번 고른 뒤, <b>방송 켜기</b>를 눌러주세요.</p>
   <div class="section-heading space-top"><h2>오늘은 무엇을 준비할까요?</h2><span class="remaining"><b>${state.preparations}</b>번 남음</span></div>
+  ${outfitReady(state)}
   <div class="prep-grid simple-preps">${prepButtons(state)}</div>${activeEffectList(state)}
   <div class="simple-broadcast-start">${btn('방송 켜기 <span>→</span>','start','','button primary full')}<p>준비를 건너뛰고 바로 시작해도 괜찮아요.</p></div>
   ${projectMini()}
@@ -49,6 +66,6 @@ export function prep() {
   <details class="optional-options"><summary>코너·게임 바꾸기 <small>선택사항</small></summary><p class="view-description">기본 편성은 ${summary}. 원하는 경우에만 바꿔주세요.</p>
   <div class="program">${programSlots(state, calendar)}</div>
   <label class="game-select"><span>오늘의 게임</span><select data-change="game" aria-label="오늘의 게임">${catalog.games.map(g=>`<option value="${g.id}" ${g.id===state.gameId?'selected':''}>${escape(g.name)}</option>`).join('')}</select></label></details>
-  <div class="simple-secondary">${btn('새 의상 준비하기','wardrobe','','button secondary')}${btn('방송 날짜 바꾸기','datePicker','','text-button')}</div>
+  <div class="simple-secondary">${btn('옷장 열기','wardrobe','','button secondary')}${btn('방송 날짜 바꾸기','datePicker','','text-button')}</div>
   ${finaleNote(state, catalog)}`;
 }
