@@ -5,13 +5,19 @@ import {rollDonation} from './audience.js';
 import {gain} from './growth.js';
 import {commitModuleChoice} from './module.js';
 import {gradeOutcome, prepBonus, rollGrade, scaleGains} from './outcome.js';
-import {reveal, startOutfit} from './outfit.js';
+import {attemptReveal, reveal, startOutfit} from './outfit.js';
 import {advanceProject, projectProgressLocks} from './project.js';
 import {reactions} from './reactions.js';
 import {unmet} from './requirements.js';
 import {random} from './rng.js';
 import {skill} from './state.js';
 import {clone} from './util.js';
+
+const REVEAL_FAIL_TEXT = [
+  '커튼을 여는 순간 리본이 툭 풀려 버렸다. 키몽이들의 \'괜찮아!\' 속에 공개는 다음으로 미뤘다.',
+  '소품 단추가 데구루루 굴러가 버렸다. 웃음바다 속에 오늘 공개는 리허설로 남기기로 했다.',
+  '조명이 맞지 않아 실루엣만 보였다. 제대로 보여주고 싶어 공개를 한 번 더 준비하기로 했다.',
+];
 
 /** 사건 종류(kind)별 고유 효과. routine·finale 은 공통 성장만 있다.
  *  {gain} 을 돌려주면 선택지의 기본 성장(c.gain) 대신 그 값을 쓴다(결과 편차). */
@@ -32,13 +38,23 @@ const KIND_EFFECTS = {
   },
   project(s, e, c, catalog) { if (!c.postpone) advanceProject(s, c, catalog); },
   calendar(s, e) { s.celebrations.push(e.celebrationKey); },
-  reveal(s, e) { reveal(s, e.outfitId); s.result.unlockedOutfit = e.outfitId; },
+  /** 공개: 덜 준비됐으면 확률로 실패(해금 안 됨) — 실패는 가벼운 해프닝 */
+  reveal(s, e) {
+    if (attemptReveal(s, e.outfitId)) { s.result.unlockedOutfit = e.outfitId; return; }
+    s.result.kind = 'revealFailed';
+    s.result.outcome = REVEAL_FAIL_TEXT[s.broadcastIndex % REVEAL_FAIL_TEXT.length];
+  },
   /** 유출 대응: 대응 종류를 기록(공개 대사에 반영), '지금 공개'·수습 실패는 조기 공개 */
   leak(s, e, c) {
     s.leaked[e.outfitId] = c.id;
-    const early = c.id === 'now' || (c.risk && random(s) < c.risk);
-    if (!early) return;
-    reveal(s, e.outfitId, {mode: 'early'});
+    if (c.id === 'now') {
+      if (!attemptReveal(s, e.outfitId, {mode: 'early'})) {
+        s.result.kind = 'revealFailed';
+        s.result.outcome = '바로 공개하려던 순간 준비가 덜 된 소품이 말썽을 부렸다. 일단 커튼을 닫고 준비를 마저 하기로 했다.';
+        return;
+      }
+    } else if (c.risk && random(s) < c.risk) reveal(s, e.outfitId, {mode: 'early'}); // 수습 실패 = 사고로 전체 노출(공개 성립)
+    else return;
     if (c.id !== 'now') s.result.outcome = '앗, 전체 화면까지 나와 버렸다! 예상보다 이른 공개였지만 새 옷은 옷장에 남았다.';
     s.result.kind = 'reveal';
     s.result.unlockedOutfit = e.outfitId;

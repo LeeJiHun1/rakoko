@@ -1,11 +1,51 @@
 // 신의상: 방송 중 제안 이벤트 → 시작(비용 200만원 전액, +25) → 준비 행동으로 진행(무료·+25) → 공개 예약 → 공개(해금) → 무료 환복.
 // 준비 중(40%↑)에는 의상당 한 번 유출 사건이 날 수 있다. 설계: outputs/rakoko_outfit_feature_design.md
-import {OUTFIT_COST, OUTFIT_PROGRESS_STEP} from './constants.js';
+import {LEAK_MIN_PROGRESS, OUTFIT_COST, OUTFIT_PROGRESS_STEP} from './constants.js';
 import {random} from './rng.js';
 
 /** 방송당 제안 이벤트 확률 (진행 중인 의상이 없을 때) */
 export const OUTFIT_OFFER_CHANCE = .2;
 export const LEAK_RESPONSES = ['hide', 'teaser', 'risky', 'now'];
+
+/** 유출 기본 확률(준비도 40%↑): 점검 안 함 8% / 점검 3% — 설계 초깃값 */
+export const LEAK_BASE = {checked: .03, unchecked: .08};
+/** 준비 소홀: 준비 중인 옷이 있는데 그 방송에 의상 준비를 안 하면 +1, 하면 -1. 1점당 유출 +4%p(최대 +24%p) */
+export const NEGLECT_LEAK_STEP = .04, NEGLECT_LEAK_CAP = .24;
+/** 덜 준비된 공개의 실패 확률: (100 - 준비도) × 0.4% → 75% 10% · 50% 20% · 25% 30% */
+export const revealFailChance = progress => progress >= 100 ? 0 : Math.min(.4, (100 - progress) * .004);
+
+export const neglectOf = (s, id) => s.outfitNeglect?.[id] || 0;
+
+/** 지금 준비 중인 옷의 이번 방송 유출 확률(시작한 미공개 옷만, 유출은 의상당 1회) */
+export function leakChance(s) {
+  const id = s.crafting;
+  if (!isStarted(s, id) || s.wardrobe[id] || s.leaked[id]) return 0;
+  const base = s.outfitProgress[id] >= LEAK_MIN_PROGRESS ? (s.checked ? LEAK_BASE.checked : LEAK_BASE.unchecked) : 0;
+  return base + Math.min(NEGLECT_LEAK_CAP, neglectOf(s, id) * NEGLECT_LEAK_STEP);
+}
+
+/** 방송이 끝날 때 소홀 점수 갱신(준비도 100% 이전까지만) */
+export function updateNeglect(s) {
+  const id = pendingOutfit(s);
+  if (id && s.outfitProgress[id] < 100) {
+    const n = neglectOf(s, id);
+    s.outfitNeglect[id] = s.outfitPreparedToday ? Math.max(0, n - 1) : Math.min(20, n + 1);
+  }
+  s.outfitPreparedToday = false;
+}
+
+/** 공개 시도: 준비가 덜 됐으면 확률로 실패(해금 안 됨, 예약 소진, 준비도 유지). 성공하면 true. */
+export function attemptReveal(s, id, options) {
+  const chance = revealFailChance(s.outfitProgress[id]);
+  if (chance > 0 && random(s) < chance) {
+    s.outfitRevealFailed[id] = true;
+    s.outfitReserved = false;
+    for (const key of Object.keys(s.reservations)) if (s.reservations[key] === 'outfit') delete s.reservations[key];
+    return false;
+  }
+  reveal(s, id, options);
+  return true;
+}
 
 export const isStarted = (s, id) => !!s.outfitStarted?.[id];
 export const isCraftable = (catalog, id) => catalog.outfits.some(x => x.id === id && x.id !== 'base');
@@ -40,6 +80,7 @@ export function startOutfit(s, id) {
   addProgress(s, id);
   s.outfitStarted[id] = true;
   s.crafting = id;
+  s.outfitPreparedToday = true; // 시작한 방송은 소홀로 치지 않는다
 }
 
 /** 준비 행동 1회로 준비도를 올린다(무료 — 비용은 시작할 때 전액 냈다). 시작하지 않은 옷이면 아무것도 바꾸지 않는다. */
@@ -48,6 +89,7 @@ export function prepareOutfit(s) {
   if (!isStarted(s, s.crafting)) throw Error('방송 중 새 의상 제안을 받아 준비를 시작해주세요.');
   if (s.outfitProgress[s.crafting] >= 100) throw Error('준비가 끝났어요. 공개 방송을 예약해주세요.');
   addProgress(s, s.crafting);
+  s.outfitPreparedToday = true;
 }
 
 /** 방송당 한 번 제안 이벤트를 굴린다. 진행 중인 의상이 없고, 남은 의상이 있고, 비용 전액을 낼 수 있을 때만. */
@@ -71,8 +113,9 @@ export const commands = {
     if (!s.wardrobe[c.outfitId]) throw Error('공개한 옷만 입을 수 있어요.');
     s.equipped = c.outfitId;
   }},
+  /** 공개 예약: 덜 준비돼도 예약할 수 있지만 공개가 실패할 수 있다 */
   reserveOutfit: {prepOnly: true, run(s) {
-    if ((s.outfitProgress[s.crafting] || 0) < 100 || s.wardrobe[s.crafting]) throw Error('준비를 마친 새 옷이 필요해요.');
+    if (!isStarted(s, s.crafting) || s.wardrobe[s.crafting]) throw Error('준비 중인 새 옷이 필요해요.');
     s.outfitReserved = !s.outfitReserved;
   }},
 };

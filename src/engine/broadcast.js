@@ -6,6 +6,7 @@ import {applyChoice} from './choices.js';
 import {broadcastGrade, GRADE_AWARENESS, GRADE_INCOME, peakViewers, updateRecords} from './audience.js';
 import {gain} from './growth.js';
 import {activeBonus} from './purchases.js';
+import {updateNeglect} from './outfit.js';
 import {deliverOrders, settleIncome, snapshotIncome} from './economy.js';
 import {offerEndingIfReady} from './ending.js';
 import {nextEvent} from './events/next.js';
@@ -32,6 +33,7 @@ function settle(s, catalog) {
   const donations = s.currentLog.reduce((a, r) => a + (r.donation?.amount || 0), 0);
   const fame = GRADE_AWARENESS[grade] ? gain(s, 'awareness', GRADE_AWARENESS[grade]) : 0;
   s.completedBroadcasts++;
+  updateNeglect(s);
   deliverOrders(s);
   // 일지에는 화면에 쓰는 값만 남긴다(채팅 줄·맥락은 결과 화면용이라 제외 — 장기 저장본 크기 절반)
   const events = s.currentLog.map(({reactions, chatContext, ...rest}) => clone(rest));

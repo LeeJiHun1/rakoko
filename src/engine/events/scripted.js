@@ -25,6 +25,7 @@ export function calendarEvent(s, type) {
 
 /** 공개 도입 대사는 유출 대응 기록에 따라 달라진다(설계: 티저 대응 시 도입 대사 변경) */
 function revealIntro(s, id) {
+  if (s.outfitRevealFailed?.[id]) return '지난번 공개 때 소품이 말썽을 부렸던 바로 그 옷. 키몽이들이 이번엔 괜찮냐며 두근두근 지켜본다.';
   if (s.leaked[id] === 'teaser') return '지난번 짧은 티저로 궁금증만 잔뜩 키워 둔 바로 그 옷. 키몽이들의 추측이 맞았을까? 오늘 드디어 커튼을 연다.';
   if (s.leaked[id]) return '한 번 살짝 들킬 뻔했던 그 옷을 오늘은 제대로 보여준다. 키몽이들이 그때 본 조각을 기억하는 눈치다.';
   return '조금씩 준비해 온 모습을 오늘의 방송에서 처음 보여준다. 공개 후에는 언제든 편하게 갈아입을 수 있다.';
@@ -32,15 +33,15 @@ function revealIntro(s, id) {
 
 export function revealEvent(s, catalog) {
   const outfit = catalog.outfits.find(x => x.id === s.crafting);
+  const risk = s.outfitProgress[outfit.id] < 100 ? ` · 준비 ${s.outfitProgress[outfit.id]}%, 실패 위험` : '';
   return event(s, 'reveal', `${outfit.name}, 드디어 공개`, revealIntro(s, outfit.id), [
-    choice('show', '새 옷으로 인사한다', '커튼을 열고 새 옷을 공개했다. 옷장에 새로운 한 벌이 남았다.'),
-    choice('detail', '디테일을 하나씩 소개한다', '작은 장식부터 차근차근 소개하며 새 옷을 공개했다.'),
+    choice('show', `새 옷으로 인사한다${risk}`, '커튼을 열고 새 옷을 공개했다. 옷장에 새로운 한 벌이 남았다.'),
+    choice('detail', `디테일을 하나씩 소개한다${risk}`, '작은 장식부터 차근차근 소개하며 새 옷을 공개했다.'),
   ], {outfitId: outfit.id});
 }
 
 const LEAK_CLUES = {maid: '프릴처럼 보이는 천 한 조각', police: '반짝이는 작은 단추', ghost: '하늘하늘한 흰 천', nun: '흑백으로 나뉜 천의 끝'};
-/** 점검 여부에 따른 유출 사건 발생 확률 / 장난스러운 수습 시 조기 공개 확률 */
-export const LEAK_CHANCE = {checked: 0.03, unchecked: 0.08};
+/** 수습 시도 시 조기 공개 확률(유출 발생 확률은 outfit.leakChance) */
 const EARLY_REVEAL_RISK = {checked: 0.10, unchecked: 0.25};
 
 export function leakEvent(s) {
@@ -48,7 +49,7 @@ export function leakEvent(s) {
     choice('hide', '작업 화면을 닫고 준비를 이어간다', '일부 단서만 남기고 화면을 닫았다. 전체 공개는 원래 준비대로 간다.'),
     choice('teaser', '짧은 티저였다고 설명한다', '키몽이들은 추측을 나눴다. 아직 전체 의상을 공개한 건 아니다.'),
     choice('risky', `화면부터 확인하며 수습한다 · 조기 공개 위험 ${s.checked ? 10 : 25}%`, '화면을 하나씩 확인하며 분위기를 수습했다.', {risk: s.checked ? EARLY_REVEAL_RISK.checked : EARLY_REVEAL_RISK.unchecked}),
-    choice('now', '그냥 지금 공개한다', '커튼을 걷고 준비 중이던 새 옷을 바로 공개했다! 다듬지 못한 부분은 웃으며 넘겼다.'),
+    choice('now', `그냥 지금 공개한다${s.outfitProgress[s.crafting] < 100 ? ' · 준비 부족, 실패 위험' : ''}`, '커튼을 걷고 준비 중이던 새 옷을 바로 공개했다! 다듬지 못한 부분은 웃으며 넘겼다.'),
   ], {outfitId: s.crafting});
 }
 

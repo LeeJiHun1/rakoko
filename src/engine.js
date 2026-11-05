@@ -2,7 +2,7 @@
 // 내부 구현은 src/engine/* 에 도메인별로 나뉘어 있다 — 구조는 docs/ARCHITECTURE.md 참고.
 // 원칙: 상태 변경은 dispatch 만, 게임 난수는 저장되는 시드(random)만 사용한다.
 export {START_DATE, DEADLINE, CORNERS, LABELS, OUTFIT_COST, OUTFIT_PROGRESS_STEP} from './engine/constants.js';
-export {pendingOutfit, isStarted} from './engine/outfit.js';
+export {pendingOutfit, isStarted, neglectOf, revealFailChance} from './engine/outfit.js';
 export {addDays, daysBetween, yearsPlayed, nextMilestone, celebrationOn, celebrationKey, daysPlayed, firstEndingDate, endingUnlocked} from './engine/dates.js';
 export {random} from './engine/rng.js';
 export {newGame, skill} from './engine/state.js';

@@ -54,6 +54,10 @@ const pools={
     '새 옷?! 무조건 찬성','어떤 옷일지 벌써 궁금하다','공개 날 꼭 올게','힌트 더 줘 ㅋㅋ','이름은 비밀이라니 더 궁금해',
     '준비하는 과정도 보여줘','설렌다 진짜','다음 의상 기대 중','천천히 준비해도 기다릴게','벌써 공개 날짜 정하고 싶다'
   ],
+  reveal_fail:[
+    'ㅋㅋㅋ 괜찮아 괜찮아','이것도 공개 리허설이지','다음엔 꼭 성공하자','방금 거 클립 각인데','실루엣만 봐도 예뻤어',
+    '기다림이 길어질수록 기대도 커진다','준비 조금만 더 하자 ㅋㅋ','오늘의 웃음 담당 소품','다음 공개 날 다시 올게','괜찮아 우린 기다릴 수 있어'
+  ],
   outfit_followup:[
     '그때 너무 급했지 ㅋㅋ','디테일 이제야 보이네','다시 봐도 예쁘다','별명 투표 재밌다','소매 장식 귀엽다',
     '급공개도 추억이지','오늘 제대로 본다','이 옷 자주 입어줘','이제야 실감 난다','그날 채팅 난리였는데 ㅋㅋ'
@@ -160,8 +164,8 @@ export function chatContext(event,selected,result,module){
   if(event.kind==='shop')return 'shopping';
   if(event.kind==='outfitOffer')return 'outfit_offer';
   if(event.kind==='outfitFollowup')return 'outfit_followup';
-  if(event.kind==='leak')return result.kind==='reveal'?'leak_early':'leak_partial';
-  if(event.kind==='reveal')return 'outfit_reveal';
+  if(event.kind==='leak')return result.kind==='reveal'?'leak_early':result.kind==='revealFailed'?'reveal_fail':'leak_partial';
+  if(event.kind==='reveal')return result.kind==='revealFailed'?'reveal_fail':'outfit_reveal';
   if(event.kind==='calendar')return event.celebrationType==='birthday'?'birthday':'anniversary';
   if(selected.postpone||selected.id==='later')return 'postpone';
   if(event.kind==='promise')return 'promise';

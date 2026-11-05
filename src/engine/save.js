@@ -16,6 +16,8 @@ export const MIGRATIONS = {
   /** 1 → 2: 역대 기록(records) 추가. 지난 일지의 최고 수입은 복원하고 나머지는 0에서 시작 */
   1: s => ({...s, schemaVersion: 2, records: {...emptyRecords(), bestGross: Math.max(0, ...s.journal.map(j => j.income?.gross || 0))}}),
   /** 2 → 3: 신의상 시작 기록(준비도가 있던 옷은 시작한 것으로), 조기 공개 후속 코너 */
+  /** 3 → 4: 준비 소홀 점수·공개 실패 기록 */
+  3: s => ({...s, schemaVersion: 4, outfitNeglect: {}, outfitRevealFailed: {}, outfitPreparedToday: false}),
   2: s => ({...s, schemaVersion: 3, outfitStarted: Object.fromEntries(Object.entries(s.outfitProgress || {}).filter(([id, p]) => p > 0 && !s.wardrobe?.[id]).map(([id]) => [id, true])), outfitFollowup: null}),
 };
 
@@ -85,6 +87,8 @@ function validateShape(s, catalog) {
   if (!isPlainObject(s.reservations) || !Object.entries(s.reservations).every(([k, v]) => ['0', '1', '2'].includes(k) && ['calendar', 'outfit', 'finale', 'outfitFollowup'].includes(v))) fail('예약 기록이 올바르지 않아요.');
   if (!onlyKeys(s.outfitStarted, outfitIds) || !Object.values(s.outfitStarted).every(v => v === true)) fail('옷장 기록이 올바르지 않아요.');
   if (!(s.outfitFollowup == null || outfitIds.includes(s.outfitFollowup))) fail('옷장 기록이 올바르지 않아요.');
+  if (!onlyKeys(s.outfitNeglect, outfitIds) || !Object.values(s.outfitNeglect).every(v => isInt(v, 0, 20))) fail('옷장 기록이 올바르지 않아요.');
+  if (!onlyKeys(s.outfitRevealFailed, outfitIds) || !Object.values(s.outfitRevealFailed).every(v => v === true) || typeof s.outfitPreparedToday !== 'boolean') fail('옷장 기록이 올바르지 않아요.');
   if (!onlyKeys(s.leaked, outfitIds) || !Object.values(s.leaked).every(v => v === true || ['hide', 'teaser', 'risky', 'now'].includes(v))) fail('옷장 기록이 올바르지 않아요.');
   if (!isInt(s.dataPrepared, 0, 2) || !(s.practicedToday == null || isInt(s.practicedToday, 0, 2))) fail('준비 기록이 올바르지 않아요.');
   if (['event', 'ending'].includes(s.phase) && !isStr(s.event?.title)) fail('진행 중 사건이 없어요.');

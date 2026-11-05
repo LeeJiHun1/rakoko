@@ -17,8 +17,9 @@ function card(state, o, index) {
 }
 
 function revealToolbar(state) {
-  if (!(state.phase==='prep'&&!state.wardrobe[state.crafting]&&(state.outfitProgress[state.crafting]||0)>=100)) return '';
-  return `<div class="craft-toolbar"><span><b>???</b> · 준비를 모두 마쳤어요.</span>${btn(state.outfitReserved?'공개 예약 해제':'이번 방송에서 공개하기','reserveOutfit','','button primary')}</div>`;
+  if (!(state.phase==='prep'&&!state.wardrobe[state.crafting]&&isStarted(state,state.crafting))) return '';
+  const done=(state.outfitProgress[state.crafting]||0)>=100;
+  return `<div class="craft-toolbar"><span><b>???</b> · ${done?'준비를 모두 마쳤어요.':'아직 준비 중이에요 · 지금 공개하면 실패할 수도 있어요'}</span>${btn(state.outfitReserved?'공개 예약 해제':done?'이번 방송에서 공개하기':'이대로 공개 예약하기','reserveOutfit','',done?'button primary':'button secondary')}</div>`;
 }
 
 export function wardrobe() {
