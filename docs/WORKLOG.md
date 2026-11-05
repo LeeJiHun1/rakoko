@@ -6,7 +6,7 @@
 ## 지금 상태 (마지막 갱신: 2026-11-05)
 
 - 브랜치: `refactor/modular-structure` (기준선 `main` = `1668cdb`)
-- 진행 중: **10단계 — 문서(ARCHITECTURE·AGENTS)**. 엔진(2)·UI(3)·CSS(4) 분리 완료 — 골든 8시드·UI 76단계 HTML·스크린샷 10쌍 모두 일치
+- 진행 중: **11단계 — 최종 브라우저 확인**, 이후 사용자 결정 대기. 엔진(2)·UI(3)·CSS(4) 분리 완료 — 골든 8시드·UI 76단계 HTML·스크린샷 10쌍 모두 일치
 - 기획 검토: `docs/DESIGN-REVIEW.md` 작성 완료 → **사용자 결정 6건 대기** (아래 「결정 대기」)
 - 검증 명령: `npm test` (엔진 56건 + 골든 8시드) · `npm run check` · `npm run build`
 
@@ -24,8 +24,8 @@
 | 6 | 검토 수정 ② 부팅 실패 탈출구 + 저장 마이그레이션 자리 | 완료 | `e7386d8` |
 | 7 | 검토 수정 ③ 다시 그릴 때 접힘 패널(`<details>`) 열림 유지 | 완료 | `f94b82e` |
 | 8 | 검토 수정 ④ 반복 사건에서 원래 상황 본문 유지 | 완료 | `543573a` |
-| 9 | 검토 수정 ⑤ 사건 조건 ID를 정적 검사에 포함 | 완료 | (이 커밋) |
-| 10 | 문서: `docs/ARCHITECTURE.md`, AGENTS.md 경로 정정(없는 `docs/IMPLEMENTATION.md`) | 대기 | |
+| 9 | 검토 수정 ⑤ 사건 조건 ID를 정적 검사에 포함 | 완료 | `0c3ca58` |
+| 10 | 문서: `docs/ARCHITECTURE.md`, AGENTS.md 경로 정정(없는 `docs/IMPLEMENTATION.md`), CLAUDE.md | 완료 | (이 커밋) |
 | 11 | 브라우저 실행 확인(Playwright) | 대기 | |
 
 ## 결정 사항
@@ -44,48 +44,11 @@
 1. 5~9단계 검토 수정 (각각 커밋, 동작 변경 시 golden 갱신 사유 기록)
 2. 사용자 결정 6건 받은 뒤 `docs/DESIGN-REVIEW.md` §5 「결정 후」 묶음 착수
 
-## UI 회귀 비교 방법 (3단계에서 사용)
+## 구조 문서
 
-- 변경 전 버전을 `git archive <커밋> index.html src assets/characters assets/events assets/fonts | tar -x -C <임시폴더>` 로 꺼내 `PORT=5391 node scripts/serve.mjs <임시폴더>`, 현재 버전은 `PORT=5392 npm run dev`.
-- `tests/ui/scenario.js` 함수를 Playwright 로 두 페이지에서 실행 → 반환된 단계별 해시를 diff. 리팩터링이면 완전 일치해야 한다.
-- 3단계 결과: 76단계 일치, pageerror 0.
-
-## UI 모듈 지도 (3단계 결과)
-
-| 파일 | 책임 |
-|---|---|
-| `src/app.js` | 진입점 (`boot()` 호출만) |
-| `ui/boot.js` | 카탈로그·저장본 로드, 복구, 이벤트 설치 |
-| `ui/store.js` | UI 공유 상태(`catalog·state·view·busy·stale·saveError`) + 조회 도우미 |
-| `ui/commands.js` | `runCommand` (dispatch → 저장 → 화면 교체), `replaceState` |
-| `ui/actions.js` | 버튼·입력 처리표 (`UI_ACTIONS`, 엔진 명령 기본 처리, 토스트 표) |
-| `ui/render.js` | 전체 다시 그리기, 탭/단계별 화면 선택표 |
-| `ui/views/*` | 화면별 HTML: layout·prep·event·result·wrap·ending·wardrobe·projects·journal·project-mini |
-| `ui/dialogs.js` · `modal.js` | 대화상자 내용 · 공용 dialog |
-| `ui/dom.js` | `escape`·`btn`·`money` 등 HTML 도우미 |
-| `ui/preferences.js` · `feedback.js` · `sync.js` · `save-files.js` | 편의 설정 · 토스트/효과음 · 탭 동기화 · 일지 파일 입출력 |
-
-## CSS 구조 (4단계 결과)
-
-- `src/style.css` 는 `@import` 순서표만 둔다. **순서 = 우선순위**라 바꾸지 않는다.
-- `src/styles/01-base … 11-simple-flow.css` — 파일 첫 줄 주석에 담당 영역. 규칙은 한 줄에 하나.
-- 반응형은 `10-responsive.css`(구 레이아웃)와 `11-simple-flow.css` 끝(간소화 흐름) 두 곳에 있다.
-- 검증: 공백·주석 제외 원본과 동일(36,568자), 1280/390px × 5화면 스크린샷 해시 일치.
-
-## 엔진 모듈 지도 (2단계 결과)
-
-| 파일 | 책임 |
-|---|---|
-| `src/engine.js` | 공개 façade — 외부는 여기서만 import |
-| `engine/constants.js` | 날짜·수치 상수 (밸런스 조정 시작점) |
-| `engine/state.js` | `newGame`·`skill`·`SCHEMA_VERSION` |
-| `engine/dispatch.js` · `commands.js` | 명령 단일 입구 · 도메인별 명령 등록표 합치기 |
-| `engine/broadcast.js` | 편성·시작·코너 진행·정산·날짜 명령 |
-| `engine/choices.js` | 선택 반영 (사건 종류별 효과 표 `KIND_EFFECTS`) |
-| `engine/events/*` | 사건 생성: `next.js`(우선순위) · `general.js`(추첨) · `eligibility.js`(등장 조건 표 `EVENT_GATES`) · `scripted.js` · `module-events.js` · `factory.js` |
-| `engine/preparation.js` · `outfit.js` · `project.js` · `module.js` · `economy.js` · `ending.js` · `calendar.js` | 도메인별 규칙 + 해당 명령 |
-| `engine/growth.js` · `requirements.js` · `reactions.js` | 성장 상한·경험 / 조건식 평가 / 채팅 반응 |
-| `engine/save.js` | 저장본 검증 |
+- 엔진·UI·CSS 모듈 지도, 확장 방법, 테스트 정책 → `docs/ARCHITECTURE.md`
+- UI 회귀 비교: 변경 전 버전을 `git archive <커밋> index.html src assets/characters assets/events assets/fonts | tar -x -C <임시폴더>` 로 꺼내
+  `PORT=5391 node scripts/serve.mjs <임시폴더>`, 현재 버전은 `PORT=5392 npm run dev` → `tests/ui/scenario.js` 를 두 페이지에서 실행해 해시 diff.
 
 ## 결정 대기 (사용자)
 
@@ -100,6 +63,7 @@
 
 ## 이력
 
+- 2026-11-05: 10단계 완료 — ARCHITECTURE.md 신설(모듈 지도는 여기로 이동), AGENTS.md 정정·규칙 추가, CLAUDE.md(@AGENTS.md).
 - 2026-11-05: 9단계 완료 — check.mjs 가 src/engine·src/ui 의 CE/RK/RA/EX/EF/LC/END ID 55개를 카탈로그와 대조(없는 ID 변이로 실패 확인).
 - 2026-11-05: 8단계 완료 — 반복 사건은 원래 본문 + 회상 한 줄. 사건 본문은 방송 사이 상태에 남지 않아 골든 해시 불변(갱신 불필요). 관찰: 다수 사건 본문이 범용 문구라 콘텐츠 보강 필요(DESIGN-REVIEW C4).
 - 2026-11-05: 7단계 완료 — render 전후로 열린 details(summary 문구#순번)·포커스(data-* 선택자) 복원. UI 시나리오에서 plan-S·game-strategy 2단계만 의도대로 변경, 상점 중첩 패널·키보드 포커스 유지 확인.
