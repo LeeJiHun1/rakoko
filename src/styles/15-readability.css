@@ -1,0 +1,42 @@
+/* 가독성·모바일 조작성 보정 (docs/AUDIT.md U1~U8). 마지막에 읽혀 앞선 규칙을 덮는다. */
+
+/* U4 최소 글자 크기: 정보성 작은 글자 11~12px, 장식 문구 10px (기존 6~9px) */
+.prep-action small,.event-meta>span:last-child,.tag,.chat-name,.equipped-label,.module-grid p,.journal-entry-date,.journal-entry footer,
+.ending-memories span,.status-panel .section-heading small,.stat>div:first-child,.game-stat,.program-slot select,.outfit-info p,
+.project-mini .text-button,.memory small,.continue-row>span,.step-dots,.date-line,.date-line .text-button,.outfit-label,.outfit-label .text-button,.save-state{font-size:11px}
+.choice-style,.lock-reason,.odds-note,.quiet-note,.shop-effect,.active-effects p,.record-line{font-size:12px}
+.page-kicker,.page-kicker>span:first-child,.studio-top,.live-pill,.eyebrow,.project-mini .eyebrow,.brand small,.site-footer,.site-footer button,.grade-stamp small{font-size:10px}
+
+/* U4 대비: 작은 글자 4.5:1 이상 (회색 #76666f · 금색 #7d5f1f · 초록 #46705c · 장미 #9a4560) */
+.quiet-note,.page-kicker,.event-meta>span:last-child,.continue-row>span,.simple-broadcast-start p,.view-description,.chat-label,.memory small,.prep-action small,.journal-entry-date{color:#76666f}
+.choice-style{color:#76666f}
+.choice-style.style-safe,.odds-note,.active-effects p,.shop-effect,.ending-hint-reqs span.met{color:#46705c}
+.choice-style.style-steady,.choice-price,.viewer-peak em,.donation-banner .donation-title{color:#7d5f1f}
+.choice-style.style-bold,.lock-reason,.journal-grade{color:#9a4560}
+
+/* U7 본문으로 건너뛰기 (키보드 사용자) */
+.skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:#3e3046;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none}
+.skip-link:focus{top:12px}
+
+/* U5 토스트는 위쪽에 — 아래쪽 고정 버튼·선택지를 가리지 않게 */
+#toast{top:16px;bottom:auto;transform:translate(-50%,-15px)}
+
+@media (max-width:760px){
+  /* U1 주요 행동 버튼을 화면 아래에 고정 (방송 켜기 · 다음 코너 · 다음 방송) */
+  .simple-broadcast-start,.continue-row,.next-broadcast{position:sticky;bottom:0;z-index:20;background:var(--paper);margin-left:-4px;margin-right:-4px;padding:10px 4px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -10px 14px -6px #3e2b3622}
+  .simple-broadcast-start p{display:none}
+  /* U3 다음 방송 버튼: 줄바꿈 없이, 주 버튼은 한 줄 전체 */
+  .next-broadcast h3{display:none}
+  .next-broadcast>.button{white-space:nowrap;flex:1 1 40%}
+  .next-broadcast>.button.primary{flex-basis:100%}
+  .next-broadcast>.text-button{flex:1 1 40%;text-align:center}
+  /* 탭 이름이 두 줄로 꺾이지 않게 아이콘 숨김 */
+  .notebook-tabs button>span{display:none}
+  .notebook-tabs button{white-space:nowrap}
+  /* U2·U8 잘리는 상단 문구와 장식 문구 정리 */
+  .page-kicker>span:first-child,.page-heading .eyebrow{display:none}
+  .page-kicker{justify-content:flex-end}
+  .episode-label{white-space:normal;text-align:right}
+  /* U6 방송 중에는 스튜디오 카드를 접어 선택지를 위로 */
+  .game-layout.is-live .studio-column{display:none}
+}

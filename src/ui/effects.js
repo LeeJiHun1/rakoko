@@ -1,6 +1,6 @@
 // 화면 연출(F5, 사용자 결정 Q6: CSS·효과음 수준). 게임 상태는 바꾸지 않는다.
 // 같은 장면을 다시 그릴 때는 반복하지 않고, "동작 줄이기"(설정·OS)면 최종 값만 보여 준다.
-import {playCue} from './feedback.js';
+import {hideToast, playCue} from './feedback.js';
 import {preferences} from './preferences.js';
 
 let lastSceneKey = null, sceneStartedAt = 0;
@@ -33,6 +33,7 @@ export function playSceneEffects(root, state) {
   if (reducedMotion()) { root.classList.add('fx-settled'); lastSceneKey = key; return; }
   root.querySelectorAll('[data-count-to]').forEach(el => countUp(el));
   if (sameScene) return; // 연달아 그린 경우: 애니메이션만 이어가고 효과음은 한 번만
+  if (lastSceneKey) hideToast(); // 장면이 바뀌면 이전 화면 알림은 닫는다(첫 화면의 복구 알림은 유지)
   lastSceneKey = key;
   sceneStartedAt = now;
   const r = state.result;

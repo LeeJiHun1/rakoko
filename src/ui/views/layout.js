@@ -7,7 +7,7 @@ export const isLive = state => ['event', 'result', 'ending'].includes(state.phas
 
 export function topbar() {
   const {busy, saveError} = store;
-  return `<header class="topbar"><a class="brand" href="#" data-view="broadcast"><span class="brand-mark">✦</span><span>라코코의 방송일지<small>THE BROADCAST JOURNAL</small></span></a>
+  return `<a class="skip-link" href="#scene">본문으로 건너뛰기</a><header class="topbar"><a class="brand" href="#" data-view="broadcast"><span class="brand-mark">✦</span><span>라코코의 방송일지<small>THE BROADCAST JOURNAL</small></span></a>
   <div class="topbar-actions"><span class="save-state ${saveError?'error':''}"><i></i>${busy?'저장 중':saveError?'저장 확인 필요':'기록 중'}</span>${btn('↻','reload','title="최신 일지 불러오기"','icon-button')}${btn('☷','settings','title="설정"','icon-button')}${btn('?','about','aria-label="게임 안내"','icon-button')}</div></header>`;
 }
 

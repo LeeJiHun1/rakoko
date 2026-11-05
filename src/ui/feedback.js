@@ -10,6 +10,9 @@ export function toast(text) {
   toastTimer = setTimeout(() => $('#toast').classList.remove('show'), 4000);
 }
 
+/** 장면이 바뀌면 이전 화면의 알림을 닫는다 */
+export function hideToast() { clearTimeout(toastTimer); $('#toast').classList.remove('show'); }
+
 let audio;
 /** 짧은 음 여러 개를 이어 낸다: [[주파수, 시작(초), 길이(초)], ...] */
 function tones(notes, volume = .04) {
