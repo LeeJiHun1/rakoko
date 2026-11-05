@@ -1,5 +1,5 @@
 // 방송 중 화면: 사건 카드 + 선택지(잠금 사유 표시).
-import {activeBonus, CORNERS, prepBonus, projectProgressLocks, STYLES, unmet} from '../../engine.js';
+import {activeBonus, CORNERS, NOTABLE_BONUS, prepBonus, projectProgressLocks, STYLES, unmet} from '../../engine.js';
 import {money} from '../dom.js';
 import {escape, tag} from '../dom.js';
 import {store} from '../store.js';
@@ -17,8 +17,8 @@ const priceTag = c => c.cost ? `<span class="choice-style choice-price">${money(
 const styleTag = c => c.cost ? priceTag(c) : Object.hasOwn(STYLES, c.style) ? `<span class="choice-style style-${c.style}" title="${STYLES[c.style].hint}">${STYLES[c.style].label} · ${STYLES[c.style].hint}</span>` : '';
 
 function oddsNote(e) {
-  if (!e.choices.some(c => c.style && c.style !== 'safe') || prepBonus(store.state, activeBonus(store.state, 'odds')) <= 0) return '';
-  return '<p class="odds-note">✦ 오늘 준비 덕분에 보통·모험 선택이 조금 유리해요</p>';
+  if (!e.choices.some(c => c.style && c.style !== 'safe') || prepBonus(store.state, activeBonus(store.state, 'odds')) < NOTABLE_BONUS) return '';
+  return `<p class="odds-note">✦ 오늘 준비가 이 ${escape(CORNERS[store.state.plan[store.state.slot]])} 코너와 잘 맞아요 · 보통·모험 선택이 유리해요</p>`;
 }
 
 export function choices(event) {

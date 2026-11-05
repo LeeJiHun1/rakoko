@@ -26,8 +26,16 @@ export function assignStyles(eventId, choices) {
   return choices;
 }
 
-/** 준비 보너스: 화면 점검 +8%p, 자료 준비 1회당 +4%p(최대 2회), 구매 효과(extra). 아쉬움 확률을 줄이고 대성공을 절반만큼 올린다. */
-export const prepBonus = (s, extra = 0) => (s.checked ? .08 : 0) + Math.min(s.dataPrepared, 2) * .04 + extra;
+/** 준비 보너스(코너별로 다르게 — 준비 행동마다 고를 이유가 생기도록):
+ *  화면 점검 +6%p(모든 코너) · 자료 준비 1회당 +5%p(잡담·팬 참여·특별 기획, 최대 2회) · 게임 연습 1회당 +10%p(게임 도전, 최대 2회) · 구매 효과(extra).
+ *  아쉬움 확률을 줄이고 대성공을 절반만큼 올린다. corner 를 생략하면 지금 코너. */
+export function prepBonus(s, extra = 0, corner = s.plan?.[s.slot]) {
+  const data = corner === 'G' ? 0 : Math.min(s.dataPrepared || 0, 2) * .05;
+  const practice = corner === 'G' ? Math.min(s.practicedToday || 0, 2) * .10 : 0;
+  return (s.checked ? .06 : 0) + data + practice + extra;
+}
+/** 화면 안내를 띄울 만큼 큰 보너스인지 */
+export const NOTABLE_BONUS = .10;
 
 export function oddsFor(style, bonus) {
   const st = STYLES[style];

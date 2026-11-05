@@ -1,5 +1,4 @@
 // 일반 사건 추첨. 초반엔 방송 착안(adaptation) 사건 비중을 높이고, 후반엔 게임 사건 가중치를 높인다.
-import {CORNERS} from '../constants.js';
 import {random} from '../rng.js';
 import {clone} from '../util.js';
 import {assignStyles} from '../outcome.js';
@@ -11,10 +10,20 @@ const ADAPTATION_SHARE = [.9, .55, .4];
 const GAMEPLAY_WEIGHT = [.35, 1, 4];
 const stageOf = s => s.completedBroadcasts < 10 ? 0 : s.completedBroadcasts < 25 ? 1 : 2;
 
+/** 조건에 맞는 사건이 없을 때의 코너별 소소한 장면(방송 회차로 번갈아, 난수 미사용) */
+const ROUTINES = {
+  T: [['느긋한 수다 한 조각', '오늘은 큰 사건 없이 근황 이야기가 이어진다. 키몽이들이 각자 오늘 있었던 일을 하나씩 꺼낸다.'], ['채팅창 단어 맞히기', '수다 중에 채팅창에 같은 단어가 연달아 올라온다. 무슨 이야기를 하고 싶은 걸까?']],
+  G: [['손 풀기 한 판', '본 게임 전에 가볍게 한 판. 키몽이들이 오늘 컨디션을 점쳐 본다.'], ['어제의 나와 대결', '지난번 기록을 띄워 두고 같은 구간에 다시 도전한다.']],
+  F: [['키몽이 한 줄 소개', '처음 온 키몽이와 오래 본 키몽이가 섞여 한 줄씩 인사를 남긴다.'], ['오늘의 질문 하나', '방송 끝나기 전에 키몽이들에게 물어볼 질문 하나를 고른다.']],
+  S: [['기획 노트 정리', '다음 특별 기획을 위해 아이디어 노트를 펼쳤다. 써 둔 메모가 생각보다 많다.'], ['작은 특집 리허설', '본 기획 전에 짧게 순서를 맞춰 본다.']],
+};
+
 function routineEvent(s) {
-  return event(s, 'routine', `${CORNERS[s.plan[s.slot]]}의 작은 한 페이지`, '큰 사건이 없는 날도 좋은 방송이 된다. 오늘 남길 작은 기록을 골라 보자.', [
-    choice('note', '오늘의 팁을 메모한다', '다음에 꺼내 볼 수 있는 짧은 메모를 남겼다.', {gain: {planning: 1}}),
-    choice('question', '키몽이의 한 줄을 듣는다', '여러 키몽이의 생각을 듣고 오늘의 코너를 마쳤다.', {gain: {community: 1}}),
+  const corner = s.plan[s.slot], options = ROUTINES[corner] || ROUTINES.T;
+  const [title, body] = options[s.broadcastIndex % options.length];
+  return event(s, 'routine', title, body, [
+    choice('note', '오늘의 팁을 메모한다', '다음에 꺼내 볼 수 있는 짧은 메모를 남겼다. 키몽이 한 명이 메모장 캡처를 부탁했다.', {gain: {planning: 1}}),
+    choice('question', '키몽이의 한 줄을 듣는다', '여러 키몽이의 생각이 한 줄씩 모였다. 같은 질문에도 대답이 제각각이라 웃음이 났다.', {gain: {community: 1}}),
   ]);
 }
 

@@ -4,7 +4,7 @@ import {isCraftable, prepareOutfit} from './outfit.js';
 
 const PREPARE_ACTIONS = {
   data(s) { gain(s, 'planning', 2); s.dataPrepared++; },
-  practice(s) { gain(s, 'gameSkill', 2); if (s.project?.gameId === s.gameId) s.project.practiced = true; },
+  practice(s) { gain(s, 'gameSkill', 2); s.practicedToday = (s.practicedToday || 0) + 1; if (s.project?.gameId === s.gameId) s.project.practiced = true; },
   check(s) { if (s.checked) throw Error('이번 방송은 이미 점검했어요.'); s.checked = true; gain(s, 'operation', 1); },
   outfit: prepareOutfit,
 };

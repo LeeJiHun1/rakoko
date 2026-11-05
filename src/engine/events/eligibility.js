@@ -35,6 +35,6 @@ export function normalEligible(s, e) {
   if (e.minElapsedDay > daysBetween(START_DATE, s.date)) return false;
   if (e.repeat.mode === 'once_per_run' && (s.seenOnce.includes(e.id) || s.familyMemory[e.family])) return false;
   if (s.familyLast[e.family] != null && s.broadcastIndex - s.familyLast[e.family] < (e.repeat.minimumBroadcastGap || 5)) return false;
-  if (s.groupLast[e.group] != null && s.broadcastIndex - s.groupLast[e.group] <= 2) return false;
+  if (s.groupLast[e.group] != null && s.broadcastIndex - s.groupLast[e.group] < 1) return false; // 같은 분류는 같은 방송에서만 겹치지 않게
   return (GATES_BY_ID.get(e.id) || []).every(gate => gate.when(s));
 }

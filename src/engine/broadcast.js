@@ -46,6 +46,7 @@ function beginNextBroadcast(s) {
   s.preparations = PREPARATIONS_PER_BROADCAST;
   s.checked = false;
   s.dataPrepared = 0;
+  s.practicedToday = 0;
   s.gainTotals = {};
   s.event = null;
   s.result = null;

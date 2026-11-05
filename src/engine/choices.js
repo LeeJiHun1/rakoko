@@ -22,7 +22,7 @@ const KIND_EFFECTS = {
     if (!s.familyMemory[e.family]) gain(s, 'awareness', 1); // 처음 만난 사건 계열은 인지도 +1
     s.familyMemory[e.family] = {choice: c.text, outcome: c.outcome};
     s.seenOnce.push(e.definitionId);
-    if (c.promise) s.promises.push({id: `promise:${s.broadcastIndex}:${s.slot}`, title: e.title, status: 'pending', dueBroadcast: s.broadcastIndex + 1, createdBroadcast: s.broadcastIndex});
+    if (c.promise) s.promises.push({id: `promise:${s.broadcastIndex}:${s.slot}`, title: e.title, status: 'pending', dueBroadcast: s.broadcastIndex + 1, createdBroadcast: s.broadcastIndex, choice: c.text});
     if (!c.style) return undefined;
     const grade = rollGrade(s, c.style, prepBonus(s, activeBonus(s, 'odds')));
     s.result.grade = grade;

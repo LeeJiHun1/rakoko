@@ -4,7 +4,7 @@ import {btn, escape} from '../dom.js';
 import {store} from '../store.js';
 import {projectMini} from './project-mini.js';
 
-const PREP_ACTIONS = [['data', '▤', '자료 준비', '기획력 +2'], ['practice', '▣', '게임 연습', '오늘의 게임 숙련 +2'], ['check', '◉', '화면 점검', '운영력 +1 · 화면 사고 대비']];
+const PREP_ACTIONS = [['data', '▤', '자료 준비', '기획력 +2 · 잡담·팬 참여·특별 기획 코너가 유리'], ['practice', '▣', '게임 연습', '숙련 +2 · 게임 도전 코너가 크게 유리'], ['check', '◉', '화면 점검', '운영력 +1 · 모든 코너의 실수 감소']];
 
 function prepButtons(state) {
   return PREP_ACTIONS.map(([id,icon,title,sub])=>{const disabled=!state.preparations||(id==='check'&&state.checked);return `<button class="prep-action" data-action="prepare" data-kind="${id}" ${disabled?'disabled':''}><span class="action-icon">${icon}</span><span><b>${title}</b><small>${sub}</small></span><span class="arrow">${id==='check'&&state.checked?'✓':'+'}</span></button>`;}).join('');

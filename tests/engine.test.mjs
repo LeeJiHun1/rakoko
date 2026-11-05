@@ -64,6 +64,8 @@ test('purchases appear as broadcast interludes, never consume a corner, and pric
 
 test('first ending opens at day 150 instead of the first anniversary',()=>{assert.equal(firstEndingDate(),'2026-06-17');let s=newGame(200);s=act(s,'project',{id:'END-001'});for(let i=0;i<3;i++)s=act(s,'plan',{index:i,corner:'S'});for(let b=0;b<3;b++){s=finish(s);s=next(s);}assert.equal(s.project.step,3);assert(finaleLocks(s,catalog).some(x=>x.includes('150일째')));s=act(s,'date',{date:'2026-06-17'});const locks=finaleLocks(s,catalog);assert(!locks.some(x=>x.includes('150일째')),locks.join());});
 
+test('each preparation helps different corners',()=>{const s={checked:false,dataPrepared:2,practicedToday:0,plan:['T','G','F'],slot:0};assert.equal(prepBonus(s,0,'T').toFixed(2),'0.10');assert.equal(prepBonus(s,0,'G'),0);const g={...s,dataPrepared:0,practicedToday:1};assert.equal(prepBonus(g,0,'G').toFixed(2),'0.10');assert.equal(prepBonus(g,0,'F'),0);assert.equal(prepBonus({...g,checked:true},0,'F').toFixed(2),'0.06');let n=act(newGame(5),'prepare',{action:'practice'});assert.equal(n.practicedToday,1);n=finish(n);n=next(n);assert.equal(n.practicedToday,0);});
+
 // Real reachability witnesses: never inject stats, story flags or experiences.
 function witness(def,seed){
   let s=def.requiresOutfit?unlockedOutfit(seed):newGame(seed);

@@ -60,7 +60,8 @@ export function shopEvent(s, def, effectsFor, effectText) {
 }
 
 export function promiseEvent(s, promise) {
-  return event(s, 'promise', '지난 방송에서 적어 둔 다음에', `‘${promise.title}’라는 메모가 오늘의 코너를 기다리고 있다.`, [
+  const body = promise.choice ? `지난 ‘${promise.title}’ 때 ‘${promise.choice}’ 하며 다음으로 미뤄 둔 메모가 있다. 키몽이들도 기억하고 있었다는 듯 채팅이 먼저 반응한다.` : `‘${promise.title}’라는 메모가 오늘의 코너를 기다리고 있다.`;
+  return event(s, 'promise', `약속 메모 · ${promise.title}`, body, [
     choice('fulfill', '약속했던 작은 기획을 진행한다', '지난 메모를 따라 코너를 진행하고 결과를 기록했다.', {gain: {planning: 1}}),
     choice('later', '기록을 남기고 한 번 더 미룬다', '약속은 지우지 않고 다음 방송으로 옮겼다.'),
   ], {promiseId: promise.id});
