@@ -85,6 +85,19 @@ export const commands = {
     if (s.project.step === PROJECT_DONE_STEP) applyStoryConditions(s, findProject(catalog, s.project.id));
     else s.plan[1] = 'S';
   }},
+  /** 마무리할 기획 바꾸기: 지금 기획은 보류하고, 보관해 둔 기획(완성 포함)을 이어간다 — 결말을 기다리며 여러 기획을 완성해 두고 고를 수 있게 */
+  switchProject: {prepOnly: true, run(s, c, catalog) {
+    const index = s.projectArchive.findIndex(p => p.instanceId === c.id && p.paused);
+    if (index < 0) throw Error('보류한 기획을 찾지 못했어요.');
+    const target = s.projectArchive.splice(index, 1)[0];
+    if (s.project) s.projectArchive.push({...s.project, paused: true});
+    delete target.paused;
+    s.project = target;
+    s.story = {endingProject: {accepted: true, eventId: target.eventId}};
+    s.finaleScheduled = false;
+    if (target.step === PROJECT_DONE_STEP) applyStoryConditions(s, findProject(catalog, target.id));
+    else s.plan[1] = 'S';
+  }},
   /** 마지막 특집 예약 토글 */
   finale: {prepOnly: true, run(s, c, catalog) {
     const locks = finaleLocks(s, catalog);

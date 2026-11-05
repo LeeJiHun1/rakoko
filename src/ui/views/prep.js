@@ -50,7 +50,8 @@ function activeEffectList(state) {
 function finaleNote(state, catalog) {
   if (state.project?.step !== 3) return '';
   const locks = finaleLocks(state, catalog);
-  return `<div class="finale-note"><span>기획의 시험과 검수를 마쳤어요.</span>${btn(state.finaleScheduled?'특집 예약 해제':'기획 마무리 방송 예약','finale',locks.length?'disabled':'','button small')}<small>${escape(locks.join(' · ')||'이번 방송을 마친 뒤 마지막 선택으로 이어져요.')}</small></div>`;
+  const others = state.projectArchive.filter(p => p.paused && p.step >= 3).length;
+  return `<div class="finale-note"><span>기획의 시험과 검수를 마쳤어요.${others?` 보관한 완성 기획 ${others}개도 목표 화면에서 고를 수 있어요.`:''}</span>${btn(state.finaleScheduled?'특집 예약 해제':'기획 마무리 방송 예약','finale',locks.length?'disabled':'','button small')}<small>${escape(locks.join(' · ')||'이번 방송을 마친 뒤 마지막 선택으로 이어져요.')}</small></div>`;
 }
 
 export function prep() {

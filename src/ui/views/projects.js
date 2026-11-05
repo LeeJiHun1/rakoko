@@ -46,9 +46,19 @@ function activeProject(state) {
   return `<div class="active-project">${projectMini()}<p>${escape(currentProject().steps[Math.min(state.project.step,2)])}</p>${state.project.boundGame?`<small>기획에 연결된 게임 · ${escape(gameName(state.project.gameId))}</small>`:''}${btn('이 기획은 보류해 두기','pauseProject',state.phase!=='prep'?'disabled':'','text-button')}</div>`;
 }
 
+/** 보관한 기획: 완성한 기획은 '이 기획으로 마무리하기'(결말 후보), 진행 중이던 기획은 '이어가기' */
 function pausedProjects(state, catalog) {
-  if (!state.projectArchive.some(p => p.paused)) return '';
-  return `<details class="optional-options"><summary>보류해 둔 기획</summary>${state.projectArchive.filter(p=>p.paused).map(p=>`<div class="paused-row"><span>${escape(catalog.projects.find(d=>d.id===p.id)?.name)} · ${escape(p.step)}/3</span>${btn('이어가기','resumeProject',`data-id="${escape(p.instanceId)}" ${state.project||state.phase!=='prep'?'disabled':''}`,'button small secondary')}</div>`).join('')}</details>`;
+  const kept = state.projectArchive.filter(p => p.paused);
+  if (!kept.length) return '';
+  const done = kept.filter(p => p.step >= 3), going = kept.filter(p => p.step < 3);
+  const row = (p, label) => `<div class="paused-row"><span>${escape(catalog.projects.find(d=>d.id===p.id)?.name)} · ${escape(p.step)}/3</span>${btn(label,'switchProject',`data-id="${escape(p.instanceId)}" ${state.phase!=='prep'?'disabled':''}`,'button small secondary')}</div>`;
+  return `<details class="optional-options" ${done.length?'open':''}><summary>보관한 기획 <small>완성 ${done.length} · 진행 중 ${going.length}</small></summary>${done.length?`<p class="view-description">완성한 기획은 결말 후보예요. 마지막 특집 전에 원하는 기획으로 바꿔 마무리할 수 있어요.</p>${done.map(p=>row(p,'이 기획으로 마무리하기')).join('')}`:''}${going.map(p=>row(p,'이어가기')).join('')}</details>`;
+}
+
+/** 지금 기획을 완성했는데 결말이 아직 열리지 않았을 때: 다른 기획도 완성해 두라는 안내 */
+function waitingTip(state) {
+  if (!state.project || state.project.step < 3 || endingUnlocked(state)) return '';
+  return `<p class="next-task">✦ 이 기획은 완성! 결말은 ${escape(firstEndingDate())}부터 열려요. 그 사이 다른 기획도 완성해 두면 마지막 특집 때 원하는 결말을 고를 수 있어요.</p>`;
 }
 
 function activeModule(state) {
@@ -70,6 +80,7 @@ export function projects() {
   const {state, catalog} = store;
   return `<p class="simple-guide">목표를 하나 고르면 <b>특별 기획 코너가 자동으로 편성</b>돼요.<br/>자료 준비 → 시범 방송 → 피드백, 세 방송에 걸쳐 만들어요.</p>
   ${activeProject(state)}
+  ${waitingTip(state)}
   ${endingHints(state, catalog)}
   <h2 class="subheading">처음이라면 이 기획부터</h2><div class="project-list recommended-projects">${catalog.projects.filter(p=>RECOMMENDED.includes(p.id)).map(projectCard).join('')}</div>
   <details class="optional-options"><summary>다른 기획 둘러보기 <small>29가지</small></summary><div class="project-list">${catalog.projects.filter(p=>!RECOMMENDED.includes(p.id)).map(projectCard).join('')}</div></details>

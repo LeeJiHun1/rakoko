@@ -86,6 +86,8 @@ test('starting a new project keeps the completed one resumable with its ending r
 
 test('viewer growth feeds the broadcast grade',()=>{assert.equal(growthPoint(110,100),1);assert.equal(growthPoint(93,100),0);assert.equal(growthPoint(92,100),-1);assert.equal(growthPoint(100,null),0);assert.equal(broadcastGrade([{},{},{}],1),'A');assert.equal(broadcastGrade([{},{},{}],-1),'C');assert.equal(broadcastGrade([{grade:'great'},{},{}],1),'S');let s=finish(newGame(500));s=next(s);s=finish(s);const j=s.journal.at(-1);assert(Number.isInteger(j.viewersBase));assert(Number.isInteger(j.growth));assert.equal(j.viewers,Math.round(j.viewersBase*{S:1.5,A:1.25,B:1,C:.85}[j.grade]));});
 
+test('several completed projects can be kept and switched before the finale',()=>{let s=newGame(410);const complete=(id)=>{s=act(s,'project',{id});for(let i=0;i<3;i++)s=act(s,'plan',{index:i,corner:'S'});for(let b=0;b<3;b++){s=finish(s);s=next(s);}assert.equal(s.project.step,3);return s.project.instanceId;};const a=complete('END-001');const b=complete('END-002');assert.equal(s.project.instanceId,b);s=act(s,'switchProject',{id:a});assert.equal(s.project.instanceId,a);assert.equal(s.story.endingProject.eventId,catalog.projects.find(p=>p.id==='END-001').eventId);assert(s.projectArchive.some(p=>p.instanceId===b&&p.paused&&p.step===3));});
+
 // Real reachability witnesses: never inject stats, story flags or experiences.
 function witness(def,seed){
   let s=def.requiresOutfit?unlockedOutfit(seed):newGame(seed);
