@@ -21,13 +21,13 @@ function activeProject(state) {
 
 function pausedProjects(state, catalog) {
   if (!state.projectArchive.some(p => p.paused)) return '';
-  return `<details class="optional-options"><summary>보류해 둔 기획</summary>${state.projectArchive.filter(p=>p.paused).map(p=>`<div class="paused-row"><span>${escape(catalog.projects.find(d=>d.id===p.id)?.name)} · ${p.step}/3</span>${btn('이어가기','resumeProject',`data-id="${escape(p.instanceId)}" ${state.project||state.phase!=='prep'?'disabled':''}`,'button small secondary')}</div>`).join('')}</details>`;
+  return `<details class="optional-options"><summary>보류해 둔 기획</summary>${state.projectArchive.filter(p=>p.paused).map(p=>`<div class="paused-row"><span>${escape(catalog.projects.find(d=>d.id===p.id)?.name)} · ${escape(p.step)}/3</span>${btn('이어가기','resumeProject',`data-id="${escape(p.instanceId)}" ${state.project||state.phase!=='prep'?'disabled':''}`,'button small secondary')}</div>`).join('')}</details>`;
 }
 
 function activeModule(state) {
   const m = state.module;
   if (!m) return '';
-  return `<div class="module-active"><h3>진행 중 · ${escape(m.name)}</h3><p>${MODULE_PHASES[m.phase]} · ${m.participation}회 참여</p><p>게임 코너에서 이어서 참여해요. 참가 기간: ${m.deadline}까지</p>${m.expired?'<p>참가 기간이 지났어요. 새로 참여할 수 있어요.</p>':''}<div>${m.phase==='working'?btn(m.practiceOnly?'다음 단계로 진행하기':'이번에는 기본 연습만 하기','practiceModule',state.phase!=='prep'?'disabled':'','button small secondary'):''}${btn('이번 참여 마치기','leaveModule',state.phase!=='prep'?'disabled':'','text-button')}</div></div>`;
+  return `<div class="module-active"><h3>진행 중 · ${escape(m.name)}</h3><p>${escape(MODULE_PHASES[m.phase])} · ${escape(m.participation)}회 참여</p><p>게임 코너에서 이어서 참여해요. 참가 기간: ${escape(m.deadline)}까지</p>${m.expired?'<p>참가 기간이 지났어요. 새로 참여할 수 있어요.</p>':''}<div>${m.phase==='working'?btn(m.practiceOnly?'다음 단계로 진행하기':'이번에는 기본 연습만 하기','practiceModule',state.phase!=='prep'?'disabled':'','button small secondary'):''}${btn('이번 참여 마치기','leaveModule',state.phase!=='prep'?'disabled':'','text-button')}</div></div>`;
 }
 
 function moduleList(state, catalog) {
@@ -40,7 +40,7 @@ function shop(state, catalog) {
 
 function orders(state) {
   if (!state.purchases.length) return '';
-  return `<details class="optional-options"><summary>주문 기록 <small>${state.purchases.length}건</small></summary><div class="order-list">${state.purchases.slice().reverse().map(p=>`<div><span>${escape(p.choice)}<small>${money(p.cost)}</small></span><b>${p.status==='delivered'?'준비물 도착':`${Math.max(0,p.dueBroadcast-state.completedBroadcasts)}회 방송 뒤 도착`}</b></div>`).join('')}</div></details>`;
+  return `<details class="optional-options"><summary>주문 기록 <small>${state.purchases.length}건</small></summary><div class="order-list">${state.purchases.slice().reverse().map(p=>`<div><span>${escape(p.choice)}<small>${money(p.cost)}</small></span><b>${p.status==='delivered'?'준비물 도착':`${escape(Math.max(0,p.dueBroadcast-state.completedBroadcasts))}회 방송 뒤 도착`}</b></div>`).join('')}</div></details>`;
 }
 
 export function projects() {

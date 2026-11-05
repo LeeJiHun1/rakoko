@@ -12,8 +12,8 @@ export function topbar() {
 }
 
 function statusPanel(state, catalog) {
-  return `<section class="status-panel"><div class="section-heading"><span>우리 방송의 지금</span><small>${escape(catalog.economy.income.scaleTiers[state.scaleIndex].label)}</small></div><div class="stat-grid">${Object.entries(state.stats).map(([key,value])=>`<div class="stat"><div><span>${LABELS[key]}</span><b>${value}<small>/100</small></b></div><div class="meter"><i style="width:${value}%" class="${key}"></i></div></div>`).join('')}</div>
-  <div class="game-stat"><span>▣ ${escape(gameName(state.gameId))}</span><b>숙련 ${skill(state)}</b></div></section>`;
+  return `<section class="status-panel"><div class="section-heading"><span>우리 방송의 지금</span><small>${escape(catalog.economy.income.scaleTiers[state.scaleIndex].label)}</small></div><div class="stat-grid">${Object.entries(state.stats).map(([key,value])=>`<div class="stat"><div><span>${LABELS[key]}</span><b>${escape(value)}<small>/100</small></b></div><div class="meter"><i style="width:${escape(value)}%" class="${escape(key)}"></i></div></div>`).join('')}</div>
+  <div class="game-stat"><span>▣ ${escape(gameName(state.gameId))}</span><b>숙련 ${escape(skill(state))}</b></div></section>`;
 }
 
 export function studio() {

@@ -4,7 +4,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFile,writeFile} from 'node:fs/promises';
-import {newGame,dispatch,unmet,projectProgressLocks,finaleLocks,addDays} from '../src/engine.js';
+import {newGame,dispatch,unmet,projectProgressLocks,finaleLocks,addDays,validateSave} from '../src/engine.js';
 
 const FIXTURE=new URL('./fixtures/golden-runs.json',import.meta.url);
 const catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
@@ -58,6 +58,7 @@ function run(seed){
       if(r()<.3)act('representative',{index:Math.floor(r()*3)});
       act('date',{date:addDays(s.date,r()<.1?120+Math.floor(r()*200):1+Math.floor(r()*30))});
     }
+    validateSave(JSON.parse(JSON.stringify(s)),catalog); // 실제 플레이 저장본은 항상 검증을 통과해야 한다
     checkpoints.push(hash(s));
   }
   return {seed,checkpoints,trail:hash(trail),final:hash(s),broadcasts:s.completedBroadcasts,endings:s.reachedEndings.map(x=>x.id)};

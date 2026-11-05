@@ -9,7 +9,7 @@ import {TOTAL_ENDINGS} from './views/journal.js';
 export function showCredits() {
   const e = store.state.lastEnding;
   if (!e) return;
-  openDialog('한 장의 마지막',`<div class="credits-scene"><span class="eyebrow">${e.forced?'TEN YEARS, ONE JOURNAL':'A CHAPTER TO REMEMBER'}</span><div class="credits-characters"><img src="${outfit().image}" alt="라코코"/>${e.forced?'<img class="spouse" src="assets/characters/kimongi-base-v1.png" alt="다수 중 한 명인 가상 키몽이"/>':''}</div><h1>${escape(e.title)}</h1><p>${escape(e.resolution)}</p><p class="epilogue">${escape(e.epilogue)}</p>${e.projectLog?`<div class="ending-memories">${e.projectLog.map(l=>`<p><span>${l.date}</span>${escape(l.text)}</p>`).join('')}</div>`:''}<span class="credit-thanks">라코코와, 서로 다른 목소리의 모든 키몽이들에게.</span><div class="credits-actions">${!e.forced?btn('같은 일지에서 방송 계속하기','continue','','button primary'):''}${btn('일지 돌아보기','viewJournal','','button secondary')}${btn('일지 내보내기','export','','button secondary')}${btn('새 일지 시작하기','confirmNew','','text-button')}</div></div>`);
+  openDialog('한 장의 마지막',`<div class="credits-scene"><span class="eyebrow">${e.forced?'TEN YEARS, ONE JOURNAL':'A CHAPTER TO REMEMBER'}</span><div class="credits-characters"><img src="${outfit().image}" alt="라코코"/>${e.forced?'<img class="spouse" src="assets/characters/kimongi-base-v1.png" alt="다수 중 한 명인 가상 키몽이"/>':''}</div><h1>${escape(e.title)}</h1><p>${escape(e.resolution)}</p><p class="epilogue">${escape(e.epilogue)}</p>${e.projectLog?`<div class="ending-memories">${e.projectLog.map(l=>`<p><span>${escape(l.date)}</span>${escape(l.text)}</p>`).join('')}</div>`:''}<span class="credit-thanks">라코코와, 서로 다른 목소리의 모든 키몽이들에게.</span><div class="credits-actions">${!e.forced?btn('같은 일지에서 방송 계속하기','continue','','button primary'):''}${btn('일지 돌아보기','viewJournal','','button secondary')}${btn('일지 내보내기','export','','button secondary')}${btn('새 일지 시작하기','confirmNew','','text-button')}</div></div>`);
 }
 
 export function openDatePicker() {
@@ -44,7 +44,7 @@ export function openConfirmNew() {
 }
 
 export function openImportConfirm(candidate) {
-  openDialog('일지 가져오기',`<p>${candidate.date} · ${candidate.broadcastIndex}번째 방송의 기록이에요.</p><p>현재 기록은 직전 저장으로 보관하고 이 일지로 이어갑니다. 필요하면 먼저 현재 일지를 내보내 주세요.</p>${btn('현재 일지 내보내기','export','','button secondary')}${btn('이 일지로 이어하기','commitImport','','button primary')}`);
+  openDialog('일지 가져오기',`<p>${escape(candidate.date)} · ${escape(candidate.broadcastIndex)}번째 방송의 기록이에요.</p><p>현재 기록은 직전 저장으로 보관하고 이 일지로 이어갑니다. 필요하면 먼저 현재 일지를 내보내 주세요.</p>${btn('현재 일지 내보내기','export','','button secondary')}${btn('이 일지로 이어하기','commitImport','','button primary')}`);
 }
 
 export function openEndingConfirm(choiceId) {
