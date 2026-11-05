@@ -1,0 +1,17 @@
+/* 상단바·페이지 틀·2단 레이아웃 */
+.topbar{height:86px;max-width:1420px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid #d9d0cf}
+.brand{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink);font-family:Neo,sans-serif;font-size:21px;line-height:1.3}
+.brand small{display:block;font:9px/1.4 Arial,sans-serif;letter-spacing:3.1px;color:#827080;margin-top:5px}
+.brand-mark{background:#342c37;color:#eab5c6;border-radius:12px;width:44px;height:44px;display:grid;place-items:center;font-size:28px;box-shadow:3px 3px 0 #cdbdc2}
+.topbar-actions{display:flex;align-items:center;gap:8px}
+.save-state{display:flex;align-items:center;gap:7px;font-size:11px;color:#686866;margin-right:14px}
+.save-state i,.pink-dot{width:6px;height:6px;background:#779480;display:inline-block;border-radius:50%}
+.save-state.error{color:#993640}
+.save-state.error i{background:#a54b57}
+.icon-button{background:transparent;border:1px solid #d8cccf;border-radius:50%;width:36px;height:36px;display:grid;place-items:center;font-size:17px;min-width:36px}
+.icon-button:hover{background:#e4d8de}
+.shell{max-width:1324px;padding:0 36px;margin:auto}
+.page-kicker{display:flex;justify-content:space-between;align-items:center;padding:24px 0 19px;color:#8a7d85;font-size:9px;letter-spacing:1.6px}
+.page-kicker i{font-style:normal;color:var(--rose);padding:0 10px}
+.episode-label{font-family:Neo,sans-serif;font-size:13px;letter-spacing:0;color:#756570}
+.game-layout{display:grid;grid-template-columns:minmax(290px,360px) minmax(0,1fr);gap:30px;align-items:start}
