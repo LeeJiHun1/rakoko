@@ -3,7 +3,7 @@ import {CORNERS, PREPARATIONS_PER_BROADCAST, SEGMENTS_PER_BROADCAST} from './con
 import {celebrationKey, celebrationOn} from './dates.js';
 import {scheduleDate} from './calendar.js';
 import {applyChoice} from './choices.js';
-import {baseViewers, broadcastGrade, GRADE_AWARENESS, GRADE_INCOME, growthPoint, peakViewers, previousBaseViewers, updateRecords} from './audience.js';
+import {baseViewers, planVarietyBonus, broadcastGrade, GRADE_AWARENESS, GRADE_INCOME, growthPoint, peakViewers, previousBaseViewers, updateRecords} from './audience.js';
 import {gain} from './growth.js';
 import {activeBonus} from './purchases.js';
 import {updateNeglect} from './outfit.js';
@@ -28,7 +28,7 @@ function reserveSpecials(s) {
 
 function settle(s, catalog) {
   // 시청자 성장(직전 방송 기본 시청자 대비)을 등급에 반영한 뒤, 등급 배율로 최종 시청자를 낸다
-  const viewersBase = baseViewers(s, activeBonus(s, 'viewers')), previousBase = previousBaseViewers(s);
+  const viewersBase = baseViewers(s, activeBonus(s, 'viewers') + planVarietyBonus(s.plan)), previousBase = previousBaseViewers(s);
   const growth = previousBase ? Math.round((viewersBase - previousBase) / previousBase * 100) : null;
   const grade = broadcastGrade(s.currentLog, growthPoint(viewersBase, previousBase));
   const {gross, cost, net} = settleIncome(s, catalog, GRADE_INCOME[grade]);
@@ -106,7 +106,14 @@ export const commands = {
   representative: {run(s, c) {
     if (s.phase !== 'wrap') throw Error('방송을 마친 뒤 고를 수 있어요.');
     if (!Number.isInteger(c.index) || c.index < 0 || c.index > 2) throw Error('기록을 골라주세요.');
-    s.journal.at(-1).representative = c.index;
+    const j = s.journal.at(-1);
+    j.representative = c.index;
+    // 대성공 장면을 대표로 고르면 클립이 퍼져 인지도 +1 (방송당 한 번)
+    if (j.events[c.index]?.grade === 'great' && j.clipped == null) {
+      j.clipped = c.index;
+      gain(s, 'awareness', 1);
+      s.records.clips = (s.records.clips || 0) + 1;
+    }
   }},
   date: {run(s, c) {
     if (!['prep', 'wrap'].includes(s.phase)) throw Error('현재 방송을 마무리한 뒤 날짜를 바꿀 수 있어요.');

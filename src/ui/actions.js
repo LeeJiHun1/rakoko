@@ -54,6 +54,7 @@ const UI_ACTIONS = {
   about: () => openAbout(),
   collection: () => openCollection(),
   achievements: () => openAchievements(),
+  moreJournal() { store.journalLimit = (store.journalLimit || 20) + 20; render(); },
   confirmNew: () => openConfirmNew(),
   async new() {
     await replaceState(newGame());

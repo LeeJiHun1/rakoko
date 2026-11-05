@@ -33,6 +33,9 @@ export function baseViewers(s, bonus = 0) {
   const snap = s.incomeSnapshot, base = 20 + snap.awareness * 3 + snap.community * 5;
   return Math.round(base * TIER_VIEWERS[s.scaleIndex] * (1 + bonus) * (0.9 + random(s) * 0.2));
 }
+/** 편성 궁합: 세 코너가 모두 다르면 시청자 +6%, 한 코너로만 채우면 -6% */
+export const planVarietyBonus = plan => ({3: .06, 2: 0, 1: -.06})[new Set(plan).size] ?? 0;
+
 /** 방송 중 화면용 시청자 추정(난수 없음, 상태를 바꾸지 않음) */
 export function estimateViewers(s, bonus = 0) {
   const snap = s.incomeSnapshot || s.stats, base = 20 + snap.awareness * 3 + snap.community * 5;

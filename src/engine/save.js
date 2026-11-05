@@ -50,7 +50,7 @@ const RECORD_CHECKS = {
   journal: j => isInt(j?.id, 1, MAX_BROADCASTS) && isDate(j.date) && Array.isArray(j.events) && j.events.length <= 3
     && j.events.every(e => isStr(e?.title) && isStr(e.choice) && optStr(e.outcome)) && isInt(j.representative, 0, 2)
     && Number.isFinite(j.income?.gross) && Number.isFinite(j.income?.cost) && Number.isFinite(j.income?.net) && optStr(j.outfit) && optStr(j.ending)
-    && (j.viewers == null || isInt(j.viewers, 0, 1e9)) && (j.viewersBase == null || isInt(j.viewersBase, 0, 1e9)) && (j.growth == null || isInt(j.growth, -100, 100000)) && (j.grade == null || ['S', 'A', 'B', 'C'].includes(j.grade)) && (j.donations == null || Number.isSafeInteger(j.donations)),
+    && (j.viewers == null || isInt(j.viewers, 0, 1e9)) && (j.viewersBase == null || isInt(j.viewersBase, 0, 1e9)) && (j.growth == null || isInt(j.growth, -100, 100000)) && (j.clipped == null || isInt(j.clipped, 0, 2)) && (j.grade == null || ['S', 'A', 'B', 'C'].includes(j.grade)) && (j.donations == null || Number.isSafeInteger(j.donations)),
   projectArchive: (p, catalog) => isProject(p, catalog),
   reachedEndings: e => isStr(e?.id, 64) && isStr(e.title) && optStr(e.epilogue) && optStr(e.resolution),
   purchases: p => isStr(p?.id, 80) && isStr(p.choice) && Number.isSafeInteger(p.cost) && isInt(p.dueBroadcast, 0, 20000) && ['pending', 'delivered'].includes(p.status)
@@ -123,7 +123,7 @@ function validateRecords(s, catalog) {
   if (s.module && !isModule(s.module)) throw Error('장기 콘텐츠 기록이 올바르지 않아요.');
   const r = s.records;
   if (!(s.missions == null || (/^\d{4}-\d{2}$/.test(s.missions.month) && Array.isArray(s.missions.list) && s.missions.list.length <= 3 && s.missions.list.every(isMission) && typeof s.missions.allDone === 'boolean'))) throw Error('미션 기록이 올바르지 않아요.');
-  if (!(r?.missionStamps == null || isInt(r.missionStamps, 0, 100000)) || !(r?.jackpots == null || isInt(r.jackpots, 0, 100000)) || !(r?.missionPerfect == null || isInt(r.missionPerfect, 0, 100000))) throw Error('역대 기록이 올바르지 않아요.');
+  if (!(r?.missionStamps == null || isInt(r.missionStamps, 0, 100000)) || !(r?.jackpots == null || isInt(r.jackpots, 0, 100000)) || !(r?.missionPerfect == null || isInt(r.missionPerfect, 0, 100000)) || !(r?.clips == null || isInt(r.clips, 0, 100000))) throw Error('역대 기록이 올바르지 않아요.');
   if (!onlyKeys(s.achievements, ACHIEVEMENT_IDS) || !Object.values(s.achievements).every(isDate)) throw Error('업적 기록이 올바르지 않아요.');
   if (!r || !['bestViewers', 'bestGross', 'greats', 'donations', 'donationTotal'].every(k => Number.isSafeInteger(r[k]) && r[k] >= 0) || !(r.bestGrade == null || ['S', 'A', 'B', 'C'].includes(r.bestGrade))) throw Error('역대 기록이 올바르지 않아요.');
   if (s.lastEnding && !isEnding(s.lastEnding)) throw Error('결말 기록이 올바르지 않아요.');

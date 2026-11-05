@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {newGame,dispatch,unmet,skill,addDays,nextMilestone,yearsPlayed,firstEndingDate,endingUnlocked,finaleLocks,projectProgressLocks,validateSave,migrateSave,loadSave,DEADLINE,STYLES,prepBonus} from '../src/engine.js';
 import {assignStyles,rollGrade,scaleGains,oddsFor} from '../src/engine/outcome.js';
-import {broadcastGrade,GRADE_INCOME,growthPoint} from '../src/engine/audience.js';
+import {broadcastGrade,GRADE_INCOME,growthPoint,planVarietyBonus} from '../src/engine/audience.js';
 import {offerWeight,priceTier,unlockedTier} from '../src/engine/purchases.js';
 import {leakChance,revealFailChance} from '../src/engine/outfit.js';
 const catalog=JSON.parse(await readFile(new URL('../src/data/catalog.json',import.meta.url),'utf8'));
@@ -91,6 +91,8 @@ test('several completed projects can be kept and switched before the finale',()=
 test('monthly missions: three per month, progress from real play, rewards once, refresh next month',()=>{let s=newGame(600);assert.equal(s.missions,null);s=act(s,'start');assert.equal(s.missions.month,'2026-01');assert.equal(s.missions.list.length,3);assert.equal(new Set(s.missions.list.map(m=>m.id)).size,3);const replay=act(copy(newGame(600)),'start');assert.deepEqual(replay.missions,s.missions);let stamps=0,cash=0;for(let b=0;b<4;b++){s=finish(s);s=next(s);if(b<3)s=act(s,'start');}assert(s.missions.list.some(m=>m.progress>0));assert.equal(s.records.missionStamps||0,s.ledger.filter(x=>x.id.startsWith('mission:')).length);assert(new Set(s.ledger.filter(x=>x.id.startsWith('mission:')).map(x=>x.id)).size===s.ledger.filter(x=>x.id.startsWith('mission:')).length,'같은 미션 보상 중복');s=act(s,'date',{date:'2026-03-01'});s=act(s,'start');assert.equal(s.missions.month,'2026-03');assert(s.missions.list.every(m=>m.progress===0&&!m.done));});
 
 test('achievements unlock from real play and are kept with a date',()=>{let s=newGame(700);assert.deepEqual(s.achievements,{});s=finish(s);assert.equal(s.achievements.first_broadcast,'2026-01-18');const again=act(next(s),'start');assert.equal(again.achievements.first_broadcast,'2026-01-18');s.records.greats=0;assert(validateSave(copy(s),catalog));const bad=copy(s);bad.achievements={evil:'2026-01-18'};assert.throws(()=>validateSave(bad,catalog));});
+
+test('plan variety, clip of a great scene, shorter cooldown after an ending',()=>{assert.equal(planVarietyBonus(['T','G','F']),.06);assert.equal(planVarietyBonus(['S','S','S']),-.06);assert.equal(planVarietyBonus(['T','T','F']),0);let found=false;for(let seed=1;seed<200&&!found;seed++){let s=finish(newGame(seed));const i=s.journal[0].events.findIndex(e=>e.grade==='great');if(i<0)continue;found=true;const aw=s.stats.awareness;s=act(s,'representative',{index:i});assert.equal(s.journal[0].clipped,i);assert.equal(s.records.clips,1);assert(s.stats.awareness>=aw);const again=act(s,'representative',{index:i});assert.equal(again.records.clips,1);}assert(found);});
 
 // Real reachability witnesses: never inject stats, story flags or experiences.
 function witness(def,seed){

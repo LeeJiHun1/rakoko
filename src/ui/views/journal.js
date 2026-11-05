@@ -3,6 +3,9 @@ import {ACHIEVEMENTS, eventsSeen} from '../../engine.js';
 import {btn, escape, money} from '../dom.js';
 import {store} from '../store.js';
 
+/** 한 번에 그리는 일지 수(오래 플레이해도 가볍게) — '이전 기록 더 보기'로 20개씩 */
+export const JOURNAL_PAGE = 20;
+
 export const TOTAL_ENDINGS = 33; // 일반 32 + 10년 강제 결말 1
 
 function entry(j, catalog) {
@@ -30,5 +33,5 @@ const EMPTY = `<div class="empty-state"><span>▥</span><h2>첫 페이지는 아
 export function journal() {
   const {state, catalog} = store;
   const got = Object.keys(state.achievements || {}).length;
-  return `<div class="journal-controls"><span>총 ${state.journal.length}번의 방송 · 만난 결말 ${state.reachedEndings.length}/${TOTAL_ENDINGS} · 업적 ${got}/${ACHIEVEMENTS.length} · 사건 도감 ${eventsSeen(state)}/${catalog.events.length}</span><div>${btn('업적','achievements','','button small secondary')}${btn('모은 결말','collection','','button small secondary')}${btn('일지 내보내기 ↓','export','','button small secondary')}</div></div>${trendCard(state)}${state.journal.length?state.journal.slice().reverse().map(j=>entry(j,catalog)).join(''):EMPTY}`;
+  return `<div class="journal-controls"><span>총 ${state.journal.length}번의 방송 · 만난 결말 ${state.reachedEndings.length}/${TOTAL_ENDINGS} · 업적 ${got}/${ACHIEVEMENTS.length} · 사건 도감 ${eventsSeen(state)}/${catalog.events.length}</span><div>${btn('업적','achievements','','button small secondary')}${btn('모은 결말','collection','','button small secondary')}${btn('일지 내보내기 ↓','export','','button small secondary')}</div></div>${trendCard(state)}${state.journal.length?state.journal.slice().reverse().slice(0,store.journalLimit||JOURNAL_PAGE).map(j=>entry(j,catalog)).join('')+(state.journal.length>(store.journalLimit||JOURNAL_PAGE)?btn(`이전 기록 더 보기 (${state.journal.length-(store.journalLimit||JOURNAL_PAGE)}개 남음)`,'moreJournal','','button secondary full'):''):EMPTY}`;
 }

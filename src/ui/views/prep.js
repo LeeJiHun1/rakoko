@@ -1,5 +1,5 @@
 // 방송 준비 화면: 준비 행동 2회 · 방송 켜기 · (선택) 편성/게임 변경 · 마지막 특집 예약.
-import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks, neglectOf, OUTFIT_PROGRESS_STEP, pendingOutfit} from '../../engine.js';
+import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks, neglectOf, OUTFIT_PROGRESS_STEP, pendingOutfit, planVarietyBonus} from '../../engine.js';
 import {btn, escape} from '../dom.js';
 import {store} from '../store.js';
 import {projectMini} from './project-mini.js';
@@ -72,6 +72,7 @@ export function prep() {
   const summary = state.plan.map(x => CORNERS[x]).join(' → ');
   return `<div class="simple-flow" aria-label="방송 진행 순서"><span class="active">1 준비</span><i>→</i><span>2 방송</span><i>→</i><span>3 일지</span></div>
   <p class="simple-guide">준비를 최대 2번 고른 뒤, <b>방송 켜기</b>를 눌러주세요.</p>
+  <p class="plan-note">오늘 편성 · ${state.plan.map(c=>escape(CORNERS[c])).join(' → ')}${planVarietyBonus(state.plan)>0?' · <b>다양한 편성이라 시청자가 조금 늘어요</b>':planVarietyBonus(state.plan)<0?' · <b class="warn">한 코너만 이어서 시청자가 조금 줄어요</b>':''}</p>
   <div class="section-heading space-top"><h2>오늘은 무엇을 준비할까요?</h2><span class="remaining"><b>${state.preparations}</b>번 남음</span></div>
   ${outfitReady(state)}
   <div class="prep-grid simple-preps">${prepButtons(state)}</div>${activeEffectList(state)}

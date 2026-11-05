@@ -33,5 +33,6 @@ export const PLAYER_SKILL_THRESHOLD = 30;
 export const FIRST_ENDING_DAYS = 150;
 export const ENDING_RECHECK_DAYS = 30;
 export const DEFER_ENDING_DAYS = 90;
-export const CONTINUE_COOLDOWN_DAYS = 365;
+/** 결말 뒤 같은 일지로 계속할 때 다음 결말까지(365 → 120일: 결말 33종을 모을 수 있게) */
+export const CONTINUE_COOLDOWN_DAYS = 120;
 export const COMMAND_HISTORY_LIMIT = 256;

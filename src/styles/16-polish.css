@@ -41,3 +41,6 @@
 .event-meta{flex-wrap:wrap;gap:6px}
 .corner-badge,.event-meta .tag{white-space:nowrap}
 @media (max-width:760px){.event-meta>span:last-child:not(.tag):not(.corner-badge){display:none}}
+.plan-note{margin:-6px 0 14px;font-size:calc(12px * var(--text-scale));color:#76666f}
+.plan-note b{color:#46705c}.plan-note b.warn{color:#9a4560}
+.clip-tag{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:999px;background:#fff1f5;border:1px solid #e5c3cf;color:#9a4560;font-style:normal;font-size:calc(11px * var(--text-scale));font-weight:700}
