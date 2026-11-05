@@ -4,7 +4,7 @@
 import {addDays, loadSave, newGame, nextMilestone} from '../engine.js';
 import * as storage from '../storage.js';
 import {replaceState, runCommand} from './commands.js';
-import {openAbout, openAchievements, openCollection, openConfirmNew, openDatePicker, openEndingConfirm, openImportConfirm, openSettings, showCredits, updateDateWarning} from './dialogs.js';
+import {maybeShowGuide, openAbout, openAchievements, openCollection, openConfirmNew, openDatePicker, openEndingConfirm, openImportConfirm, openSettings, showCredits, updateDateWarning} from './dialogs.js';
 import {$} from './dom.js';
 import {clickSound, toast} from './feedback.js';
 import {closeDialog} from './modal.js';
@@ -60,6 +60,8 @@ const UI_ACTIONS = {
     closeDialog();
     announceSaved(store.state);
     render();
+    try { localStorage.removeItem('rakoko-guide-seen'); } catch {}
+    maybeShowGuide();
   },
   async commitImport() {
     const before = store.state;
@@ -163,7 +165,22 @@ async function onChange(e) {
   }
 }
 
+/** 키보드: 1~4 선택지, Enter/→ 지금 화면의 주 버튼(방송 켜기·다음 코너·7일 뒤). 입력 중·대화상자 열림·다른 탭이면 무시 */
+const PRIMARY_ACTIONS = ['[data-action="advance"]', '[data-action="start"]', '[data-action="nextWeek"]'];
+function onKeydown(e) {
+  if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || store.view !== 'broadcast' || document.querySelector('#modal')?.open) return;
+  const el = document.activeElement;
+  if (el && (['INPUT', 'SELECT', 'TEXTAREA'].includes(el.tagName) || el.isContentEditable)) return;
+  let target = null;
+  if (/^[1-4]$/.test(e.key)) target = document.querySelectorAll('#app .choice')[Number(e.key) - 1];
+  else if ((e.key === 'Enter' || e.key === 'ArrowRight') && !(el && el.tagName === 'BUTTON')) target = PRIMARY_ACTIONS.map(s => document.querySelector(`#app ${s}`)).find(Boolean);
+  if (!target || target.disabled) return;
+  e.preventDefault();
+  target.click();
+}
+
 export function installEventHandlers() {
+  document.addEventListener('keydown', onKeydown);
   document.addEventListener('click', onClick);
   document.addEventListener('change', onChange);
 }

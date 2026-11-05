@@ -30,8 +30,19 @@ export function openSettings() {
   $('#font-style').value = preferences.font;
 }
 
+const GUIDE_KEY = 'rakoko-guide-seen';
+/** 새 일지 첫 방송 전에 한 번만 보여 주는 안내 */
+export function maybeShowGuide() {
+  const {state} = store;
+  let seen = false;
+  try { seen = localStorage.getItem(GUIDE_KEY) === '1'; } catch {}
+  if (seen || state.completedBroadcasts > 0 || state.phase !== 'prep') return;
+  try { localStorage.setItem(GUIDE_KEY, '1'); } catch {}
+  openDialog('첫 방송을 켜기 전에',`<ol class="guide-list"><li><b>준비</b> — 방송마다 준비 행동 2번. 자료·연습·점검마다 유리해지는 코너가 달라요.</li><li><b>방송</b> — 코너 3개. 선택지의 <em>안정·보통·모험</em>에 따라 대성공도, 아쉬움도 나와요.</li><li><b>일지</b> — 결과와 시청자 성장으로 방송 등급(S~C)이 매겨지고, 응원이 터지기도 해요.</li><li><b>목표</b> — 기획을 골라 3단계로 완성하고, 방송 150일째부터 마지막 특집으로 결말을 만나요. 여러 기획을 완성해 두고 고를 수도 있어요.</li><li><b>그 밖에</b> — 방송 중 새 의상 제안·구매 이벤트, 이번 달 미션, 업적과 사건 도감이 기다려요.</li></ol><p class="modal-description">키보드: 숫자 1~4로 선택, Enter 로 다음. 설정에서 글자 크기·동작 줄이기·효과음을 바꿀 수 있어요.</p>${btn('첫 방송 준비하기','closeModal','','button primary full')}`);
+}
+
 export function openAbout() {
-  openDialog('라코코의 방송일지',`<p class="about-intro">오늘의 방송이<br/><b>내일의 이야기가 되는 곳.</b></p><p>준비하고, 함께 방송하고, 기억할 장면을 남기는 비공식 선택형 팬게임이에요.</p><ul class="about-list"><li>준비 행동은 방송마다 2번, 코너는 3개예요.</li><li>기획은 특별 코너에서 자료·시범·피드백 순으로 만들어요.</li><li>새 옷은 준비 → 공개 → 무료 환복으로 이어져요.</li></ul><p class="modal-description">캐릭터: 사용자 제공 공식 참조를 바탕으로 만든 도트풍 이미지.<br/>픽셀 글꼴: Neo둥근모 · Eunbin Jeong · SIL OFL 1.1.<br/><a href="assets/fonts/neodgm-LICENSE.txt" target="_blank" rel="noopener">글꼴 라이선스 보기</a></p>`);
+  openDialog('라코코의 방송일지',`<p class="about-intro">오늘의 방송이<br/><b>내일의 이야기가 되는 곳.</b></p><p>준비하고, 함께 방송하고, 기억할 장면을 남기는 비공식 선택형 팬게임이에요.</p><ul class="about-list"><li>준비 행동은 방송마다 2번, 코너는 3개예요. 선택지의 안정·보통·모험에 따라 결과가 갈려요.</li><li>기획은 특별 코너에서 자료·시범·피드백 순으로 만들고, 방송 150일째부터 결말로 이어져요.</li><li>새 옷은 방송 중 제안 → 준비 → 커튼 공개 → 무료 환복. 준비를 미루면 유출될 수도!</li><li>이번 달 미션, 업적과 사건 도감도 모아 보세요.</li><li>키보드: 숫자 1~4로 선택, Enter 로 다음.</li></ul><p class="modal-description">캐릭터: 사용자 제공 공식 참조를 바탕으로 만든 도트풍 이미지.<br/>픽셀 글꼴: Neo둥근모 · Eunbin Jeong · SIL OFL 1.1.<br/><a href="assets/fonts/neodgm-LICENSE.txt" target="_blank" rel="noopener">글꼴 라이선스 보기</a></p>`);
 }
 
 export function openCollection() {

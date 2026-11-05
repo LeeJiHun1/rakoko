@@ -2,7 +2,7 @@
 import {loadSave, newGame} from '../engine.js';
 import * as storage from '../storage.js';
 import {installEventHandlers} from './actions.js';
-import {showCredits} from './dialogs.js';
+import {maybeShowGuide, showCredits} from './dialogs.js';
 import {escape} from './dom.js';
 import {toast} from './feedback.js';
 import {installBackdropClose} from './modal.js';
@@ -51,6 +51,7 @@ export async function boot() {
       throw renderError;
     }
     if (state.phase === 'credits') showCredits();
+    else maybeShowGuide();
   } catch (error) {
     showBootError(error);
   }

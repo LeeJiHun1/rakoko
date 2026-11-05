@@ -57,3 +57,7 @@
   .text-large .notebook-tabs button{flex:0 0 auto;padding-left:14px;padding-right:14px}
   .text-large .date-stamp{display:none}
 }
+
+/* 키보드 단축키 안내: 마우스·키보드 환경(데스크톱)에서만 */
+.key-hint{display:none}
+@media (hover:hover) and (pointer:fine){.key-hint{display:inline;color:#76666f}}

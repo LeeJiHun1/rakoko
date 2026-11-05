@@ -48,3 +48,5 @@ dialog::backdrop{background:#211b2b99;backdrop-filter:blur(4px)}
 }
 .boot-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0 8px}
 .boot-note{font-size:calc(12px * var(--text-scale));color:var(--muted)}
+.guide-list{padding-left:20px;display:grid;gap:8px;margin:4px 0 12px}
+.guide-list em{font-style:normal;color:#9a4560}
