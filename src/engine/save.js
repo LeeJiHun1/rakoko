@@ -5,6 +5,7 @@ import {SCHEMA_VERSION} from './state.js';
 import {clone} from './util.js';
 import {emptyRecords} from './audience.js';
 import {isMission} from './missions.js';
+import {ACHIEVEMENT_IDS} from './achievements.js';
 
 const LIST_KEYS = ['journal', 'commands', 'promises', 'purchases', 'experienceRecords', 'reachedEndings', 'projectArchive', 'moduleArchive', 'celebrations', 'seenOnce'];
 
@@ -20,6 +21,8 @@ export const MIGRATIONS = {
   /** 3 → 4: 준비 소홀 점수·공개 실패 기록 */
   /** 4 → 5: 이번 달 미션(다음 방송 시작 때 생성) */
   4: s => ({...s, schemaVersion: 5, missions: null}),
+  /** 5 → 6: 업적(다음 행동 때 지금 상태로 판정) */
+  5: s => ({...s, schemaVersion: 6, achievements: {}}),
   3: s => ({...s, schemaVersion: 4, outfitNeglect: {}, outfitRevealFailed: {}, outfitPreparedToday: false}),
   2: s => ({...s, schemaVersion: 3, outfitStarted: Object.fromEntries(Object.entries(s.outfitProgress || {}).filter(([id, p]) => p > 0 && !s.wardrobe?.[id]).map(([id]) => [id, true])), outfitFollowup: null}),
 };
@@ -120,7 +123,8 @@ function validateRecords(s, catalog) {
   if (s.module && !isModule(s.module)) throw Error('장기 콘텐츠 기록이 올바르지 않아요.');
   const r = s.records;
   if (!(s.missions == null || (/^\d{4}-\d{2}$/.test(s.missions.month) && Array.isArray(s.missions.list) && s.missions.list.length <= 3 && s.missions.list.every(isMission) && typeof s.missions.allDone === 'boolean'))) throw Error('미션 기록이 올바르지 않아요.');
-  if (!(r?.missionStamps == null || isInt(r.missionStamps, 0, 100000))) throw Error('역대 기록이 올바르지 않아요.');
+  if (!(r?.missionStamps == null || isInt(r.missionStamps, 0, 100000)) || !(r?.jackpots == null || isInt(r.jackpots, 0, 100000)) || !(r?.missionPerfect == null || isInt(r.missionPerfect, 0, 100000))) throw Error('역대 기록이 올바르지 않아요.');
+  if (!onlyKeys(s.achievements, ACHIEVEMENT_IDS) || !Object.values(s.achievements).every(isDate)) throw Error('업적 기록이 올바르지 않아요.');
   if (!r || !['bestViewers', 'bestGross', 'greats', 'donations', 'donationTotal'].every(k => Number.isSafeInteger(r[k]) && r[k] >= 0) || !(r.bestGrade == null || ['S', 'A', 'B', 'C'].includes(r.bestGrade))) throw Error('역대 기록이 올바르지 않아요.');
   if (s.lastEnding && !isEnding(s.lastEnding)) throw Error('결말 기록이 올바르지 않아요.');
   if (s.phase === 'event' && !s.event.choices.every(c => isStr(c?.id, 80) && isStr(c.text))) throw Error('진행 중 사건이 없어요.');

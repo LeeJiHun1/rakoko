@@ -1,4 +1,5 @@
 // 지난 기록: 방송별 일지 · 결말 수집 · 내보내기.
+import {ACHIEVEMENTS, eventsSeen} from '../../engine.js';
 import {btn, escape, money} from '../dom.js';
 import {store} from '../store.js';
 
@@ -12,5 +13,6 @@ const EMPTY = `<div class="empty-state"><span>▥</span><h2>첫 페이지는 아
 
 export function journal() {
   const {state, catalog} = store;
-  return `<div class="journal-controls"><span>총 ${state.journal.length}번의 방송 · 만난 결말 ${state.reachedEndings.length}/${TOTAL_ENDINGS}</span><div>${btn('모은 결말','collection','','button small secondary')}${btn('일지 내보내기 ↓','export','','button small secondary')}</div></div>${state.journal.length?state.journal.slice().reverse().map(j=>entry(j,catalog)).join(''):EMPTY}`;
+  const got = Object.keys(state.achievements || {}).length;
+  return `<div class="journal-controls"><span>총 ${state.journal.length}번의 방송 · 만난 결말 ${state.reachedEndings.length}/${TOTAL_ENDINGS} · 업적 ${got}/${ACHIEVEMENTS.length} · 사건 도감 ${eventsSeen(state)}/${catalog.events.length}</span><div>${btn('업적','achievements','','button small secondary')}${btn('모은 결말','collection','','button small secondary')}${btn('일지 내보내기 ↓','export','','button small secondary')}</div></div>${state.journal.length?state.journal.slice().reverse().map(j=>entry(j,catalog)).join(''):EMPTY}`;
 }

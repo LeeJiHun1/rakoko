@@ -69,5 +69,6 @@ export function rollDonation(s, bonus = 0) {
   s.ledger.push({id: `donation:${s.broadcastIndex}:${s.slot}`, date: s.date, net: amount});
   s.records.donations++;
   s.records.donationTotal += amount;
+  if (tier.id === 'jackpot') s.records.jackpots = (s.records.jackpots || 0) + 1;
   return {tier: tier.id, amount, from, message};
 }

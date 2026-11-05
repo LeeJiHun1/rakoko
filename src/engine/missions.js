@@ -49,6 +49,7 @@ export function bumpMission(s, id, {corner, amount = 1} = {}) {
   }
   if (!s.missions.allDone && s.missions.list.length && s.missions.list.every(m => m.done)) {
     s.missions.allDone = true;
+    s.records.missionPerfect = (s.records.missionPerfect || 0) + 1;
     gain(s, 'community', 2);
   }
 }

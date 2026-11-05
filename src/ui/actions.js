@@ -4,7 +4,7 @@
 import {addDays, loadSave, newGame, nextMilestone} from '../engine.js';
 import * as storage from '../storage.js';
 import {replaceState, runCommand} from './commands.js';
-import {openAbout, openCollection, openConfirmNew, openDatePicker, openEndingConfirm, openImportConfirm, openSettings, showCredits, updateDateWarning} from './dialogs.js';
+import {openAbout, openAchievements, openCollection, openConfirmNew, openDatePicker, openEndingConfirm, openImportConfirm, openSettings, showCredits, updateDateWarning} from './dialogs.js';
 import {$} from './dom.js';
 import {clickSound, toast} from './feedback.js';
 import {closeDialog} from './modal.js';
@@ -53,6 +53,7 @@ const UI_ACTIONS = {
   settings: () => openSettings(),
   about: () => openAbout(),
   collection: () => openCollection(),
+  achievements: () => openAchievements(),
   confirmNew: () => openConfirmNew(),
   async new() {
     await replaceState(newGame());

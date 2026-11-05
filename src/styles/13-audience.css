@@ -48,3 +48,11 @@
 .mission-row.done span{color:#46705c;font-weight:700}
 .mission-row.done .meter i{background:#5f8a76}
 .mission-row small,.mission-note{color:#76666f;font-size:calc(11px * var(--text-scale))}
+.achievement-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.achievement{padding:12px;border-radius:10px;border:1px dashed var(--line);background:#faf7f2;opacity:.75}
+.achievement span{font-size:calc(18px * var(--text-scale));color:#9c8a96}
+.achievement h3{margin:4px 0 2px;font-size:calc(13px * var(--text-scale))}
+.achievement p{margin:0;font-size:calc(11px * var(--text-scale));color:#76666f}
+.achievement.got{opacity:1;border-style:solid;border-color:#d9a4b5;background:#fff7f9}
+.achievement.got span{color:#c19f67}
+.achievement small{display:block;margin-top:4px;color:#76666f;font-size:calc(10px * var(--text-scale))}

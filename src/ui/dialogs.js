@@ -1,5 +1,5 @@
 // 대화상자 화면: 크레딧 · 날짜 고르기 · 설정 · 안내 · 결말 모음 · 새 일지 · 가져오기 · 결말 확인.
-import {addDays, DEADLINE} from '../engine.js';
+import {ACHIEVEMENTS, addDays, DEADLINE, eventsSeen} from '../engine.js';
 import {$, btn, escape} from './dom.js';
 import {openDialog} from './modal.js';
 import {preferences} from './preferences.js';
@@ -37,6 +37,11 @@ export function openAbout() {
 export function openCollection() {
   const {state} = store;
   openDialog('함께 만난 이야기들',`<p class="modal-description">만난 결말 ${state.reachedEndings.length} / ${TOTAL_ENDINGS}. 아직 만나지 않은 이야기는 첫 장면을 위해 남겨 둘게요.</p><div class="collection-list">${state.reachedEndings.length?state.reachedEndings.map(x=>`<article><span>✦</span><h3>${escape(x.title)}</h3><p>${escape(x.epilogue)}</p></article>`).join(''):'<p>아직 마지막 장을 쓰지 않았어요.<br/>지금의 작은 기획부터 함께 만들어 보세요.</p>'}</div>`);
+}
+
+export function openAchievements() {
+  const {state, catalog} = store, got = state.achievements || {};
+  openDialog('업적과 사건 도감',`<p class="modal-description">업적 ${Object.keys(got).length} / ${ACHIEVEMENTS.length} · 만난 사건 ${eventsSeen(state)} / ${catalog.events.length}</p><div class="achievement-grid">${ACHIEVEMENTS.map(a=>got[a.id]?`<article class="achievement got"><span>✦</span><h3>${escape(a.label)}</h3><p>${escape(a.desc)}</p><small>${escape(got[a.id])}</small></article>`:`<article class="achievement"><span>?</span><h3>${escape(a.label)}</h3><p>${escape(a.desc)}</p></article>`).join('')}</div>`);
 }
 
 export function openConfirmNew() {

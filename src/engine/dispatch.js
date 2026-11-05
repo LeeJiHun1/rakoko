@@ -1,6 +1,7 @@
 // 모든 상태 변경의 단일 입구. 원본 상태는 바꾸지 않고 복제본에 명령을 적용해 돌려준다.
 // 같은 commandId 는 한 번만 적용된다(중복 클릭·재전송 대비). 실패하면 예외를 던지고 원본은 그대로다.
 import {COMMAND_HISTORY_LIMIT} from './constants.js';
+import {unlockAchievements} from './achievements.js';
 import {COMMANDS} from './commands.js';
 import {clone} from './util.js';
 
@@ -16,6 +17,7 @@ export function dispatch(state, command, catalog) {
   if (state.commands.includes(command.commandId)) return state;
   const next = clone(state);
   execute(next, command, catalog);
+  unlockAchievements(next); // 업적은 모든 명령 뒤 상태로 판정
   next.commands.push(command.commandId);
   next.commands = next.commands.slice(-COMMAND_HISTORY_LIMIT);
   next.revision++;

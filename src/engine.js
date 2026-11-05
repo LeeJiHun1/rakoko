@@ -14,3 +14,4 @@ export {validateSave, migrateSave, loadSave} from './engine/save.js';
 export {GATED_EVENT_IDS} from './engine/events/eligibility.js';
 export {STYLES, prepBonus, NOTABLE_BONUS} from './engine/outcome.js';
 export {activeBonus, activeEffects, effectsFor, effectText, EFFECT_LABELS} from './engine/purchases.js';
+export {ACHIEVEMENTS, eventsSeen} from './engine/achievements.js';
