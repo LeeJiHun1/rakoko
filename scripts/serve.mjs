@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const root = path.resolve(process.argv[2] || '.');
 const port = Number(process.env.PORT || 5173);
-const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.woff2':'font/woff2','.svg':'image/svg+xml','.md':'text/plain; charset=utf-8'};
+const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.woff2':'font/woff2','.svg':'image/svg+xml','.ogg':'audio/ogg','.mp3':'audio/mpeg','.wav':'audio/wav','.md':'text/plain; charset=utf-8'};
 // 개발 전용 서버. 127.0.0.1 에만 묶고, Host 헤더를 확인해 DNS rebinding 으로 저장소 파일(로컬 캡처 등)을 읽지 못하게 한다.
 const allowedHosts = new Set([`127.0.0.1:${port}`, `localhost:${port}`]);
 const server = http.createServer((req,res) => {

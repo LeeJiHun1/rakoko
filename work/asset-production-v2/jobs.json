@@ -1,0 +1,1160 @@
+[
+  {
+    "path": "assets/characters/faces/rakoko-face-ghost-default.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "ghost portrait default",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-ghost-default.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production ghost portrait default asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: pale ice-blue WHITE VEIL and high-neck opaque pale dress with draped sleeves; friendly costume only, no supernatural effects. Calm attentive neutral expression, small relaxed mouth. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-ghost-v1.png"
+    ],
+    "outfit": "ghost",
+    "expression": "default"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-ghost-smile.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "ghost portrait smile",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-ghost-smile.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production ghost portrait smile asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: pale ice-blue WHITE VEIL and high-neck opaque pale dress with draped sleeves; friendly costume only, no supernatural effects. Bright friendly smile, both colored eyes gently open, happy little open mouth. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-ghost-v1.png"
+    ],
+    "outfit": "ghost",
+    "expression": "smile"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-ghost-flustered.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "ghost portrait flustered",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-ghost-flustered.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production ghost portrait flustered asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: pale ice-blue WHITE VEIL and high-neck opaque pale dress with draped sleeves; friendly costume only, no supernatural effects. Mildly embarrassed awkward smile, pink cheeks and one small blue SWEAT DROP near temple, both eyes visible. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-ghost-v1.png"
+    ],
+    "outfit": "ghost",
+    "expression": "flustered"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-ghost-surprised.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "ghost portrait surprised",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-ghost-surprised.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production ghost portrait surprised asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: pale ice-blue WHITE VEIL and high-neck opaque pale dress with draped sleeves; friendly costume only, no supernatural effects. Surprised wide heterochromatic eyes, round small open mouth, raised brows. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-ghost-v1.png"
+    ],
+    "outfit": "ghost",
+    "expression": "surprised"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-ghost-proud.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "ghost portrait proud",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-ghost-proud.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production ghost portrait proud asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: pale ice-blue WHITE VEIL and high-neck opaque pale dress with draped sleeves; friendly costume only, no supernatural effects. Pleased confident smile, chin gently raised, small victory fist beside shoulder. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-ghost-v1.png"
+    ],
+    "outfit": "ghost",
+    "expression": "proud"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-maid-default.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "maid portrait default",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-maid-default.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production maid portrait default asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: navy-black puff-sleeve maid dress, WHITE FRILLED BUNNY-EAR HEADBAND with one upright and one bent ear, white collar, navy bow and white apron. Calm attentive neutral expression, small relaxed mouth. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-maid-v1.png"
+    ],
+    "outfit": "maid",
+    "expression": "default"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-maid-smile.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "maid portrait smile",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-maid-smile.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production maid portrait smile asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: navy-black puff-sleeve maid dress, WHITE FRILLED BUNNY-EAR HEADBAND with one upright and one bent ear, white collar, navy bow and white apron. Bright friendly smile, both colored eyes gently open, happy little open mouth. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-maid-v1.png"
+    ],
+    "outfit": "maid",
+    "expression": "smile"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-maid-flustered.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "maid portrait flustered",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-maid-flustered.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production maid portrait flustered asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: navy-black puff-sleeve maid dress, WHITE FRILLED BUNNY-EAR HEADBAND with one upright and one bent ear, white collar, navy bow and white apron. Mildly embarrassed awkward smile, pink cheeks and one small blue SWEAT DROP near temple, both eyes visible. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-maid-v1.png"
+    ],
+    "outfit": "maid",
+    "expression": "flustered"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-maid-surprised.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "maid portrait surprised",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-maid-surprised.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production maid portrait surprised asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: navy-black puff-sleeve maid dress, WHITE FRILLED BUNNY-EAR HEADBAND with one upright and one bent ear, white collar, navy bow and white apron. Surprised wide heterochromatic eyes, round small open mouth, raised brows. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-maid-v1.png"
+    ],
+    "outfit": "maid",
+    "expression": "surprised"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-maid-proud.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "maid portrait proud",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-maid-proud.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production maid portrait proud asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: navy-black puff-sleeve maid dress, WHITE FRILLED BUNNY-EAR HEADBAND with one upright and one bent ear, white collar, navy bow and white apron. Pleased confident smile, chin gently raised, small victory fist beside shoulder. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-maid-v1.png"
+    ],
+    "outfit": "maid",
+    "expression": "proud"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-police-default.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "police portrait default",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-police-default.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production police portrait default asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: NAVY PEAKED CAP with small plain gold badge, white sleeveless collared blouse, navy tie and draped navy jacket; no weapon. Calm attentive neutral expression, small relaxed mouth. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-police-v1.png"
+    ],
+    "outfit": "police",
+    "expression": "default"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-police-smile.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "police portrait smile",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-police-smile.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production police portrait smile asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: NAVY PEAKED CAP with small plain gold badge, white sleeveless collared blouse, navy tie and draped navy jacket; no weapon. Bright friendly smile, both colored eyes gently open, happy little open mouth. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-police-v1.png"
+    ],
+    "outfit": "police",
+    "expression": "smile"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-police-flustered.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "police portrait flustered",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-police-flustered.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production police portrait flustered asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: NAVY PEAKED CAP with small plain gold badge, white sleeveless collared blouse, navy tie and draped navy jacket; no weapon. Mildly embarrassed awkward smile, pink cheeks and one small blue SWEAT DROP near temple, both eyes visible. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-police-v1.png"
+    ],
+    "outfit": "police",
+    "expression": "flustered"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-police-surprised.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "police portrait surprised",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-police-surprised.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production police portrait surprised asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: NAVY PEAKED CAP with small plain gold badge, white sleeveless collared blouse, navy tie and draped navy jacket; no weapon. Surprised wide heterochromatic eyes, round small open mouth, raised brows. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-police-v1.png"
+    ],
+    "outfit": "police",
+    "expression": "surprised"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-police-proud.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "police portrait proud",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-police-proud.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production police portrait proud asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: NAVY PEAKED CAP with small plain gold badge, white sleeveless collared blouse, navy tie and draped navy jacket; no weapon. Pleased confident smile, chin gently raised, small victory fist beside shoulder. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-police-v1.png"
+    ],
+    "outfit": "police",
+    "expression": "proud"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-nun-default.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "nun portrait default",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-nun-default.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production nun portrait default asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: WHITE VEIL WITH DARK PIPING, white high-neck opaque long sleeves, dark shoulder panels and small silver ornamental cross as clothing detail, same reference headdress; no religious scene or magic. Calm attentive neutral expression, small relaxed mouth. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-nun-v1.png"
+    ],
+    "outfit": "nun",
+    "expression": "default"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-nun-smile.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "nun portrait smile",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-nun-smile.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production nun portrait smile asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: WHITE VEIL WITH DARK PIPING, white high-neck opaque long sleeves, dark shoulder panels and small silver ornamental cross as clothing detail, same reference headdress; no religious scene or magic. Bright friendly smile, both colored eyes gently open, happy little open mouth. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-nun-v1.png"
+    ],
+    "outfit": "nun",
+    "expression": "smile"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-nun-flustered.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "nun portrait flustered",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-nun-flustered.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production nun portrait flustered asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: WHITE VEIL WITH DARK PIPING, white high-neck opaque long sleeves, dark shoulder panels and small silver ornamental cross as clothing detail, same reference headdress; no religious scene or magic. Mildly embarrassed awkward smile, pink cheeks and one small blue SWEAT DROP near temple, both eyes visible. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-nun-v1.png"
+    ],
+    "outfit": "nun",
+    "expression": "flustered"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-nun-surprised.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "nun portrait surprised",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-nun-surprised.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production nun portrait surprised asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: WHITE VEIL WITH DARK PIPING, white high-neck opaque long sleeves, dark shoulder panels and small silver ornamental cross as clothing detail, same reference headdress; no religious scene or magic. Surprised wide heterochromatic eyes, round small open mouth, raised brows. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-nun-v1.png"
+    ],
+    "outfit": "nun",
+    "expression": "surprised"
+  },
+  {
+    "path": "assets/characters/faces/rakoko-face-nun-proud.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "nun portrait proud",
+    "group": "faces",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/characters__faces__rakoko-face-nun-proud.prompt.txt",
+    "prompt": "Use case: identity-preserve. ONE production nun portrait proud asset, exact 512x512 PNG. CHEST-UP centered square portrait of the SAME character in reference. STRICTLY preserve outfit and headgear from reference: WHITE VEIL WITH DARK PIPING, white high-neck opaque long sleeves, dark shoulder panels and small silver ornamental cross as clothing detail, same reference headdress; no religious scene or magic. Pleased confident smile, chin gently raised, small victory fist beside shoulder. Keep whole headdress and hair bow inside square, lower crop at chest, readable face occupies about 45% canvas height. Same forward-facing angle and proportions across portrait set. No extra accessories, do not substitute default clothing. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/events/outfit-reveals/rakoko-nun-v1.png"
+    ],
+    "outfit": "nun",
+    "expression": "proud"
+  },
+  {
+    "path": "assets/scenes/scene-tech.png",
+    "width": 960,
+    "height": 360,
+    "transparent": true,
+    "label": "장비·화면",
+    "group": "scenes",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/scenes__scene-tech.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 장비·화면 asset, exact 960x360 PNG. Panoramic transparent vignette of an unbranded monitor showing simple blank test color blocks, microphone with loose but safe plug, small screwdriver and neatly coiled cable. Friendly troubleshooting, no sparks or damage. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": []
+  },
+  {
+    "path": "assets/scenes/scene-game.png",
+    "width": 960,
+    "height": 360,
+    "transparent": true,
+    "label": "게임 도전",
+    "group": "scenes",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/scenes__scene-game.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 게임 도전 asset, exact 960x360 PNG. Panoramic transparent vignette of RAKOKO happily concentrating on plain controller at a compact desk, original abstract colored block challenge on small monitor, strategy notebook and one cheering Kimongi. No specific commercial game. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/rakoko-base-v1.png",
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/scenes/scene-fan.png",
+    "width": 960,
+    "height": 360,
+    "transparent": true,
+    "label": "팬 참여",
+    "group": "scenes",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/scenes__scene-fan.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 팬 참여 asset, exact 960x360 PNG. Panoramic transparent vignette of several varied Kimongi showing blank fan-art cards, heart paddles and voting tokens around a low table, cheerful community participation. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/scenes/scene-flow.png",
+    "width": 960,
+    "height": 360,
+    "transparent": true,
+    "label": "방송 흐름",
+    "group": "scenes",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/scenes__scene-flow.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 방송 흐름 asset, exact 960x360 PNG. Panoramic transparent vignette of RAKOKO adjusting her microphone and reaching for a mug beside a small blank cue-card stand and plain clock with unnumbered face; a waiting Kimongi waves, cozy casual streaming transition. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/rakoko-base-v1.png",
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/scenes/scene-collab.png",
+    "width": 960,
+    "height": 360,
+    "transparent": true,
+    "label": "합방·협동",
+    "group": "scenes",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/scenes__scene-collab.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 합방·협동 asset, exact 960x360 PNG. Panoramic transparent vignette of RAKOKO and three Kimongi coordinating at a small shared table, several plain headsets, colored role cards and two generic controllers. No other human figures, no voice chat logos. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/rakoko-base-v1.png",
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/scenes/scene-project.png",
+    "width": 960,
+    "height": 360,
+    "transparent": true,
+    "label": "특별 기획",
+    "group": "scenes",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/scenes__scene-project.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 특별 기획 asset, exact 960x360 PNG. Panoramic transparent vignette of open original storyboard notebook, blank color-coded planning cards, a pencil, brass paper clips and a tiny stage model under a simple desk lamp. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": []
+  },
+  {
+    "path": "assets/scenes/scene-promise.png",
+    "width": 960,
+    "height": 360,
+    "transparent": true,
+    "label": "약속 메모",
+    "group": "scenes",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/scenes__scene-promise.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 약속 메모 asset, exact 960x360 PNG. Panoramic transparent vignette of an open journal with one blank ribbon-bookmarked page, a folded note secured by a small heart-shaped paperclip, pencil and neatly tied little parcel. Friendly promise memory, no letters. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": []
+  },
+  {
+    "path": "assets/scenes/scene-celebration.png",
+    "width": 960,
+    "height": 360,
+    "transparent": true,
+    "label": "기념일",
+    "group": "scenes",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/scenes__scene-celebration.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 기념일 asset, exact 960x360 PNG. Panoramic transparent vignette of a small cream cake with unnumbered candles, blank calendar page, coral/navy bunting and several joyful Kimongi holding gold confetti. No wedding implication. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/ui/grade-S.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "grade S stamp",
+    "group": "grades",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__grade-S.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production grade S stamp asset, exact 256x256 PNG. ONE bold large Latin capital S centered inside a clean pixel-art round ink-stamp medallion. Double stepped circle border, warm gold and cream/navy palette. Single tiny four-point glint at top, letter must be instantly readable at 48px. Match all four grade stamps; C is dignified, not punitive. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. Text EXACTLY: S. No additional lettering or numbers.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/grade-A.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "grade A stamp",
+    "group": "grades",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__grade-A.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production grade A stamp asset, exact 256x256 PNG. ONE bold large Latin capital A centered inside a clean pixel-art round ink-stamp medallion. Double stepped circle border, rich plum and cream/navy palette. Single tiny four-point glint at top, letter must be instantly readable at 48px. Match all four grade stamps; C is dignified, not punitive. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. Text EXACTLY: A. No additional lettering or numbers.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/grade-B.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "grade B stamp",
+    "group": "grades",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__grade-B.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production grade B stamp asset, exact 256x256 PNG. ONE bold large Latin capital B centered inside a clean pixel-art round ink-stamp medallion. Double stepped circle border, muted lavender and cream/navy palette. Single tiny four-point glint at top, letter must be instantly readable at 48px. Match all four grade stamps; C is dignified, not punitive. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. Text EXACTLY: B. No additional lettering or numbers.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/grade-C.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "grade C stamp",
+    "group": "grades",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__grade-C.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production grade C stamp asset, exact 256x256 PNG. ONE bold large Latin capital C centered inside a clean pixel-art round ink-stamp medallion. Double stepped circle border, cool slate and cream/navy palette. Single tiny four-point glint at top, letter must be instantly readable at 48px. Match all four grade stamps; C is dignified, not punitive. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. Text EXACTLY: C. No additional lettering or numbers.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/donation-small.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "support small",
+    "group": "donations",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__donation-small.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production support small asset, exact 256x256 PNG. One large coral pixel heart above two small cream supportive hands, minimal small gold glints. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/donation-medium.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "support medium",
+    "group": "donations",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__donation-medium.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production support medium asset, exact 256x256 PNG. Two friendly cheering light sticks crossed, cream handles and warm gold/coral lights, a little heart between. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/donation-jackpot.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "support jackpot",
+    "group": "donations",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__donation-jackpot.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production support jackpot asset, exact 256x256 PNG. A small navy-and-gold party popper sending coral/gold square confetti upward, festive and compact, no money or gambling symbols. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/events/outfit-locked.png",
+    "width": 512,
+    "height": 768,
+    "transparent": true,
+    "label": "unrevealed outfit silhouette",
+    "group": "outfit",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/events__outfit-locked.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production unrevealed outfit silhouette asset, exact 512x768 PNG. ONE neutral dress-form stand FULLY COVERED by an opaque cream cloth from top to base. Smooth generic silhouette, no readable headwear or outfit detail under cloth, small navy ribbon loosely tied at base, simple dark stand feet. NO actual costume visible, no face, no person, no question mark. Must work for all four undisclosed outfits. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/events/outfit-offer.png",
+    "width": 960,
+    "height": 540,
+    "transparent": true,
+    "label": "costume proposal sketchbook",
+    "group": "outfit",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/events__outfit-offer.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production costume proposal sketchbook asset, exact 960x540 PNG. A gently angled open costume planning sketchbook with blank template figure outlines (generic mannequin, no actual character face), small navy/cream/coral fabric swatches, pencil, measuring ribbon and gold clip. A few tiny simple silhouette thumbnail panels, not finished identifiable outfits. Transparent vignette, cozy creative planning invitation. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/items/item-game.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "purchase game",
+    "group": "items",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/items__item-game.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production purchase game asset, exact 256x256 PNG. One unified small game item illustration. A blank navy game software case and plain generic game controller, original design, no disc brand. Large simple silhouette readable at 64px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/items/item-gear.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "purchase gear",
+    "group": "items",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/items__item-gear.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production purchase gear asset, exact 256x256 PNG. One unified small game item illustration. Compact desk microphone on small stand with a simple cream headset, no labels. Large simple silhouette readable at 64px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/items/item-storage.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "purchase storage",
+    "group": "items",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/items__item-storage.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production purchase storage asset, exact 256x256 PNG. One unified small game item illustration. Two small unbranded external SSD drives with short neat cable, navy shell and brass port accents. Large simple silhouette readable at 64px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/items/item-design.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "purchase design",
+    "group": "items",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/items__item-design.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production purchase design asset, exact 256x256 PNG. One unified small game item illustration. A little drawing tablet with stylus and a blank thumbnail layout card showing only geometric shapes. Large simple silhouette readable at 64px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/items/item-props.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "purchase props",
+    "group": "items",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/items__item-props.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production purchase props asset, exact 256x256 PNG. One unified small game item illustration. A small cream ribbon-tied gift box, a gold pin and a little coral heart keychain, no character copying. Large simple silhouette readable at 64px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/items/item-venue.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "purchase venue",
+    "group": "items",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/items__item-venue.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production purchase venue asset, exact 256x256 PNG. One unified small game item illustration. Miniature cozy unoccupied rental studio room vignette inside an open dollhouse shell, desk, lamp, plain microphone, no property branding. Large simple silhouette readable at 64px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/items/item-editing.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "purchase editing",
+    "group": "items",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/items__item-editing.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production purchase editing asset, exact 256x256 PNG. One unified small game item illustration. Small blank filmstrip with a pair of modest editing scissors and a navy timeline panel containing only colored rectangles. Large simple silhouette readable at 64px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/items/item-event.png",
+    "width": 256,
+    "height": 256,
+    "transparent": true,
+    "label": "purchase event",
+    "group": "items",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/items__item-event.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production purchase event asset, exact 256x256 PNG. One unified small game item illustration. Miniature friendly event stage with coral and gold bunting, two lights and several tiny blank audience paddles, no commercial logo. Large simple silhouette readable at 64px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": []
+  },
+  {
+    "path": "assets/modules/module-1.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "블록 마을",
+    "group": "modules",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/modules__module-1.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 블록 마을 asset, exact 640x360 PNG. Panoramic self-contained miniature environment vignette with transparent space outside its irregular silhouette. A tiny ORIGINAL toy-like block village with cream and navy cube houses, a shared garden and several Kimongi carrying wooden blocks. Distinct from Minecraft: no grass cubes, creepers, pixel face mobs or copied textures. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "moduleId": "LC-MC"
+  },
+  {
+    "path": "assets/modules/module-2.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "도시 역할극",
+    "group": "modules",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/modules__module-2.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 도시 역할극 asset, exact 640x360 PNG. Panoramic self-contained miniature environment vignette with transparent space outside its irregular silhouette. Miniature original cozy modern city street with two warm-lit shops, small plain car and friendly Kimongi carrying everyday role props; no crime, guns or GTA logo. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "moduleId": "LC-RP"
+  },
+  {
+    "path": "assets/modules/module-3.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "협동 생존",
+    "group": "modules",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/modules__module-3.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 협동 생존 asset, exact 640x360 PNG. Panoramic self-contained miniature environment vignette with transparent space outside its irregular silhouette. Friendly tiny camping settlement, tent, camp stove, gathered logs, simple vegetable patch and three Kimongi sharing supplies. No danger, wounds or weapons. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "moduleId": "LC-SV"
+  },
+  {
+    "path": "assets/modules/module-4.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "초보 공대",
+    "group": "modules",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/modules__module-4.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 초보 공대 asset, exact 640x360 PNG. Panoramic self-contained miniature environment vignette with transparent space outside its irregular silhouette. Original playful cooperative training course with colored floor pads, small training dummy, shields and four Kimongi practicing formation. No monster, magic or copyrighted MMO imagery. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "moduleId": "LC-RD"
+  },
+  {
+    "path": "assets/modules/module-5.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "게임컵",
+    "group": "modules",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/modules__module-5.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 게임컵 asset, exact 640x360 PNG. Panoramic self-contained miniature environment vignette with transparent space outside its irregular silhouette. Small original esports-style stage with plain screens and generic game controllers, an unbranded cup on podium, several Kimongi cheering; no actual platform logo. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "moduleId": "LC-PT"
+  },
+  {
+    "path": "assets/modules/module-6.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "친선전",
+    "group": "modules",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/modules__module-6.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 친선전 asset, exact 640x360 PNG. Panoramic self-contained miniature environment vignette with transparent space outside its irregular silhouette. Friendly miniature game table with two generic controllers facing each other, warm team flags and Kimongi exchanging a cheerful high five; no trophy implying automatic win. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "moduleId": "LC-ST"
+  },
+  {
+    "path": "assets/modules/module-7.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "협동 식당",
+    "group": "modules",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/modules__module-7.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 협동 식당 asset, exact 640x360 PNG. Panoramic self-contained miniature environment vignette with transparent space outside its irregular silhouette. Open-front miniature cozy restaurant kitchen with steaming pot, simple plates and three Kimongi wearing plain aprons sharing cooking tasks; no copied Overcooked characters or layouts. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "moduleId": "LC-CO"
+  },
+  {
+    "path": "assets/modules/module-8.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "가상 전시회",
+    "group": "modules",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/modules__module-8.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 가상 전시회 asset, exact 640x360 PNG. Panoramic self-contained miniature environment vignette with transparent space outside its irregular silhouette. Small original miniature gallery with blank geometric abstract paintings, a simple plinth sculpture, warm lights and Kimongi visitors, no existing artworks. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "moduleId": "LC-VR"
+  },
+  {
+    "path": "assets/games/game-puzzle.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "작은 퍼즐 탐정",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-puzzle.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 작은 퍼즐 탐정 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. Three interlocking cream/navy puzzle pieces with a small magnifying glass, no letters. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "puzzle"
+  },
+  {
+    "path": "assets/games/game-strategy.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "처음 만나는 전략",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-strategy.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 처음 만나는 전략 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. A compact original chess-like board with one abstract navy tower and gold arrow tokens, no recognizable proprietary game. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "strategy"
+  },
+  {
+    "path": "assets/games/game-action.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "한 판 더, 액션",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-action.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 한 판 더, 액션 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. A tiny coral running shoe with two simple motion chevrons and a gold goal flag, no weapons. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "action"
+  },
+  {
+    "path": "assets/games/game-coop.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "함께하는 협동전",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-coop.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 함께하는 협동전 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. Two cream mitten-like hands fitting together one gold jigsaw piece, teamwork. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "coop"
+  },
+  {
+    "path": "assets/games/game-rhythm.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "두근두근 리듬",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-rhythm.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 두근두근 리듬 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. A navy musical note and two coral/gold beat circles, no rhythm game logo. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "rhythm"
+  },
+  {
+    "path": "assets/games/game-boxing.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "방구석 복싱",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-boxing.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 방구석 복싱 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. One pair of coral and navy padded boxing gloves with cream laces, friendly sports. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [],
+    "gameId": "boxing"
+  },
+  {
+    "path": "assets/games/game-sandbox.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "우리 동네 만들기",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-sandbox.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 우리 동네 만들기 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. A tiny toy house and simple cream landscape tile with a small gold hammer, original building play. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "sandbox"
+  },
+  {
+    "path": "assets/games/game-sandbox_blocks.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "블록 마을 공동생활",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-sandbox_blocks.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 블록 마을 공동생활 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. Three stacked cream/navy wooden toy cubes forming a little house with coral roof, no copied Minecraft grass block. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "sandbox_blocks"
+  },
+  {
+    "path": "assets/games/game-city_roleplay.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "도시 생활 역할극",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-city_roleplay.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 도시 생활 역할극 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. Small cream apartment facade with a coral awning and a tiny navy car, everyday city life. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "city_roleplay"
+  },
+  {
+    "path": "assets/games/game-survival_coop.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "협동 생존 정착기",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-survival_coop.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 협동 생존 정착기 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. One friendly small camping tent, a rolled blanket and a tiny cream water flask, no danger. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [],
+    "gameId": "survival_coop"
+  },
+  {
+    "path": "assets/games/game-raid_mmo.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "초보 공대 성장기",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-raid_mmo.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 초보 공대 성장기 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. Three plain navy/cream training shields arranged together with colored role markers, no fantasy runes or magic. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "raid_mmo"
+  },
+  {
+    "path": "assets/games/game-platform_cup_game.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "플랫폼 공식 게임컵",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-platform_cup_game.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 플랫폼 공식 게임컵 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. Plain gold cup on navy base beside a generic small controller, no brand or platform mark. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [],
+    "gameId": "platform_cup_game"
+  },
+  {
+    "path": "assets/games/game-streamer_cup_game.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "스트리머 초청 친선전",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-streamer_cup_game.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 스트리머 초청 친선전 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. Two small facing generic controllers under a simple cream/coral handshake ribbon, no letters or actual streamer. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "streamer_cup_game"
+  },
+  {
+    "path": "assets/games/game-coop_restaurant.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "키몽이 협동 식당",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-coop_restaurant.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 키몽이 협동 식당 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. A small cream cooking pot with navy handle and coral ladle, two warm steam pixels, no character. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "coop_restaurant"
+  },
+  {
+    "path": "assets/games/game-virtual_exhibition.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "가상 전시회 제작단",
+    "group": "games",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/games__game-virtual_exhibition.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production 가상 전시회 제작단 asset, exact 128x128 PNG. One unified very coarse logical 24x24 pixel icon enlarged, bold navy outline, cream/coral/gold fills, legible at 32px, minimal detail. A cream framed ORIGINAL geometric mini painting and tiny gold museum display light, no famous artwork. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": [],
+    "gameId": "virtual_exhibition"
+  },
+  {
+    "path": "assets/ui/badge-broadcast.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "broadcast achievement badge",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__badge-broadcast.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production broadcast achievement badge asset, exact 128x128 PNG. One round small pixel enamel badge, matching consistent navy rim and cream center with muted gold accent. Central symbol: a tiny desk microphone. Very coarse 24x24 logical pixels, legible at 32px. No words, numbers or laurels crowding icon. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/badge-great.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "great achievement badge",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__badge-great.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production great achievement badge asset, exact 128x128 PNG. One round small pixel enamel badge, matching consistent navy rim and cream center with muted gold accent. Central symbol: a gold four-point glint over small raised cheer marks. Very coarse 24x24 logical pixels, legible at 32px. No words, numbers or laurels crowding icon. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere. IMPORTANT: OBJECTS ONLY. Absolutely no person, human, girl, boy, mascot, face, body, portrait or character. Only the listed inanimate objects.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/badge-viewers.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "viewers achievement badge",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__badge-viewers.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production viewers achievement badge asset, exact 128x128 PNG. One round small pixel enamel badge, matching consistent navy rim and cream center with muted gold accent. Central symbol: three small round abstract crowd heads, no real faces. Very coarse 24x24 logical pixels, legible at 32px. No words, numbers or laurels crowding icon. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/badge-donation.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "donation achievement badge",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__badge-donation.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production donation achievement badge asset, exact 128x128 PNG. One round small pixel enamel badge, matching consistent navy rim and cream center with muted gold accent. Central symbol: one coral heart. Very coarse 24x24 logical pixels, legible at 32px. No words, numbers or laurels crowding icon. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/badge-outfit.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "outfit achievement badge",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__badge-outfit.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production outfit achievement badge asset, exact 128x128 PNG. One round small pixel enamel badge, matching consistent navy rim and cream center with muted gold accent. Central symbol: a simple clothes hanger and cream ribbon. Very coarse 24x24 logical pixels, legible at 32px. No words, numbers or laurels crowding icon. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/badge-project.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "project achievement badge",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__badge-project.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production project achievement badge asset, exact 128x128 PNG. One round small pixel enamel badge, matching consistent navy rim and cream center with muted gold accent. Central symbol: open notebook and pencil. Very coarse 24x24 logical pixels, legible at 32px. No words, numbers or laurels crowding icon. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/badge-ending.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "ending achievement badge",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__badge-ending.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production ending achievement badge asset, exact 128x128 PNG. One round small pixel enamel badge, matching consistent navy rim and cream center with muted gold accent. Central symbol: closed journal with gold ribbon bookmark. Very coarse 24x24 logical pixels, legible at 32px. No words, numbers or laurels crowding icon. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/badge-mission.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "mission achievement badge",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__badge-mission.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production mission achievement badge asset, exact 128x128 PNG. One round small pixel enamel badge, matching consistent navy rim and cream center with muted gold accent. Central symbol: a clear gold check mark on blank cream checklist card. Very coarse 24x24 logical pixels, legible at 32px. No words, numbers or laurels crowding icon. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/ui/mission-stamp.png",
+    "width": 128,
+    "height": 128,
+    "transparent": true,
+    "label": "mission complete stamp",
+    "group": "badges",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/ui__mission-stamp.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production mission complete stamp asset, exact 128x128 PNG. One compact diamond-shaped navy-and-gold pixel ink stamp with a big cream check mark and two small gold sparkles, readable at 32px, no letters or numbers. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/events/celebration-birthday.png",
+    "width": 960,
+    "height": 540,
+    "transparent": true,
+    "label": "birthday celebration",
+    "group": "celebration",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/events__celebration-birthday.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production birthday celebration asset, exact 960x540 PNG. Wide cozy transparent vignette: RAKOKO smiles beside a modest cream birthday cake with unnumbered candles, several Kimongi bring a small wrapped present and coral/gold bunting. Default clothing, no birthday number or text. Whole figures and props safely inside border. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/rakoko-base-v1.png",
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/events/celebration-anniversary.png",
+    "width": 960,
+    "height": 540,
+    "transparent": true,
+    "label": "broadcast anniversary celebration",
+    "group": "celebration",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/events__celebration-anniversary.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production broadcast anniversary celebration asset, exact 960x540 PNG. Wide cozy transparent vignette: RAKOKO holds open her broadcast journal beside a microphone, many Kimongi cheer with little gold flags and coral confetti, a blank calendar page and small ribbon-tied memory box. Default clothes, no year numeral, supports every anniversary. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/rakoko-base-v1.png",
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/events/reveal-fail.png",
+    "width": 640,
+    "height": 360,
+    "transparent": true,
+    "label": "costume reveal lighthearted mishap",
+    "group": "outfit",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/events__reveal-fail.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production costume reveal lighthearted mishap asset, exact 640x360 PNG. One friendly tiny non-harmful costume prop mishap vignette: a loosened navy/gold ribbon tumbles gently, two plain gold buttons roll along a short cream stage edge, small comic motion lines. NO person, no body, no wardrobe exposure, no ripped dress, no underwear, no humiliation, no damage. Light humorous tone. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark.  Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": []
+  },
+  {
+    "path": "assets/endings/forced-10y.png",
+    "width": 960,
+    "height": 540,
+    "transparent": false,
+    "label": "ten year fictional group portrait",
+    "group": "ending",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/endings__forced-10y.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production ten year fictional group portrait asset, exact 960x540 PNG. Warm commemorative wedding GROUP PHOTO illustration for a fictional game ending. RAKOKO in her recognizable modest DEFAULT outfit stands beside ONE tiny Kimongi wearing a small cream bow tie; they hold a small coral flower bouquet together. MANY other varied Kimongi crowd around them, warm cream/navy bunting and gentle gold confetti, joyful cozy room. No wedding dress replacement, no kiss, no human fan avatar, no actual viewer likeness, no sexual imagery, no text or year numbers. This is a fanciful mascot marriage ending, not an actual relationship claim. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Opaque fully illustrated scene background, no transparency or checkerboard. Keep focal action safely inside 8% margins. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/rakoko-base-v1.png",
+      "assets/characters/kimongi-base-v1.png"
+    ],
+    "authorization": "2026-11-06 사용자가 2차 창작 허용을 직접 확인하고 문서 기록을 요청함."
+  },
+  {
+    "path": "assets/brand/key-visual.png",
+    "width": 1600,
+    "height": 900,
+    "transparent": false,
+    "label": "title key visual",
+    "group": "brand",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/brand__key-visual.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production title key visual asset, exact 1600x900 PNG. An inviting cozy pixel-art streaming room at warm evening, RAKOKO sits at her desk with open broadcast diary, microphone, plain monitor and several varied Kimongi playfully gathering with blank note cards. The main character and crowd occupy RIGHT TWO THIRDS; LEFT THIRD is quiet dark navy wall with a few subtle warm lights, ample clean negative space for a separately rendered title. No baked-in text, no title lettering. Friendly sense of making tomorrow's broadcast together. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Opaque fully illustrated scene background, no transparency or checkerboard. Keep focal action safely inside 8% margins. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/rakoko-base-v1.png",
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/brand/icon-512.png",
+    "width": 512,
+    "height": 512,
+    "transparent": true,
+    "label": "app icon",
+    "group": "brand",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/brand__icon-512.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production app icon asset, exact 512x512 PNG. ONE simple recognizable pixel app icon: Kimongi HEAD and BLACK SCARF peeking over an OPEN CREAM JOURNAL with navy border and tiny gold bookmark. Preserve coral/moss patchwork and stitched seam from reference. Coarse 32x32 logical pixels, bold silhouette readable at 32px, no tiny detail, no background circle, no words. Not a full body or full scene. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Genuine transparent alpha background. Self-contained subject with fully clean 8% transparent margins, no backdrop rectangle, no outside glow or cast shadow. Keep all head accessories, hands and relevant props inside frame. No text or numbers anywhere.",
+    "refs": [
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  },
+  {
+    "path": "assets/brand/og-image.png",
+    "width": 1200,
+    "height": 630,
+    "transparent": false,
+    "label": "share preview image",
+    "group": "brand",
+    "generator": "imagegen",
+    "promptFile": "work/asset-production-v2/brand__og-image.prompt.txt",
+    "prompt": "Use case: illustration-story. ONE production share preview image asset, exact 1200x630 PNG. A cozy streamer journal game promotional scene. RAKOKO in default costume with recognizable hair/eyes smiles at an open cream journal, a row of different Kimongi along the bottom, microphone and generic controller nearby, simple elegant navy/plum room background with muted gold ribbon accent. Reserve clean LEFT 45% for highly legible Korean game title, main character on RIGHT. The only text is the exact Korean title, cream pixel lettering with navy outline, prominent and readable when scaled to 600px. Production game pixel art matching existing sprites. Crisp hard square pixel clusters and stepped contours, restrained navy/plum/cream/gold palette with coral/olive accents. No painterly brushwork or soft blur. No actual platform or brand logos, no copyrighted game characters, no other real streamer, no real human viewer, no occult or scary imagery, no watermark. RAKOKO has navy straight bangs, white streak/gold bow/side ponytail on VIEWER RIGHT, blue eye VIEWER LEFT and red eye VIEWER RIGHT. Default clothing is opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Kimongi is a round CORAL and MOSS GREEN PATCHWORK plush mascot, stitched seams, pointed ears, BLACK scarf, BLACK spade-tipped tail; never a human. Opaque fully illustrated scene background, no transparency or checkerboard. Keep focal action safely inside 8% margins. Text EXACTLY: 라코코의 방송일지. No additional lettering or numbers.",
+    "refs": [
+      "assets/characters/rakoko-base-v1.png",
+      "assets/characters/kimongi-base-v1.png"
+    ]
+  }
+]
