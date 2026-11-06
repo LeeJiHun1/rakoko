@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "producedAt": "2026-11-05",
+  "request": "docs/ASSET-REQUESTS.md",
+  "tool": "Built-in image_gen.imagegen (CLI/API fallback unused)",
+  "identityReferences": [
+    "assets/characters/rakoko-base-v1.png",
+    "assets/characters/kimongi-base-v1.png"
+  ],
+  "processing": "Windows System.Drawing: nearest-neighbor sizing only; contain for alpha assets, cover for opaque scenes. No semantic repainting.",
+  "distribution": "로컬 제작물. 공개 배포는 docs/ASSET-REQUESTS.md의 공개 전 조건에 따른다.",
+  "integration": "이미지 제작·배치 완료. UI 연결·빌드 대상 추가는 별도 작업.",
+  "assets": [
+    {
+      "path": "assets/characters/rakoko-face-default.png",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "label": "라코코 · 기본",
+      "promptFile": "work/asset-production/face-default.prompt.txt",
+      "prompt": "Use case: identity-preserve. Production game portrait, ONE 512x512 square PNG on genuine transparent background. Use the referenced existing RAKOKO pixel sprite as strict identity and rendering reference. Create chest-up portrait centered with complete head, gold hair bow and side ponytail visible, modest opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Preserve navy straight bangs, white streak on VIEWER RIGHT, gold bow on VIEWER RIGHT, ponytail on VIEWER RIGHT, blue iris on VIEWER LEFT and red iris on VIEWER RIGHT. Expression ONLY: calm attentive neutral face, relaxed small mouth, looking at viewer. Crisp large square pixel clusters, stepped contours, restrained navy/plum/cream/gold palette, no soft painted rendering. Consistent head size and chest-up crop across portrait set. Leave 6% clear transparent margin. No text, no logos, no backdrop, no frame, no outside glow, no ground shadow. Keep both eyes identifiable unless expression demands a small squint. One subject only."
+    },
+    {
+      "path": "assets/characters/rakoko-face-smile.png",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "label": "라코코 · 웃음",
+      "promptFile": "work/asset-production/face-smile.prompt.txt",
+      "prompt": "Use case: identity-preserve. Production game portrait, ONE 512x512 square PNG on genuine transparent background. Use the referenced existing RAKOKO pixel sprite as strict identity and rendering reference. Create chest-up portrait centered with complete head, gold hair bow and side ponytail visible, modest opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Preserve navy straight bangs, white streak on VIEWER RIGHT, gold bow on VIEWER RIGHT, ponytail on VIEWER RIGHT, blue iris on VIEWER LEFT and red iris on VIEWER RIGHT. Expression ONLY: bright warm smile, gently smiling open heterochromatic eyes, a small happy open mouth. Crisp large square pixel clusters, stepped contours, restrained navy/plum/cream/gold palette, no soft painted rendering. Consistent head size and chest-up crop across portrait set. Leave 6% clear transparent margin. No text, no logos, no backdrop, no frame, no outside glow, no ground shadow. Keep both eyes identifiable unless expression demands a small squint. One subject only."
+    },
+    {
+      "path": "assets/characters/rakoko-face-surprised.png",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "label": "라코코 · 놀람",
+      "promptFile": "work/asset-production/face-surprised.prompt.txt",
+      "prompt": "Use case: identity-preserve. Production game portrait, ONE 512x512 square PNG on genuine transparent background. Use the referenced existing RAKOKO pixel sprite as strict identity and rendering reference. Create chest-up portrait centered with complete head, gold hair bow and side ponytail visible, modest opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Preserve navy straight bangs, white streak on VIEWER RIGHT, gold bow on VIEWER RIGHT, ponytail on VIEWER RIGHT, blue iris on VIEWER LEFT and red iris on VIEWER RIGHT. Expression ONLY: surprised wide heterochromatic eyes, small round open mouth, raised brows. Crisp large square pixel clusters, stepped contours, restrained navy/plum/cream/gold palette, no soft painted rendering. Consistent head size and chest-up crop across portrait set. Leave 6% clear transparent margin. No text, no logos, no backdrop, no frame, no outside glow, no ground shadow. Keep both eyes identifiable unless expression demands a small squint. One subject only."
+    },
+    {
+      "path": "assets/characters/rakoko-face-flustered.png",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "label": "라코코 · 당황",
+      "promptFile": "work/asset-production/face-flustered.prompt.txt",
+      "prompt": "Use case: identity-preserve. Production game portrait, ONE 512x512 square PNG on genuine transparent background. Use the referenced existing RAKOKO pixel sprite as strict identity and rendering reference. Create chest-up portrait centered with complete head, gold hair bow and side ponytail visible, modest opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Preserve navy straight bangs, white streak on VIEWER RIGHT, gold bow on VIEWER RIGHT, ponytail on VIEWER RIGHT, blue iris on VIEWER LEFT and red iris on VIEWER RIGHT. Expression ONLY: mildly embarrassed awkward smile, one tiny blue sweat drop near temple, pink cheeks, both eyes visible. Crisp large square pixel clusters, stepped contours, restrained navy/plum/cream/gold palette, no soft painted rendering. Consistent head size and chest-up crop across portrait set. Leave 6% clear transparent margin. No text, no logos, no backdrop, no frame, no outside glow, no ground shadow. Keep both eyes identifiable unless expression demands a small squint. One subject only."
+    },
+    {
+      "path": "assets/characters/rakoko-face-proud.png",
+      "width": 512,
+      "height": 512,
+      "transparent": true,
+      "label": "라코코 · 뿌듯",
+      "promptFile": "work/asset-production/face-proud.prompt.txt",
+      "prompt": "Use case: identity-preserve. Production game portrait, ONE 512x512 square PNG on genuine transparent background. Use the referenced existing RAKOKO pixel sprite as strict identity and rendering reference. Create chest-up portrait centered with complete head, gold hair bow and side ponytail visible, modest opaque white collared blouse, navy tie with gold clasp, black jacket draped at shoulders. Preserve navy straight bangs, white streak on VIEWER RIGHT, gold bow on VIEWER RIGHT, ponytail on VIEWER RIGHT, blue iris on VIEWER LEFT and red iris on VIEWER RIGHT. Expression ONLY: pleased confident smile, slightly raised chin, one gloved hand making small victory fist near shoulder. Crisp large square pixel clusters, stepped contours, restrained navy/plum/cream/gold palette, no soft painted rendering. Consistent head size and chest-up crop across portrait set. Leave 6% clear transparent margin. No text, no logos, no backdrop, no frame, no outside glow, no ground shadow. Keep both eyes identifiable unless expression demands a small squint. One subject only."
+    },
+    {
+      "path": "assets/backgrounds/studio-night.png",
+      "width": 1600,
+      "height": 1000,
+      "transparent": false,
+      "label": "방송 스튜디오 · 밤",
+      "promptFile": "work/asset-production/studio-night.prompt.txt",
+      "prompt": "Use case: illustration-story. Production background for a pixel-art streamer fan game, exact 1600x1000 landscape PNG. Cozy compact fictional home streaming studio at night, indigo window and a few warm golden distant lights, soft violet monitor glow, cozy warm desk lamp. Unoccupied room, no person. Desk with two unbranded dark monitors, small microphone on articulated arm, keyboard, warm light, a little patchwork coral-pink and moss-green round plush mascot with black scarf on shelf, books and a few plants. Clear space around center so character overlay remains readable. Tasteful navy, plum, cream, muted gold palette. Crisp square pixel-art clusters, stepped lines, low-resolution game background enlarged without smoothing, no realistic photo, no blur, no gradients, no text, no UI, no actual platform logos, no occult imagery. Fully painted opaque background, no checkerboard. Match existing sprite game's cozy small pixel scale. Create only this night scene."
+    },
+    {
+      "path": "assets/backgrounds/studio-day.png",
+      "width": 1600,
+      "height": 1000,
+      "transparent": false,
+      "label": "방송 스튜디오 · 낮",
+      "promptFile": "work/asset-production/studio-day.prompt.txt",
+      "prompt": "Use case: illustration-story. Production background for a pixel-art streamer fan game, exact 1600x1000 landscape PNG. Cozy compact fictional home streaming studio at daytime, pale blue sky and soft sunny window light, warm cream and muted lilac room colors. Unoccupied room, no person. Desk with two unbranded dark monitors, small microphone on articulated arm, keyboard, warm light, a little patchwork coral-pink and moss-green round plush mascot with black scarf on shelf, books and a few plants. Clear space around center so character overlay remains readable. Tasteful navy, plum, cream, muted gold palette. Crisp square pixel-art clusters, stepped lines, low-resolution game background enlarged without smoothing, no realistic photo, no blur, no gradients, no text, no UI, no actual platform logos, no occult imagery. Fully painted opaque background, no checkerboard. Match existing sprite game's cozy small pixel scale. Create only this day scene."
+    },
+    {
+      "path": "assets/events/outfit-leak/maid.png",
+      "width": 640,
+      "height": 360,
+      "transparent": true,
+      "label": "유출 단서 · 프릴 조각",
+      "promptFile": "work/asset-production/leak-maid.prompt.txt",
+      "spoilerPolicy": "일부 천 조각만 표시. 의상 전체 공개용 아님.",
+      "prompt": "Use case: illustration-story. Production partial costume leak CLUE icon for cozy pixel-art fan game. Exact 640x360 wide PNG with real transparent background. Draw ONLY a tiny navy cloth corner with short white frilled apron edge and a small navy ribbon knot; no ears/headband, no full apron. Fragment centered occupying middle 45% width, with broad clear transparent margins. Strictly only a material detail, full outfit must remain UNIDENTIFIABLE from silhouette. This is a censored advance peek, not a costume reveal. Clean hard square pixel clusters, stepped navy outlines, restrained cream/navy/plum/gold palette matching a retro character sprite. No full costume, no person or body parts, no hanger, no camera, no black redaction bar, no lettering, no card frame, no decorative question mark, no background, no glow, no shadow, no occult symbol. One fragment only."
+    },
+    {
+      "path": "assets/events/outfit-leak/police.png",
+      "width": 640,
+      "height": 360,
+      "transparent": true,
+      "label": "유출 단서 · 단추 조각",
+      "promptFile": "work/asset-production/leak-police.prompt.txt",
+      "spoilerPolicy": "일부 천 조각만 표시. 의상 전체 공개용 아님.",
+      "prompt": "Use case: illustration-story. Production partial costume leak CLUE icon for cozy pixel-art fan game. Exact 640x360 wide PNG with real transparent background. Draw ONLY two small plain round brass buttons on a tiny navy uniform fabric scrap and a short white seam; no badge, no cap, no text. Fragment centered occupying middle 45% width, with broad clear transparent margins. Strictly only a material detail, full outfit must remain UNIDENTIFIABLE from silhouette. This is a censored advance peek, not a costume reveal. Clean hard square pixel clusters, stepped navy outlines, restrained cream/navy/plum/gold palette matching a retro character sprite. No full costume, no person or body parts, no hanger, no camera, no black redaction bar, no lettering, no card frame, no decorative question mark, no background, no glow, no shadow, no occult symbol. One fragment only."
+    },
+    {
+      "path": "assets/events/outfit-leak/ghost.png",
+      "width": 640,
+      "height": 360,
+      "transparent": true,
+      "label": "유출 단서 · 흰 천 끝",
+      "promptFile": "work/asset-production/leak-ghost.prompt.txt",
+      "spoilerPolicy": "일부 천 조각만 표시. 의상 전체 공개용 아님.",
+      "prompt": "Use case: illustration-story. Production partial costume leak CLUE icon for cozy pixel-art fan game. Exact 640x360 wide PNG with real transparent background. Draw ONLY a floating-looking but completely ordinary pale ice-blue folded cloth hem with a scalloped white edge; non-supernatural, no body, no face. Fragment centered occupying middle 45% width, with broad clear transparent margins. Strictly only a material detail, full outfit must remain UNIDENTIFIABLE from silhouette. This is a censored advance peek, not a costume reveal. Clean hard square pixel clusters, stepped navy outlines, restrained cream/navy/plum/gold palette matching a retro character sprite. No full costume, no person or body parts, no hanger, no camera, no black redaction bar, no lettering, no card frame, no decorative question mark, no background, no glow, no shadow, no occult symbol. One fragment only."
+    },
+    {
+      "path": "assets/events/outfit-leak/nun.png",
+      "width": 640,
+      "height": 360,
+      "transparent": true,
+      "label": "유출 단서 · 흑백 천 끝",
+      "promptFile": "work/asset-production/leak-nun.prompt.txt",
+      "spoilerPolicy": "일부 천 조각만 표시. 의상 전체 공개용 아님.",
+      "prompt": "Use case: illustration-story. Production partial costume leak CLUE icon for cozy pixel-art fan game. Exact 640x360 wide PNG with real transparent background. Draw ONLY a close small corner of white cloth with one charcoal-black piping strip folded over; no cross, no veil outline, no head or person. Fragment centered occupying middle 45% width, with broad clear transparent margins. Strictly only a material detail, full outfit must remain UNIDENTIFIABLE from silhouette. This is a censored advance peek, not a costume reveal. Clean hard square pixel clusters, stepped navy outlines, restrained cream/navy/plum/gold palette matching a retro character sprite. No full costume, no person or body parts, no hanger, no camera, no black redaction bar, no lettering, no card frame, no decorative question mark, no background, no glow, no shadow, no occult symbol. One fragment only."
+    },
+    {
+      "path": "assets/characters/kimongi-1.png",
+      "width": 128,
+      "height": 128,
+      "transparent": true,
+      "label": "키몽이 1 · 모자",
+      "promptFile": "work/asset-production/kimongi-1.prompt.txt",
+      "prompt": "Use case: identity-preserve. Make ONE tiny full-body pixel-art Kimongi crowd avatar on real transparent background, target 128x128 PNG. Existing reference STRICTLY defines mascot species and silhouette: plump stitched round coral-pink and moss-green patchwork head/body, pointed green side ears, black angular eyes, cute tiny fang mouth, thick BLACK scarf tied in front, stubby little limbs, thin BLACK tail ending in pointed spade on viewer right. This is the same mascot with a crowd variation, not a different character. Variant: original moss-green and coral patchwork, small navy baseball cap with no marking, cheerful open smile. Scarf and tail always black, seam stitches visible. No human, no background, no text, no logos. Coarse clean square clusters, hard stepped outlines, small readable sprite, 12% transparent margins, whole tail and accessories inside canvas, no shadow, no glow. Keep basic silhouette consistent."
+    },
+    {
+      "path": "assets/characters/kimongi-2.png",
+      "width": 128,
+      "height": 128,
+      "transparent": true,
+      "label": "키몽이 2 · 안경",
+      "promptFile": "work/asset-production/kimongi-2.prompt.txt",
+      "prompt": "Use case: identity-preserve. Make ONE tiny full-body pixel-art Kimongi crowd avatar on real transparent background, target 128x128 PNG. Existing reference STRICTLY defines mascot species and silhouette: plump stitched round coral-pink and moss-green patchwork head/body, pointed green side ears, black angular eyes, cute tiny fang mouth, thick BLACK scarf tied in front, stubby little limbs, thin BLACK tail ending in pointed spade on viewer right. This is the same mascot with a crowd variation, not a different character. Variant: sage-green and peach patchwork, plain round black spectacles, inquisitive grin. Scarf and tail always black, seam stitches visible. No human, no background, no text, no logos. Coarse clean square clusters, hard stepped outlines, small readable sprite, 12% transparent margins, whole tail and accessories inside canvas, no shadow, no glow. Keep basic silhouette consistent."
+    },
+    {
+      "path": "assets/characters/kimongi-3.png",
+      "width": 128,
+      "height": 128,
+      "transparent": true,
+      "label": "키몽이 3 · 하트",
+      "promptFile": "work/asset-production/kimongi-3.prompt.txt",
+      "prompt": "Use case: identity-preserve. Make ONE tiny full-body pixel-art Kimongi crowd avatar on real transparent background, target 128x128 PNG. Existing reference STRICTLY defines mascot species and silhouette: plump stitched round coral-pink and moss-green patchwork head/body, pointed green side ears, black angular eyes, cute tiny fang mouth, thick BLACK scarf tied in front, stubby little limbs, thin BLACK tail ending in pointed spade on viewer right. This is the same mascot with a crowd variation, not a different character. Variant: original moss-green and coral patchwork, holding one little pink heart in front, delighted expression. Scarf and tail always black, seam stitches visible. No human, no background, no text, no logos. Coarse clean square clusters, hard stepped outlines, small readable sprite, 12% transparent margins, whole tail and accessories inside canvas, no shadow, no glow. Keep basic silhouette consistent."
+    },
+    {
+      "path": "assets/characters/kimongi-4.png",
+      "width": 128,
+      "height": 128,
+      "transparent": true,
+      "label": "키몽이 4 · 졸린 얼굴",
+      "promptFile": "work/asset-production/kimongi-4.prompt.txt",
+      "prompt": "Use case: identity-preserve. Make ONE tiny full-body pixel-art Kimongi crowd avatar on real transparent background, target 128x128 PNG. Existing reference STRICTLY defines mascot species and silhouette: plump stitched round coral-pink and moss-green patchwork head/body, pointed green side ears, black angular eyes, cute tiny fang mouth, thick BLACK scarf tied in front, stubby little limbs, thin BLACK tail ending in pointed spade on viewer right. This is the same mascot with a crowd variation, not a different character. Variant: muted olive and rose patchwork, sleepy half-closed eyes, small soft blue nightcap with no stars. Scarf and tail always black, seam stitches visible. No human, no background, no text, no logos. Coarse clean square clusters, hard stepped outlines, small readable sprite, 12% transparent margins, whole tail and accessories inside canvas, no shadow, no glow. Keep basic silhouette consistent."
+    },
+    {
+      "path": "assets/characters/kimongi-5.png",
+      "width": 128,
+      "height": 128,
+      "transparent": true,
+      "label": "키몽이 5 · 헤드폰",
+      "promptFile": "work/asset-production/kimongi-5.prompt.txt",
+      "prompt": "Use case: identity-preserve. Make ONE tiny full-body pixel-art Kimongi crowd avatar on real transparent background, target 128x128 PNG. Existing reference STRICTLY defines mascot species and silhouette: plump stitched round coral-pink and moss-green patchwork head/body, pointed green side ears, black angular eyes, cute tiny fang mouth, thick BLACK scarf tied in front, stubby little limbs, thin BLACK tail ending in pointed spade on viewer right. This is the same mascot with a crowd variation, not a different character. Variant: original moss-green and coral patchwork, simple cream headphones, excited small open mouth. Scarf and tail always black, seam stitches visible. No human, no background, no text, no logos. Coarse clean square clusters, hard stepped outlines, small readable sprite, 12% transparent margins, whole tail and accessories inside canvas, no shadow, no glow. Keep basic silhouette consistent."
+    },
+    {
+      "path": "assets/characters/kimongi-6.png",
+      "width": 128,
+      "height": 128,
+      "transparent": true,
+      "label": "키몽이 6 · 파티 모자",
+      "promptFile": "work/asset-production/kimongi-6.prompt.txt",
+      "prompt": "Use case: identity-preserve. Make ONE tiny full-body pixel-art Kimongi crowd avatar on real transparent background, target 128x128 PNG. Existing reference STRICTLY defines mascot species and silhouette: plump stitched round coral-pink and moss-green patchwork head/body, pointed green side ears, black angular eyes, cute tiny fang mouth, thick BLACK scarf tied in front, stubby little limbs, thin BLACK tail ending in pointed spade on viewer right. This is the same mascot with a crowd variation, not a different character. Variant: mint-green and watermelon pink patchwork, tiny plain gold party hat, happily waving one stubby arm. Scarf and tail always black, seam stitches visible. No human, no background, no text, no logos. Coarse clean square clusters, hard stepped outlines, small readable sprite, 12% transparent margins, whole tail and accessories inside canvas, no shadow, no glow. Keep basic silhouette consistent."
+    },
+    {
+      "path": "assets/brand/logo.png",
+      "width": 1200,
+      "height": 360,
+      "transparent": true,
+      "label": "라코코의 방송일지 · 로고",
+      "promptFile": "work/asset-production/logo.prompt.txt",
+      "prompt": "Use case: logo-brand. ONE transparent pixel-art typography logo for a cozy Korean streamer journal game, exact 1200x360 wide PNG. Text verbatim: \"라코코의 방송일지\". Korean spelling must be EXACT. Two-line centered compact arrangement: larger \"라코코의\" above \"방송일지\", or a highly legible single horizontal line if necessary to fit wide canvas. Blocky custom Korean pixel lettering, warm cream fill, deep navy/plum stepped outline and small muted gold offset, no unreadable decorative strokes. Small pixel notebook and microphone accents at edges, subtle gold hair ribbon motif. Keep all lettering inside canvas with generous transparent margin. No character faces, no extra text, no Roman alphabet, no symbols resembling occult, no watermark, no background rectangle, genuine alpha transparency. Letters legible at 300px width."
+    },
+    {
+      "path": "assets/endings/EF-001.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-001 · 다음 해 편성표의 마지막 빈칸",
+      "promptFile": "work/asset-production/EF-001.prompt.txt",
+      "eventId": "EF-001",
+      "endingIds": [
+        "END-001",
+        "END-002"
+      ],
+      "endingTitles": [
+        "그 시간이면 켜지는 방송",
+        "편성표 밖의 라코코"
+      ],
+      "prompt": "Use case: illustration-story. ONE production ending scene illustration EF-001 for original fan game, 960x540 landscape PNG, opaque fully illustrated background. Scene: the last blank spot in next year's schedule. RAKOKO sits at a warm desk filling a large open weekly planner with simple colored blank squares; several little Kimongi gather along its edge, calendar pages and a microphone nearby. Feeling of a dependable new beginning. Reference1 STRICTLY defines RAKOKO identity: navy straight bangs, white streak/gold bow/ponytail viewer RIGHT, blue eye viewer LEFT, red eye viewer RIGHT, white collared opaque blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: stitched coral and moss green mascot, pointed ears, black scarf and pointed black tail, NOT humans. Crisp square pixel-art clusters and stepped outlines matching references, charming readable low-resolution game illustration, navy/plum/cream/gold with coral/olive accents, warm light, clean story composition. Keep full heads/hands in frame and main action centered safely inside 10% margins. No lettering or numbers anywhere, no UI, no logos, no actual streamers other than main character, no third-party game characters, no occult or scary imagery, no giant ending title, no split panels, no watermark. This shared scene must suit either of its two positive ending branches, do not imply retirement, death, or marriage."
+    },
+    {
+      "path": "assets/endings/EF-002.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-002 · 긴 도전의 마지막 판",
+      "promptFile": "work/asset-production/EF-002.prompt.txt",
+      "eventId": "EF-002",
+      "endingIds": [
+        "END-003",
+        "END-004"
+      ],
+      "endingTitles": [
+        "마지막 보스 뒤의 첫 페이지",
+        "공략을 들려주는 사람"
+      ],
+      "prompt": "Use case: illustration-story. ONE production ending scene illustration EF-002 for original fan game, 960x540 landscape PNG, opaque fully illustrated background. Scene: the final round of a long game challenge. RAKOKO holds a plain unbranded controller with determined happy smile, open hand-drawn strategy notebook beside her, monitor showing an ORIGINAL abstract blocky summit and a small victory flag, Kimongi cheering. No recognizable commercial game. Reference1 STRICTLY defines RAKOKO identity: navy straight bangs, white streak/gold bow/ponytail viewer RIGHT, blue eye viewer LEFT, red eye viewer RIGHT, white collared opaque blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: stitched coral and moss green mascot, pointed ears, black scarf and pointed black tail, NOT humans. Crisp square pixel-art clusters and stepped outlines matching references, charming readable low-resolution game illustration, navy/plum/cream/gold with coral/olive accents, warm light, clean story composition. Keep full heads/hands in frame and main action centered safely inside 10% margins. No lettering or numbers anywhere, no UI, no logos, no actual streamers other than main character, no third-party game characters, no occult or scary imagery, no giant ending title, no split panels, no watermark. This shared scene must suit either of its two positive ending branches, do not imply retirement, death, or marriage."
+    },
+    {
+      "path": "assets/endings/EF-003.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-003 · 끝내 달성하지 못한 목표",
+      "promptFile": "work/asset-production/EF-003.prompt.txt",
+      "eventId": "EF-003",
+      "endingIds": [
+        "END-005",
+        "END-006"
+      ],
+      "endingTitles": [
+        "기록보다 남은 것",
+        "클리어하지 못한 공략집"
+      ],
+      "prompt": "Use case: illustration-story. ONE production ending scene illustration EF-003 for original fan game, 960x540 landscape PNG, opaque fully illustrated background. Scene: a challenge changed into lessons learned. RAKOKO warmly smiles while laying out several crumpled drafts and a repaired notebook of original abstract routes, Kimongi helps pin a new route map, gentle hopeful mood rather than sadness, no victory trophy. Reference1 STRICTLY defines RAKOKO identity: navy straight bangs, white streak/gold bow/ponytail viewer RIGHT, blue eye viewer LEFT, red eye viewer RIGHT, white collared opaque blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: stitched coral and moss green mascot, pointed ears, black scarf and pointed black tail, NOT humans. Crisp square pixel-art clusters and stepped outlines matching references, charming readable low-resolution game illustration, navy/plum/cream/gold with coral/olive accents, warm light, clean story composition. Keep full heads/hands in frame and main action centered safely inside 10% margins. No lettering or numbers anywhere, no UI, no logos, no actual streamers other than main character, no third-party game characters, no occult or scary imagery, no giant ending title, no split panels, no watermark. This shared scene must suit either of its two positive ending branches, do not imply retirement, death, or marriage."
+    },
+    {
+      "path": "assets/endings/EF-004.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-004 · 키몽이 기획안의 최종 투표",
+      "promptFile": "work/asset-production/EF-004.prompt.txt",
+      "eventId": "EF-004",
+      "endingIds": [
+        "END-007",
+        "END-008"
+      ],
+      "endingTitles": [
+        "키몽이 편성국",
+        "오늘 하루의 키몽제"
+      ],
+      "prompt": "Use case: illustration-story. ONE production ending scene illustration EF-004 for original fan game, 960x540 landscape PNG, opaque fully illustrated background. Scene: Kimongi fan planning festival. RAKOKO stands behind a small friendly booth arranging blank voting cards and colored bunting, MANY patchwork Kimongi eagerly raise small colorful paddles in foreground, cozy joyful miniature community festival. Reference1 STRICTLY defines RAKOKO identity: navy straight bangs, white streak/gold bow/ponytail viewer RIGHT, blue eye viewer LEFT, red eye viewer RIGHT, white collared opaque blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: stitched coral and moss green mascot, pointed ears, black scarf and pointed black tail, NOT humans. Crisp square pixel-art clusters and stepped outlines matching references, charming readable low-resolution game illustration, navy/plum/cream/gold with coral/olive accents, warm light, clean story composition. Keep full heads/hands in frame and main action centered safely inside 10% margins. No lettering or numbers anywhere, no UI, no logos, no actual streamers other than main character, no third-party game characters, no occult or scary imagery, no giant ending title, no split panels, no watermark. This shared scene must suit either of its two positive ending branches, do not imply retirement, death, or marriage."
+    },
+    {
+      "path": "assets/endings/EF-005.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-005 · 방송에서 만들던 작품의 완성",
+      "promptFile": "work/asset-production/EF-005.prompt.txt",
+      "eventId": "EF-005",
+      "endingIds": [
+        "END-009",
+        "END-010"
+      ],
+      "endingTitles": [
+        "송출 화면 밖으로",
+        "첫 화 끝, 다음 화 예고"
+      ],
+      "prompt": "Use case: illustration-story. ONE pixel-art ending scene EF-005, exact 960x540 landscape PNG, opaque illustrated background. a handmade creation is ready to share. RAKOKO proudly presents a small open original illustrated storybook above her drawing desk; pencil, blank storyboard squares, bright paper crafts and curious Kimongi nearby. Both standalone finished work and start of a series fit this scene. Use Reference1 strictly for RAKOKO identity and default clothes: navy straight bangs, viewer-right white streak, gold bow and ponytail, blue left eye/red right eye, opaque white collar blouse, navy tie, black shoulder jacket. Reference2 strictly fixes Kimongi species: stitched coral/moss-green patchwork, black scarf, pointed ears and spade tail, NOT humans. Match crisp square pixel clusters, stepped outlines and warm navy/plum/cream/gold palette. Friendly cozy game illustration, centered safe composition with 10% margins. No text or numbers anywhere, no UI, no logo, no actual people or other streamers, no copyrighted game objects, no occult, no scary symbols, no watermark. No split panels. This is a positive chapter ending, not retirement or farewell from life."
+    },
+    {
+      "path": "assets/endings/EF-006.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-006 · 막이 오르기 직전",
+      "promptFile": "work/asset-production/EF-006.prompt.txt",
+      "eventId": "EF-006",
+      "endingIds": [
+        "END-011",
+        "END-012"
+      ],
+      "endingTitles": [
+        "이름을 건 첫 무대",
+        "혼자 켰던 방송, 함께 오른 무대"
+      ],
+      "prompt": "Use case: illustration-story. ONE pixel-art ending scene EF-006, exact 960x540 landscape PNG, opaque illustrated background. curtain rises on a friendly online performance. RAKOKO beside microphone on a small warm amber-lit stage, arms gently open toward audience, a row of cute Kimongi in foreground holding small glow sticks, a few empty auxiliary microphones hinting collaborative performance without showing other people. Use Reference1 strictly for RAKOKO identity and default clothes: navy straight bangs, viewer-right white streak, gold bow and ponytail, blue left eye/red right eye, opaque white collar blouse, navy tie, black shoulder jacket. Reference2 strictly fixes Kimongi species: stitched coral/moss-green patchwork, black scarf, pointed ears and spade tail, NOT humans. Match crisp square pixel clusters, stepped outlines and warm navy/plum/cream/gold palette. Friendly cozy game illustration, centered safe composition with 10% margins. No text or numbers anywhere, no UI, no logo, no actual people or other streamers, no copyrighted game objects, no occult, no scary symbols, no watermark. No split panels. This is a positive chapter ending, not retirement or farewell from life."
+    },
+    {
+      "path": "assets/endings/EF-007.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-007 · 합동 기획의 마지막 역할 배정",
+      "promptFile": "work/asset-production/EF-007.prompt.txt",
+      "eventId": "EF-007",
+      "endingIds": [
+        "END-013",
+        "END-014"
+      ],
+      "endingTitles": [
+        "모두의 마이크를 켜는 사람",
+        "우리 팀 마지막 라운드"
+      ],
+      "prompt": "Use case: illustration-story. ONE pixel-art ending scene EF-007, exact 960x540 landscape PNG, opaque illustrated background. final role assignment for a collaboration. RAKOKO in a cozy production room points to a blank color-coded run-of-show board, a controller and headset on desk, several Kimongi wearing simple producer headsets help arrange colored cards. Both hosting and team practice are implied; no competition trophy. Use Reference1 strictly for RAKOKO identity and default clothes: navy straight bangs, viewer-right white streak, gold bow and ponytail, blue left eye/red right eye, opaque white collar blouse, navy tie, black shoulder jacket. Reference2 strictly fixes Kimongi species: stitched coral/moss-green patchwork, black scarf, pointed ears and spade tail, NOT humans. Match crisp square pixel clusters, stepped outlines and warm navy/plum/cream/gold palette. Friendly cozy game illustration, centered safe composition with 10% margins. No text or numbers anywhere, no UI, no logo, no actual people or other streamers, no copyrighted game objects, no occult, no scary symbols, no watermark. No split panels. This is a positive chapter ending, not retirement or farewell from life."
+    },
+    {
+      "path": "assets/endings/EF-008.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-008 · 의상 공개 다음의 마지막 기획",
+      "promptFile": "work/asset-production/EF-008.prompt.txt",
+      "eventId": "EF-008",
+      "endingIds": [
+        "END-015",
+        "END-016"
+      ],
+      "endingTitles": [
+        "옷장에서 시작된 이야기",
+        "한 벌에서 열린 전시회"
+      ],
+      "prompt": "Use case: illustration-story. ONE pixel-art ending scene EF-008, exact 960x540 landscape PNG, opaque illustrated background. an outfit-themed creative exhibition opens. RAKOKO in her DEFAULT outfit smiles at an atelier with navy/white fabric swatches, a modest dress-form silhouette under a plain cream cloth at one side and small framed original abstract costume sketches at another; Kimongi visitors admire the work. Do not reveal or invent new costume on her; supports theater and exhibition branches. Use Reference1 strictly for RAKOKO identity and default clothes: navy straight bangs, viewer-right white streak, gold bow and ponytail, blue left eye/red right eye, opaque white collar blouse, navy tie, black shoulder jacket. Reference2 strictly fixes Kimongi species: stitched coral/moss-green patchwork, black scarf, pointed ears and spade tail, NOT humans. Match crisp square pixel clusters, stepped outlines and warm navy/plum/cream/gold palette. Friendly cozy game illustration, centered safe composition with 10% margins. No text or numbers anywhere, no UI, no logo, no actual people or other streamers, no copyrighted game objects, no occult, no scary symbols, no watermark. No split panels. This is a positive chapter ending, not retirement or farewell from life."
+    },
+    {
+      "path": "assets/endings/EF-009.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-009 · 특집 직전 송출 화면이 멈췄다",
+      "promptFile": "work/asset-production/EF-009.prompt.txt",
+      "eventId": "EF-009",
+      "endingIds": [
+        "END-017",
+        "END-018"
+      ],
+      "endingTitles": [
+        "화면이 꺼져도 들리는 방송",
+        "생방송 대신 첫 상영회"
+      ],
+      "prompt": "Use case: illustration-story. ONE production pixel-art ending illustration EF-009, exact 960x540 landscape PNG, opaque complete background. Scene: broadcast screen stops, but the program finds a way. RAKOKO cheerfully speaks into a desk microphone while one large monitor is blank indigo; a smaller side monitor displays a simple nonverbal film-strip icon and abstract wave bars, little Kimongi listen with headphones. Equipment is calm and safe, no sparks or emergency. Reference1 strictly defines RAKOKO default character: navy bangs, white streak/gold bow/ponytail on viewer RIGHT, blue eye viewer LEFT and red eye viewer RIGHT, opaque white collared blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: coral-pink/moss-green patchwork mascot, black scarf, pointed ears and black spade tail, NOT human. Crisp square pixel clusters, stepped edges, warm navy/plum/cream/gold palette with coral/olive accents. Charming cozy retro game scene, legible at thumbnail scale, central safe framing, no cropped heads/hands. Absolutely no lettering or numbers, UI, logos, other real streamers, existing copyrighted characters, occult, scary elements, split panels or watermarks. Positive completed chapter, not permanent retirement."
+    },
+    {
+      "path": "assets/endings/EF-010.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-010 · 오래전에 봉인한 시간캡슐",
+      "promptFile": "work/asset-production/EF-010.prompt.txt",
+      "eventId": "EF-010",
+      "endingIds": [
+        "END-019",
+        "END-020"
+      ],
+      "endingTitles": [
+        "그때 적어 둔 다음에",
+        "작은 방송 박물관"
+      ],
+      "prompt": "Use case: illustration-story. ONE production pixel-art ending illustration EF-010, exact 960x540 landscape PNG, opaque complete background. Scene: opening an old time capsule of broadcast memories. RAKOKO and several Kimongi around an open wooden keepsake box containing blank folded letters, little original photo-free drawings, ribbons and a diary, a small shelf of curated memory objects behind them. Warm nostalgic light, hopeful future. Reference1 strictly defines RAKOKO default character: navy bangs, white streak/gold bow/ponytail on viewer RIGHT, blue eye viewer LEFT and red eye viewer RIGHT, opaque white collared blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: coral-pink/moss-green patchwork mascot, black scarf, pointed ears and black spade tail, NOT human. Crisp square pixel clusters, stepped edges, warm navy/plum/cream/gold palette with coral/olive accents. Charming cozy retro game scene, legible at thumbnail scale, central safe framing, no cropped heads/hands. Absolutely no lettering or numbers, UI, logos, other real streamers, existing copyrighted characters, occult, scary elements, split panels or watermarks. Positive completed chapter, not permanent retirement."
+    },
+    {
+      "path": "assets/endings/EF-011.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-011 · 생일 특집의 마지막 선물",
+      "promptFile": "work/asset-production/EF-011.prompt.txt",
+      "eventId": "EF-011",
+      "endingIds": [
+        "END-021",
+        "END-022"
+      ],
+      "endingTitles": [
+        "매년 다시 부를 한 곡",
+        "우리가 쓴 생일 한 권"
+      ],
+      "prompt": "Use case: illustration-story. ONE production pixel-art ending illustration EF-011, exact 960x540 landscape PNG, opaque complete background. Scene: birthday special gift created together. RAKOKO smiles by a modest birthday cake with simple unnumbered candles, open keepsake book and blank sheet music on table, many little Kimongi offer a ribbon-tied parcel; both original song and memory book branches suit the composition. No numbers or text. Reference1 strictly defines RAKOKO default character: navy bangs, white streak/gold bow/ponytail on viewer RIGHT, blue eye viewer LEFT and red eye viewer RIGHT, opaque white collared blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: coral-pink/moss-green patchwork mascot, black scarf, pointed ears and black spade tail, NOT human. Crisp square pixel clusters, stepped edges, warm navy/plum/cream/gold palette with coral/olive accents. Charming cozy retro game scene, legible at thumbnail scale, central safe framing, no cropped heads/hands. Absolutely no lettering or numbers, UI, logos, other real streamers, existing copyrighted characters, occult, scary elements, split panels or watermarks. Positive completed chapter, not permanent retirement."
+    },
+    {
+      "path": "assets/endings/EF-012.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-012 · 작은 공개 행사의 마지막 자리",
+      "promptFile": "work/asset-production/EF-012.prompt.txt",
+      "eventId": "EF-012",
+      "endingIds": [
+        "END-023",
+        "END-024"
+      ],
+      "endingTitles": [
+        "채팅창에서 같은 자리로",
+        "키몽이 운동회 첫 회"
+      ],
+      "prompt": "Use case: illustration-story. ONE production pixel-art ending illustration EF-012, exact 960x540 landscape PNG, opaque complete background. Scene: small friendly community event. RAKOKO at low stage with microphone and colorful blank question cards, foreground groups of cute Kimongi gather around simple original tabletop minigame pieces and small colored flags, intimate lively meetup. No human fan faces. Reference1 strictly defines RAKOKO default character: navy bangs, white streak/gold bow/ponytail on viewer RIGHT, blue eye viewer LEFT and red eye viewer RIGHT, opaque white collared blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: coral-pink/moss-green patchwork mascot, black scarf, pointed ears and black spade tail, NOT human. Crisp square pixel clusters, stepped edges, warm navy/plum/cream/gold palette with coral/olive accents. Charming cozy retro game scene, legible at thumbnail scale, central safe framing, no cropped heads/hands. Absolutely no lettering or numbers, UI, logos, other real streamers, existing copyrighted characters, occult, scary elements, split panels or watermarks. Positive completed chapter, not permanent retirement."
+    },
+    {
+      "path": "assets/endings/EF-013.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-013 · 장난으로 만든 말이 간판이 됐다",
+      "promptFile": "work/asset-production/EF-013.prompt.txt",
+      "eventId": "EF-013",
+      "endingIds": [
+        "END-025",
+        "END-026"
+      ],
+      "endingTitles": [
+        "실수로 태어난 대표 코너",
+        "농담 하나의 플레이 버튼"
+      ],
+      "prompt": "Use case: illustration-story. ONE production ending scene EF-013, exact 960x540 landscape PNG with opaque illustrated background. Scene: a small joke becomes an original signature program. RAKOKO giggles beside a miniature tabletop puppet-theater frame and a little original abstract puzzle board of colored geometric tiles, Kimongi exchange funny blank speech bubbles and play together. No text at all, no mocking expressions; bright playful comedy. Reference1 strictly locks RAKOKO default identity: navy bangs, viewer-right white streak/gold bow/ponytail, viewer-left blue eye and viewer-right red eye, opaque white collared blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: coral and moss-green sewn patchwork mascot, black scarf, pointed ears, black spade tail, NOT a human. Cozy original retro game illustration, crisp square pixel clusters, stepped outlines, navy/plum/cream/gold palette with muted coral/olive. Readable storytelling, central action inside safe 10% margins, full heads and hands. No lettering or numbers anywhere, no UI text, no logos, no other real streamers or real fans, no copyrighted game characters, no occult or frightening content, no split panels, no watermark. Completed creative chapter, no death/marriage/permanent retirement implication."
+    },
+    {
+      "path": "assets/endings/EF-014.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-014 · 큰 특집과 작은 약속이 같은 날",
+      "promptFile": "work/asset-production/EF-014.prompt.txt",
+      "eventId": "EF-014",
+      "endingIds": [
+        "END-027",
+        "END-028"
+      ],
+      "endingTitles": [
+        "더 큰 편성표의 한 칸",
+        "오늘은 우리 방송 하는 날"
+      ],
+      "prompt": "Use case: illustration-story. ONE production ending scene EF-014, exact 960x540 landscape PNG with opaque illustrated background. Scene: a large invitation and a small promise on the same day. RAKOKO thoughtfully but happily arranges two blank cream event cards side by side on an open planner, one card bears tiny stage silhouette and the other tiny house/microphone icon, a closed invitation envelope nearby. Several Kimongi help sort the schedule. Both choices equally valued, no checkmarks picking a route. Reference1 strictly locks RAKOKO default identity: navy bangs, viewer-right white streak/gold bow/ponytail, viewer-left blue eye and viewer-right red eye, opaque white collared blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: coral and moss-green sewn patchwork mascot, black scarf, pointed ears, black spade tail, NOT a human. Cozy original retro game illustration, crisp square pixel clusters, stepped outlines, navy/plum/cream/gold palette with muted coral/olive. Readable storytelling, central action inside safe 10% margins, full heads and hands. No lettering or numbers anywhere, no UI text, no logos, no other real streamers or real fans, no copyrighted game characters, no occult or frightening content, no split panels, no watermark. Completed creative chapter, no death/marriage/permanent retirement implication."
+    },
+    {
+      "path": "assets/endings/EF-015.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-015 · 기획 전체를 못 끝낼 것 같다",
+      "promptFile": "work/asset-production/EF-015.prompt.txt",
+      "eventId": "EF-015",
+      "endingIds": [
+        "END-029",
+        "END-030"
+      ],
+      "endingTitles": [
+        "작아도 완성된 오늘",
+        "끝이 아니라 정규 편성"
+      ],
+      "prompt": "Use case: illustration-story. ONE production ending scene EF-015, exact 960x540 landscape PNG with opaque illustrated background. Scene: a large project finds a finishable shape. RAKOKO proudly arranges a few completed miniature storyboard panels in a neat row on a long desk, larger pile of unused drafts set aside, Kimongi hold up a finished small booklet and additional blank chapter cards. Feeling of achievable completion and continuing series, no trash or failure mood. Reference1 strictly locks RAKOKO default identity: navy bangs, viewer-right white streak/gold bow/ponytail, viewer-left blue eye and viewer-right red eye, opaque white collared blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: coral and moss-green sewn patchwork mascot, black scarf, pointed ears, black spade tail, NOT a human. Cozy original retro game illustration, crisp square pixel clusters, stepped outlines, navy/plum/cream/gold palette with muted coral/olive. Readable storytelling, central action inside safe 10% margins, full heads and hands. No lettering or numbers anywhere, no UI text, no logos, no other real streamers or real fans, no copyrighted game characters, no occult or frightening content, no split panels, no watermark. Completed creative chapter, no death/marriage/permanent retirement implication."
+    },
+    {
+      "path": "assets/endings/EF-016.png",
+      "width": 960,
+      "height": 540,
+      "transparent": false,
+      "label": "EF-016 · 완성된 방송일지 영상의 마지막 컷",
+      "promptFile": "work/asset-production/EF-016.prompt.txt",
+      "eventId": "EF-016",
+      "endingIds": [
+        "END-031",
+        "END-032"
+      ],
+      "endingTitles": [
+        "우리가 방송을 만든 시간",
+        "방송일지의 움직이는 마지막 장"
+      ],
+      "prompt": "Use case: illustration-story. ONE production ending scene EF-016, exact 960x540 landscape PNG with opaque illustrated background. Scene: the last cut of an original broadcast journal film. RAKOKO at an editing desk with an open diary and original hand-drawn storyboard sheets, monitor displays a simple illustrated version of the same diary scene inside abstract filmstrip border, Kimongi sit together watching a little projection on wall. Warm reflective hopeful finale, supports documentary and animation; no real video capture or platform UI. Reference1 strictly locks RAKOKO default identity: navy bangs, viewer-right white streak/gold bow/ponytail, viewer-left blue eye and viewer-right red eye, opaque white collared blouse/navy tie/black shoulder jacket. Reference2 defines Kimongi: coral and moss-green sewn patchwork mascot, black scarf, pointed ears, black spade tail, NOT a human. Cozy original retro game illustration, crisp square pixel clusters, stepped outlines, navy/plum/cream/gold palette with muted coral/olive. Readable storytelling, central action inside safe 10% margins, full heads and hands. No lettering or numbers anywhere, no UI text, no logos, no other real streamers or real fans, no copyrighted game characters, no occult or frightening content, no split panels, no watermark. Completed creative chapter, no death/marriage/permanent retirement implication."
+    },
+    {
+      "path": "assets/icons/corner-T.png",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "label": "코너 · 잡담",
+      "promptFile": "work/asset-production/corner-T.prompt.txt",
+      "prompt": "Use case: stylized-concept. One game UI icon for TALK corner: a warm cream mug with one simple speech bubble behind it. 96x96 transparent PNG. Very coarse 24x24 logical pixel art enlarged, bold navy stepped outline, cream body, muted plum and gold small accents. Single unified silhouette centered, 12% clear margin, readable at 24px, no lettering, no numbers, no background, no shadow, no glow, no actual logo. Match a cozy navy cream pixel-game icon set."
+    },
+    {
+      "path": "assets/icons/corner-G.png",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "label": "코너 · 게임 도전",
+      "promptFile": "work/asset-production/corner-G.prompt.txt",
+      "prompt": "Use case: stylized-concept. One game UI icon for GAME CHALLENGE corner: a generic navy game controller with cream directional cross and two coral round buttons, tiny gold sparkle accent. 96x96 transparent PNG. Very coarse 24x24 logical pixel art enlarged, bold navy stepped outline, cream/navy/plum/gold palette, single unified silhouette centered, 12% clear margin, readable at 24px. No brand or recognizable specific console, no lettering or numbers, no background, no shadow, no glow. Match cozy navy cream pixel-game icon set."
+    },
+    {
+      "path": "assets/icons/corner-F.png",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "label": "코너 · 팬 참여",
+      "promptFile": "work/asset-production/corner-F.prompt.txt",
+      "prompt": "Use case: stylized-concept. One game UI icon for FAN PARTICIPATION corner: two small overlapping cream speech bubbles surrounding a coral pixel heart. 96x96 transparent PNG. Very coarse 24x24 logical pixel art enlarged, bold navy stepped outline, cream/navy/plum/gold/coral palette, single unified silhouette centered, 12% clear margin, readable at 24px. No lettering or numbers, no logos, no background, no shadow or glow. Match cozy navy cream pixel-game icon set."
+    },
+    {
+      "path": "assets/icons/corner-S.png",
+      "width": 96,
+      "height": 96,
+      "transparent": true,
+      "label": "코너 · 특별 기획",
+      "promptFile": "work/asset-production/corner-S.prompt.txt",
+      "prompt": "Use case: stylized-concept. One game UI icon for SPECIAL PROJECT corner: open cream notebook with two plain gold tabs and a small gold four-point glint above the binding. 96x96 transparent PNG. Very coarse 24x24 logical pixel art enlarged, bold navy stepped outline, cream/navy/plum/gold palette, single unified silhouette centered, 12% clear margin, readable at 24px. Pages blank, no text or numbers, no logos, no background, no shadow or glow, no occult star. Match cozy navy cream pixel-game icon set."
+    }
+  ]
+}

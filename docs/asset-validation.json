@@ -1,0 +1,572 @@
+﻿[
+    {
+        "path":  "assets/characters/rakoko-face-default.png",
+        "width":  512,
+        "height":  512,
+        "transparentPixels":  123554,
+        "visiblePixels":  138590,
+        "visibleBounds":  [
+                              9,
+                              1,
+                              509,
+                              505
+                          ],
+        "sha256":  "f7a63853f15d65d771c88827dce8b06ca1f407fe9bc3974cad48186c6b041757",
+        "bytes":  285203
+    },
+    {
+        "path":  "assets/characters/rakoko-face-smile.png",
+        "width":  512,
+        "height":  512,
+        "transparentPixels":  129353,
+        "visiblePixels":  132791,
+        "visibleBounds":  [
+                              14,
+                              14,
+                              500,
+                              504
+                          ],
+        "sha256":  "72fb729a28d55a0dde0642e73ae934aa21bccaf316c7a11091c057eccaba164d",
+        "bytes":  275013
+    },
+    {
+        "path":  "assets/characters/rakoko-face-surprised.png",
+        "width":  512,
+        "height":  512,
+        "transparentPixels":  128390,
+        "visiblePixels":  133754,
+        "visibleBounds":  [
+                              9,
+                              10,
+                              495,
+                              503
+                          ],
+        "sha256":  "63fe2ec6d1a725f37469d274788d30a8bd9d9dc9ee642bc1ba7cadf3added2d6",
+        "bytes":  272010
+    },
+    {
+        "path":  "assets/characters/rakoko-face-flustered.png",
+        "width":  512,
+        "height":  512,
+        "transparentPixels":  129381,
+        "visiblePixels":  132763,
+        "visibleBounds":  [
+                              22,
+                              9,
+                              487,
+                              505
+                          ],
+        "sha256":  "a958725c1b11de2d567cc9966f6b2b23a4ba47e5861a58444a054e0e9f65cf40",
+        "bytes":  272487
+    },
+    {
+        "path":  "assets/characters/rakoko-face-proud.png",
+        "width":  512,
+        "height":  512,
+        "transparentPixels":  122395,
+        "visiblePixels":  139749,
+        "visibleBounds":  [
+                              13,
+                              13,
+                              482,
+                              499
+                          ],
+        "sha256":  "06df2ea5e79c9aa05c117b7b2f397c669aca4a28c6aa525a340945a56dc68114",
+        "bytes":  298461
+    },
+    {
+        "path":  "assets/backgrounds/studio-night.png",
+        "width":  1600,
+        "height":  1000,
+        "transparentPixels":  0,
+        "visiblePixels":  1600000,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              1599,
+                              999
+                          ],
+        "sha256":  "5a484c38b3751a9062de5582b7b0afd3ae3164f7a6def7cb3954b1fa69729986",
+        "bytes":  2652465
+    },
+    {
+        "path":  "assets/backgrounds/studio-day.png",
+        "width":  1600,
+        "height":  1000,
+        "transparentPixels":  0,
+        "visiblePixels":  1600000,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              1599,
+                              999
+                          ],
+        "sha256":  "fe2504ef81f392225dac8f4d0e1bd404dc10c8775eb14f13a482312a0d67a8a6",
+        "bytes":  2866155
+    },
+    {
+        "path":  "assets/events/outfit-leak/maid.png",
+        "width":  640,
+        "height":  360,
+        "transparentPixels":  211764,
+        "visiblePixels":  18636,
+        "visibleBounds":  [
+                              70,
+                              56,
+                              594,
+                              334
+                          ],
+        "sha256":  "759aedb677ddd4798529b0d64daa2bf27c1f5f6ebcf22b7ae1632622d6f13ed1",
+        "bytes":  47654
+    },
+    {
+        "path":  "assets/events/outfit-leak/police.png",
+        "width":  640,
+        "height":  360,
+        "transparentPixels":  209613,
+        "visiblePixels":  20787,
+        "visibleBounds":  [
+                              30,
+                              64,
+                              563,
+                              332
+                          ],
+        "sha256":  "98a517703613b9dbf3274fbc0341de1dca4a65fda55f7d235c45da8f8fc5a33b",
+        "bytes":  45732
+    },
+    {
+        "path":  "assets/events/outfit-leak/ghost.png",
+        "width":  640,
+        "height":  360,
+        "transparentPixels":  200318,
+        "visiblePixels":  30082,
+        "visibleBounds":  [
+                              37,
+                              80,
+                              603,
+                              324
+                          ],
+        "sha256":  "b7cb8ab96f925d1eb628dbf9d0de3220865abf75487d9969a0a6bbbfd0544755",
+        "bytes":  62603
+    },
+    {
+        "path":  "assets/events/outfit-leak/nun.png",
+        "width":  640,
+        "height":  360,
+        "transparentPixels":  209268,
+        "visiblePixels":  21132,
+        "visibleBounds":  [
+                              42,
+                              8,
+                              554,
+                              348
+                          ],
+        "sha256":  "0abcae81ba1a6e33f0bda8b4fafb0873725fdc3e9029ffebd3ae76d2d2bce479",
+        "bytes":  49390
+    },
+    {
+        "path":  "assets/characters/kimongi-1.png",
+        "width":  128,
+        "height":  128,
+        "transparentPixels":  10941,
+        "visiblePixels":  5443,
+        "visibleBounds":  [
+                              20,
+                              12,
+                              117,
+                              114
+                          ],
+        "sha256":  "4802d73a877d425e4399f27ba850e4b89b57fbb34d1ed627129a694e1545b959",
+        "bytes":  13913
+    },
+    {
+        "path":  "assets/characters/kimongi-2.png",
+        "width":  128,
+        "height":  128,
+        "transparentPixels":  11007,
+        "visiblePixels":  5377,
+        "visibleBounds":  [
+                              20,
+                              15,
+                              107,
+                              112
+                          ],
+        "sha256":  "1c88428b7fa19dc810192645f06c59ba3696e8978da1857c4afc8c64ca1596b0",
+        "bytes":  13800
+    },
+    {
+        "path":  "assets/characters/kimongi-3.png",
+        "width":  128,
+        "height":  128,
+        "transparentPixels":  11168,
+        "visiblePixels":  5216,
+        "visibleBounds":  [
+                              13,
+                              15,
+                              105,
+                              120
+                          ],
+        "sha256":  "1aae7bbd3e3e7dd5a51923e710794dc130701a4d5317abce789120c9ee1aa70a",
+        "bytes":  13064
+    },
+    {
+        "path":  "assets/characters/kimongi-4.png",
+        "width":  128,
+        "height":  128,
+        "transparentPixels":  11217,
+        "visiblePixels":  5167,
+        "visibleBounds":  [
+                              21,
+                              2,
+                              111,
+                              126
+                          ],
+        "sha256":  "a3dd95bcb095caf0a094c37a2ab76d1b9eff5be91d2f2e066d1c552304571662",
+        "bytes":  13433
+    },
+    {
+        "path":  "assets/characters/kimongi-5.png",
+        "width":  128,
+        "height":  128,
+        "transparentPixels":  10584,
+        "visiblePixels":  5800,
+        "visibleBounds":  [
+                              20,
+                              13,
+                              109,
+                              115
+                          ],
+        "sha256":  "36f09207fc74be9ea012b45be3622de5831c43976712dfce936522981b95a666",
+        "bytes":  14799
+    },
+    {
+        "path":  "assets/characters/kimongi-6.png",
+        "width":  128,
+        "height":  128,
+        "transparentPixels":  11258,
+        "visiblePixels":  5126,
+        "visibleBounds":  [
+                              20,
+                              11,
+                              117,
+                              111
+                          ],
+        "sha256":  "4376a37e0a298b02ade0d523a21202220b5744e85415634b88e8abe9227c9ae9",
+        "bytes":  13876
+    },
+    {
+        "path":  "assets/brand/logo.png",
+        "width":  1200,
+        "height":  360,
+        "transparentPixels":  224486,
+        "visiblePixels":  207514,
+        "visibleBounds":  [
+                              84,
+                              2,
+                              1081,
+                              359
+                          ],
+        "sha256":  "46a846323b59b206c05e82e2c4356d58228361f3ae6fd06a52debf139d3c5a92",
+        "bytes":  402909
+    },
+    {
+        "path":  "assets/endings/EF-001.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "978cf59e37cadf6210336f9428f07f18db5e2750846e1276ba6454daf5cc6470",
+        "bytes":  1313091
+    },
+    {
+        "path":  "assets/endings/EF-002.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "0d3d782cd516b36e71d2b13104ed15956f49630af2a16add03a072988fd8b7e0",
+        "bytes":  1334290
+    },
+    {
+        "path":  "assets/endings/EF-003.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "fb2255737d0a6e994984a0c6122c1f063c335a1b00e5f8bc82eae97c40cb6e2c",
+        "bytes":  1344979
+    },
+    {
+        "path":  "assets/endings/EF-004.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "fb85d185ccfa0456e3893a7f7f4f3ce76d3fff8108f3c9f7ba51363ef94a4aef",
+        "bytes":  1423448
+    },
+    {
+        "path":  "assets/endings/EF-005.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "1f7f45eba4c3bddcd6248b281d80f3d83f81b8a2e11c590ab678b180549be0e7",
+        "bytes":  1278252
+    },
+    {
+        "path":  "assets/endings/EF-006.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "4ca18e858af9e41e570a291e9f0b3c1d5c1912153ad608511051ae6c47a1e83f",
+        "bytes":  1249320
+    },
+    {
+        "path":  "assets/endings/EF-007.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "c15deea46af1a9fc32b1c11c0163ac7a8959a5e8b8e81bf766bda877f81dc288",
+        "bytes":  1259460
+    },
+    {
+        "path":  "assets/endings/EF-008.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "555bbd22fa26f2eed45d0dda2624eabfe51d375ad53f75b220a63de287f8ec58",
+        "bytes":  1294469
+    },
+    {
+        "path":  "assets/endings/EF-009.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "bfd7dc51c81d757f8a1bb4510affd6ae01b55373f0d1e7908b75142b2a23f689",
+        "bytes":  1103647
+    },
+    {
+        "path":  "assets/endings/EF-010.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "8305c2cb19213e1c3cecf164373a531c1255ee7ded3f344b71c2bb036d829b5d",
+        "bytes":  1491408
+    },
+    {
+        "path":  "assets/endings/EF-011.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "18409037bd50c9a5bb3377ee7eea3c4e2f9679f1f491630407f98884aa1c0dd2",
+        "bytes":  1412326
+    },
+    {
+        "path":  "assets/endings/EF-012.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "ffb151e3667820b355f6e3c1d64bda002db1921ccded855da883631a5c6ebe63",
+        "bytes":  1426631
+    },
+    {
+        "path":  "assets/endings/EF-013.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "c3fdba8e4f95cebb7e7bb675d1b4f463f4e0be107600329adec6ec339037e5c8",
+        "bytes":  1376872
+    },
+    {
+        "path":  "assets/endings/EF-014.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "50a61ffcfb8f4a991eb9fb063e36d1ca7b19b4cadebd316d95ea5c00377010e1",
+        "bytes":  1386523
+    },
+    {
+        "path":  "assets/endings/EF-015.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "ce237798be318a77aebb3f487e352aeceffd9d1f23de5f519c9e041b27ef32c0",
+        "bytes":  1260534
+    },
+    {
+        "path":  "assets/endings/EF-016.png",
+        "width":  960,
+        "height":  540,
+        "transparentPixels":  0,
+        "visiblePixels":  518400,
+        "visibleBounds":  [
+                              0,
+                              0,
+                              959,
+                              539
+                          ],
+        "sha256":  "c8779a32e4753c88a028facb6af8571bac4161e226e62a5085a7f941fd48377e",
+        "bytes":  1307203
+    },
+    {
+        "path":  "assets/icons/corner-T.png",
+        "width":  96,
+        "height":  96,
+        "transparentPixels":  5849,
+        "visiblePixels":  3367,
+        "visibleBounds":  [
+                              7,
+                              16,
+                              82,
+                              84
+                          ],
+        "sha256":  "41697fd2496ab33bd66981d763fcb9538454e3d112b2432b0d24303d5ba13b71",
+        "bytes":  6756
+    },
+    {
+        "path":  "assets/icons/corner-G.png",
+        "width":  96,
+        "height":  96,
+        "transparentPixels":  5788,
+        "visiblePixels":  3428,
+        "visibleBounds":  [
+                              6,
+                              13,
+                              87,
+                              92
+                          ],
+        "sha256":  "b8005926fa0541d22362915f3971c762e38cb808b50850e6bc2904b01ece6d9b",
+        "bytes":  6950
+    },
+    {
+        "path":  "assets/icons/corner-F.png",
+        "width":  96,
+        "height":  96,
+        "transparentPixels":  5601,
+        "visiblePixels":  3615,
+        "visibleBounds":  [
+                              9,
+                              15,
+                              83,
+                              84
+                          ],
+        "sha256":  "4f92eaf52379ed000d29a55d9abb882aa4f1926859292861471c2d4f3780581e",
+        "bytes":  6661
+    },
+    {
+        "path":  "assets/icons/corner-S.png",
+        "width":  96,
+        "height":  96,
+        "transparentPixels":  4298,
+        "visiblePixels":  4918,
+        "visibleBounds":  [
+                              7,
+                              10,
+                              90,
+                              87
+                          ],
+        "sha256":  "43e151a1ccb587810d8cdd02ac62d6e7e9f66c152b24e7ed3a08edb5e2fdf68f",
+        "bytes":  8084
+    }
+]
