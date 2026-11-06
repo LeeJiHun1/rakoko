@@ -1,6 +1,7 @@
 // 화면 그리기. 매번 #app 전체를 다시 그리되(가상 DOM 없음), 열린 접힘 패널과 포커스는 유지한다.
 import {$, btn, money} from './dom.js';
 import {playSceneEffects} from './effects.js';
+import {syncMusic} from './audio.js';
 import {applyPreferences} from './preferences.js';
 import {store} from './store.js';
 import {endingChoices, creditsScreen} from './views/ending.js';
@@ -67,6 +68,7 @@ export function render() {
   // 진행 막대 너비는 인라인 style 대신 CSSOM 으로(엄격한 CSP 에서 style 속성 금지, 숫자만 허용)
   for (const bar of app.querySelectorAll('[data-meter]')) bar.style.width = `${Math.max(0, Math.min(100, Number(bar.dataset.meter) || 0))}%`;
   playSceneEffects(app, state);
+  syncMusic(active);
   for (const img of app.querySelectorAll('img')) img.addEventListener('error', () => { img.classList.add('image-unavailable'); img.alt = img.alt || '이미지를 불러오지 못했어요'; }, {once: true});
 }
 

@@ -4,8 +4,12 @@ await rm('dist',{recursive:true,force:true});
 await mkdir('dist',{recursive:true});
 await copyFile('index.html','dist/index.html');
 await cp('src','dist/src',{recursive:true});
-for(const folder of ['characters','events/outfit-reveals','events/outfit-journal','events/outfit-leak','backgrounds','brand','endings','icons','fonts']) {
+// 화면에 쓰는 폴더만 복사한다. assets/references(방송 캡처 원본)는 절대 넣지 않는다.
+// 표정 초상은 v2 경로(characters/faces)만 쓰므로 v1 사본(characters/rakoko-face-*.png)은 빼고, 메타 JSON·README 도 뺀다.
+const FOLDERS = ['characters','events','backgrounds','brand','endings','icons','fonts','scenes','ui','items','modules','games','audio'];
+const skip = source => source.endsWith('.json') || source.endsWith('README.md') || /[\\/]characters[\\/]rakoko-face-[a-z]+\.png$/.test(source);
+for(const folder of FOLDERS) {
   await mkdir(`dist/assets/${folder}`,{recursive:true});
-  await cp(`assets/${folder}`,`dist/assets/${folder}`,{recursive:true,filter:source=>!source.endsWith('.json')});
+  await cp(`assets/${folder}`,`dist/assets/${folder}`,{recursive:true,filter:source=>!skip(source)});
 }
 console.log('Built dist/ — static hosting, no server dependencies.');

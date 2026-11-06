@@ -38,9 +38,10 @@ export function playSceneEffects(root, state) {
   sceneStartedAt = now;
   const r = state.result;
   if (state.phase === 'result' && r) {
-    if (r.donation) playCue(r.donation.tier === 'jackpot' ? 'record' : 'donation');
+    if (r.kind === 'reveal') playCue('curtain');
+    else if (r.donation) playCue('donation');
     else if (r.grade === 'great') playCue('great');
-    else if (r.grade === 'miss') playCue('miss');
+    else if (r.grade === 'miss' || r.kind === 'revealFailed') playCue('miss');
   }
   if (state.phase === 'wrap' && r?.newRecords?.length) playCue('record');
 }

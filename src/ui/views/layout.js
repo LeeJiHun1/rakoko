@@ -2,7 +2,7 @@
 import {activeBonus, estimateViewers, LABELS, skill} from '../../engine.js';
 import {btn, escape} from '../dom.js';
 import {gameName, outfit, store} from '../store.js';
-import {kimongiAvatar, LOGO, STUDIO_BACKGROUND} from '../assets.js';
+import {gameIcon, kimongiAvatar, LOGO, STUDIO_BACKGROUND} from '../assets.js';
 
 export const isLive = state => ['event', 'result', 'ending'].includes(state.phase);
 
@@ -21,7 +21,7 @@ function recordLine(state) {
 
 function statusPanel(state, catalog) {
   return `<section class="status-panel"><div class="section-heading"><span>우리 방송의 지금</span><small>${escape(catalog.economy.income.scaleTiers[state.scaleIndex].label)}</small></div><div class="stat-grid">${['awareness','community','planning','operation'].map(key=>[key,Number(state.stats[key])||0]).map(([key,value])=>`<div class="stat"><div><span>${LABELS[key]}</span><b>${escape(value)}<small>/100</small></b></div><div class="meter"><i data-meter="${escape(value)}" class="${escape(key)}"></i></div></div>`).join('')}</div>
-  <div class="game-stat"><span>▣ ${escape(gameName(state.gameId))}</span><b>숙련 ${escape(skill(state))}</b></div>${recordLine(state)}</section>`;
+  <div class="game-stat"><span>${gameIcon(state.gameId)?`<img class="game-icon" src="${gameIcon(state.gameId)}" alt="" width="128" height="128"/>`:'▣'} ${escape(gameName(state.gameId))}</span><b>숙련 ${escape(skill(state))}</b></div>${recordLine(state)}</section>`;
 }
 
 /** 방송 중: 시청자 수(추정)와 최근 키몽이 채팅 — 방송 화면처럼 */

@@ -67,6 +67,8 @@ index.html ─ src/app.js ─ src/ui/boot.js
 | `ui/dialogs.js` · `ui/modal.js` | 대화상자 내용 · 공용 `<dialog>` |
 | `ui/dom.js` | `escape`·`btn`·`tag`·`money`·`compact` |
 | `ui/preferences.js` · `feedback.js` · `sync.js` · `save-files.js` | 편의 설정 · 토스트/효과음 · 탭 동기화 · 일지 파일 입출력 |
+| `ui/assets.js` | 그림·소리 경로와 짝 규칙(사건 분류→삽화, 구매 이벤트→아이템, 업적→배지 등). DOM 없음 — `scripts/check.mjs` 가 `allAssetPaths()` 로 존재·짝 누락 검사. 새 사건 분류·업적·게임·구매 이벤트를 추가하면 여기 짝도 추가해야 check 통과 |
+| `ui/audio.js` | 효과음(Ogg, 미지원 시 feedback.js 비프음)·배경음악(준비/방송 2곡, 페이드 전환). 설정 `sound`·`music` 둘 다 기본 꺼짐 |
 
 ## 스타일
 

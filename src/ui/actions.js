@@ -143,7 +143,7 @@ async function onClick(e) {
   }
 }
 
-const PREFERENCE_INPUTS = ['font-size', 'font-style', 'motion-toggle', 'sound-toggle'];
+const PREFERENCE_INPUTS = ['font-size', 'font-style', 'motion-toggle', 'sound-toggle', 'music-toggle'];
 
 async function onChange(e) {
   try {
@@ -157,6 +157,7 @@ async function onChange(e) {
       preferences.font = $('#font-style').value;
       preferences.reducedMotion = $('#motion-toggle').checked;
       preferences.sound = $('#sound-toggle').checked;
+      preferences.music = $('#music-toggle').checked;
       savePreferences();
       render();
       clickSound();

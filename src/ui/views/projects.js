@@ -3,6 +3,7 @@ import {effectText, endingUnlocked, firstEndingDate, LABELS, projectLocks, skill
 import {btn, escape, money} from '../dom.js';
 import {currentProject, gameName, store} from '../store.js';
 import {projectMini} from './project-mini.js';
+import {moduleBanner} from '../assets.js';
 
 const RECOMMENDED = ['END-001', 'END-003', 'END-007'];
 const MODULE_SYMBOLS = ['▧', '⌂', '♧', '⚑', '♜', '♞', '☕', '▥'];
@@ -68,7 +69,7 @@ function activeModule(state) {
 }
 
 function moduleList(state, catalog) {
-  return `<details class="optional-options"><summary>장기 콘텐츠에 참여하기 <small>마을·협동·대회</small></summary><p class="view-description">다른 가상 동료들과 여러 방송에 걸쳐 진행해요. 한 번에 하나씩 참여할 수 있어요.</p><div class="module-grid">${catalog.modules.map((m,i)=>`<article><span class="module-symbol">${MODULE_SYMBOLS[i]}</span><h3>${escape(m.name)}</h3><p>최소 5회 참여 · 초보도 가능</p>${btn('참여하기','joinModule',`data-id="${m.id}" ${state.phase!=='prep'||(state.module&&!state.module.expired)?'disabled':''}`,'button small secondary')}</article>`).join('')}</div></details>`;
+  return `<details class="optional-options"><summary>장기 콘텐츠에 참여하기 <small>마을·협동·대회</small></summary><p class="view-description">다른 가상 동료들과 여러 방송에 걸쳐 진행해요. 한 번에 하나씩 참여할 수 있어요.</p><div class="module-grid">${catalog.modules.map((m,i)=>`<article>${moduleBanner(m.id)?`<img class="module-banner" src="${moduleBanner(m.id)}" alt="" loading="lazy" width="640" height="360"/>`:`<span class="module-symbol">${MODULE_SYMBOLS[i]}</span>`}<h3>${escape(m.name)}</h3><p>최소 5회 참여 · 초보도 가능</p>${btn('참여하기','joinModule',`data-id="${m.id}" ${state.phase!=='prep'||(state.module&&!state.module.expired)?'disabled':''}`,'button small secondary')}</article>`).join('')}</div></details>`;
 }
 
 function orders(state) {

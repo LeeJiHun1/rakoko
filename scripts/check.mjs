@@ -23,14 +23,11 @@ const files = await jsFiles('src');
 for (const file of files) execFileSync(process.execPath, ['--check', file]);
 assert((await stat('assets/fonts/neodgm-LICENSE.txt')).isFile());
 // 화면에 연결한 그림 에셋(src/ui/assets.js)이 실제로 있는지 — 배포에서 깨진 그림 방지
-const requiredAssets = [
-  ...['default', 'smile', 'surprised', 'flustered', 'proud'].map(e => `assets/characters/rakoko-face-${e}.png`),
-  ...[1, 2, 3, 4, 5, 6].map(n => `assets/characters/kimongi-${n}.png`),
-  'assets/backgrounds/studio-day.png', 'assets/backgrounds/studio-night.png', 'assets/brand/logo.png',
-  ...['maid', 'police', 'ghost', 'nun'].map(id => `assets/events/outfit-leak/${id}.png`),
-  ...['T', 'G', 'F', 'S'].map(c => `assets/icons/corner-${c}.png`),
-  ...c.endingEvents.map(e => `assets/endings/${e.id}.png`),
-];
+const {allAssetPaths, BADGE_ACHIEVEMENT_IDS} = await import('../src/ui/assets.js');
+const {ACHIEVEMENTS} = await import('../src/engine/achievements.js');
+assert.deepEqual(ACHIEVEMENTS.map(a => a.id).filter(id => !BADGE_ACHIEVEMENT_IDS.includes(id)), [], '배지 분류 없는 업적');
+const requiredAssets = [...new Set(allAssetPaths(c))];
+assert(!requiredAssets.includes(null), '짝 그림이 없는 항목(사건 분류·게임·모듈·구매 이벤트 등)이 있음');
 for (const file of requiredAssets) assert((await stat(file)).isFile(), `에셋 없음: ${file}`);
 
 // 코드에 직접 적힌 콘텐츠 ID 가 카탈로그에 실제로 있는지 (카탈로그 재생성으로 ID 가 바뀌면 조건이 조용히 사라지는 것을 막는다)

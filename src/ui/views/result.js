@@ -2,14 +2,15 @@
 import {LABELS} from '../../engine.js';
 import {btn, escape, money, tag} from '../dom.js';
 import {store} from '../store.js';
-import {facePath, kimongiAvatar} from '../assets.js';
+import {donationArt, facePath, kimongiAvatar, REVEAL_FAIL} from '../assets.js';
 
 const DONATION_TITLES = {jackpot: '대박 응원!', medium: '응원 도착', small: '응원 도착'};
 
 /** 가상 응원 알림 (실제 플랫폼 화폐명은 쓰지 않는다) */
 function donationBanner(d) {
   if (!d) return '';
-  return `<div class="donation-banner tier-${escape(d.tier)}" role="status"><span class="donation-title">${DONATION_TITLES[d.tier] || '응원 도착'}</span><p><b>${escape(d.from)}</b>님이 응원 <b class="donation-amount" data-count-to="${escape(d.amount)}">${money(d.amount)}</b>을 보냈어요</p><small>“${escape(d.message)}”</small></div>`;
+  const art = donationArt(d.tier);
+  return `<div class="donation-banner tier-${escape(d.tier)}${art?' has-art':''}" role="status">${art?`<img class="donation-art" src="${art}" alt="" width="256" height="256"/>`:''}<span class="donation-title">${DONATION_TITLES[d.tier] || '응원 도착'}</span><p><b>${escape(d.from)}</b>님이 응원 <b class="donation-amount" data-count-to="${escape(d.amount)}">${money(d.amount)}</b>을 보냈어요</p><small>“${escape(d.message)}”</small></div>`;
 }
 
 /** 공개 연출: 닫힌 커튼이 걷히며 새 옷 등장(동작 줄이기면 바로 열린 상태) + 지금 입기(무료, 자동 환복 없음) */
@@ -43,5 +44,5 @@ function resultExpression(r) {
 export function resultScreen() {
   const {state} = store, r = state.result;
   const face = facePath(state, resultExpression(r));
-  return `${heading(r)}<article class="event-card result-card${r.grade ? ' grade-' + escape(r.grade) : ''}${face ? ' has-face' : ''}">${face ? `<img class="card-face" src="${face}" alt="" width="512" height="512"/>` : ''}<span class="eyebrow">${escape(r.title)}</span><h2>${escape(r.choice)}</h2><p class="event-body">${escape(r.outcome)}</p><div class="gain-list">${Object.entries(r.changes||{}).map(([key,n])=>`<span>${escape(LABELS[key])} <b>+${escape(Number(n))}</b></span>`).join('')}${r.kind==='reveal'?tag('옷장에 새 의상이 추가됐어요'):''}${r.kind==='revealFailed'?tag('공개 실패 · 준비도는 그대로, 다시 예약할 수 있어요'):''}</div>${revealStage(state, r.unlockedOutfit)}</article>${donationBanner(r.donation)}${reactionRows(r.reactions||[])}<div class="continue-row"><span>0${escape(Number(state.slot)+1)} / 03 코너<span class="key-hint"> · Enter</span></span>${btn(r.interlude?'코너 이어서 진행 <span>→</span>':state.slot<2?'다음 코너로 <span>→</span>':'오늘의 일지 마무리 <span>→</span>','advance','','button primary')}</div>`;
+  return `${heading(r)}<article class="event-card result-card${r.grade ? ' grade-' + escape(r.grade) : ''}${face ? ' has-face' : ''}">${face ? `<img class="card-face" src="${face}" alt="" width="512" height="512"/>` : ''}<span class="eyebrow">${escape(r.title)}</span><h2>${escape(r.choice)}</h2><p class="event-body">${escape(r.outcome)}</p><div class="gain-list">${Object.entries(r.changes||{}).map(([key,n])=>`<span>${escape(LABELS[key])} <b>+${escape(Number(n))}</b></span>`).join('')}${r.kind==='reveal'?tag('옷장에 새 의상이 추가됐어요'):''}${r.kind==='revealFailed'?tag('공개 실패 · 준비도는 그대로, 다시 예약할 수 있어요'):''}</div>${r.kind==='revealFailed'?`<div class="event-art art-photo"><img src="${REVEAL_FAIL}" alt="풀린 리본과 굴러가는 단추" width="640" height="360"/></div>`:''}${revealStage(state, r.unlockedOutfit)}</article>${donationBanner(r.donation)}${reactionRows(r.reactions||[])}<div class="continue-row"><span>0${escape(Number(state.slot)+1)} / 03 코너<span class="key-hint"> · Enter</span></span>${btn(r.interlude?'코너 이어서 진행 <span>→</span>':state.slot<2?'다음 코너로 <span>→</span>':'오늘의 일지 마무리 <span>→</span>','advance','','button primary')}</div>`;
 }

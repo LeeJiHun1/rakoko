@@ -30,7 +30,7 @@ npm run preview  # dist/ 미리보기
 - **이번 달 미션** — 매달 3개, 달성 보상과 도장.
 - **업적 25종·사건 도감 80종·결말 모음 33칸** — 지난 기록 탭.
 - **시청자 추이 그래프·결산** — 지난 기록 탭.
-- **편의** — 키보드(숫자 1~4 선택, Enter 다음), 글자 크기 125~200%, 동작 줄이기, 효과음, 일지 내보내기/가져오기.
+- **편의** — 키보드(숫자 1~4 선택, Enter 다음), 글자 크기 125~200%, 동작 줄이기, 효과음·배경음악(기본 꺼짐), 일지 내보내기/가져오기.
 
 ## 폴더 구조
 
@@ -42,7 +42,7 @@ src/styles/         영역별 CSS (src/style.css 가 순서표)
 src/data/           catalog.json(실행 콘텐츠) · chat.js(채팅 반응)
 scripts/            dev 서버 · 빌드 · 검사 · 콘텐츠 컴파일러
 tests/              엔진 테스트 · 골든 테스트 · UI 비교 시나리오
-assets/             캐릭터·의상 이미지, 글꼴
+assets/             그림·소리·글꼴 (경로는 src/ui/assets.js 한 곳에서 관리)
 outputs/ · work/    조사·설계 기록과 그 생성 스크립트 (실행에는 쓰지 않음)
 docs/               아래 문서
 ```
@@ -56,7 +56,8 @@ docs/               아래 문서
 | [`docs/DESIGN-REVIEW.md`](docs/DESIGN-REVIEW.md) | 기획 검토 · 사용자 결정 사항 |
 | [`docs/AUDIT.md`](docs/AUDIT.md) | 플레이·UI/UX·보안 조사 결과 |
 | [`docs/PLAYTEST.md`](docs/PLAYTEST.md) | 실제 플레이 검토(첫 결말까지) |
-| [`docs/ASSET-REQUESTS.md`](docs/ASSET-REQUESTS.md) | 필요한 그림 에셋 요청 목록 |
+| [`docs/ASSET-REQUESTS.md`](docs/ASSET-REQUESTS.md) · [`-v2`](docs/ASSET-REQUESTS-v2.md) | 그림·소리 에셋 요청 목록 |
+| [`docs/ASSET-DELIVERY.md`](docs/ASSET-DELIVERY.md) · [`-v2`](docs/ASSET-DELIVERY-v2.md) | 에셋 제작 인계(규격·검사·재생성 방법) |
 | [`AGENTS.md`](AGENTS.md) | 작업 규칙 (Codex·Claude Code 공용, `CLAUDE.md` 가 가져옴) |
 
 ## 고지
@@ -65,3 +66,4 @@ docs/               아래 문서
 - 캐릭터 이미지는 사용자 제공 참조를 바탕으로 만든 도트풍 이미지입니다. **공개 배포 전에 라코코 측 2차 창작 가이드라인(AI 생성 이미지·후원 묘사·팬게임 배포)을 확인하고, 허용되는 범위에서만 공개합니다.**
 - 방송 다시보기 캡처 등 참조 원본은 저장소에 포함하지 않습니다(`.gitignore`).
 - 글꼴: Neo둥근모 (Eunbin Jeong, SIL OFL 1.1) — `assets/fonts/neodgm-LICENSE.txt`
+- 음원: 외부 음원·샘플 없이 직접 합성한 오리지널 — 생성 소스 `scripts/synthesize-requested-audio.py`

@@ -4,16 +4,16 @@ import {$, btn, escape} from './dom.js';
 import {openDialog} from './modal.js';
 import {preferences} from './preferences.js';
 import {outfit, store} from './store.js';
-import {endingImage, LOGO} from './assets.js';
+import {badgeIcon, endingImage, FORCED_ENDING_IMAGE, KEY_VISUAL, LOGO} from './assets.js';
 
 /** 결말 ID(END-xxx) → 결말 사건 그림(EF-xxx) */
-const endingArt = endingId => endingImage(store.catalog.projects.find(p => p.id === endingId)?.eventId);
+const endingArt = endingId => endingId === 'END-FORCED-10Y' ? FORCED_ENDING_IMAGE : endingImage(store.catalog.projects.find(p => p.id === endingId)?.eventId);
 import {TOTAL_ENDINGS} from './views/journal.js';
 
 export function showCredits() {
   const e = store.state.lastEnding;
   if (!e) return;
-  openDialog('한 장의 마지막',`<div class="credits-scene"><span class="eyebrow">${e.forced?'TEN YEARS, ONE JOURNAL':'A CHAPTER TO REMEMBER'}</span>${!e.forced&&endingArt(e.id)?`<img class="ending-art" src="${endingArt(e.id)}" alt="결말 장면: ${escape(e.title)}" width="960" height="540"/>`:''}<div class="credits-characters${!e.forced&&endingArt(e.id)?' with-art':''}"><img src="${outfit().image}" alt="라코코"/>${e.forced?'<img class="spouse" src="assets/characters/kimongi-base-v1.png" alt="다수 중 한 명인 가상 키몽이"/>':''}</div><h1>${escape(e.title)}</h1><p>${escape(e.resolution)}</p><p class="epilogue">${escape(e.epilogue)}</p>${e.projectLog?`<div class="ending-memories">${e.projectLog.map(l=>`<p><span>${escape(l.date)}</span>${escape(l.text)}</p>`).join('')}</div>`:''}<span class="credit-thanks">라코코와, 서로 다른 목소리의 모든 키몽이들에게.</span><div class="credits-actions">${!e.forced?btn('같은 일지에서 방송 계속하기','continue','','button primary'):''}${btn('일지 돌아보기','viewJournal','','button secondary')}${btn('일지 내보내기','export','','button secondary')}${btn('새 일지 시작하기','confirmNew','','text-button')}</div></div>`);
+  openDialog('한 장의 마지막',`<div class="credits-scene"><span class="eyebrow">${e.forced?'TEN YEARS, ONE JOURNAL':'A CHAPTER TO REMEMBER'}</span>${endingArt(e.id)?`<img class="ending-art" src="${endingArt(e.id)}" alt="${e.forced?'10년을 함께한 키몽이들과의 단체사진':`결말 장면: ${escape(e.title)}`}" width="960" height="540"/>`:''}<div class="credits-characters${endingArt(e.id)?' with-art':''}"><img src="${outfit().image}" alt="라코코"/>${e.forced?'<img class="spouse" src="assets/characters/kimongi-base-v1.png" alt="다수 중 한 명인 가상 키몽이"/>':''}</div><h1>${escape(e.title)}</h1><p>${escape(e.resolution)}</p><p class="epilogue">${escape(e.epilogue)}</p>${e.projectLog?`<div class="ending-memories">${e.projectLog.map(l=>`<p><span>${escape(l.date)}</span>${escape(l.text)}</p>`).join('')}</div>`:''}<span class="credit-thanks">라코코와, 서로 다른 목소리의 모든 키몽이들에게.</span><div class="credits-actions">${!e.forced?btn('같은 일지에서 방송 계속하기','continue','','button primary'):''}${btn('일지 돌아보기','viewJournal','','button secondary')}${btn('일지 내보내기','export','','button secondary')}${btn('새 일지 시작하기','confirmNew','','text-button')}</div></div>`);
 }
 
 export function openDatePicker() {
@@ -29,7 +29,7 @@ export function updateDateWarning() {
 }
 
 export function openSettings() {
-  openDialog('나에게 편한 방송일지',`<label class="setting-row">글자 크기<select id="font-size"><option value="100">기본</option><option value="125">125%</option><option value="150">150%</option><option value="200">200%</option></select></label><label class="setting-row">본문 글꼴<select id="font-style"><option value="readable">읽기 편한 글꼴</option><option value="pixel">픽셀 글꼴</option></select></label><label class="setting-row">동작 줄이기<input id="motion-toggle" type="checkbox" ${preferences.reducedMotion?'checked':''}/></label><label class="setting-row">작은 효과음<input id="sound-toggle" type="checkbox" ${preferences.sound?'checked':''}/></label><div class="settings-files">${btn('일지 내보내기','export','','button secondary')}<label class="button secondary file-label">일지 가져오기<input type="file" id="import-file" accept="application/json,.json"/></label></div><p class="modal-description">이 브라우저에 자동 저장돼요. 다른 PC로 옮길 때는 일지 파일을 내보내 주세요.</p>${btn('새 일지 시작하기','confirmNew','','text-button danger')}`);
+  openDialog('나에게 편한 방송일지',`<label class="setting-row">글자 크기<select id="font-size"><option value="100">기본</option><option value="125">125%</option><option value="150">150%</option><option value="200">200%</option></select></label><label class="setting-row">본문 글꼴<select id="font-style"><option value="readable">읽기 편한 글꼴</option><option value="pixel">픽셀 글꼴</option></select></label><label class="setting-row">동작 줄이기<input id="motion-toggle" type="checkbox" ${preferences.reducedMotion?'checked':''}/></label><label class="setting-row">효과음<input id="sound-toggle" type="checkbox" ${preferences.sound?'checked':''}/></label><label class="setting-row">배경음악<input id="music-toggle" type="checkbox" ${preferences.music?'checked':''}/></label><div class="settings-files">${btn('일지 내보내기','export','','button secondary')}<label class="button secondary file-label">일지 가져오기<input type="file" id="import-file" accept="application/json,.json"/></label></div><p class="modal-description">이 브라우저에 자동 저장돼요. 다른 PC로 옮길 때는 일지 파일을 내보내 주세요.</p>${btn('새 일지 시작하기','confirmNew','','text-button danger')}`);
   $('#font-size').value = preferences.textSize;
   $('#font-style').value = preferences.font;
 }
@@ -42,7 +42,7 @@ export function maybeShowGuide() {
   try { seen = localStorage.getItem(GUIDE_KEY) === '1'; } catch {}
   if (seen || state.completedBroadcasts > 0 || state.phase !== 'prep') return;
   try { localStorage.setItem(GUIDE_KEY, '1'); } catch {}
-  openDialog('첫 방송을 켜기 전에',`<img class="guide-logo" src="${LOGO}" alt="라코코의 방송일지" width="1200" height="360"/><ol class="guide-list"><li><b>준비</b> — 방송마다 준비 행동 2번. 자료·연습·점검마다 유리해지는 코너가 달라요.</li><li><b>방송</b> — 코너 3개. 선택지의 <em>안정·보통·모험</em>에 따라 대성공도, 아쉬움도 나와요.</li><li><b>일지</b> — 결과와 시청자 성장으로 방송 등급(S~C)이 매겨지고, 응원이 터지기도 해요.</li><li><b>목표</b> — 기획을 골라 3단계로 완성하고, 방송 150일째부터 마지막 특집으로 결말을 만나요. 여러 기획을 완성해 두고 고를 수도 있어요.</li><li><b>그 밖에</b> — 방송 중 새 의상 제안·구매 이벤트, 이번 달 미션, 업적과 사건 도감이 기다려요.</li></ol><p class="modal-description">키보드: 숫자 1~4로 선택, Enter 로 다음. 설정에서 글자 크기·동작 줄이기·효과음을 바꿀 수 있어요.</p>${btn('첫 방송 준비하기','closeModal','','button primary full')}`);
+  openDialog('첫 방송을 켜기 전에',`<div class="guide-hero"><img class="guide-visual" src="${KEY_VISUAL}" alt="" width="1600" height="900"/><img class="guide-logo" src="${LOGO}" alt="라코코의 방송일지" width="1200" height="360"/></div><ol class="guide-list"><li><b>준비</b> — 방송마다 준비 행동 2번. 자료·연습·점검마다 유리해지는 코너가 달라요.</li><li><b>방송</b> — 코너 3개. 선택지의 <em>안정·보통·모험</em>에 따라 대성공도, 아쉬움도 나와요.</li><li><b>일지</b> — 결과와 시청자 성장으로 방송 등급(S~C)이 매겨지고, 응원이 터지기도 해요.</li><li><b>목표</b> — 기획을 골라 3단계로 완성하고, 방송 150일째부터 마지막 특집으로 결말을 만나요. 여러 기획을 완성해 두고 고를 수도 있어요.</li><li><b>그 밖에</b> — 방송 중 새 의상 제안·구매 이벤트, 이번 달 미션, 업적과 사건 도감이 기다려요.</li></ol><p class="modal-description">키보드: 숫자 1~4로 선택, Enter 로 다음. 설정에서 글자 크기·동작 줄이기·효과음·배경음악을 바꿀 수 있어요.</p>${btn('첫 방송 준비하기','closeModal','','button primary full')}`);
 }
 
 export function openAbout() {
@@ -59,7 +59,7 @@ export function openCollection() {
 
 export function openAchievements() {
   const {state, catalog} = store, got = state.achievements || {};
-  openDialog('업적과 사건 도감',`<p class="modal-description">업적 ${Object.keys(got).length} / ${ACHIEVEMENTS.length} · 만난 사건 ${eventsSeen(state)} / ${catalog.events.length}</p><div class="achievement-grid">${ACHIEVEMENTS.map(a=>got[a.id]?`<article class="achievement got"><span>✦</span><h3>${escape(a.label)}</h3><p>${escape(a.desc)}</p><small>${escape(got[a.id])}</small></article>`:`<article class="achievement"><span>?</span><h3>${escape(a.label)}</h3><p>${escape(a.desc)}</p></article>`).join('')}</div>`);
+  openDialog('업적과 사건 도감',`<p class="modal-description">업적 ${Object.keys(got).length} / ${ACHIEVEMENTS.length} · 만난 사건 ${eventsSeen(state)} / ${catalog.events.length}</p><div class="achievement-grid">${ACHIEVEMENTS.map(a=>got[a.id]?`<article class="achievement got">${badgeIcon(a.id)?`<img class="badge" src="${badgeIcon(a.id)}" alt="" width="128" height="128" loading="lazy"/>`:'<span>✦</span>'}<h3>${escape(a.label)}</h3><p>${escape(a.desc)}</p><small>${escape(got[a.id])}</small></article>`:`<article class="achievement">${badgeIcon(a.id)?`<img class="badge locked" src="${badgeIcon(a.id)}" alt="" width="128" height="128" loading="lazy"/>`:'<span>?</span>'}<h3>${escape(a.label)}</h3><p>${escape(a.desc)}</p></article>`).join('')}</div>`);
 }
 
 export function openConfirmNew() {

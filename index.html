@@ -2,12 +2,20 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#25212a" />
   <meta name="description" content="오늘의 방송이 내일의 이야기가 되는 곳. 라코코와 키몽이들의 비공식 선택형 팬게임." />
   <title>라코코의 방송일지</title>
-  <link rel="icon" href="./assets/characters/kimongi-base-v1.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/brand/icon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./assets/brand/icon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/brand/icon-180.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="라코코의 방송일지" />
+  <meta property="og:description" content="오늘의 방송이 내일의 이야기가 되는 곳. 라코코와 키몽이들의 비공식 선택형 팬게임." />
+  <!-- 공유 미리보기는 대부분 절대 주소만 읽는다. 공개 주소가 정해지면 https://…/assets/brand/og-image.png 로 바꾼다 -->
+  <meta property="og:image" content="./assets/brand/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preload" href="./assets/fonts/neodgm-v1.601.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="./src/style.css" />
 </head>

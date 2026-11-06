@@ -3,6 +3,7 @@ import {activeEffects, celebrationOn, CORNERS, EFFECT_LABELS, finaleLocks, negle
 import {btn, escape} from '../dom.js';
 import {store} from '../store.js';
 import {projectMini} from './project-mini.js';
+import {gameIcon, MISSION_STAMP} from '../assets.js';
 
 /** 준비 행동이 유리하게 만드는 코너(코너 색 점으로 표시) */
 const PREP_CORNERS = {data: ['T', 'F', 'S'], practice: ['G'], check: ['T', 'G', 'F', 'S']};
@@ -56,7 +57,7 @@ function missionCard(state) {
   const m = state.missions;
   if (!m || m.month !== state.date.slice(0, 7)) return `<div class="mission-card empty"><span class="eyebrow">이번 달 미션</span><p>이번 달 첫 방송을 켜면 미션 3개가 도착해요.</p></div>`;
   const done = m.list.filter(x => x.done).length;
-  return `<div class="mission-card${m.allDone?' all-done':''}"><div class="mission-head"><span class="eyebrow">${escape(Number(m.month.slice(5)))}월의 미션</span><b>${escape(done)}/${escape(m.list.length)}${m.allDone?' · 모두 달성!':''}</b></div>${m.list.map(x=>`<div class="mission-row ${x.done?'done':''}"><span>${x.done?'✓':'·'} ${escape(x.label)}</span><small>${escape(x.progress)}/${escape(x.target)}</small><div class="meter"><i data-meter="${escape(Math.round(x.progress/x.target*100))}"></i></div></div>`).join('')}<small class="mission-note">달성할 때마다 방송 자금, 3개 모두 달성하면 단골 시청층이 늘어요.</small></div>`;
+  return `<div class="mission-card${m.allDone?' all-done':''}">${m.allDone?`<img class="mission-stamp" src="${MISSION_STAMP}" alt="이번 달 미션 모두 달성 도장" width="128" height="128"/>`:''}<div class="mission-head"><span class="eyebrow">${escape(Number(m.month.slice(5)))}월의 미션</span><b>${escape(done)}/${escape(m.list.length)}${m.allDone?' · 모두 달성!':''}</b></div>${m.list.map(x=>`<div class="mission-row ${x.done?'done':''}"><span>${x.done?'✓':'·'} ${escape(x.label)}</span><small>${escape(x.progress)}/${escape(x.target)}</small><div class="meter"><i data-meter="${escape(Math.round(x.progress/x.target*100))}"></i></div></div>`).join('')}<small class="mission-note">달성할 때마다 방송 자금, 3개 모두 달성하면 단골 시청층이 늘어요.</small></div>`;
 }
 
 function finaleNote(state, catalog) {
@@ -82,7 +83,7 @@ export function prep() {
   ${state.project&&state.project.step<3&&!state.plan.includes('S')?`<p class="next-task">기획을 진행하려면 특별 기획 코너가 필요해요. ${btn('편성에 넣기','includeProject','','text-button')}</p>`:''}
   <details class="optional-options"><summary>코너·게임 바꾸기 <small>선택사항</small></summary><p class="view-description">기본 편성은 ${summary}. 원하는 경우에만 바꿔주세요.</p>
   <div class="program">${programSlots(state, calendar)}</div>
-  <label class="game-select"><span>오늘의 게임</span><select data-change="game" aria-label="오늘의 게임">${catalog.games.map(g=>`<option value="${g.id}" ${g.id===state.gameId?'selected':''}>${escape(g.name)}</option>`).join('')}</select></label></details>
+  <label class="game-select"><span>${gameIcon(state.gameId)?`<img class="game-icon" src="${gameIcon(state.gameId)}" alt="" width="128" height="128"/>`:''}오늘의 게임</span><select data-change="game" aria-label="오늘의 게임">${catalog.games.map(g=>`<option value="${g.id}" ${g.id===state.gameId?'selected':''}>${escape(g.name)}</option>`).join('')}</select></label></details>
   <div class="simple-secondary">${btn('옷장 열기','wardrobe','','button secondary')}${btn('방송 날짜 바꾸기','datePicker','','text-button')}</div>
   ${finaleNote(state, catalog)}`;
 }
