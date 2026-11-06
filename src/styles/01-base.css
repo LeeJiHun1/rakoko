@@ -1,0 +1,22 @@
+/* 글꼴·색상 토큰(:root)·기본 요소 */
+@font-face{font-family:Neo;src:url('../../assets/fonts/neodgm-v1.601.woff2') format('woff2');font-display:swap}
+
+:root{--ink:#302b33;--muted:#796e78;--paper:#faf6ee;--rose:#b85b75;--rose-dark:#963b57;--line:#e7ded7;--gold:#c19f67;--text-scale:1;color-scheme:light;font-family:Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;font-synthesis:none}
+
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:#eeebe6;background-image:radial-gradient(#b6aab51a .7px,transparent .7px);background-size:7px 7px;font-size:calc(14px * var(--text-scale));line-height:1.65}
+button,input,select{font:inherit}
+button,a,select,input{ -webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed}
+button,a,input,select{outline-offset:4px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #a64367}
+button{transition:background .16s,transform .16s,border-color .16s}
+a{color:var(--rose-dark)}
+h1,h2,h3,p{margin:0}
+img{max-width:100%}
+button{color:inherit}
+small{font-size:.8em}
+select{min-height:42px}
+button:disabled{opacity:.52}
+button:not(:disabled):active{transform:translateY(1px)}

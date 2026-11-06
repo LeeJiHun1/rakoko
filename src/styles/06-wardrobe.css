@@ -1,0 +1,18 @@
+/* 옷장 화면 */
+.view-description{color:#8b7783;font-size:calc(11px * var(--text-scale));margin-bottom:20px}
+.wardrobe-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.wardrobe-card{background:#f5eee4;border:1px solid #ded1c7;border-radius:7px;overflow:hidden}
+.wardrobe-card.equipped{border-color:#b46a86;box-shadow:0 0 0 2px #b46a8610}
+.outfit-preview{height:200px;background:radial-gradient(ellipse at 50% 70%,#d6c6d7,#e5d9d5 55%,#ebe3d6);position:relative;overflow:hidden}
+.outfit-preview img{width:100%;height:270px;object-fit:contain;object-position:top;margin-top:15px}
+.equipped-label{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);background:#a85473;color:white;font-size:calc(9px * var(--text-scale));padding:3px 8px;border-radius:3px;white-space:nowrap}
+.sealed-outfit{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#bca6af;font-size:calc(55px * var(--text-scale));background:repeating-linear-gradient(-45deg,transparent,transparent 10px,#ddcfd52b 10px,#ddcfd52b 11px)}
+.sealed-outfit small{font-size:calc(10px * var(--text-scale));text-align:center;line-height:1.8;color:#927d88}
+.outfit-info{padding:14px}
+.outfit-info h2{font:calc(18px * var(--text-scale)) Neo,sans-serif;font-weight:400}
+.outfit-info p{font-size:calc(10px * var(--text-scale));color:#8d7887;margin:5px 0 12px}
+.outfit-info .button{font-size:calc(10px * var(--text-scale));min-height:38px;padding:8px 10px}
+.craft-progress{font-size:calc(10px * var(--text-scale));color:#a2788b;margin:10px 0}
+.craft-toolbar{position:sticky;bottom:12px;padding:14px;background:#f4e9d9;border:1px solid #d6bda8;box-shadow:0 4px 12px #33202c22;display:flex;gap:12px;align-items:center;justify-content:space-between;border-radius:7px;margin-top:20px}
+.craft-toolbar>span{font-size:calc(10px * var(--text-scale));color:#8d6a74}
+.craft-toolbar .button{font-size:calc(10px * var(--text-scale));padding:10px}

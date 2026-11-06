@@ -1,0 +1,125 @@
+// 방송 한 회의 흐름: 편성 → 시작(예약·수입 스냅샷) → 코너 3개(선택→결과) → 정산 → 날짜 이동.
+import {CORNERS, PREPARATIONS_PER_BROADCAST, SEGMENTS_PER_BROADCAST} from './constants.js';
+import {celebrationKey, celebrationOn} from './dates.js';
+import {scheduleDate} from './calendar.js';
+import {applyChoice} from './choices.js';
+import {baseViewers, planVarietyBonus, broadcastGrade, GRADE_AWARENESS, GRADE_INCOME, growthPoint, peakViewers, previousBaseViewers, updateRecords} from './audience.js';
+import {gain} from './growth.js';
+import {activeBonus} from './purchases.js';
+import {updateNeglect} from './outfit.js';
+import {bumpMission, refreshMissions} from './missions.js';
+import {deliverOrders, settleIncome, snapshotIncome} from './economy.js';
+import {offerEndingIfReady} from './ending.js';
+import {nextEvent} from './events/next.js';
+import {clone} from './util.js';
+
+/** 예약 사건이 들어가는 코너 위치 */
+const RESERVATION_SLOT = {calendar: 0, finale: 1, outfit: 2};
+
+function reserveSpecials(s) {
+  const type = celebrationOn(s);
+  if (type && !s.celebrations.includes(celebrationKey(type, s.date))) s.reservations[RESERVATION_SLOT.calendar] = 'calendar';
+  if (s.outfitReserved && !s.wardrobe[s.crafting]) s.reservations[RESERVATION_SLOT.outfit] = 'outfit';
+  if (s.finaleScheduled) s.reservations[RESERVATION_SLOT.finale] = 'finale';
+  // 조기 공개로 미뤄진 소개 코너: 공개 자리(3번째)가 비면 거기, 아니면 첫 코너
+  if (s.outfitFollowup) { const slot = s.reservations[RESERVATION_SLOT.outfit] ? (s.reservations[0] ? null : 0) : RESERVATION_SLOT.outfit; if (slot != null) s.reservations[slot] = 'outfitFollowup'; }
+  for (const key of Object.keys(s.reservations)) s.plan[Number(key)] = 'S';
+}
+
+function settle(s, catalog) {
+  // 시청자 성장(직전 방송 기본 시청자 대비)을 등급에 반영한 뒤, 등급 배율로 최종 시청자를 낸다
+  const viewersBase = baseViewers(s, activeBonus(s, 'viewers') + planVarietyBonus(s.plan)), previousBase = previousBaseViewers(s);
+  const growth = previousBase ? Math.round((viewersBase - previousBase) / previousBase * 100) : null;
+  const grade = broadcastGrade(s.currentLog, growthPoint(viewersBase, previousBase));
+  const {gross, cost, net} = settleIncome(s, catalog, GRADE_INCOME[grade]);
+  const viewers = peakViewers(viewersBase, grade);
+  const newRecords = updateRecords(s, {viewers, gross, grade});
+  const donations = s.currentLog.reduce((a, r) => a + (r.donation?.amount || 0), 0);
+  const fame = GRADE_AWARENESS[grade] ? gain(s, 'awareness', GRADE_AWARENESS[grade]) : 0;
+  s.completedBroadcasts++;
+  updateNeglect(s);
+  deliverOrders(s);
+  // 일지에는 화면에 쓰는 값만 남긴다(채팅 줄·맥락은 결과 화면용이라 제외 — 장기 저장본 크기 절반)
+  const events = s.currentLog.map(({reactions, chatContext, ...rest}) => clone(rest));
+  s.journal.push({id: s.broadcastIndex, date: s.date, events, income: {gross, cost, net}, outfit: s.equipped, representative: 0, viewers, grade, donations, viewersBase, growth});
+  if (s.module?.phase === 'closed') { s.moduleArchive.push(clone(s.module)); s.module = null; }
+  s.phase = 'wrap';
+  s.result = {gross, cost, net, grade, viewers, donations, newRecords, fame, growth};
+  bumpMission(s, 'broadcasts');
+  if (['S', 'A'].includes(grade)) bumpMission(s, 'topGrade');
+  if (newRecords.includes('viewers') && s.completedBroadcasts > 1) bumpMission(s, 'record');
+  s.event = null;
+  offerEndingIfReady(s, catalog);
+}
+
+/** 정산 화면에서 날짜를 옮기면 다음 회차 준비 상태로 초기화 */
+function beginNextBroadcast(s) {
+  s.broadcastIndex++;
+  s.phase = 'prep';
+  s.preparations = PREPARATIONS_PER_BROADCAST;
+  s.checked = false;
+  s.dataPrepared = 0;
+  s.practicedToday = 0;
+  s.gainTotals = {};
+  s.event = null;
+  s.result = null;
+  s.currentLog = [];
+  s.reservations = {};
+  s.finaleScheduled = false;
+  if (s.planBeforeReservations) s.plan = s.planBeforeReservations;
+  delete s.planBeforeReservations;
+}
+
+export const commands = {
+  plan: {prepOnly: true, run(s, c) {
+    if (!Object.hasOwn(CORNERS, c.corner) || c.index < 0 || c.index > 2) throw Error('올바른 코너를 골라주세요.');
+    s.plan[c.index] = c.corner;
+  }},
+  game: {prepOnly: true, run(s, c, catalog) {
+    if (!catalog.games.some(g => g.id === c.gameId)) throw Error('게임을 찾을 수 없어요.');
+    s.gameId = c.gameId;
+    s.gameSkillById[c.gameId] ??= 10;
+  }},
+  start: {prepOnly: true, run(s, c, catalog) {
+    s.currentLog = [];
+    s.slot = 0;
+    s.reservations = {};
+    s.leakChecked = false;
+    s.planBeforeReservations = clone(s.plan);
+    reserveSpecials(s);
+    snapshotIncome(s, catalog);
+    refreshMissions(s);
+    if (s.module) s.module.usedThisBroadcast = 0;
+    nextEvent(s, catalog);
+  }},
+  choose: {run(s, c, catalog) {
+    if (s.phase !== 'event') throw Error('현재 선택할 사건이 없어요.');
+    applyChoice(s, c.id, catalog);
+  }},
+  advance: {run(s, c, catalog) {
+    if (s.phase !== 'result') throw Error('결과를 먼저 확인해주세요.');
+    if (s.result?.interlude) { nextEvent(s, catalog, {allowShop: false}); return; } // 막간 뒤에는 같은 코너 진행
+    s.slot++;
+    if (s.slot < SEGMENTS_PER_BROADCAST) nextEvent(s, catalog);
+    else settle(s, catalog);
+  }},
+  representative: {run(s, c) {
+    if (s.phase !== 'wrap') throw Error('방송을 마친 뒤 고를 수 있어요.');
+    if (!Number.isInteger(c.index) || c.index < 0 || c.index > 2) throw Error('기록을 골라주세요.');
+    const j = s.journal.at(-1);
+    j.representative = c.index;
+    // 대성공 장면을 대표로 고르면 클립이 퍼져 인지도 +1 (방송당 한 번)
+    if (j.events[c.index]?.grade === 'great' && j.clipped == null) {
+      j.clipped = c.index;
+      gain(s, 'awareness', 1);
+      s.records.clips = (s.records.clips || 0) + 1;
+    }
+  }},
+  date: {run(s, c) {
+    if (!['prep', 'wrap'].includes(s.phase)) throw Error('현재 방송을 마무리한 뒤 날짜를 바꿀 수 있어요.');
+    const wasWrap = s.phase === 'wrap';
+    scheduleDate(s, c.date);
+    if (s.phase === 'credits') return;
+    if (wasWrap) beginNextBroadcast(s);
+  }},
+};

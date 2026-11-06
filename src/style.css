@@ -1,0 +1,18 @@
+/* 스타일 진입점 — 순서가 곧 우선순위(cascade)이므로 바꾸지 않는다. 새 규칙은 해당 영역 파일에 추가. */
+@import url('./styles/01-base.css');
+@import url('./styles/02-layout.css');
+@import url('./styles/03-studio.css');
+@import url('./styles/04-notebook-prep.css');
+@import url('./styles/05-broadcast.css');
+@import url('./styles/06-wardrobe.css');
+@import url('./styles/07-projects.css');
+@import url('./styles/08-journal.css');
+@import url('./styles/09-dialogs.css');
+@import url('./styles/10-responsive.css');
+@import url('./styles/11-simple-flow.css');
+@import url('./styles/12-outcomes.css');
+@import url('./styles/13-audience.css');
+@import url('./styles/14-effects.css');
+@import url('./styles/15-readability.css');
+@import url('./styles/16-polish.css');
+@import url('./styles/17-assets.css');

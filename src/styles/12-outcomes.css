@@ -1,0 +1,28 @@
+/* 결과 편차: 선택지 성향 라벨 · 결과 등급 표시 (F1) */
+.choice-style{display:block;margin-top:4px;font-size:calc(11px * var(--text-scale));letter-spacing:.02em;color:#8a7a84}
+.choice-style.style-safe{color:#5f8a76}
+.choice-style.style-steady{color:#b08a3e}
+.choice-style.style-bold{color:#b85b75;font-weight:700}
+.odds-note{margin:-4px 0 14px;font-size:calc(12px * var(--text-scale));color:#5f8a76}
+.result-heading.grade-great{color:#b85b75}
+.result-heading.grade-great span{background:#b85b75;color:#fff}
+.result-heading.grade-miss{color:#8a7a84}
+.result-card.grade-great{border-color:#d9a4b5;box-shadow:0 0 0 3px #b85b7522,0 8px 22px #b85b7526}
+.result-card.grade-miss{background:#f6f2ee}
+
+/* 신의상 공개 무대 */
+.reveal-stage{position:relative;margin:4px 0 16px;border-radius:12px;overflow:hidden;aspect-ratio:1672/941;background:#2e2a3a}
+.reveal-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.reveal-stage .stage-outfit{object-fit:contain;top:8%;height:92%;image-rendering:pixelated;animation:fx-rise .7s ease-out .55s both}
+.reveal-stage .stage-curtain{animation:fx-curtain 1s ease-in .2s both}
+@keyframes fx-curtain{to{opacity:0;transform:scaleY(1.04)}}
+.fx-settled .reveal-stage .stage-curtain,.reduce-motion .reveal-stage .stage-curtain{display:none}
+@media (prefers-reduced-motion:reduce){.reveal-stage .stage-curtain{display:none}}
+.reveal-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
+.outfit-ready{display:grid;gap:6px;margin:6px 0 14px;padding:14px 16px;border-radius:12px;background:linear-gradient(135deg,#fff4f7,#fff8ea);border:1px solid #e5c3cf}
+.outfit-ready .button{justify-self:start}
+.secret-tag{font-size:calc(10px * var(--text-scale));padding:1px 6px;border-radius:999px;background:#3e3046;color:#fff;margin-left:4px;vertical-align:middle}
+.outfit-ready .meter{height:6px;background:#efe6df;border-radius:6px;overflow:hidden}
+.outfit-ready .meter i{display:block;height:100%;background:linear-gradient(90deg,#c19f67,#b85b75)}
+.outfit-ready:not(.done){background:#fbf7f2;border-color:var(--line)}
+.neglect-hint{color:#9a4560;font-size:calc(12px * var(--text-scale))}

@@ -1,0 +1,148 @@
+/* 화면 폭별 조정(1440 / 1000 / 760 / 390px) */
+@media(min-width:1440px){
+.shell{padding:0 58px}
+.game-layout{gap:38px}
+.studio{height:556px}
+.character{height:550px;bottom:-125px}
+.studio-window{height:340px;width:270px;top:70px}
+}
+
+@media(max-width:1000px){
+.shell{padding:0 24px}
+.topbar{padding:0 28px}
+.game-layout{grid-template-columns:280px minmax(0,1fr);gap:20px}
+.studio{height:470px}
+.character{bottom:-77px}
+.studio-caption h2{font-size:calc(29px * var(--text-scale))}
+.notebook-inner{padding:24px 22px 26px 26px}
+.prep-grid{gap:8px}
+.prep-action{padding:10px 8px;gap:5px}
+.prep-action small{font-size:calc(8px * var(--text-scale))}
+.program-slot{padding:2px 6px;gap:4px}
+.slot-no{display:none}
+.start-button{min-width:155px}
+.page-heading h1{font-size:calc(24px * var(--text-scale))}
+.prep-footer>span{max-width:120px}
+.project-mini .text-button{max-width:65px}
+.stat-grid{gap:14px}
+.status-panel{padding:17px}
+.notebook-tabs button{font-size:calc(10px * var(--text-scale));gap:5px}
+}
+
+@media(max-width:760px){
+.topbar{height:74px;padding:0 20px}
+.brand{font-size:calc(18px * var(--text-scale));gap:10px}
+.brand-mark{height:36px;width:36px;font-size:calc(25px * var(--text-scale))}
+.brand small{font-size:calc(7px * var(--text-scale));letter-spacing:2.1px}
+.topbar-actions{gap:6px}
+.save-state{margin-right:2px;font-size:calc(9px * var(--text-scale))}
+.icon-button{height:32px;width:32px;min-width:32px;font-size:calc(16px * var(--text-scale))}
+.shell{padding:0 18px}
+.page-kicker{padding:16px 0 13px;font-size:calc(7px * var(--text-scale));letter-spacing:1.1px}
+.page-kicker i{padding:0 5px}
+.episode-label{font-size:calc(11px * var(--text-scale))}
+.game-layout{display:flex;flex-direction:column;gap:18px}
+.studio-column{position:static;width:100%;display:grid;grid-template-columns:1fr 1.1fr;gap:12px}
+.studio{height:205px;border-radius:12px}
+.studio-top{top:11px;left:10px;right:10px;font-size:calc(5px * var(--text-scale));letter-spacing:.8px}
+.studio-top>span:last-child{display:none}
+.live-pill{font-size:calc(6px * var(--text-scale));padding:2px 5px}
+.studio-window{width:130px;height:170px;top:40px}
+.character{height:230px;bottom:-62px;left:28%;width:83%}
+.studio-caption{left:14px;bottom:13px;right:10px}
+.studio-caption .tiny{font-size:calc(5px * var(--text-scale));letter-spacing:1.4px}
+.studio-caption h2{font-size:calc(22px * var(--text-scale));margin:5px 0 0}
+.studio-caption p{display:none}
+.studio:after{height:130px;background:linear-gradient(transparent,#241e2ee8 85%)}
+.outfit-label{font-size:calc(7px * var(--text-scale));margin-top:9px;padding-top:7px}
+.outfit-label .text-button{font-size:calc(7px * var(--text-scale));min-height:20px}
+.s1{font-size:calc(17px * var(--text-scale));left:13px;top:52px}
+.s2{font-size:calc(12px * var(--text-scale));right:12px;top:100px}
+.status-panel{margin:0;padding:14px 12px;border-radius:12px}
+.status-panel .section-heading{font-size:calc(10px * var(--text-scale));align-items:flex-start}
+.status-panel .section-heading small{font-size:calc(8px * var(--text-scale))}
+.stat-grid{margin:15px 0 12px;gap:12px 14px}
+.stat>div:first-child{font-size:calc(8px * var(--text-scale));gap:3px}
+.stat b{font-size:calc(12px * var(--text-scale))}
+.stat b small{display:none}
+.game-stat{font-size:calc(8px * var(--text-scale));padding-top:9px}
+.game-stat>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:74%}
+.notebook{width:100%;min-height:0;border-radius:10px}
+.notebook-tabs{border-radius:10px 10px 0 0}
+.notebook-tabs button{padding:14px 3px;min-height:48px;font-size:calc(11px * var(--text-scale))}
+.notebook-inner{padding:23px 22px 25px 26px}
+.page-heading h1{font-size:calc(25px * var(--text-scale))}
+.date-stamp{width:58px;min-width:58px}
+.page-heading{padding-bottom:18px}
+.wallet{margin-bottom:20px}
+.prep-action{padding:11px 10px;gap:9px;min-height:69px}
+.prep-action small{font-size:calc(9px * var(--text-scale))}
+.prep-action b{font-size:calc(11px * var(--text-scale))}
+.slot-no{display:inline}
+.program-slot{padding:2px 7px}
+.prep-footer>span{max-width:none}
+.start-button{min-width:160px}
+.site-footer{flex-direction:column;gap:4px;padding:22px 0 26px}
+.event-card{padding:20px}
+.event-card h2{font-size:calc(23px * var(--text-scale))}
+.studio-caption .text-button{white-space:nowrap}
+.journal-entry{padding:20px 18px 14px}
+.craft-toolbar{align-items:flex-start}
+.craft-toolbar>span{line-height:1.8}
+.module-grid{gap:10px}
+.view-description{line-height:1.9}
+}
+
+@media(max-width:390px){
+.shell{padding:0 10px}
+.topbar{padding:0 13px}
+.topbar-actions .save-state{display:none}
+.page-kicker>span:first-child{font-size:calc(6px * var(--text-scale))}
+.studio-column{gap:8px}
+.studio{height:194px}
+.status-panel{padding:12px 10px}
+.stat-grid{gap:11px}
+.game-stat{font-size:calc(7px * var(--text-scale))}
+.notebook-inner{padding:19px 15px 23px 20px}
+.page-heading h1{font-size:calc(22px * var(--text-scale))}
+.eyebrow{font-size:calc(8px * var(--text-scale))}
+.intro-line{font-size:calc(10px * var(--text-scale))}
+.prep-action{gap:5px;padding:10px 7px}
+.action-icon{min-width:21px;font-size:calc(18px * var(--text-scale))}
+.prep-action small{font-size:calc(8px * var(--text-scale))}
+.arrow{font-size:calc(11px * var(--text-scale))}
+.prep-footer{flex-direction:column;align-items:stretch;gap:12px}
+.prep-footer>span{text-align:center;font-size:calc(10px * var(--text-scale))}
+.program-slot{gap:3px;padding:2px 5px}
+.slot-no{display:none}
+.program-slot select{font-size:calc(9px * var(--text-scale))}
+.event-card{padding:17px}
+.choice{padding:12px 9px;gap:8px}
+.chat-reactions{padding:12px 9px}
+.chat-row{gap:5px;font-size:calc(10px * var(--text-scale))}
+.chat-name{font-size:calc(8px * var(--text-scale))}
+.outfit-preview{height:166px}
+.outfit-preview img{height:230px}
+.outfit-info{padding:12px}
+.outfit-info p{font-size:calc(9px * var(--text-scale))}
+.wardrobe-grid{gap:10px}
+.project-mini{gap:9px}
+.project-mini-icon{display:none}
+.project-mini .text-button{font-size:calc(9px * var(--text-scale))}
+.module-grid article{padding:13px}
+.module-grid h3{font-size:calc(11px * var(--text-scale))}
+.memory{padding:11px 9px}
+.memory b{font-size:calc(11px * var(--text-scale))}
+.memory small{font-size:calc(9px * var(--text-scale))}
+.settlement strong{font-size:calc(20px * var(--text-scale))}
+.continue-row{gap:15px}
+.continue-row .button{font-size:calc(11px * var(--text-scale));padding:11px}
+.next-broadcast>.button{flex:1;padding:11px;font-size:calc(11px * var(--text-scale))}
+.quick-dates{gap:8px}
+.quick-dates .button{font-size:calc(11px * var(--text-scale));padding:10px}
+.date-line{font-size:calc(8px * var(--text-scale))}
+.date-line .text-button{font-size:calc(8px * var(--text-scale))}
+dialog{padding:22px 18px}
+.modal-heading h2{font-size:calc(21px * var(--text-scale))}
+.setting-row{font-size:calc(12px * var(--text-scale))}
+}
