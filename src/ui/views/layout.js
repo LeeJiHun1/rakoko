@@ -2,12 +2,13 @@
 import {activeBonus, estimateViewers, LABELS, skill} from '../../engine.js';
 import {btn, escape} from '../dom.js';
 import {gameName, outfit, store} from '../store.js';
+import {kimongiAvatar, LOGO, STUDIO_BACKGROUND} from '../assets.js';
 
 export const isLive = state => ['event', 'result', 'ending'].includes(state.phase);
 
 export function topbar() {
   const {busy, saveError} = store;
-  return `<a class="skip-link" href="#scene">본문으로 건너뛰기</a><header class="topbar"><a class="brand" href="#" data-view="broadcast"><span class="brand-mark">✦</span><span>라코코의 방송일지<small>THE BROADCAST JOURNAL</small></span></a>
+  return `<a class="skip-link" href="#scene">본문으로 건너뛰기</a><header class="topbar"><a class="brand" href="#" data-view="broadcast"><img class="brand-logo" src="${LOGO}" alt="라코코의 방송일지" width="1200" height="360"/></a>
   <div class="topbar-actions"><span class="save-state ${saveError?'error':''}"><i></i>${busy?'저장 중':saveError?'저장 확인 필요':'기록 중'}</span>${btn('↻','reload','title="최신 일지 불러오기"','icon-button')}${btn('☷','settings','title="설정"','icon-button')}${btn('?','about','aria-label="게임 안내"','icon-button')}</div></header>`;
 }
 
@@ -27,13 +28,14 @@ function statusPanel(state, catalog) {
 function liveOverlay(state) {
   const viewers = estimateViewers(state, activeBonus(state, 'viewers'));
   const rows = (state.phase === 'result' ? state.result?.reactions : state.currentLog.at(-1)?.reactions) || [];
-  const chat = rows.slice(-4).map(r => `<p><b>${escape(r.speaker)}</b> ${escape(r.text)}</p>`).join('') || '<p class="chat-idle">채팅창이 두근두근 기다리는 중…</p>';
+  const chat = rows.slice(-4).map(r => `<p><img src="${kimongiAvatar(r.speaker)}" alt="" width="20" height="20"/><b>${escape(r.speaker)}</b> ${escape(r.text)}</p>`).join('') || '<p class="chat-idle">채팅창이 두근두근 기다리는 중…</p>';
   return `<div class="studio-live"><span class="live-viewers"><i></i>${escape(viewers.toLocaleString('ko-KR'))}명 시청 중</span><div class="studio-chat">${chat}</div></div>`;
 }
 
 export function studio() {
   const {state, catalog} = store, live = isLive(state), o = outfit();
-  return `<aside class="studio-column"><section class="studio"><div class="studio-top"><span class="live-pill ${live?'live':''}"><i></i>${live?'ON AIR':'STANDBY'}</span><span>RAKOKO / STUDIO 01</span></div>
+  // 스튜디오 배경: 준비·정산은 낮, 방송 중은 밤(인물은 별도 레이어)
+  return `<aside class="studio-column"><section class="studio has-bg bg-${live?'night':'day'}"><img class="studio-bg" src="${live?STUDIO_BACKGROUND.night:STUDIO_BACKGROUND.day}" alt="" width="1600" height="1000"/><div class="studio-top"><span class="live-pill ${live?'live':''}"><i></i>${live?'ON AIR':'STANDBY'}</span><span>RAKOKO / STUDIO 01</span></div>
   <div class="studio-window"><span></span></div><div class="studio-grid"></div><span class="studio-spark s1">✦</span><span class="studio-spark s2">✧</span>
   <img class="character" src="${o.image}" alt="${escape(o.name)}을 입은 라코코" width="1024" height="1536" />
   <div class="studio-caption">${live?liveOverlay(state):`<span class="tiny">TODAY'S RAKOKO</span><h2>오늘도,<br/>코코랑.</h2><p>아직 쓰지 않은 이야기가 기다리고 있어.</p>`}<div class="outfit-label"><i></i>${escape(o.name)}${btn('갈아입기 ↗','wardrobe','','text-button')}</div></div></section>

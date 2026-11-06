@@ -1,6 +1,7 @@
 // 방송 중 화면: 사건 카드 + 선택지(잠금 사유 표시).
 import {activeBonus, CORNERS, NOTABLE_BONUS, prepBonus, projectProgressLocks, STYLES, unmet} from '../../engine.js';
 import {money} from '../dom.js';
+import {cornerIcon, facePath, leakClue} from '../assets.js';
 import {escape, tag} from '../dom.js';
 import {store} from '../store.js';
 
@@ -27,6 +28,9 @@ export function choices(event) {
 
 const CORNER_ICONS = {T: '☕', G: '▣', F: '♡', S: '✦'};
 
+/** 결과가 정해지기 전이라 기본 표정, 돌발 상황(유출)만 놀람 */
+const eventFace = (state, e) => facePath(state, e.kind === 'leak' ? 'surprised' : 'default');
+
 function eventTag(e) {
   if (e.kind === 'project') return '작은 기획의 한 단계';
   if (e.kind === 'module') return '함께 이어가는 콘텐츠';
@@ -39,6 +43,6 @@ function eventTag(e) {
 
 export function eventScreen() {
   const {state} = store, e = state.event;
-  return `<div class="broadcast-progress">${[0,1,2].map((i)=>`<span class="corner-${escape(state.plan[i])} ${i===state.slot?'current':i<state.slot?'done':''}">${i<state.slot?'✓':String(i+1).padStart(2,'0')} ${CORNERS[state.plan[i]]}</span>`).join('')}</div>
-  <article class="event-card corner-${escape(state.plan[state.slot])}"><div class="event-meta"><span class="corner-badge corner-${escape(state.plan[state.slot])}">${CORNER_ICONS[state.plan[state.slot]]||''} ${escape(CORNERS[state.plan[state.slot]])}</span>${tag(eventTag(e))}<span>SCENE ${escape(String(Number(state.slot)+1).padStart(2,'0'))}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${e.kind==='reveal'?'<div class="reveal-stage"><img src="assets/events/outfit-journal/stage-closed-v1.png" alt="닫힌 무대 커튼" width="1672" height="941"/></div>':''}${oddsNote(e)}${e.kind==='leak'?'<div class="clue"><span>▧</span><p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>':''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.<span class="key-hint"> · 키보드 1~${escape(Math.min(4,e.choices.length))}로 선택</span></p>`;
+  return `<div class="broadcast-progress">${[0,1,2].map((i)=>`<span class="corner-${escape(state.plan[i])} ${i===state.slot?'current':i<state.slot?'done':''}">${cornerIcon(state.plan[i])?`<img src="${cornerIcon(state.plan[i])}" alt="" width="16" height="16"/>`:''}${i<state.slot?'✓':String(i+1).padStart(2,'0')} ${CORNERS[state.plan[i]]}</span>`).join('')}</div>
+  <article class="event-card corner-${escape(state.plan[state.slot])}${eventFace(state, e) ? ' has-face' : ''}">${eventFace(state, e) ? `<img class="card-face" src="${eventFace(state, e)}" alt="" width="512" height="512"/>` : ''}<div class="event-meta"><span class="corner-badge corner-${escape(state.plan[state.slot])}">${cornerIcon(state.plan[state.slot])?`<img src="${cornerIcon(state.plan[state.slot])}" alt="" width="18" height="18"/>`:CORNER_ICONS[state.plan[state.slot]]||''} ${escape(CORNERS[state.plan[state.slot]])}</span>${tag(eventTag(e))}<span>SCENE ${escape(String(Number(state.slot)+1).padStart(2,'0'))}</span></div><h2>${escape(e.title)}</h2><p class="event-body">${escape(e.body)}</p>${e.kind==='reveal'?'<div class="reveal-stage"><img src="assets/events/outfit-journal/stage-closed-v1.png" alt="닫힌 무대 커튼" width="1672" height="941"/></div>':''}${oddsNote(e)}${e.kind==='leak'?`<div class="clue${leakClue(e.outfitId)?' has-img':''}">${leakClue(e.outfitId)?`<img src="${leakClue(e.outfitId)}" alt="작업 화면에 잠깐 비친 옷의 한 조각" width="640" height="360"/>`:'<span>▧</span>'}<p>잠깐 스친 작은 단서.<br/>전체 모습은 아직 비밀이에요.</p></div>`:''}${choices(e)}</article><p class="quiet-note">선택한 순간이, 다음 방송의 이야기가 됩니다.<span class="key-hint"> · 키보드 1~${escape(Math.min(4,e.choices.length))}로 선택</span></p>`;
 }

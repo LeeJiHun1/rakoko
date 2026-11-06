@@ -4,12 +4,16 @@ import {$, btn, escape} from './dom.js';
 import {openDialog} from './modal.js';
 import {preferences} from './preferences.js';
 import {outfit, store} from './store.js';
+import {endingImage, LOGO} from './assets.js';
+
+/** 결말 ID(END-xxx) → 결말 사건 그림(EF-xxx) */
+const endingArt = endingId => endingImage(store.catalog.projects.find(p => p.id === endingId)?.eventId);
 import {TOTAL_ENDINGS} from './views/journal.js';
 
 export function showCredits() {
   const e = store.state.lastEnding;
   if (!e) return;
-  openDialog('한 장의 마지막',`<div class="credits-scene"><span class="eyebrow">${e.forced?'TEN YEARS, ONE JOURNAL':'A CHAPTER TO REMEMBER'}</span><div class="credits-characters"><img src="${outfit().image}" alt="라코코"/>${e.forced?'<img class="spouse" src="assets/characters/kimongi-base-v1.png" alt="다수 중 한 명인 가상 키몽이"/>':''}</div><h1>${escape(e.title)}</h1><p>${escape(e.resolution)}</p><p class="epilogue">${escape(e.epilogue)}</p>${e.projectLog?`<div class="ending-memories">${e.projectLog.map(l=>`<p><span>${escape(l.date)}</span>${escape(l.text)}</p>`).join('')}</div>`:''}<span class="credit-thanks">라코코와, 서로 다른 목소리의 모든 키몽이들에게.</span><div class="credits-actions">${!e.forced?btn('같은 일지에서 방송 계속하기','continue','','button primary'):''}${btn('일지 돌아보기','viewJournal','','button secondary')}${btn('일지 내보내기','export','','button secondary')}${btn('새 일지 시작하기','confirmNew','','text-button')}</div></div>`);
+  openDialog('한 장의 마지막',`<div class="credits-scene"><span class="eyebrow">${e.forced?'TEN YEARS, ONE JOURNAL':'A CHAPTER TO REMEMBER'}</span>${!e.forced&&endingArt(e.id)?`<img class="ending-art" src="${endingArt(e.id)}" alt="결말 장면: ${escape(e.title)}" width="960" height="540"/>`:''}<div class="credits-characters${!e.forced&&endingArt(e.id)?' with-art':''}"><img src="${outfit().image}" alt="라코코"/>${e.forced?'<img class="spouse" src="assets/characters/kimongi-base-v1.png" alt="다수 중 한 명인 가상 키몽이"/>':''}</div><h1>${escape(e.title)}</h1><p>${escape(e.resolution)}</p><p class="epilogue">${escape(e.epilogue)}</p>${e.projectLog?`<div class="ending-memories">${e.projectLog.map(l=>`<p><span>${escape(l.date)}</span>${escape(l.text)}</p>`).join('')}</div>`:''}<span class="credit-thanks">라코코와, 서로 다른 목소리의 모든 키몽이들에게.</span><div class="credits-actions">${!e.forced?btn('같은 일지에서 방송 계속하기','continue','','button primary'):''}${btn('일지 돌아보기','viewJournal','','button secondary')}${btn('일지 내보내기','export','','button secondary')}${btn('새 일지 시작하기','confirmNew','','text-button')}</div></div>`);
 }
 
 export function openDatePicker() {
@@ -38,7 +42,7 @@ export function maybeShowGuide() {
   try { seen = localStorage.getItem(GUIDE_KEY) === '1'; } catch {}
   if (seen || state.completedBroadcasts > 0 || state.phase !== 'prep') return;
   try { localStorage.setItem(GUIDE_KEY, '1'); } catch {}
-  openDialog('첫 방송을 켜기 전에',`<ol class="guide-list"><li><b>준비</b> — 방송마다 준비 행동 2번. 자료·연습·점검마다 유리해지는 코너가 달라요.</li><li><b>방송</b> — 코너 3개. 선택지의 <em>안정·보통·모험</em>에 따라 대성공도, 아쉬움도 나와요.</li><li><b>일지</b> — 결과와 시청자 성장으로 방송 등급(S~C)이 매겨지고, 응원이 터지기도 해요.</li><li><b>목표</b> — 기획을 골라 3단계로 완성하고, 방송 150일째부터 마지막 특집으로 결말을 만나요. 여러 기획을 완성해 두고 고를 수도 있어요.</li><li><b>그 밖에</b> — 방송 중 새 의상 제안·구매 이벤트, 이번 달 미션, 업적과 사건 도감이 기다려요.</li></ol><p class="modal-description">키보드: 숫자 1~4로 선택, Enter 로 다음. 설정에서 글자 크기·동작 줄이기·효과음을 바꿀 수 있어요.</p>${btn('첫 방송 준비하기','closeModal','','button primary full')}`);
+  openDialog('첫 방송을 켜기 전에',`<img class="guide-logo" src="${LOGO}" alt="라코코의 방송일지" width="1200" height="360"/><ol class="guide-list"><li><b>준비</b> — 방송마다 준비 행동 2번. 자료·연습·점검마다 유리해지는 코너가 달라요.</li><li><b>방송</b> — 코너 3개. 선택지의 <em>안정·보통·모험</em>에 따라 대성공도, 아쉬움도 나와요.</li><li><b>일지</b> — 결과와 시청자 성장으로 방송 등급(S~C)이 매겨지고, 응원이 터지기도 해요.</li><li><b>목표</b> — 기획을 골라 3단계로 완성하고, 방송 150일째부터 마지막 특집으로 결말을 만나요. 여러 기획을 완성해 두고 고를 수도 있어요.</li><li><b>그 밖에</b> — 방송 중 새 의상 제안·구매 이벤트, 이번 달 미션, 업적과 사건 도감이 기다려요.</li></ol><p class="modal-description">키보드: 숫자 1~4로 선택, Enter 로 다음. 설정에서 글자 크기·동작 줄이기·효과음을 바꿀 수 있어요.</p>${btn('첫 방송 준비하기','closeModal','','button primary full')}`);
 }
 
 export function openAbout() {
@@ -48,7 +52,7 @@ export function openAbout() {
 /** 결말 모음: 33칸(일반 32 + 10년 결말). 못 만난 결말은 제목을 숨기고 어떤 기획으로 갈 수 있는지만 힌트 */
 export function openCollection() {
   const {state, catalog} = store, met = new Map(state.reachedEndings.map(e => [e.id, e]));
-  const card = (id, hint) => { const e = met.get(id); return e ? `<article class="got"><span>✦</span><h3>${escape(e.title)}</h3><p>${escape(e.epilogue)}</p></article>` : `<article class="locked"><span>?</span><h3>???</h3><p>${escape(hint)}</p></article>`; };
+  const card = (id, hint) => { const e = met.get(id), art = e && endingArt(id); return e ? `<article class="got">${art?`<img class="collection-art" src="${art}" alt="" width="960" height="540" loading="lazy"/>`:'<span>✦</span>'}<h3>${escape(e.title)}</h3><p>${escape(e.epilogue)}</p></article>` : `<article class="locked"><span>?</span><h3>???</h3><p>${escape(hint)}</p></article>`; };
   const cards = catalog.projects.map(p => card(p.id, `기획 「${p.name}」에서 만날 수 있어요`)).join('') + card('END-FORCED-10Y', '결말 없이 10년을 방송하면…');
   openDialog('함께 만난 이야기들',`<p class="modal-description">만난 결말 ${met.size} / ${TOTAL_ENDINGS}. 한 기획에서도 마지막 선택에 따라 다른 결말을 만날 수 있어요.</p><div class="collection-list">${cards}</div>`);
 }

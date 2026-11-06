@@ -4,7 +4,7 @@ await rm('dist',{recursive:true,force:true});
 await mkdir('dist',{recursive:true});
 await copyFile('index.html','dist/index.html');
 await cp('src','dist/src',{recursive:true});
-for(const folder of ['characters','events/outfit-reveals','events/outfit-journal','fonts']) {
+for(const folder of ['characters','events/outfit-reveals','events/outfit-journal','events/outfit-leak','backgrounds','brand','endings','icons','fonts']) {
   await mkdir(`dist/assets/${folder}`,{recursive:true});
   await cp(`assets/${folder}`,`dist/assets/${folder}`,{recursive:true,filter:source=>!source.endsWith('.json')});
 }

@@ -1,0 +1,40 @@
+/* 그림 에셋 표시(v1 38종, docs/ASSET-DELIVERY.md). 도트 그림은 pixelated + contain */
+.brand-logo,.studio-bg,.card-face,.clue img,.studio-chat img,.chat-row img,.corner-badge img,.broadcast-progress img,.ending-art,.collection-art,.guide-logo{image-rendering:pixelated}
+
+/* 상단바 로고 */
+.brand-logo{height:56px;width:auto;object-fit:contain;display:block}
+@media (max-width:760px){.brand-logo{height:40px}}
+
+/* 스튜디오 배경(인물 없는 방) + 캐릭터 레이어, 글자 가독용 그라데이션 */
+.studio.has-bg{background:#241d2b}
+.studio-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.studio.has-bg::after{content:'';position:absolute;inset:0;height:auto;z-index:1;pointer-events:none;background:linear-gradient(180deg,#1d182455 0%,#1d182400 30%,#1d182400 52%,#1d1824d9 82%,#1d1824f2 100%)}
+.studio.has-bg .studio-window,.studio.has-bg .studio-grid{display:none}
+.studio.has-bg .character{z-index:1}
+.studio.has-bg .studio-top,.studio.has-bg .studio-caption,.studio.has-bg .studio-spark{z-index:2}
+.studio.has-bg.bg-day::after{background:linear-gradient(180deg,#1d182433 0%,#1d182400 30%,#1d182400 50%,#1d1824cc 80%,#1d1824ee 100%)}
+
+/* 표정 초상: 사건·결과 카드 오른쪽 위 */
+.event-card.has-face{position:relative}
+.event-card.has-face>.event-meta,.event-card.has-face>.eyebrow,.event-card.has-face>h2,.event-card.has-face>p{padding-right:110px}
+.card-face{position:absolute;top:14px;right:14px;width:92px;height:92px;object-fit:contain;border-radius:50%;background:radial-gradient(circle at 50% 60%,#fff6f8,#f3e7ea);border:2px solid #fff;box-shadow:0 4px 12px #3e2b3622}
+@media (max-width:760px){.event-card.has-face>.event-meta,.event-card.has-face>.eyebrow,.event-card.has-face>h2,.event-card.has-face>p{padding-right:72px}.card-face{width:64px;height:64px;top:10px;right:10px}}
+
+/* 유출 단서 그림 */
+.clue.has-img{flex-direction:column;gap:6px;text-align:center}
+.clue img{width:100%;max-width:420px;height:auto;object-fit:contain;display:block;margin:0 auto}
+
+/* 채팅 아이콘(키몽이 변형) */
+.studio-chat p{display:flex;align-items:center;gap:6px}
+.studio-chat img{width:20px;height:20px;object-fit:contain;flex:none}
+.chat-row img{object-fit:contain}
+
+/* 코너 아이콘 */
+.corner-badge img{width:18px;height:18px;object-fit:contain}
+.broadcast-progress img{width:16px;height:16px;object-fit:contain;vertical-align:-3px;margin-right:4px}
+
+/* 결말 장면 */
+.ending-art{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;display:block;margin:8px 0 14px;box-shadow:0 6px 18px #3e2b3626}
+.credits-characters.with-art{display:none}
+.collection-art{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px;display:block;margin-bottom:6px}
+.guide-logo{width:min(360px,80%);height:auto;object-fit:contain;display:block;margin:0 auto 10px}

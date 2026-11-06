@@ -2,6 +2,7 @@
 import {LABELS} from '../../engine.js';
 import {btn, escape, money, tag} from '../dom.js';
 import {store} from '../store.js';
+import {facePath, kimongiAvatar} from '../assets.js';
 
 const DONATION_TITLES = {jackpot: '대박 응원!', medium: '응원 도착', small: '응원 도착'};
 
@@ -20,7 +21,7 @@ function revealStage(state, id) {
 }
 
 export function reactionRows(rows) {
-  return `<div class="chat-reactions"><div class="chat-label"><span>LIVE CHAT</span><i></i> 키몽이들의 한마디</div>${rows.map((r,i)=>`<div class="chat-row"><img src="assets/characters/kimongi-base-v1.png" alt="" width="32" height="32"/><span class="chat-name color-${i}">${escape(r.speaker)}</span><span>${escape(r.text)}</span></div>`).join('')}</div>`;
+  return `<div class="chat-reactions"><div class="chat-label"><span>LIVE CHAT</span><i></i> 키몽이들의 한마디</div>${rows.map((r,i)=>`<div class="chat-row"><img src="${kimongiAvatar(r.speaker)}" alt="" width="32" height="32"/><span class="chat-name color-${i}">${escape(r.speaker)}</span><span>${escape(r.text)}</span></div>`).join('')}</div>`;
 }
 
 const GRADE_HEADINGS = {great: ['✦', '대성공!'], miss: ['…', '아쉬움, 그래도 웃음은 남았다']};
@@ -30,7 +31,17 @@ function heading(r) {
   return `<div class="result-heading grade-${escape(r.grade || 'success')}"><span>${icon}</span><p>${text}</p></div>`;
 }
 
+/** 결과가 확정된 뒤의 표정(기본 의상일 때만 — 의상별 초상은 v2) */
+function resultExpression(r) {
+  if (r.kind === 'revealFailed' || r.grade === 'miss') return 'flustered';
+  if (r.donation?.tier === 'jackpot' || r.kind === 'reveal') return 'proud';
+  if (r.donation) return 'surprised';
+  if (r.grade === 'great') return 'smile';
+  return 'default';
+}
+
 export function resultScreen() {
   const {state} = store, r = state.result;
-  return `${heading(r)}<article class="event-card result-card${r.grade ? ' grade-' + escape(r.grade) : ''}"><span class="eyebrow">${escape(r.title)}</span><h2>${escape(r.choice)}</h2><p class="event-body">${escape(r.outcome)}</p><div class="gain-list">${Object.entries(r.changes||{}).map(([key,n])=>`<span>${escape(LABELS[key])} <b>+${escape(Number(n))}</b></span>`).join('')}${r.kind==='reveal'?tag('옷장에 새 의상이 추가됐어요'):''}${r.kind==='revealFailed'?tag('공개 실패 · 준비도는 그대로, 다시 예약할 수 있어요'):''}</div>${revealStage(state, r.unlockedOutfit)}</article>${donationBanner(r.donation)}${reactionRows(r.reactions||[])}<div class="continue-row"><span>0${escape(Number(state.slot)+1)} / 03 코너<span class="key-hint"> · Enter</span></span>${btn(r.interlude?'코너 이어서 진행 <span>→</span>':state.slot<2?'다음 코너로 <span>→</span>':'오늘의 일지 마무리 <span>→</span>','advance','','button primary')}</div>`;
+  const face = facePath(state, resultExpression(r));
+  return `${heading(r)}<article class="event-card result-card${r.grade ? ' grade-' + escape(r.grade) : ''}${face ? ' has-face' : ''}">${face ? `<img class="card-face" src="${face}" alt="" width="512" height="512"/>` : ''}<span class="eyebrow">${escape(r.title)}</span><h2>${escape(r.choice)}</h2><p class="event-body">${escape(r.outcome)}</p><div class="gain-list">${Object.entries(r.changes||{}).map(([key,n])=>`<span>${escape(LABELS[key])} <b>+${escape(Number(n))}</b></span>`).join('')}${r.kind==='reveal'?tag('옷장에 새 의상이 추가됐어요'):''}${r.kind==='revealFailed'?tag('공개 실패 · 준비도는 그대로, 다시 예약할 수 있어요'):''}</div>${revealStage(state, r.unlockedOutfit)}</article>${donationBanner(r.donation)}${reactionRows(r.reactions||[])}<div class="continue-row"><span>0${escape(Number(state.slot)+1)} / 03 코너<span class="key-hint"> · Enter</span></span>${btn(r.interlude?'코너 이어서 진행 <span>→</span>':state.slot<2?'다음 코너로 <span>→</span>':'오늘의 일지 마무리 <span>→</span>','advance','','button primary')}</div>`;
 }
