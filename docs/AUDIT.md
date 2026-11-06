@@ -49,8 +49,8 @@
 | S7 | 낮음 | 방송 10,000회 초과 시 저장본 둘 다 거부(2100년까지 매일 방송 가능) | 한도 40,000 (`bbb4aa0`) |
 | S8 | 정보 | 응원·대회 상금 가산에 자금 상한 없음 | 상한 적용 (`bbb4aa0`) |
 | S9 | 정보 | 탭 동기화 메시지·편의 설정 값 형식 미검사 | 형식 확인·허용 값만 (`bbb4aa0`) |
-| S10 | 정보 | **원격 `github.com/LeeJiHun1/rakoko` 는 public(비어 있음)** → push 즉시 공개. 커밋 작성자 이메일(회사 도메인)이 전 커밋에 포함 | **사용자 결정 필요** — push 전 작성자 이메일 정리 여부(히스토리 재작성 필요) |
-| S11 | 정보 | 추적 파일에 비공식 내부 API 수집기(`work/rakoko/collect_kimongi_chat.py`)·채팅 원문 짧은 인용(`outputs/rakoko_kimongi_chat_research.md`, 영상 링크+시각으로 작성자 역추적 가능) | **사용자 결정 필요** — 공개 전 제외(.gitignore + 히스토리)·익명화 여부 |
+| S10 | 정보 | **원격 `github.com/LeeJiHun1/rakoko` 는 public(비어 있음)** → push 즉시 공개. 커밋 작성자 이메일(회사 도메인)이 전 커밋에 포함 | **해결** — 전 커밋 작성자 `jihoonlee <>`(이메일 없음) 확인 후 2026-11-06 push |
+| S11 | 정보 | 추적 파일에 비공식 내부 API 수집기(`work/rakoko/collect_kimongi_chat.py`)·채팅 원문 짧은 인용(`outputs/rakoko_kimongi_chat_research.md`, 영상 링크+시각으로 작성자 역추적 가능) | **해결(2026-11-06, 사용자 결정)** — 채팅 조사 보고서·수집기 2종·보고서 생성기를 push 전 로컬 히스토리 전체에서 제거하고 .gitignore(로컬 보관). 다른 조사 문서의 해당 링크는 로컬 전용 파일을 가리킴. 게임 대사(`src/data/chat.js`)는 직접 창작이라 영향 없음 |
 | S12 | 정보 | GitHub Pages 프로젝트 사이트(`*.github.io/<repo>`)는 같은 계정 저장소끼리 origin 공유, meta 로는 `frame-ancestors` 불가 | 배포 시 별도 (서브)도메인 권장 |
 | S13 | 정보 | 깊은 중첩 입력의 브라우저 구조화 복제 한도(미확인), Windows 8.3 짧은 이름 우회(미확인), PNG 의 생성 메타데이터(C2PA) | 기록만 |
 

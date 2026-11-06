@@ -12,3 +12,10 @@ playtest-saves/
 # 방송 캡처·참조 원본 (시청자 닉네임 노출·저작권) — 로컬 보관만
 assets/references/
 outputs/*.jpg
+
+# 실제 시청자 채팅 인용·비공식 API 채팅 수집기 (AUDIT S11, 2026-11-06 공개 전 히스토리에서 제거) — 로컬 보관만
+outputs/rakoko_kimongi_chat_research.md
+work/rakoko/collect_kimongi_chat.py
+work/rakoko/collect_kimongi_targeted.py
+work/rakoko/build_kimongi_dialogue.py
+work/rakoko/kimongi_chat/
